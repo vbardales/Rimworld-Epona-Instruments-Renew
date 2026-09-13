@@ -15,7 +15,6 @@ showcase: pending
 tested_on:
 updated: 2026-09-13
 remaining:
-  - defect: About.xml and README use public unofficial wording instead of required private prohibited wording
   - unverified: newly supplied local ModIcon and artwork remain outside this first push and are not validated
   - defect: Mod/About/Preview.png is absent
   - unverified: configuration checks on effective patched definitions; existing checker reads zero definitions
@@ -25,9 +24,7 @@ remaining:
 
 # Epona Instruments Renew - status
 
-The literal stage is the workflow floor: the horsMonoRepo gate is not established until
-an autonomous repository, remote and pushed commit exist. This folder is a local prepared
-project; its physical location alone does not establish that gate.
+Current stage: horsMonoRepo. The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
 
 Scope: Three carried instruments: great highland bagpipes, uilleann pipes and accordion.
 
@@ -217,3 +214,4 @@ Next gate: ModIcon générée. Confirm completion of implementation and inspect/
 new local icon before advancing. No build is applicable to this XML/texture-only package.
 Preview and the later outstanding tests remain separate; no game launch or Steam Workshop
 publication was performed. Historical test outputs and ongoing local artwork remain intact.
+
