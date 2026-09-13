@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <JP_GreatHighlandBagpipes.label>grande cornemuse des Highlands</JP_GreatHighlandBagpipes.label>
+  <JP_GreatHighlandBagpipes.description>Un instrument à anche puissant, alimenté par un sac d'air tenu sous le bras. Conçu pour s'entendre d'un bout à l'autre d'une vallée, ce qui en fait un choix discutable en intérieur.</JP_GreatHighlandBagpipes.description>
+  <JP_UilleannPipes.label>cornemuse uilleann</JP_UilleannPipes.label>
+  <JP_UilleannPipes.description>Une cornemuse à soufflet, jouée assis, à la voix plus douce et plus suave que sa cousine des Highlands. Difficile à bien jouer, et reconnaissable entre toutes quand on la joue mal.</JP_UilleannPipes.description>
+  <JP_Accordion.label>accordéon</JP_Accordion.label>
+  <JP_Accordion.description>Une boîte à anches actionnée par un soufflet et deux claviers. Puissant, transportable, et capable de porter un bal entier à lui seul.</JP_Accordion.description>
+</LanguageData>

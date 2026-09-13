@@ -1,0 +1,6 @@
+Conditional patches skipped, so 4 def(s) were not created: pass the mod their gate names as a target to check them
+Patch operations applied: 40
+Defs indexed: 11659
+
+Keys checked: 6 - errors: 0
+

@@ -1,0 +1,46 @@
+{
+  "authors": "Outremer",
+  "scope": "Three carried instruments: great highland bagpipes, uilleann pipes and accordion.",
+  "source": "Epona Instruments Standalone",
+  "definitions": [
+    "ThingDef:JP_Accordion",
+    "ThingDef:JP_GreatHighlandBagpipes",
+    "ThingDef:JP_UilleannPipes"
+  ],
+  "classification": "silent",
+  "workshopIds": [
+    "2627618308"
+  ],
+  "sourceVersion": "1.3",
+  "originRevision": "eafda413babde8984007380e3435e19b872ea001",
+  "files": [
+    {
+      "Path": "Mod/Patches/EponaInstruments.xml",
+      "SHA256": "2804E719BDF2B782FFB8D386A57306946E175177B4ED6559C45F0344F5135203"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/GreatHighlandPipes_m.png",
+      "SHA256": "0623B7A9D5A97BD82E45B07368E07A08DC4CF58C1CEAB5399DA917A137731479"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/GreatHighlandPipes.png",
+      "SHA256": "1DA3E02F6F59DBDC799E0C0DC410C7BBBA8FFC1CC9A107DBEB50EED2A6FE6F2C"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/UilleannPipes_m.png",
+      "SHA256": "53A7DE399A6B57C8191B47076B94D19D3A8E96309ECBDFA6682A0FE285A22EAC"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/UilleannPipes.png",
+      "SHA256": "717A668A2E6CF283382F227E3221606495858DA1DF6BA8DEF81507BBE61E1205"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/Accordion_m.png",
+      "SHA256": "53A7DE399A6B57C8191B47076B94D19D3A8E96309ECBDFA6682A0FE285A22EAC"
+    },
+    {
+      "Path": "Mod/Textures/Things\\Items\\Pipes/Accordion.png",
+      "SHA256": "0885EB1D533AF9B60F784BADCCBECA7F801DACAC973257334BD02B93BE27EDEB"
+    }
+  ]
+}

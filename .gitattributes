@@ -1,0 +1,4 @@
+* text=auto
+*.png binary
+*.dll binary
+Tests/**/*.txt whitespace=-blank-at-eof

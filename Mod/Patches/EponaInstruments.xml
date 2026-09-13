@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Two bagpipes and an accordion from Epona Instruments Standalone by Outremer. Its definitions live under 1.3 with no LoadFolders.xml and are not selected for 1.6. Keep this private extraction separate from Steam-managed source files. These items complement the instruments supplied by Musical Instruments (Continued), whose reviewed catalogue had no pipes or accordion. Guard on HeldMusicalInstrumentBase before adding definitions that reference MusicalInstruments component classes: missing classes can invalidate whole definitions. Add the source-missing CompProp_PlayingMusic. Reuse MIC_Ocarina_Play for the pipes and MIC_ElectronicOrgan_Play for accordion because dedicated samples are unavailable. Replace setting-specific labels Great Stalion Bagpipe, Epones Pipe and Cavalier Accordion with generic instrument names. -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[@Name="HeldMusicalInstrumentBase"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs</xpath>
+      <value>
+
+        <ThingDef ParentName="PrimitiveInstrumentBase">
+          <defName>JP_GreatHighlandBagpipes</defName>
+          <label>great highland bagpipes</label>
+          <description>A loud reed instrument driven by a bag of air kept under the arm. Built to be heard across a valley, which makes it a questionable choice indoors.</description>
+          <graphicData>
+            <texPath>Things/Items/Pipes/GreatHighlandPipes</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <techLevel>Medieval</techLevel>
+          <statBases>
+            <WorkToMake>28000</WorkToMake>
+            <Mass>5</Mass>
+          </statBases>
+          <costList>
+            <WoodLog>40</WoodLog>
+          </costList>
+          <stuffCategories>
+            <li>Fabric</li>
+            <li>Leathery</li>
+          </stuffCategories>
+          <costStuffCount>80</costStuffCount>
+          <comps>
+            <li Class="MusicalInstruments.CompProperties_MusicalInstrument">
+              <compClass>MusicalInstruments.CompMusicalInstrument</compClass>
+              <easiness>0.4</easiness>
+              <expressiveness>0.6</expressiveness>
+              <xOffset>-0.2</xOffset>
+              <zOffset>0.0</zOffset>
+              <xOffsetFacing>0.3</xOffsetFacing>
+              <zOffsetFacing>0.0</zOffsetFacing>
+              <vertical>true</vertical>
+            </li>
+            <li Class="MusicalInstruments.CompProp_PlayingMusic">
+              <soundPlayInstrument>MIC_Ocarina_Play</soundPlayInstrument>
+            </li>
+          </comps>
+        </ThingDef>
+
+        <ThingDef ParentName="PrimitiveInstrumentBase">
+          <defName>JP_UilleannPipes</defName>
+          <label>uilleann pipes</label>
+          <description>Bellows-blown pipes played sitting down, with a softer and sweeter voice than their highland cousins. Difficult to play well, and unmistakable when played badly.</description>
+          <graphicData>
+            <texPath>Things/Items/Pipes/UilleannPipes</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <techLevel>Medieval</techLevel>
+          <statBases>
+            <WorkToMake>45000</WorkToMake>
+            <Mass>4</Mass>
+          </statBases>
+          <costList>
+            <WoodLog>20</WoodLog>
+            <ComponentIndustrial>3</ComponentIndustrial>
+          </costList>
+          <stuffCategories>
+            <li>Metallic</li>
+          </stuffCategories>
+          <costStuffCount>75</costStuffCount>
+          <comps>
+            <li Class="MusicalInstruments.CompProperties_MusicalInstrument">
+              <compClass>MusicalInstruments.CompMusicalInstrument</compClass>
+              <easiness>0.2</easiness>
+              <expressiveness>0.9</expressiveness>
+              <xOffset>0.2</xOffset>
+              <zOffset>0.0</zOffset>
+              <xOffsetFacing>-0.2</xOffsetFacing>
+              <zOffsetFacing>0.0</zOffsetFacing>
+              <vertical>true</vertical>
+            </li>
+            <li Class="MusicalInstruments.CompProp_PlayingMusic">
+              <soundPlayInstrument>MIC_Ocarina_Play</soundPlayInstrument>
+            </li>
+          </comps>
+        </ThingDef>
+
+        <ThingDef ParentName="HeldMusicalInstrumentBase">
+          <defName>JP_Accordion</defName>
+          <label>accordion</label>
+          <description>A box of reeds worked by a bellows and two banks of keys. Loud, portable, and capable of carrying a whole dance on its own.</description>
+          <graphicData>
+            <texPath>Things/Items/Pipes/Accordion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <techLevel>Medieval</techLevel>
+          <statBases>
+            <WorkToMake>65000</WorkToMake>
+            <Mass>2</Mass>
+          </statBases>
+          <recipeMaker>
+            <researchPrerequisite>StringedInstruments</researchPrerequisite>
+          </recipeMaker>
+          <costList>
+            <WoodLog>30</WoodLog>
+            <ComponentIndustrial>5</ComponentIndustrial>
+          </costList>
+          <stuffCategories>
+            <li>Metallic</li>
+          </stuffCategories>
+          <costStuffCount>15</costStuffCount>
+          <comps>
+            <li Class="MusicalInstruments.CompProperties_MusicalInstrument">
+              <compClass>MusicalInstruments.CompMusicalInstrument</compClass>
+              <easiness>0.3</easiness>
+              <expressiveness>0.8</expressiveness>
+              <xOffset>0.1</xOffset>
+              <zOffset>0.0</zOffset>
+              <xOffsetFacing>-0.05</xOffsetFacing>
+              <zOffsetFacing>-0.2</zOffsetFacing>
+              <vertical>true</vertical>
+            </li>
+            <li Class="MusicalInstruments.CompProp_PlayingMusic">
+              <soundPlayInstrument>MIC_ElectronicOrgan_Play</soundPlayInstrument>
+            </li>
+          </comps>
+        </ThingDef>
+
+
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

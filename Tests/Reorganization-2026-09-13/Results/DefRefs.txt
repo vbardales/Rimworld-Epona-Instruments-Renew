@@ -1,0 +1,19 @@
+Champs de reference lus dans l'assemblage : 1186 balises (28 ecrites a la main), 22 typees
+Lecture des defs du jeu (C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Data)...
+Lecture des defs du mod (C:\Users\nelim\Documents\rimworld\JoyPreservation\ReorganizationReview-2026-09-13\EponaInstrumentsRenew\Mod)...
+Lecture des defs de dependance (C:\Users\nelim\Documents\rimworld\RepossessedFurniture\Mod\Defs)...
+Lecture des defs de dependance (C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2274558815/1.6)...
+
+=== C:\Users\nelim\Documents\rimworld\JoyPreservation\ReorganizationReview-2026-09-13\EponaInstrumentsRenew\Mod ===
+defs du mod : 3   parents du mod : 0
+-- tous les XML sont bien formes --
+-- aucune reference de def introuvable --
+-- toutes les references pointent sur le bon type de def --
+-- tous les ParentName sont resolus --
+
+-- Class= utilisees (verifier a la main si elles viennent d'un mod) --
+  MusicalInstruments.CompProp_PlayingMusic   Patches\EponaInstruments.xml
+  MusicalInstruments.CompProperties_MusicalInstrument Patches\EponaInstruments.xml
+  PatchOperationAdd                          Patches\EponaInstruments.xml
+  PatchOperationConditional                  Patches\EponaInstruments.xml
+
