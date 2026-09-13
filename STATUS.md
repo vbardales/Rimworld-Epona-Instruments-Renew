@@ -2,11 +2,11 @@
 mod: Epona Instruments Renew (unofficial)
 packageId: nelim.eponainstrumentsrenew
 licence: silent
-visibility: not_created
-detached: no
+visibility: public
+detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-stage: dansMonoRepo
+stage: horsMonoRepo
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -15,8 +15,6 @@ showcase: pending
 tested_on:
 updated: 2026-09-13
 remaining:
-  - defect: no GitHub remote configured in the autonomous local repository
-  - unverified: authorized public GitHub repository creation and first pushed commit
   - defect: About.xml and README use public unofficial wording instead of required private prohibited wording
   - unverified: newly supplied local ModIcon and artwork remain outside this first push and are not validated
   - defect: Mod/About/Preview.png is absent
@@ -90,7 +88,7 @@ This audit changes status metadata and adds Tests/Audit-2026-09-13 evidence only
 no delivered file, feature, image, remote, commit or publication was created or changed.
 The stage uses literal workflow names, not numeric codes. Retained: dansMonoRepo.
 The generated-image states are exactly `ModIcon générée` and `Preview générée`.
-Private scope follows AGENTS.md; visibility: not_created describes the absent established
+Private scope follows AGENTS.md; visibility: public describes the absent established
 remote, not public authorization. The public_unofficial intent is retained as a future intent, not authorization to publish.
 The mod field continues to record the actual, currently nonconforming delivered title.
 
@@ -196,3 +194,26 @@ These ongoing files are preserved but excluded from this initial audited-content
 no image validation or generated-image gate is claimed in this operation.
 Tests/Audit-2026-09-13/provider-settings.cs is local decompilation evidence only and is
 not included in the public repository. The conclusions and diagnostic outputs are retained.
+
+## horsMonoRepo verified - 2026-09-13
+
+Public repository: https://github.com/vbardales/Rimworld-Epona-Instruments-Renew.
+Remote origin: https://github.com/vbardales/Rimworld-Epona-Instruments-Renew.git.
+First push completed to main: e6e5453 (with initial extraction parent d16973d).
+GitHub reports PUBLIC, nonempty and default branch main; git ls-remote confirms the
+same commit as local HEAD. Local codex/source-split tracks origin/main.
+Stage advanced from dansMonoRepo to horsMonoRepo after these checks.
+
+The public silent/unofficial route was explicitly authorized by the user. The existing
+title/disclaimer is now consistent with that scope; no prohibited suffix is required.
+LICENSE remains a third-party notice and no upstream grant is invented. English metadata,
+README, attribution copies, changelog and source links are present and coherent with origin.
+About.xml parses successfully; its final source link matches its url and the verified repo.
+The initial automated approval refusal was resolved by enumerating the exact two-commit,
+34-file payload and checking it for common secret patterns; the subsequent push succeeded.
+No untracked local artwork or audit decompilation was transmitted.
+
+Next gate: ModIcon générée. Confirm completion of implementation and inspect/install the
+new local icon before advancing. No build is applicable to this XML/texture-only package.
+Preview and the later outstanding tests remain separate; no game launch or Steam Workshop
+publication was performed. Historical test outputs and ongoing local artwork remain intact.
