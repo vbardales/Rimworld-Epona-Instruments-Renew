@@ -15,7 +15,7 @@ showcase: pending
 tested_on:
 updated: 2026-09-13
 remaining:
-  - unverified: newly supplied local ModIcon and artwork remain outside this first push and are not validated
+  - defect: installed ModIcon is the 1254x1254 original (1356479 bytes), not the expected 128x128 delivery image
   - defect: Mod/About/Preview.png is absent
   - unverified: configuration checks on effective patched definitions; existing checker reads zero definitions
   - defect: functional scenarios do not specify carried-instrument crafting and playing prerequisites/actions
@@ -215,3 +215,23 @@ new local icon before advancing. No build is applicable to this XML/texture-only
 Preview and the later outstanding tests remain separate; no game launch or Steam Workshop
 publication was performed. Historical test outputs and ongoing local artwork remain intact.
 
+
+## ModIcon gate inspection - 2026-09-13
+
+Checked revision: c4093357d41da4f16df8fc8659fb3885bbbdd2ab plus untracked local artwork.
+Directly inspected Mod/About/ModIcon.png: orange winking ponytail mascot, accordion and
+bagpipes are visible, with a dark background and no title text. No new generation was run.
+PNG header: 1254 x 1254 pixels; file size: 1,356,479 bytes. This is the full-resolution
+source, byte-identical to Assets/Variants/epona-instruments-queue-v1.png.
+SHA256: 89FA656B0DC16D991A1B8E43BA895EE51F91124C8D193B42FC77B65AC3E0BA02.
+
+Result: defect in delivered dimensions; expected ModIcon size is 128 x 128 per
+STYLE_RIMWORLD.md. The 1 MB Preview limit is not being applied to ModIcon; its excessive
+size is recorded separately. Readability at 32 pixels remains unverified until the
+proper delivery rendition exists. No need for a new illustration was established.
+Preserve the original, produce the 128 x 128 delivery rendition, inspect it at 32 pixels,
+and complete the implementation check before validating ModIcon générée.
+
+Stage remains horsMonoRepo. Mod/About/Preview.png is still absent. In accordance with the
+original audit scope, this inspection does not modify or generate artwork. Local artwork
+and prior audit files remain preserved and outside the public commit; only STATUS is updated.
