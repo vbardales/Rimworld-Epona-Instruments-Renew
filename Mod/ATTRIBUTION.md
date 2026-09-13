@@ -7,6 +7,11 @@ No blanket licence or author permission is invented. Source links and historical
 details follow. Historical personal-use wording is retained as evidence; local separation
 is not a public release or proof of new rights. Missing upstream access remains unverified.
 
+On 2026-09-13, the maintainer authorized public GitHub distribution under the workflow's
+silent/unofficial classification. This decision is not permission from Outremer and does
+not replace the third-party notice in LICENSE. Credits and the removal commitment remain.
+The historical personal-use account below describes the earlier extraction context.
+
 Transferred from Joy Preservation revision eafda413babde8984007380e3435e19b872ea001.
 Only the listed recreation files and their language/texture closure are included.
 

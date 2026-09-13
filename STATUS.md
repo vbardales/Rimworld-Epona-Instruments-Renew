@@ -3,8 +3,8 @@ mod: Epona Instruments Renew (unofficial)
 packageId: nelim.eponainstrumentsrenew
 licence: silent
 visibility: not_created
-detached: yes
-local_path: C:\Users\nelim\Documents\RimWorldMods\EponaInstrumentsRenew
+detached: no
+local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
 stage: dansMonoRepo
 settings_audit: not_applicable
@@ -15,9 +15,14 @@ showcase: pending
 tested_on:
 updated: 2026-09-13
 remaining:
-  - unverified: remote repository and first push not created or authorized for public release
-  - feature: dedicated ModIcon and Preview not generated
-  - unverified: final in-game tests and old-save reload
+  - defect: no GitHub remote configured in the autonomous local repository
+  - unverified: authorized public GitHub repository creation and first pushed commit
+  - defect: About.xml and README use public unofficial wording instead of required private prohibited wording
+  - unverified: newly supplied local ModIcon and artwork remain outside this first push and are not validated
+  - defect: Mod/About/Preview.png is absent
+  - unverified: configuration checks on effective patched definitions; existing checker reads zero definitions
+  - defect: functional scenarios do not specify carried-instrument crafting and playing prerequisites/actions
+  - unverified: final game scenarios, logs, EN/FR interface, provider music setting interaction and old-save reload
 ---
 
 # Epona Instruments Renew - status
@@ -68,3 +73,126 @@ The project has its own local Git repository on codex/source-split and a local R
 Mods junction pointing at Mod/. No remote repository exists and no push or publication
 was performed. The active ModsConfig was not edited. Select this package manually when
 testing the split, with its declared provider when applicable.
+
+## User-requested location — 2026-09-13
+
+Moved alongside the other mods under Documents/rimworld. The nested local Git repository
+was preserved; no remote or push was created. The game junction now targets this location.
+Stage remains dansMonoRepo; independent remote/detachment gates remain pending.
+
+## Ordered workflow audit - 2026-09-13
+
+Audited revision: d16973d10f5027a569330036b3ffdf91f40c1746, branch codex/source-split.
+Repository: C:/Users/nelim/Documents/rimworld/EponaInstrumentsRenew; delivered root: Mod/.
+Before this audit only STATUS.md was locally modified (detached flag, relocated path,
+and location history). Those changes and all historical results were preserved.
+This audit changes status metadata and adds Tests/Audit-2026-09-13 evidence only;
+no delivered file, feature, image, remote, commit or publication was created or changed.
+The stage uses literal workflow names, not numeric codes. Retained: dansMonoRepo.
+The generated-image states are exactly `ModIcon générée` and `Preview générée`.
+Private scope follows AGENTS.md; visibility: not_created describes the absent established
+remote, not public authorization. The public_unofficial intent is retained as a future intent, not authorization to publish.
+The mod field continues to record the actual, currently nonconforming delivered title.
+
+| Transition target | Audit result and evidence |
+| --- | --- |
+| horsMonoRepo | Blocked. git rev-parse --show-toplevel establishes an autonomous local repository and HEAD exists. git remote -v is empty: missing configured remote is a defect; GitHub existence, private visibility and first push remain unverified. STATUS and English README/ATTRIBUTION/LICENSE/CHANGELOG exist. packageId and folder naming are coherent; no remote name can be checked. Private scope conflicts with (unofficial) and the public opening in About/README; required (prohibited) and PERSONAL USE ONLY wording are absent. |
+| ModIcon générée | Not established: Mod/About/ModIcon.png is absent. Build is not applicable: this package delivers XML and textures, no own assembly or C# implementation. No claim that all development is finished based on a nonexistent build. |
+| Preview générée | Not established: Mod/About/Preview.png is absent. Dimensions, size, camera and image content cannot be inspected. No visual defect is inferred from an unperformed inspection. |
+| preOptions | Not established. Description is English, but the final Source code on GitHub link and url element are absent. Private title/description conventions fail as above. Accent/secondary palette cannot be verified without the image. |
+| options | Independently validated as settings_audit: not_applicable for this package; see settings scope below. |
+| l10n | Independently validated for six owned fields, English native Def fallback and six French injections. See translation scope below. |
+| preTest | Dependency declarations independently validated against installed Musical Instruments (Continued) 1.6.5: Mlie.MusicalInstruments is required and ordered before this mod; its own Harmony dependency is declared by the provider. Parents, sound/research references and component types resolve. Root patches are loaded without needing LoadFolders; provider selects root, 1.6 and Assets. The parent guard is defensive, not an optional-dependency declaration. |
+| done | Not established independently. Six diagnostic commands finish successfully, but ConfigErrors reads 0 of 0 defs and explicitly excludes patch effects; effective configuration validation remains unverified. TEST_SCENARIOS.md has prerequisites/actions/expectations but generic recreation-menu/build instructions do not specify crafting at the sculptor bench, required research, a capable pawn/music spot and playing each carried instrument. Power/fuel cases are not applicable to these items. |
+| tested | Unverified: no game launched, no scenarios executed, no runtime logs or EN/FR layouts checked. New colony and copied existing save, playing/sound/jobs and save/reload must be exercised by the user at the final gate. |
+
+### Settings audit
+
+Direct inventory: one patch adds three carried ThingDefs, costs, stats, material categories,
+research and provider comps. No own settings storage, Verse.Mod implementation, empty page,
+MainButtonDef or shortcut exists. These balance and rendering fields are content definitions,
+not a demonstrated need for an Epona-specific settings page.
+Provider-owned settings were also inspected: MusicalInstrumentsMod exposes PlayMusic through
+its existing Musical Instruments settings page (decompiled evidence: provider-settings.cs).
+This package reuses that provider behavior without overriding or duplicating configuration.
+No new Epona page or shortcut is justified. Provider option effects/persistence and integration
+with these instruments are not claimed tested; the sound toggle belongs in final game checks.
+No RIMMSQOL or other customization integration was tested or claimed supported here.
+
+### Translation audit
+
+All owned label/description fields in the complete patch were read and compared semantically:
+three labels and three descriptions, six nonempty French entries, native English source values.
+There are no owned UI strings in code, nested translatable fields, parameters or markup to add.
+Check-DefInjected resolves all six keys with zero errors using the installed provider target;
+the unrelated skipped conditional patches in target indexing do not leave these keys unresolved.
+The existing automated inventory confirms no duplicate/empty entries and parameter parity.
+Inherited provider/vanilla UI remains dependency-owned; its runtime rendering is unverified.
+localization, translation_en and translation_fr remain complete for preTest resource readiness,
+not certification of in-game display.
+
+### Commands, artifacts and limits
+
+Replayed the existing Validate-Package.ps1 using a copy with only its results directory changed:
+`./Tests/Audit-2026-09-13/Validate-Package.ps1 -Root .`.
+Results: XmlFields, ConfigErrors, TypeRefs, DefInjected, XmlClasses and DefRefs reported PASS;
+see run.txt and Results/. Interpret the zero-definition ConfigErrors result as no coverage,
+not a successful functional configuration test. XML fields/classes, all three def references
+and parents, and six injection paths were actually checked. No artificial tests were added.
+
+artifacts.txt records identical root/distributed LICENSE, ATTRIBUTION.md and SOURCES.json,
+and all seven provenance hashes matching the patch and six textures. package-hashes.json
+identifies every delivered file in this audit. Historical reorganization and split evidence
+was preserved, not relabelled as a newly executed 555-check split test.
+The third-party notice grants no licence; silent is the inherited local source classification
+(1.3 source recorded in ATTRIBUTION/SOURCES), not a newly verified permission grant.
+Current upstream permissions/version claims were not rechecked online and remain unverified.
+No GitHub URL is configured to test; absence of a checked URL is not a finding of a broken link.
+
+Next transition only: establish a private GitHub repository, configured remote and first pushed
+commit, and align the title/private-use wording with the private project scope. These actions
+were not performed during this audit. Images and subsequent checks belong to later transitions.
+Optional recommendation: make the test runner distinguish zero-coverage diagnostics from PASS.
+This recommendation does not itself add another mandatory gate.
+
+## Licence impact review - 2026-09-13
+
+Correction to the audit: `silent` does not require a private repository or a prohibited
+suffix by itself. PUBLISHING.md explicitly provides a public silent/unofficial path when
+no prohibition is recorded. The private scope in the preceding audit came from AGENTS.md,
+not from the licence classification. An instruction to obtain approval before publication
+also does not, by itself, establish a permanent private-publication intent.
+
+Restore the previously recorded publication_intent: public_unofficial; the audit should
+not have replaced that user/project intent. The present local private scope in AGENTS.md
+and this future public intent are distinct. The wording finding concerns the present private
+scope only: (prohibited) is the private-build convention, not a claim that Outremer forbade
+reuse. If the project is explicitly designated for the public silent route, (unofficial)
+is the corresponding convention; silent itself requires no reclassification to alive or forbidden.
+
+LICENSE is a third-party content notice, not MIT or another grant. This package copies
+three definitions and six textures according to ATTRIBUTION/SOURCES, so the permission
+status of that material cannot be treated like merely depending on an external mod.
+No new upstream permission or prohibition was established by this review. Preserve the
+silent record and attribution; do not invent licensing rights or infer prohibition from silence.
+
+Stage remains dansMonoRepo: the missing configured GitHub remote and unverified first push
+still block horsMonoRepo independently of this clarification. No publication or private/public
+remote change is authorized or performed by this licence review.
+
+## Authorized public GitHub preparation - 2026-09-13
+
+The user explicitly confirmed creating the public GitHub repository and pushing the first
+commit. This supersedes the earlier private project scope and its private-only wording
+finding. Keep the existing (unofficial) title, disclaimer, attribution and silent classification.
+AGENTS.md now records that authorization; Steam Workshop publication remains outside scope.
+Repository destination: https://github.com/vbardales/Rimworld-Epona-Instruments-Renew.
+About.xml now declares this URL and ends its English description with the matching
+Source code on GitHub link. Root/distributed attribution copies were synchronized.
+Stage remains dansMonoRepo until repository creation and the first push are verified.
+
+Local artwork appeared after the audit: Mod/About/ModIcon.png and Assets/Variants/.
+These ongoing files are preserved but excluded from this initial audited-content push;
+no image validation or generated-image gate is claimed in this operation.
+Tests/Audit-2026-09-13/provider-settings.cs is local decompilation evidence only and is
+not included in the public repository. The conclusions and diagnostic outputs are retained.

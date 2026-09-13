@@ -3,12 +3,17 @@
   <name>Epona Instruments Renew (unofficial)</name>
   <author>Outremer; recreation port by nelim</author>
   <packageId>nelim.eponainstrumentsrenew</packageId>
+  <url>https://github.com/vbardales/Rimworld-Epona-Instruments-Renew</url>
   <description>UNOFFICIAL. This mod is published without the original author's explicit consent.
 If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 Three carried instruments: great highland bagpipes, uilleann pipes and accordion.
 
-Prepared locally; not published. Source rights remain with the original authors. No settings or custom MainButton. Enable this mod when upgrading from the former Joy Preservation collection; identifiers are preserved, but saves are not yet validated in game.</description>
+Source rights remain with the original authors. No settings or custom MainButton. Enable this mod when upgrading from the former Joy Preservation collection; identifiers are preserved, but saves are not yet validated in game.
+
+Requires Musical Instruments (Continued). Original definitions and textures by Outremer; recreation port by nelim. No Steam Workshop release has been made for this extraction.
+
+[url=https://github.com/vbardales/Rimworld-Epona-Instruments-Renew]Source code on GitHub[/url]</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

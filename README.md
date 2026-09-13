@@ -7,7 +7,7 @@ Three carried instruments: great highland bagpipes, uilleann pipes and accordion
 
 ## Status
 
-This is a local, unpublished recreation extraction. It does not claim to port the whole
+This is an unofficial recreation extraction prepared for a public GitHub repository. It does not claim to port the whole
 source mod. Classification: silent; see LICENSE and ATTRIBUTION.md. Package: nelim.eponainstrumentsrenew.
 
 Install Mod/ as the game mod root. Enable this package before loading a save that used
@@ -20,5 +20,6 @@ controls remain unchanged. EN/FR resources accompany the extracted definitions.
 
 Requires Core 1.6 and Musical Instruments (Continued), declared in About.xml. The defensive patch guard prevents invalid instrument definitions if a player forces a start without the provider. No upstream source mod is required.
 
-No icon or preview has been copied from the mixed collection. Artwork, remote repository,
-final publication checks and in-game tests remain pending; consult STATUS.md.
+The public source repository is [Rimworld-Epona-Instruments-Renew](https://github.com/vbardales/Rimworld-Epona-Instruments-Renew).
+No Steam Workshop release has been made for this extraction. Artwork validation,
+final release checks and in-game tests remain pending; consult STATUS.md.
