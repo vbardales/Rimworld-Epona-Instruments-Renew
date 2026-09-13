@@ -21,5 +21,6 @@ controls remain unchanged. EN/FR resources accompany the extracted definitions.
 Requires Core 1.6 and Musical Instruments (Continued), declared in About.xml. The defensive patch guard prevents invalid instrument definitions if a player forces a start without the provider. No upstream source mod is required.
 
 The public source repository is [Rimworld-Epona-Instruments-Renew](https://github.com/vbardales/Rimworld-Epona-Instruments-Renew).
-No Steam Workshop release has been made for this extraction. Artwork validation,
-final release checks and in-game tests remain pending; consult STATUS.md.
+No Steam Workshop release has been made for this extraction. The AI-generated icon and
+preview are installed and visually checked. Final release checks and in-game tests remain
+pending; consult STATUS.md. Original artwork and reproducible preview composition live in Art/.

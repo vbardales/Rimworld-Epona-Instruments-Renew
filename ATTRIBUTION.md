@@ -12,6 +12,13 @@ silent/unofficial classification. This decision is not permission from Outremer 
 not replace the third-party notice in LICENSE. Credits and the removal commitment remain.
 The historical personal-use account below describes the earlier extraction context.
 
+## Showcase artwork
+
+The mod icon and preview illustration were generated with OpenAI image_gen. The icon
+source is preserved in Art/ModIcon-source.png and the text-free preview in Art/Preview.png.
+Preview typography and palette are composed separately by the maintainer; see Art/.
+These showcase images are distinct from Outremer's six in-game instrument textures.
+
 Transferred from Joy Preservation revision eafda413babde8984007380e3435e19b872ea001.
 Only the listed recreation files and their language/texture closure are included.
 

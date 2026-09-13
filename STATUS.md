@@ -6,17 +6,15 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-stage: horsMonoRepo
+stage: preOptions
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
 translation_fr: complete
-showcase: pending
+showcase: complete
 tested_on:
 updated: 2026-09-13
 remaining:
-  - defect: installed ModIcon is the 1254x1254 original (1356479 bytes), not the expected 128x128 delivery image
-  - defect: Mod/About/Preview.png is absent
   - unverified: configuration checks on effective patched definitions; existing checker reads zero definitions
   - defect: functional scenarios do not specify carried-instrument crafting and playing prerequisites/actions
   - unverified: final game scenarios, logs, EN/FR interface, provider music setting interaction and old-save reload
@@ -24,7 +22,7 @@ remaining:
 
 # Epona Instruments Renew - status
 
-Current stage: horsMonoRepo. The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
+Current stage: preOptions. The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
 
 Scope: Three carried instruments: great highland bagpipes, uilleann pipes and accordion.
 
@@ -235,3 +233,44 @@ and complete the implementation check before validating ModIcon générée.
 Stage remains horsMonoRepo. Mod/About/Preview.png is still absent. In accordance with the
 original audit scope, this inspection does not modify or generate artwork. Local artwork
 and prior audit files remain preserved and outside the public commit; only STATUS is updated.
+
+## ModIcon générée - 2026-09-13
+
+The user authorized completing the artwork and generating the Preview. Existing XML
+implementation contains the three intended carried instruments and their texture closure;
+no feature implementation remains identified. Configuration checks and game scenarios remain
+tracked at their later test gates. Build: not applicable, no owned compiled code.
+Preserved the exact icon original as Art/ModIcon-source.png; installed a deterministic
+128 x 128 rendition in Mod/About/ModIcon.png (26,692 bytes). Inspected both 128 and 32 px:
+mascot, wink and accordion are recognizable; fine bagpipe details simplify at 32 px.
+Art/ModIcon-32.png records the small-size inspection. Stage: ModIcon générée.
+
+## Preview générée - 2026-09-13
+
+Generated the text-free illustration with the built-in image_gen tool; exact prompt:
+Art/preview-generation.txt. Preserved original output as Art/Preview.png. Installed the
+composed Mod/About/Preview.png: PNG, 896 x 504, 620,492 bytes, below 900 KB and 1 MB.
+Directly inspected the source and final images: high overhead oblique room, tiled slate
+floor, accordion/bagpipes on the right and a small faceless colonist. No concrete camera
+defect identified. No historical generation report or recorded screenshot comparison needed.
+Stage: Preview générée. The source and icon originals remain separate from delivered files.
+
+## preOptions - 2026-09-13
+
+Preview palette is recorded only in Art/preview-palette.json and consumed by
+Art/render-preview.cjs, which produces Art/preview.html. Slate floor guided the cool veil
+and blue secondary ink; lamp and wooden instruments guided the distinct warm amber accent.
+Segoe UI was available and document.fonts.ready completed. Renew uses the 65% secondary
+suffix treatment; (unofficial) occupies its own tag line; 1.6 matches supportedVersions.
+Inspected final 896 x 504 and Art/Preview-268.png: title/version identifiable, rule visible,
+no cropped glyphs or overlaps with the instrument subjects. The summary is intended for
+full-size viewing. The PNG background was rendered separately without text for contrast checks.
+Art/preview-qa.json records conservative minimum contrast across entire text rectangles:
+title 6.90, tag 6.65, summary 9.57 and badge 10.35, all above 4.5:1.
+
+About description is English, keeps the authorized unofficial disclaimer, and finishes
+with the exact Source code on GitHub link matching url/origin. AI artwork attribution was
+added before that final link and to synchronized root/distributed attribution documents.
+All metadata XML still parses; no gameplay definitions, translations or settings changed.
+Existing independent settings/localization findings remain valid but this artwork operation
+stops at preOptions. Later test findings remain in remaining; no game testing is claimed.

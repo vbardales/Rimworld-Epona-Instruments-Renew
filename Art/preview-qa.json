@@ -1,0 +1,36 @@
+{
+  "font": "Segoe UI",
+  "fontAvailable": true,
+  "size": [
+    896,
+    504
+  ],
+  "bytes": 620492,
+  "checks": [
+    {
+      "selector": "h1",
+      "x": 50,
+      "y": 54,
+      "width": 450,
+      "height": 101.1875,
+      "minimumContrast": 6.908894741246594
+    },
+    {
+      "selector": ".tag",
+      "x": 50,
+      "y": 163.1875,
+      "width": 450,
+      "height": 26.390625,
+      "minimumContrast": 6.6591066213421
+    },
+    {
+      "selector": ".summary",
+      "x": 50,
+      "y": 228.578125,
+      "width": 430,
+      "height": 60.875,
+      "minimumContrast": 9.578213758550199
+    }
+  ],
+  "badgeContrast": 10.351337474349831
+}

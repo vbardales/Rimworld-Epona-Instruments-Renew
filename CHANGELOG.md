@@ -2,6 +2,7 @@
 
 ## Unreleased - 2026-09-13
 
+- Install the 128 px icon and illustrated 896 x 504 preview with English title and version badge.
 - Prepare the authorized public unofficial GitHub repository and add its metadata link.
 - Separate the existing recreation content from Joy Preservation by source rights.
 - Preserve definition names, gameplay fields, texture bytes and matching French resources.
