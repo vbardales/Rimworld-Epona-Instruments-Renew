@@ -16,8 +16,8 @@ tested_on:
 updated: 2026-09-21
 remaining:
   - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
-  - unverified: the tickerType Normal correction (2026-09-21) has never been observed in a game; the sound only being audible is the check
-  - unverified: Pickle suite Tests/Pickle (01-alone.feature, 4 scenarios, one pass sans-facultatifs) is written and has never run; steps used come from suites that already ran, but this file has not; run it under the lock through Run-PickleWsl.ps1 only, and open no capture (none written)
+  - unverified: the tickerType Normal correction (2026-09-21): the loaded def reports Normal (Pickle, 2026-09-21) but the sound has never been heard in a game; scenario 4 is the check
+  - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), 4 scenarios of 4 played, 4 passed, exitReason passed, report in Tests/Pickle/results/2026-09-21-sans-facultatifs/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
   - local state: local main is 1 commit ahead of origin/main (1a4586b); uncommitted: About.xml wording, the patch fix, SOURCES.json (both copies), ATTRIBUTION.md (both copies), CHANGELOG.md, TEST_SCENARIOS.md, TESTING.md, STATUS.md; untracked: Tests/Pickle/, Tests/Test-EffectiveDefs.ps1, Tests/Audit-2026-09-13/, Tests/Audit-2026-09-21/, Art/preview-background.png, Art/preview-render.png, Assets/ (matters at tested -> prepublished)
 ---
 
@@ -378,3 +378,28 @@ Limits, stated plainly: the Pickle features use only steps that appear in suites
 `no warnings from mod`), but this file itself has never run, and `Docs/steps.md` was not available to
 check them. A `field "category"` / `"tickerType"` value spelling is the likeliest thing a first run
 could reject. Nothing was committed or pushed.
+
+### Pickle run - 2026-09-21 17:31 (Windows time)
+
+Requested by the user ("prend un ticket"). `scripts/Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew
+-MaxWaitMinutes 720` queued behind 11 tickets and one running suite, took the lock, staged 12 mods
+(Core, the five DLC, Harmony, RimLogging, Pickle, Musical Instruments (Continued), this mod and its
+companion; English, developer mode on), ran under Xvfb, and released the lock. No other session's game
+was touched; Windows RimWorld was not running and was not started.
+
+Result: pass `sans-facultatifs`, `exitReason: passed`, exit 0, **4 scenarios played of 4 written**, 4 passed,
+0 failed, 0 skipped, 0 flaky (about 1.9 s of scenarios). Report copied to
+`Tests/Pickle/results/2026-09-21-sans-facultatifs/` (junit.xml, messages.ndjson, summary.json, summary.md).
+Report time 17:31:02 against a run that ended a few seconds earlier: not a stale report. `Player.log`
+was not kept: by the time it was read another session's run (Adaptive Storage) had already overwritten it.
+
+What it establishes, and no more: in a real load with the provider, the three defs exist, the mod loads
+after Musical Instruments, no error and no warning attributed to it, and the loaded `JP_*` defs report
+`tickerType Normal` (Ocarina too, as reference), `techLevel Medieval`, `category Item`. It establishes
+nothing about crafting, taking to inventory, playing or the sound, and it wrote no capture, so no
+`@review` image exists to open.
+
+Side notes: the script printed "veille non empechee: cannot convert -2147483647 to UInt32" (its
+`SetThreadExecutionState` call); harmless for a two-second run but it would not stop the machine sleeping
+during a long one. The `screenshots/` folder of the shared report dir held other mods' images, none ours.
+Stage remains `done`; `done -> tested` still needs the manual scenarios (and the language pass, if wanted).

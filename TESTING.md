@@ -2,7 +2,7 @@
 
 Not shipped: it lives beside `Mod/`, never inside it. This mod ships no assembly and no Defs
 folder: three `ThingDef`s are added by `Mod/Patches/EponaInstruments.xml` on top of Musical
-Instruments (Continued), and six textures. Nothing here has been run in a game yet; see
+Instruments (Continued), and six textures. The Pickle suite ran once (2026-09-21, 4 of 4, `Tests/Pickle/results/`); the manual scenarios have not been run in a game. See
 `STATUS.md` for what is verified and what is not.
 
 ## Layers, cheapest first
@@ -41,7 +41,7 @@ construction; the staging places it from `About.xml` and finds its Workshop id i
 `Tests/Pickle/wsl-ids.map`. The provider-absent case cannot run under Pickle (the game refuses the
 mod without it); the patch guard is asserted offline by `Test-EffectiveDefs.ps1`.
 
-## Running the suite (not done yet)
+## Running the suite
 
 From the workspace root (`Documents/rimworld`), only through the one entry point, which takes the machine lock, refuses when a game is running and
 releases the lock itself. Never start the Windows RimWorld, never a second instance, never close

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="Epona Instruments Renew alone" tests="4" failures="0" skipped="0" flakes="0" time="1.935">
+    <testcase name="it loads after Musical Instruments and says nothing" classname="Epona Instruments Renew alone" time="0.647">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="the patch added the three carried instruments" classname="Epona Instruments Renew alone" time="0.280">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="they are ticked held items, like the provider's own instruments" classname="Epona Instruments Renew alone" time="0.500">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="they are medieval items, not buildings" classname="Epona Instruments Renew alone" time="0.508">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
