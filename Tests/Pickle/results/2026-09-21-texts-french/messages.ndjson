@@ -1,0 +1,30 @@
+{"meta":{"protocolVersion":"22.0.0","implementation":{"name":"Pickle","version":"1.0.0"}}}
+{"source":{"uri":"French texts of the carried instruments","data":"","mediaType":"text/x.cucumber.gherkin+plain"}}
+{"gherkinDocument":{"uri":"French texts of the carried instruments","feature":{"name":"French texts of the carried instruments"}}}
+{"pickle":{"id":"1","uri":"French texts of the carried instruments","name":"French texts of the carried instruments"}}
+{"testRunStarted":{"timestamp":{"seconds":0,"nanos":0}}}
+{"testCase":{"id":"2","pickleId":"1","testSteps":[{"id":"3","pickleStepId":"3"},{"id":"4","pickleStepId":"4"}]}}
+{"testCaseStarted":{"id":"5","testCaseId":"2","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"5","testStepId":"3","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"5","testStepId":"3","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":162000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"5","testStepId":"4","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"5","testStepId":"4","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":170000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"attachment":{"testCaseStartedId":"5","body":"smoke test attachment content","mediaType":"text/x.plain","contentEncoding":"IDENTITY"}}
+{"testCaseFinished":{"testCaseStartedId":"5","timestamp":{"seconds":0,"nanos":0}}}
+{"testCase":{"id":"6","pickleId":"1","testSteps":[{"id":"7","pickleStepId":"7"},{"id":"8","pickleStepId":"8"}]}}
+{"testCaseStarted":{"id":"9","testCaseId":"6","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"9","testStepId":"7","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"9","testStepId":"7","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":6000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"9","testStepId":"8","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"9","testStepId":"8","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":175000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"attachment":{"testCaseStartedId":"9","body":"smoke test attachment content","mediaType":"text/x.plain","contentEncoding":"IDENTITY"}}
+{"testCaseFinished":{"testCaseStartedId":"9","timestamp":{"seconds":0,"nanos":0}}}
+{"testCase":{"id":"10","pickleId":"1","testSteps":[{"id":"11","pickleStepId":"11"},{"id":"12","pickleStepId":"12"}]}}
+{"testCaseStarted":{"id":"13","testCaseId":"10","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"13","testStepId":"11","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"13","testStepId":"11","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":125000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"testStepStarted":{"testCaseStartedId":"13","testStepId":"12","timestamp":{"seconds":0,"nanos":0}}}
+{"testStepFinished":{"testCaseStartedId":"13","testStepId":"12","testStepResult":{"status":"PASSED","duration":{"seconds":0,"nanos":159000000}},"timestamp":{"seconds":0,"nanos":0}}}
+{"attachment":{"testCaseStartedId":"13","body":"smoke test attachment content","mediaType":"text/x.plain","contentEncoding":"IDENTITY"}}
+{"testCaseFinished":{"testCaseStartedId":"13","timestamp":{"seconds":0,"nanos":0}}}
+{"testRunFinished":{"success":true,"timestamp":{"seconds":0,"nanos":0}}}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="Epona Instruments Renew alone" tests="4" failures="0" skipped="0" flakes="0" time="1.274">
+    <testcase name="it loads after Musical Instruments and says nothing" classname="Epona Instruments Renew alone" time="0.394">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="the patch added the three carried instruments" classname="Epona Instruments Renew alone" time="0.164">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="they are ticked held items, like the provider's own instruments" classname="Epona Instruments Renew alone" time="0.342">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="they are medieval items, not buildings" classname="Epona Instruments Renew alone" time="0.374">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="what the carried instruments look like" tests="3" failures="0" skipped="0" flakes="0" time="35.928">
+    <testcase name="the three instruments side by side" classname="what the carried instruments look like" time="11.628">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: great highland bagpipes, uilleann pipes and accordion -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/manual--great-highland-bagpipes--uilleann-pipes-and-accordion--step0.png
+</system-out>
+    </testcase>
+    <testcase name="next to the provider's own instruments" classname="what the carried instruments look like" time="8.984">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: ocarina, the three new instruments, frame drum -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/manual--ocarina--the-three-new-instruments--frame-drum--step0.png
+</system-out>
+    </testcase>
+    <testcase name="at the default zoom, as a player sees them" classname="what the carried instruments look like" time="15.316">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: default zoom -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/manual--default-zoom--step0.png
+</system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="English texts of the carried instruments" tests="3" failures="0" skipped="0" flakes="0" time="0.688">
+    <testcase name="JP_GreatHighlandBagpipes reads in English" classname="English texts of the carried instruments" time="0.228">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="JP_UilleannPipes reads in English" classname="English texts of the carried instruments" time="0.230">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+    <testcase name="JP_Accordion reads in English" classname="English texts of the carried instruments" time="0.230">
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

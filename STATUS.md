@@ -15,6 +15,7 @@ showcase: complete
 tested_on:
 updated: 2026-09-21
 remaining:
+  - reserve (visual, 2026-09-21): in the review captures the highland bagpipes and uilleann pipes are drawn about two cells wide (drawSize 2 inherited from the provider base, textures fill the frame) and overlap when one cell apart; the provider's ocarina is much smaller. Judge in game whether that is acceptable; nothing was changed
   - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
   - unverified: the tickerType Normal correction (2026-09-21): the loaded def reports Normal (Pickle, 2026-09-21) but the sound has never been heard in a game; scenario 4 is the check
   - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), English then French (-Language French), 4 scenarios of 4 played each, 4 passed, exitReason passed, reports in Tests/Pickle/results/2026-09-21-sans-facultatifs and -french/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
@@ -416,3 +417,34 @@ Same limits as the English pass: the scenarios read defs and the log only, and n
 mod loads in French with no error and no warning attributed to it. It does **not** show the French labels
 and descriptions rendering (scenario 8 of TEST_SCENARIOS.md, to play by hand), nor any clipping or fallback text.
 Pushed before this run: origin/main = 465c488. This entry and the report are committed locally, not pushed.
+
+### Pickle captures, texts and crafting film - 2026-09-21 (evening)
+
+Requested: "prepare the scenarios to ease the manual checks, with a video or screenshot if possible". Four runs queued
+through `Run-PickleWsl.ps1`; after a session crash the three queued processes survived and ran in turn.
+
+| Run | Filter | Result | Where |
+| --- | --- | --- | --- |
+| English, `-IncludeWip` | `01-alone`, `02-review-captures`, `10-english-texts` | `exitReason: passed`, **10 of 10 played, 10 passed** | `Tests/Pickle/results/2026-09-21-captures-english/` |
+| French, `-Language French -IncludeWip` | `11-french-texts` | `passed`, **3 of 3**: the loaded French labels and descriptions equal the DefInjected strings | `.../2026-09-21-texts-french/` |
+| English, `-IncludeWip` | `20-craft-and-film` (first version) | **watchdog-timeout, exit 2, 0 scenarios written**: `I wait for bill` allows 120 s and the accordion (65,000 work) was still an unfinished item | `.../2026-09-21-craft-film-stalled/` (video, contact sheet, no frames) |
+| English, `-IncludeWip` | `20-craft-and-film` (rewritten to stop at work in progress) | queued, not yet run | - |
+
+Read at source, not from the green: the report of each run was dated against its run (archived by the next run under
+its own time); the captures were opened. Findings.
+- `I spawn a "JP_*"` works for stuff-made items: the game names the result ("Steel uilleann pipes (normal)"). The item
+  and its hover label appear in the capture.
+- Textures: the accordion (red bellows, keys) reads clearly and its mask applies; the two pipes read as a tartan bag with
+  drones and as a bag with chanter. **They are drawn about two cells wide and overlap when spawned one cell apart**, while
+  the provider's ocarina is small and its frame drum about one cell: recorded as a visual reserve in `remaining`, not
+  a defect, and nothing was changed. Images: `screenshots/*.jpg` and the two x5 close-ups.
+- The film (265 frames, `accordion-in-progress.mp4`) shows the flow working up to the wait: bench built, recipe offered after
+  the research, a colonist walking to the stockpile then to the bench, hover label "Unfinished steel accordion". It does
+  **not** show a finished item, and shows no sound. The rewritten feature stops at the unfinished item.
+- The first film could not record the whole craft because the wait limit is real time; the game hour moved from 9 h to 10 h
+  in about 120 s.
+- The full-resolution PNG captures (3 MB each) and the 265 raw frames were not kept in the repository: JPEGs, a contact sheet
+  and the mp4 replace them; the originals stay in `pickle-reports-archive/` until it rotates.
+- Shared-script defect found: `scripts/Run-PickleWsl.ps1` contains a backspace character in the path of the
+  `pickle-reports-archive?loque-...` folder it creates when it kills a stalled run, so that step crashes after the lock is
+  released. Not fixed here (shared file); a separate task was proposed.

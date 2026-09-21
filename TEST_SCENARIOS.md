@@ -39,8 +39,8 @@ Everything below is optional: it only saves time. Developer mode on, a colony st
 | Scenario | Pickle aid | Still manual |
 | --- | --- | --- |
 | 1 Loads cleanly | `01-alone.feature`: loaded, after the provider, no error, no warning from the mod | the log of a real start on your own mod list |
-| 2 Research gating | film `20-craft-and-film.feature` (bench built, research finished, bill added) | the gating *before* research: a bill must not be offered |
-| 3 Crafting | film + captures of each product, `20-craft-and-film.feature` | quality/art tab, a stuff outside the list being refused |
+| 2 Research gating | film `20-craft-and-film.feature` (bench built, research finished, bill added, colonist starts the item) | the gating *before* research: a bill must not be offered |
+| 3 Crafting | film up to the unfinished item (`20-craft-and-film.feature`); the finished items are shown by the captures, not the film | quality/art tab, a stuff outside the list being refused |
 | 3 Textures and size | captures `02-review-captures.feature`: three items side by side, next to an ocarina and a frame drum, default zoom | your judgement of them |
 | 4 Playing and sound | nothing | all of it (music spot, performance, sound, offsets) |
 | 5 Provider setting | nothing | all of it |

@@ -1,11 +1,13 @@
-# TEST_SCENARIOS.md scenarios 2 and 3, as a film: a colonist makes each instrument at the musical
+# TEST_SCENARIOS.md scenarios 2 and 3, as a film: a colonist starts each instrument at the musical
 # instrument bench. `@wip`, so a default run skips it; aim at this file:
 #   -Filter '20-craft-and-film.feature' -IncludeWip
-# Best effort, written without ever having run: the first run decides what needs adjusting (the bench
-# cell, a colonist who is free, the bill step's recipe name `Make_<defName>`, the ingredient choice for a
-# stuff-made item). A failure here says which of those it was; it is not a defect of the mod until
-# proven. It films what the offline tests cannot: that the recipe appears at the bench once the research is
-# done, and that the product appears with a texture.
+#
+# First attempt (2026-09-21) waited for the finished product with `I wait for bill`, which allows 120
+# real seconds. The film showed everything up to that point working - the bench built, the recipe on
+# offer once the research was finished, a colonist walking over and an "Unfinished steel accordion" on the
+# bench - and the accordion (65,000 work) simply is not made in 120 s. So this version stops where the
+# film is still telling something: a bill is added, the colonist works for a while, and the unfinished
+# item exists. The finished products are shown by 02-review-captures.feature instead.
 #
 # What a film cannot show: sound. Playing and hearing the instruments stays manual (scenario 4).
 @wip @film @review
@@ -26,26 +28,23 @@ Feature: making the carried instruments
     And I zoom all the way in
     And I move the camera to (148, 155)
 
-  @timeout:900
-  Scenario: the accordion is made
+  Scenario: the accordion is started
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
-    And game speed is ultrafast
-    And I wait for bill "Make_JP_Accordion" to finish
-    Then a "JP_Accordion" exists
-    And I take a screenshot "accordion made at the bench"
+    Then the "TableMusicalInstruments" has 1 bills
+    When I wait 3500 ticks
+    Then a "UnfinishedSculpture" exists
+    And I take a screenshot "accordion under construction"
 
-  @timeout:900
-  Scenario: the uilleann pipes are made
+  Scenario: the uilleann pipes are started
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
-    And game speed is ultrafast
-    And I wait for bill "Make_JP_UilleannPipes" to finish
-    Then a "JP_UilleannPipes" exists
-    And I take a screenshot "uilleann pipes made at the bench"
+    Then the "TableMusicalInstruments" has 1 bills
+    When I wait 3500 ticks
+    Then a "UnfinishedSculpture" exists
+    And I take a screenshot "uilleann pipes under construction"
 
-  @timeout:900
-  Scenario: the great highland bagpipes are made
+  Scenario: the great highland bagpipes are started
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
-    And game speed is ultrafast
-    And I wait for bill "Make_JP_GreatHighlandBagpipes" to finish
-    Then a "JP_GreatHighlandBagpipes" exists
-    And I take a screenshot "great highland bagpipes made at the bench"
+    Then the "TableMusicalInstruments" has 1 bills
+    When I wait 3500 ticks
+    Then a "UnfinishedSculpture" exists
+    And I take a screenshot "great highland bagpipes under construction"
