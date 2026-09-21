@@ -56,3 +56,11 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Epon
 workspace root and passes the companion's display name as the filter (`EponaInstrumentsRenew - Pickle
 tests`). Read `exitReason` in the report before any count, and check the number of scenarios played
 against the seven non-`@wip` scenarios written here (`01-alone.feature` 4, `02-review-captures.feature` 3).
+
+## Shared Pickle tools
+
+Common Pickle steps live in the separate `PickleTools` repository (`PickleTools/README.md` at the workspace root),
+and the headless WSL guide moved to `PickleTools/Headless/README.md` (`scripts/PICKLE-WSL.md` is now a stub). This
+suite declares **no step of its own** and stages **no tool**: it uses Pickle's built-in steps only, so it cannot
+collide with them. `FilmTicks` (one picture every N game ticks) is the one that could improve `20-craft-and-film`,
+whose waits are capped at 5 real seconds; it is not used yet.
