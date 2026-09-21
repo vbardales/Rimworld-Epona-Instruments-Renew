@@ -1,0 +1,4 @@
+=== C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew\Mod ===
+types references depuis le XML : 6
+-- tous les types references sont resolus --
+

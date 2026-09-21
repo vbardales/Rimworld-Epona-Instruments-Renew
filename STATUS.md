@@ -6,23 +6,24 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-stage: preOptions
+stage: done
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
 translation_fr: complete
 showcase: complete
 tested_on:
-updated: 2026-09-13
+updated: 2026-09-21
 remaining:
-  - unverified: configuration checks on effective patched definitions; existing checker reads zero definitions
-  - defect: functional scenarios do not specify carried-instrument crafting and playing prerequisites/actions
-  - unverified: final game scenarios, logs, EN/FR interface, provider music setting interaction and old-save reload
+  - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
+  - unverified: the tickerType Normal correction (2026-09-21) has never been observed in a game; the sound only being audible is the check
+  - unverified: Pickle suite Tests/Pickle (01-alone.feature, 4 scenarios, one pass sans-facultatifs) is written and has never run; steps used come from suites that already ran, but this file has not; run it under the lock through Run-PickleWsl.ps1 only, and open no capture (none written)
+  - local state: local main is 1 commit ahead of origin/main (1a4586b); uncommitted: About.xml wording, the patch fix, SOURCES.json (both copies), ATTRIBUTION.md (both copies), CHANGELOG.md, TEST_SCENARIOS.md, TESTING.md, STATUS.md; untracked: Tests/Pickle/, Tests/Test-EffectiveDefs.ps1, Tests/Audit-2026-09-13/, Tests/Audit-2026-09-21/, Art/preview-background.png, Art/preview-render.png, Assets/ (matters at tested -> prepublished)
 ---
 
 # Epona Instruments Renew - status
 
-Current stage: preOptions. The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
+Current stage: done (audit of 2026-09-21, then the preTest -> done work of the same day; stage codes are the literal workflow names, no numeric codes). The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
 
 Scope: Three carried instruments: great highland bagpipes, uilleann pipes and accordion.
 
@@ -274,3 +275,106 @@ added before that final link and to synchronized root/distributed attribution do
 All metadata XML still parses; no gameplay definitions, translations or settings changed.
 Existing independent settings/localization findings remain valid but this artwork operation
 stops at preOptions. Later test findings remain in remaining; no game testing is claimed.
+
+
+## Ordered workflow audit - 2026-09-21
+
+Previous stage: preOptions. Retained stage: preTest.
+Audited revision: b0b9db22c2f5499747c624ba42fd763c959c7d76 on codex/source-split
+(origin/main = 1a4586b486e1c0d281c0d5fe099df69d1173cd76; local branch is 1 commit ahead).
+Local modifications at audit time, all preserved: Mod/About/About.xml (description wording
+"nelim" -> "Nelim", uncommitted), untracked Art/preview-background.png, Art/preview-render.png,
+Assets/ and Tests/Audit-2026-09-13/. This audit adds Tests/Audit-2026-09-21/ and edits STATUS.md
+only; no delivered file, image, feature, commit, push or publication was changed or made.
+No RimWorld instance (Windows or WSL) was launched, no Pickle run started, no lock taken.
+Delivered root: Mod/.
+
+| Transition | Result | Evidence checked this session |
+| --- | --- | --- |
+| horsMonoRepo | validated | `git rev-parse --show-toplevel` = the standalone repo; `git ls-remote origin` returns main = 1a4586b; `gh repo view` reports PUBLIC, non-empty, default branch main, URL matching About.xml `<url>`. STATUS, README, ATTRIBUTION, LICENSE, CHANGELOG present and in English; root/Mod copies of LICENSE, ATTRIBUTION.md and SOURCES.json are byte-identical (`cmp`). silent + public_unofficial recorded and consistent with the `(unofficial)` suffix and the removal-commitment paragraph. packageId / folder / repository names coherent. |
+| ModIcon générée | validated | Mod/About/ModIcon.png: PNG 128 x 128 RGBA, 26,692 bytes. Opened directly: orange winking ponytail mascot with accordion and bagpipes, no text. Build not applicable (XML + textures only, no assembly or Source/). Implementation: three ThingDefs, six textures; no feature left identified. |
+| Preview générée | validated | Mod/About/Preview.png: PNG 896 x 504 RGB, 620,492 bytes (< 900 KB). Opened directly: high oblique room, slate tile floor, lamp pool, accordion/bagpipes/uilleann chanter on a bench, one faceless colonist at the edge; no camera defect seen. Original text-free source kept in Art/Preview.png. |
+| preOptions | validated | Overlay palette lives only in Art/preview-palette.json and is read by Art/render-preview.cjs. Independent recomputation on the text-free Art/preview-background.png over the QA rectangles: title 10.68:1, tag 6.98:1, summary 10.17:1 worst case; badge 10.35:1; veil luminance 0.0205 so light ink is the correct rule. Accent (amber) and secondary (pale blue) are clearly different hues on the opened image; their luminance is nearly equal (ratio 1.01), noted only as an observation. Title composition: "Renew" reduced and in secondary ink, `(unofficial)` on its own tag line, no linking words, badge 1.6 = supportedVersions. About.xml: English description starting with the exact UNOFFICIAL paragraph, ending with `[url=https://github.com/vbardales/Rimworld-Epona-Instruments-Renew]Source code on GitHub[/url]`, identical to `<url>` and the origin remote. |
+| options | validated (not_applicable) | Mod/ holds only About, Patches, Languages and Textures: no Assemblies, no Source/, no Verse.Mod/ModSettings, no MainButtonDef. Hence no settings page and no shortcut exist; nothing to add. Provider-owned settings (Musical Instruments PlayMusic) are not duplicated. No RIMMSQOL claim. |
+| l10n | validated | Six owned fields (three labels, three descriptions): English is the native Def value in Patches/EponaInstruments.xml, French in Languages/French/DefInjected/ThingDef/JoyPreservation.xml, all nonempty, no parameters or markup. Check-DefInjected: 6 keys, 0 errors (4 unrelated conditional defs skipped by the checker are not ours). No own C# or UI strings. Not a proof of in-game rendering. |
+| preTest | validated | Patch references MusicalInstruments.CompProperties_MusicalInstrument, CompProp_PlayingMusic, PrimitiveInstrumentBase / HeldMusicalInstrumentBase, MIC_Ocarina_Play, MIC_ElectronicOrgan_Play and research StringedInstruments; all resolve in the installed provider 1.6 (Mlie.MusicalInstruments, workshop 2274558815, supports 1.6; its own Harmony dependency is declared by the provider). About.xml declares it as a hard dependency (really used) and as loadAfter; Ludeon.RimWorld loadAfter; supportedVersions 1.6. No LoadFolders needed: root patches load, and the provider selects root, 1.6 and Assets. No optional integration is declared or patched; the parent guard is defensive only. |
+| done | NOT established | See remaining work below. |
+| tested | NOT established | No game scenario, Pickle run, log check or EN/FR interface check performed. |
+
+### Commands and results
+
+Replayed the shared diagnostics from a copy that writes elsewhere (the 2026-09-13 results are
+untouched): `powershell.exe -ExecutionPolicy Bypass -File Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .`
+Exit 0 in 50 s. Outputs in Tests/Audit-2026-09-21/Results/ and run.txt.
+PASS XmlFields (2 files, no unknown field), TypeRefs (no unguarded third-party type),
+DefInjected (6 keys, 0 errors), XmlClasses (6 types resolved), DefRefs (3 defs, no missing
+reference or wrong type, all ParentName resolved), ConfigErrors (see below), plus the EN/FR
+inventory (6 fields, parity, no empty/duplicate).
+Interpretation: ConfigErrors printed "defs checked: 0 of 0 ... no Defs folder here". Its PASS
+means no coverage, not a successful configuration test; the three defs only exist after the
+patch runs, and the checker states it reads defs as written. Effective configuration remains unverified.
+Other direct checks: `file`/PNG headers, `gh repo view`, `git ls-remote`, `cmp`, sha256 of
+the six textures (match SOURCES.json; the two `_m` masks of Accordion and UilleannPipes
+share one hash, as recorded in the 2026-09-13 provenance), and the palette contrast script above.
+
+### Remaining work for preTest -> done (nothing else is required for that transition)
+
+1. Rewrite TEST_SCENARIOS.md for this package: preconditions (Core 1.6, Musical Instruments,
+   StringedInstruments researched for the accordion, a pawn able to craft and to play, a music
+   spot), actions (craft each instrument at its bench, equip/play, provider PlayMusic on/off, save
+   and reload) and expected results. Drop the cases that do not apply (recreation menu, power,
+   flick, refuelling, split-package ownership) or justify them.
+2. Automated/XML test that covers the effective patched definitions, or an explicit justification
+   that the shared checker cannot (zero defs read); no artificial test to fill the box.
+3. Gherkin/Pickle: write what only a running game can show, or justify non-applicability, and add a
+   TESTING.md stating how many Pickle passes are required (no optional mod is declared here, so
+   the minimal set is the natural single pass; incompatibilities: none declared). Writing them is
+   required for done; running them belongs to done -> tested.
+4. Re-run the offline XML diagnostics on the delivered version once the above is in place.
+
+### Optional recommendations (not blockers)
+
+- The comment at the top of Mod/Patches/EponaInstruments.xml still says "private extraction"; it
+  ships to players and no longer matches the public unofficial scope.
+- Make the shared ConfigErrors runner report zero-coverage as such instead of PASS.
+- Before tested -> prepublished: commit/push About.xml and b0b9db2, decide what to do with the
+  untracked artwork and Tests/Audit-2026-09-13/, and add PUBLICATION.md; none affects this stage.
+
+
+## preTest -> done - 2026-09-21
+
+Requested after the audit above. Branch housekeeping first: `codex/source-split` pointed at the same
+commit as `main` (b0b9db2), so there was nothing to merge; local `main` was created from it, tracking
+`origin/main`, and `codex/source-split` was deleted. Nothing was pushed. No RimWorld was launched.
+
+**Defect found and fixed.** The new effective-defs test (`Tests/Test-EffectiveDefs.ps1`) failed 3
+assertions on the first run, saved in `Tests/Audit-2026-09-21/Results/EffectiveDefs-before-fix.txt`:
+the three defs inherited `tickerType Never` from `HeldMusicalInstrumentBase`, while all 9 Musical
+Instruments (Continued) instruments set `Normal`. The provider's `Comp_PlayingMusic` starts its
+sound from `CompTick` (decompiled, `MusicalInstruments.dll` 1.6), so with `Never` the pipes and the
+accordion would very probably be silent - the same fault this patch was written to fix. Corrected by
+adding `<tickerType>Normal</tickerType>` to each def in `Mod/Patches/EponaInstruments.xml`. The
+patch's provenance hash was updated in both `SOURCES.json` copies (the original is kept as
+`OriginalSHA256`), `ATTRIBUTION.md` (both copies, synced with `cmp`) and `CHANGELOG.md` record it.
+**The effect is inferred from the decompiled code and the provider's convention; it has not been
+observed in a game.** The regression check is scenario 4 of `TEST_SCENARIOS.md`.
+
+Inheritance in the test was ported from `Verse.XmlInheritance.RecursiveNodeCopyOverwriteElements`
+(decompiled): list items of the child are appended to the parent's list unless `Inherit="False"`.
+The docstring of the shared `Check-ConfigErrors.ps1` says a child list replaces the parent's; the
+game code says otherwise, which matters for any def whose base carries comps.
+
+| done criterion | Result |
+| --- | --- |
+| Functional scenarios written with preconditions, actions, expected results | `TEST_SCENARIOS.md` rewritten: 8 scenarios, item/research/cost table, non-applicable cases justified (carried items have no power, flick or refuel controls; no settings; extraction cases were verified offline). |
+| Automated tests written, executed, green | `Tests/Test-EffectiveDefs.ps1`: patch guard with/without provider, inheritance replay, ~30 assertions per def (parents, comps incl. inherited Usable/Art/Quality, sound defs, research, table, textures and masks, stuff and cost defs, EN/FR). Before the fix 3 FAIL; after the fix: all assertions passed, exit 0, `Results/EffectiveDefs.txt`. |
+| XML tests executed, green | `Validate-Package.ps1` replayed after the fix: six diagnostics PASS (exit 0), `run-after-fix.txt`. `Check-ConfigErrors` still reads 0 defs; the gap it leaves is now covered by the effective-defs test, not by it. |
+| Pickle written, scope justified | `Tests/Pickle/`: companion mod, `wsl-ids.map` (Mlie.MusicalInstruments 2274558815), `01-alone.feature` with 4 scenarios that only read defs and the log. `TESTING.md` justifies the scope and states the pass count: one (sans-facultatifs); "avec facultatifs" not applicable (no optional mod declared), no incompatibility declared. Execution is not required at this stage and was not attempted. |
+| Results match the delivered version | Both test families were run after the last change to `Mod/`. |
+| Non-applicability justified, no artificial test | See `TESTING.md` and the last section of `TEST_SCENARIOS.md`. |
+
+Limits, stated plainly: the Pickle features use only steps that appear in suites that have already run
+(`mod is loaded`, `loads after`, `def of type exists`, `def field is`, `no errors were logged`,
+`no warnings from mod`), but this file itself has never run, and `Docs/steps.md` was not available to
+check them. A `field "category"` / `"tickerType"` value spelling is the likeliest thing a first run
+could reject. Nothing was committed or pushed.

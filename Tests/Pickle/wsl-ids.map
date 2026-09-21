@@ -1,0 +1,6 @@
+# Workshop ids the staging script cannot guess: it knows Harmony, Pickle, RimLogging and a few
+# frameworks only. This mod's one hard dependency is Musical Instruments (Continued), which the
+# defs are added on top of. It only RESOLVES the id; what gets activated is what About.xml declares.
+#
+# packageId              workshopId
+Mlie.MusicalInstruments  2274558815
