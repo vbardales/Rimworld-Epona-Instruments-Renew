@@ -9,6 +9,9 @@
 # film is still telling something: a bill is added, the colonist works for a while, and the unfinished
 # item exists. The finished products are shown by 02-review-captures.feature instead.
 #
+# A wait step is limited to 5 real seconds (about 2,000 ticks on this machine): a 3,500-tick wait timed
+# out on 2026-09-21, hence two waits of 1,800. The colonist was already at the bench when it did.
+#
 # What a film cannot show: sound. Playing and hearing the instruments stays manual (scenario 4).
 @wip @film @review
 Feature: making the carried instruments
@@ -31,20 +34,23 @@ Feature: making the carried instruments
   Scenario: the accordion is started
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 3500 ticks
+    When I wait 1800 ticks
+    And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
     And I take a screenshot "accordion under construction"
 
   Scenario: the uilleann pipes are started
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 3500 ticks
+    When I wait 1800 ticks
+    And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
     And I take a screenshot "uilleann pipes under construction"
 
   Scenario: the great highland bagpipes are started
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 3500 ticks
+    When I wait 1800 ticks
+    And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
     And I take a screenshot "great highland bagpipes under construction"

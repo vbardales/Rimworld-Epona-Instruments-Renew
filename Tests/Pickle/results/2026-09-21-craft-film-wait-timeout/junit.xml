@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="making the carried instruments" tests="3" failures="3" skipped="0" flakes="0" time="47.360">
+    <testcase name="the accordion is started" classname="making the carried instruments" time="20.103">
+      <failure message="Step 'When I wait 3500 ticks' timed out after 5s">Step 'When I wait 3500 ticks' timed out after 5s</failure>
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: screenshot -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/making-the-carried-instruments--the-accordion-is-started--step16.png
+State dump [SimSteps.ColonistState]: tick=70382 paused=False map=0
+  Jet: job=DoBill driver=JobDriver_DoBill drafted=False stance=Stance_Mobile pos=(144, 0, 153)
+  Keeper: job=Play_Horseshoes driver=JobDriver_PlayHorseshoes drafted=False stance=Stance_Mobile pos=(131, 0, 169)
+  Larson: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Cooldown pos=(131, 0, 160)
+  Morrison: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Mobile pos=(130, 0, 166)
+</system-out>
+    </testcase>
+    <testcase name="the uilleann pipes are started" classname="making the carried instruments" time="13.512">
+      <failure message="Step 'When I wait 3500 ticks' timed out after 5s">Step 'When I wait 3500 ticks' timed out after 5s</failure>
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: screenshot -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/making-the-carried-instruments--the-uilleann-pipes-are-started--step16.png
+State dump [SimSteps.ColonistState]: tick=71198 paused=False map=0
+  Jet: job=DoBill driver=JobDriver_DoBill drafted=False stance=Stance_Mobile pos=(148, 0, 154)
+  Keeper: job=Play_Horseshoes driver=JobDriver_PlayHorseshoes drafted=False stance=Stance_Mobile pos=(136, 0, 174)
+  Larson: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Mobile pos=(122, 0, 182)
+  Morrison: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Mobile pos=(125, 0, 173)
+</system-out>
+    </testcase>
+    <testcase name="the great highland bagpipes are started" classname="making the carried instruments" time="13.745">
+      <failure message="Step 'When I wait 3500 ticks' timed out after 5s">Step 'When I wait 3500 ticks' timed out after 5s</failure>
+      <system-out>Attachment: smoke-attachment -&gt; smoke test attachment content
+Attachment: screenshot -&gt; /mnt/c/Users/nelim/Documents/rimworld/pickle-reports/screenshots/making-the-carried-instruments--the-great-highland-bagpipes-are-started--step16.png
+State dump [SimSteps.ColonistState]: tick=71414 paused=False map=0
+  Jet: job=DoBill driver=JobDriver_DoBill drafted=False stance=Stance_Mobile pos=(148, 0, 154)
+  Keeper: job=Play_Horseshoes driver=JobDriver_PlayHorseshoes drafted=False stance=Stance_Mobile pos=(131, 0, 169)
+  Larson: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Mobile pos=(122, 0, 196)
+  Morrison: job=HaulToCell driver=JobDriver_HaulToCell drafted=False stance=Stance_Mobile pos=(122, 0, 188)
+</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

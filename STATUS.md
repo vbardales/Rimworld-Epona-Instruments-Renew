@@ -16,6 +16,7 @@ tested_on:
 updated: 2026-09-21
 remaining:
   - reserve (visual, 2026-09-21): in the review captures the highland bagpipes and uilleann pipes are drawn about two cells wide (drawSize 2 inherited from the provider base, textures fill the frame) and overlap when one cell apart; the provider's ocarina is much smaller. Judge in game whether that is acceptable; nothing was changed
+  - observed 2026-09-21 (film, no sound): the crafting flow up to the unfinished item works for the three instruments: bench built, recipe offered once PrimitiveInstruments/StringedInstruments are finished, a colonist takes the bill and starts it ("Unfinished steel accordion" and its siblings). Finished products and any sound are not shown
   - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
   - unverified: the tickerType Normal correction (2026-09-21): the loaded def reports Normal (Pickle, 2026-09-21) but the sound has never been heard in a game; scenario 4 is the check
   - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), English then French (-Language French), 4 scenarios of 4 played each, 4 passed, exitReason passed, reports in Tests/Pickle/results/2026-09-21-sans-facultatifs and -french/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
@@ -428,7 +429,8 @@ through `Run-PickleWsl.ps1`; after a session crash the three queued processes su
 | English, `-IncludeWip` | `01-alone`, `02-review-captures`, `10-english-texts` | `exitReason: passed`, **10 of 10 played, 10 passed** | `Tests/Pickle/results/2026-09-21-captures-english/` |
 | French, `-Language French -IncludeWip` | `11-french-texts` | `passed`, **3 of 3**: the loaded French labels and descriptions equal the DefInjected strings | `.../2026-09-21-texts-french/` |
 | English, `-IncludeWip` | `20-craft-and-film` (first version) | **watchdog-timeout, exit 2, 0 scenarios written**: `I wait for bill` allows 120 s and the accordion (65,000 work) was still an unfinished item | `.../2026-09-21-craft-film-stalled/` (video, contact sheet, no frames) |
-| English, `-IncludeWip` | `20-craft-and-film` (rewritten to stop at work in progress) | queued, not yet run | - |
+| English, `-IncludeWip` | `20-craft-and-film` (rewritten to stop at work in progress, 3,500-tick wait) | **failed 0 of 3**: `I wait 3500 ticks` timed out after 5 s (a wait step is limited to 5 real seconds, about 2,000 ticks here); the failure capture already shows the colonist at the bench and "Unfinished steel uilleann pipes" | `.../2026-09-21-craft-film-wait-timeout/` |
+| English, `-IncludeWip` | `20-craft-and-film` (two waits of 1,800 ticks) | `exitReason: passed`, **3 of 3 played, 3 passed**; report 22:03:54 against a check at 22:04:23 | `.../2026-09-21-craft-film/` (one mp4 per instrument, JUnit, summary) |
 
 Read at source, not from the green: the report of each run was dated against its run (archived by the next run under
 its own time); the captures were opened. Findings.
