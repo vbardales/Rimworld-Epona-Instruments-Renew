@@ -17,7 +17,7 @@ updated: 2026-09-21
 remaining:
   - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
   - unverified: the tickerType Normal correction (2026-09-21): the loaded def reports Normal (Pickle, 2026-09-21) but the sound has never been heard in a game; scenario 4 is the check
-  - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), 4 scenarios of 4 played, 4 passed, exitReason passed, report in Tests/Pickle/results/2026-09-21-sans-facultatifs/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
+  - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), English then French (-Language French), 4 scenarios of 4 played each, 4 passed, exitReason passed, reports in Tests/Pickle/results/2026-09-21-sans-facultatifs and -french/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
   - local state: local main is 1 commit ahead of origin/main (1a4586b); uncommitted: About.xml wording, the patch fix, SOURCES.json (both copies), ATTRIBUTION.md (both copies), CHANGELOG.md, TEST_SCENARIOS.md, TESTING.md, STATUS.md; untracked: Tests/Pickle/, Tests/Test-EffectiveDefs.ps1, Tests/Audit-2026-09-13/, Tests/Audit-2026-09-21/, Art/preview-background.png, Art/preview-render.png, Assets/ (matters at tested -> prepublished)
 ---
 
@@ -403,3 +403,16 @@ Side notes: the script printed "veille non empechee: cannot convert -2147483647 
 `SetThreadExecutionState` call); harmless for a two-second run but it would not stop the machine sleeping
 during a long one. The `screenshots/` folder of the shared report dir held other mods' images, none ours.
 Stage remains `done`; `done -> tested` still needs the manual scenarios (and the language pass, if wanted).
+
+### Pickle run, French pass - 2026-09-21 19:10 (Windows time)
+
+Same entry point with `-Language French` (language fixed at staging, not switched during the run; the
+script confirmed "French (Français), devMode on"). Queued behind 11 tickets. Pass `sans-facultatifs`,
+`exitReason: passed`, exit 0, **4 scenarios played of 4 written**, 4 passed, 0 failed. Report time 19:10:14
+against a check at 19:10:45: not stale. Copied to `Tests/Pickle/results/2026-09-21-sans-facultatifs-french/`
+(the set name in the report does not carry the language; the folder name does).
+
+Same limits as the English pass: the scenarios read defs and the log only, and no capture exists. It shows the
+mod loads in French with no error and no warning attributed to it. It does **not** show the French labels
+and descriptions rendering (scenario 8 of TEST_SCENARIOS.md, to play by hand), nor any clipping or fallback text.
+Pushed before this run: origin/main = 465c488. This entry and the report are committed locally, not pushed.

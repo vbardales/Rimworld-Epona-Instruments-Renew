@@ -2,7 +2,7 @@
 
 Not shipped: it lives beside `Mod/`, never inside it. This mod ships no assembly and no Defs
 folder: three `ThingDef`s are added by `Mod/Patches/EponaInstruments.xml` on top of Musical
-Instruments (Continued), and six textures. The Pickle suite ran once (2026-09-21, 4 of 4, `Tests/Pickle/results/`); the manual scenarios have not been run in a game. See
+Instruments (Continued), and six textures. The Pickle suite ran once (2026-09-21, 4 of 4 in English and 4 of 4 in French, `Tests/Pickle/results/`); the manual scenarios have not been run in a game. See
 `STATUS.md` for what is verified and what is not.
 
 ## Layers, cheapest first
