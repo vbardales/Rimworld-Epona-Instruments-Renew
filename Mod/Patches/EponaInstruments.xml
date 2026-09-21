@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-  <!-- Two bagpipes and an accordion from Epona Instruments Standalone by Outremer. Its definitions live under 1.3 with no LoadFolders.xml and are not selected for 1.6. Keep this private extraction separate from Steam-managed source files. These items complement the instruments supplied by Musical Instruments (Continued), whose reviewed catalogue had no pipes or accordion. Guard on HeldMusicalInstrumentBase before adding definitions that reference MusicalInstruments component classes: missing classes can invalidate whole definitions. Add the source-missing CompProp_PlayingMusic. Reuse MIC_Ocarina_Play for the pipes and MIC_ElectronicOrgan_Play for accordion because dedicated samples are unavailable. Replace setting-specific labels Great Stalion Bagpipe, Epones Pipe and Cavalier Accordion with generic instrument names. -->
+  <!-- Two bagpipes and an accordion from Epona Instruments Standalone by Outremer. Its definitions live under 1.3 with no LoadFolders.xml and are not selected for 1.6. Keep this extraction separate from Steam-managed source files. Set tickerType Normal like every Musical Instruments (Continued) instrument: its CompProp_PlayingMusic starts the playing sound from CompTick, which never runs for the inherited Never. These items complement the instruments supplied by Musical Instruments (Continued), whose reviewed catalogue had no pipes or accordion. Guard on HeldMusicalInstrumentBase before adding definitions that reference MusicalInstruments component classes: missing classes can invalidate whole definitions. Add the source-missing CompProp_PlayingMusic. Reuse MIC_Ocarina_Play for the pipes and MIC_ElectronicOrgan_Play for accordion because dedicated samples are unavailable. Replace setting-specific labels Great Stalion Bagpipe, Epones Pipe and Cavalier Accordion with generic instrument names. -->
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[@Name="HeldMusicalInstrumentBase"]</xpath>
@@ -19,6 +19,7 @@
             <shaderType>CutoutComplex</shaderType>
           </graphicData>
           <techLevel>Medieval</techLevel>
+          <tickerType>Normal</tickerType>
           <statBases>
             <WorkToMake>28000</WorkToMake>
             <Mass>5</Mass>
@@ -58,6 +59,7 @@
             <shaderType>CutoutComplex</shaderType>
           </graphicData>
           <techLevel>Medieval</techLevel>
+          <tickerType>Normal</tickerType>
           <statBases>
             <WorkToMake>45000</WorkToMake>
             <Mass>4</Mass>
@@ -97,6 +99,7 @@
             <shaderType>CutoutComplex</shaderType>
           </graphicData>
           <techLevel>Medieval</techLevel>
+          <tickerType>Normal</tickerType>
           <statBases>
             <WorkToMake>65000</WorkToMake>
             <Mass>2</Mass>

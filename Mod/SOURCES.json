@@ -16,7 +16,9 @@
   "files": [
     {
       "Path": "Mod/Patches/EponaInstruments.xml",
-      "SHA256": "2804E719BDF2B782FFB8D386A57306946E175177B4ED6559C45F0344F5135203"
+      "SHA256": "05F735889FF00C911EC29FC8F74F8BEB4F216EBA210B3EA8B7343874CDB62AEA",
+      "OriginalSHA256": "2804E719BDF2B782FFB8D386A57306946E175177B4ED6559C45F0344F5135203",
+      "Modification": "2026-09-21: tickerType Normal added to the three ThingDefs"
     },
     {
       "Path": "Mod/Textures/Things\\Items\\Pipes/GreatHighlandPipes_m.png",

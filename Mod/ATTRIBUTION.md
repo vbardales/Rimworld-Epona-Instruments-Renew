@@ -56,6 +56,7 @@ accordion**. These three duplicate nothing.
 | No `CompProp_PlayingMusic`: the instruments would have been **silent** | added, with the nearest sounds in Mlie's catalogue — `MIC_Ocarina_Play` for the pipes, `MIC_ElectronicOrgan_Play` for the accordion |
 | A home-made `EponaMusicalInstrumentBase`, a field-for-field copy of Mlie's | replaced by Mlie's real bases (`PrimitiveInstrumentBase`, `HeldMusicalInstrumentBase`) |
 | Labels tied to the Epona setting ("Great Stalion Bagpipe", "Epones Pipe", "Cavalier Accordion") | made generic; extracted alone, that lore no longer applies |
+| Nothing set `tickerType`, so the items inherited `Never` and `CompProp_PlayingMusic` (which starts its sound from `CompTick`) would never run | `tickerType` set to `Normal`, as every Musical Instruments (Continued) instrument does (2026-09-21; found by `Tests/Test-EffectiveDefs.ps1`, not yet observed in a game) |
 
 The sounds are a stopgap and are meant as one: Mlie has neither a bagpipe nor an accordion sample.
 One line to change the day real recordings exist.
