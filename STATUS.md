@@ -19,7 +19,7 @@ remaining:
   - unverified: every manual scenario of TEST_SCENARIOS.md (1 to 8) - crafting, research gating, taking to inventory, playing and its sound, provider music setting, save/reload, pre-split saves, provider absent, EN/FR rendering (done -> tested)
   - unverified: the tickerType Normal correction (2026-09-21): the loaded def reports Normal (Pickle, 2026-09-21) but the sound has never been heard in a game; scenario 4 is the check
   - observed 2026-09-21: Pickle sans-facultatifs (the only required pass), English then French (-Language French), 4 scenarios of 4 played each, 4 passed, exitReason passed, reports in Tests/Pickle/results/2026-09-21-sans-facultatifs and -french/; it reads defs and the log only and has no capture, so it says nothing about crafting, playing or rendering
-  - local state: local main is 1 commit ahead of origin/main (1a4586b); uncommitted: About.xml wording, the patch fix, SOURCES.json (both copies), ATTRIBUTION.md (both copies), CHANGELOG.md, TEST_SCENARIOS.md, TESTING.md, STATUS.md; untracked: Tests/Pickle/, Tests/Test-EffectiveDefs.ps1, Tests/Audit-2026-09-13/, Tests/Audit-2026-09-21/, Art/preview-background.png, Art/preview-render.png, Assets/ (matters at tested -> prepublished)
+  - local state (2026-09-21 evening): everything of the mod and its tests is committed on main; origin/main = 3b7f5b5, local main is 2 commits ahead (8ee1910, c45f353), not pushed; untracked and left alone on purpose: Tests/Audit-2026-09-13/ (decompilation evidence), Art/preview-background.png, Art/preview-render.png, Assets/ (matters at tested -> prepublished)
 ---
 
 # Epona Instruments Renew - status
