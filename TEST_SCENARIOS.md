@@ -21,6 +21,36 @@ this mod, in that order; a new colony from any scenario; developer mode on when 
 Play the game in the language the step names: **the language is chosen at launch, never switched
 during a test.**
 
+## Shortcuts for the manual run
+
+Everything below is optional: it only saves time. Developer mode on, a colony started on any map.
+
+- **Skip research:** Debug actions menu > Research (finish all, or the two projects). Scenario 2 needs the
+  gating seen *before*, so do it first and only then finish the research.
+- **Get the items without crafting:** Debug actions menu > Spawn thing, pick the item and a stuff, click on the
+  ground. The three defNames are `JP_GreatHighlandBagpipes`, `JP_UilleannPipes`, `JP_Accordion`.
+- **Music spot:** build the provider's `music spot` (Architect > Joy) for scenario 4; a pawn needs Artistic 3
+  or more, or an instrument in hand, to be offered a performance. Set Joy low (Debug > Needs) to trigger it sooner.
+- **Listening:** scenario 4 is the only check that needs your ears. Stand the camera near the pawn, zoom in,
+  and listen for the whole performance. Silence is the regression (`tickerType`, see STATUS.md).
+
+## What the Pickle runs already show (nothing to redo, but look at the images)
+
+| Scenario | Pickle aid | Still manual |
+| --- | --- | --- |
+| 1 Loads cleanly | `01-alone.feature`: loaded, after the provider, no error, no warning from the mod | the log of a real start on your own mod list |
+| 2 Research gating | film `20-craft-and-film.feature` (bench built, research finished, bill added) | the gating *before* research: a bill must not be offered |
+| 3 Crafting | film + captures of each product, `20-craft-and-film.feature` | quality/art tab, a stuff outside the list being refused |
+| 3 Textures and size | captures `02-review-captures.feature`: three items side by side, next to an ocarina and a frame drum, default zoom | your judgement of them |
+| 4 Playing and sound | nothing | all of it (music spot, performance, sound, offsets) |
+| 5 Provider setting | nothing | all of it |
+| 6 Save / reload | nothing | all of it (`I save and reload` exists in Pickle, not written here) |
+| 7 Provider absent | offline guard test | the real start without the provider |
+| 8 EN/FR | `10-english-texts.feature`, `11-french-texts.feature`: the loaded label and description strings | rendering, clipping, fallback text in the interface |
+
+The `@wip` features are skipped by a default run; aim at them with `-IncludeWip -Filter '<file>'` (see TESTING.md).
+A green capture scenario means the route ran, never that the picture is right: open the images.
+
 ## 1. Loads cleanly
 
 - **Precondition:** clean profile, the mods above only.

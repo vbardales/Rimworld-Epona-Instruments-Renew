@@ -11,19 +11,19 @@ Instruments (Continued), and six textures. The Pickle suite ran once (2026-09-21
 | --- | --- | --- | --- |
 | Shared XML diagnostics | `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` | seconds, no game | fields, type references, DefInjected paths, XML classes, def references and parents, EN/FR inventory. `Check-ConfigErrors` reads 0 defs here (no Defs folder): its PASS is no coverage |
 | Effective defs | `Tests/Test-EffectiveDefs.ps1` | seconds, no game | the three defs **as the game sees them**: the patch guard is evaluated with and without the provider, `ParentName` inheritance is replayed the way `XmlInheritance` does it (list items append), then ~30 assertions per def: parents, comps, sound, research, workbench, textures and masks, stuff and cost defs, EN/FR text |
-| Pickle (Gherkin) | `Tests/Pickle/Mod/Pickle/Features/01-alone.feature` | minutes, **takes the machine** | what only a running game can say: the defs exist after the real patch pipeline, the loaded `tickerType`, a silent load |
+| Pickle (Gherkin) | `Tests/Pickle/Mod/Pickle/Features/` | minutes, **takes the machine** | `01-alone` (7 scenarios with `02-review-captures`, by default): the defs exist after the real patch pipeline, the loaded `tickerType`, a silent load, three review captures of the items. `@wip`, aimed with `-IncludeWip -Filter`: `10-english-texts`, `11-french-texts` (the loaded strings, one language each) and `20-craft-and-film` (a colonist makes each item at the bench, filmed; best effort, never run before 2026-09-21) |
 | Manual scenarios | `TEST_SCENARIOS.md` | by hand, in a game | crafting, taking to inventory, playing, sound, saves, EN/FR rendering |
 
-Everything provable outside the game is proved outside the game. The Pickle suite is four short
-scenarios that only read defs and the log; it does not restate what the offline tests already assert.
+Everything provable outside the game is proved outside the game. The default Pickle run is four short scenarios that only read defs and the log, plus three capture scenarios; it does not restate what the offline tests already assert.
 
-## Why Pickle is this small
+## Why Pickle stays small
 
-Crafting at the instrument table, taking an instrument to inventory and playing it need a colony with
-a pawn, research, materials and a music spot. No test save exists and no Pickle step for these jobs has
-been verified for this suite, so writing them would be guessing at step texts: an undefined step costs a
-whole run. They stay manual (`TEST_SCENARIOS.md`, scenarios 3 to 6). No screenshot scenario exists for the
-same reason: the instruments are never shown without a colony around them.
+Pickle ships a `test-colony` save, so a colony is available; what Pickle cannot do is judge. Captures and a film
+show a person the textures, the sizes and the crafting; they assert nothing about the image, and a green run of
+them means the route ran. Playing an instrument needs a music spot, an Artistic pawn and a performance, and its
+result is a **sound**, which neither a capture nor a film carries: scenarios 4 and 5 of `TEST_SCENARIOS.md` stay
+manual, as do save/reload and the provider-absent start. The crafting film is written without ever having run;
+it is `@wip` so that its first failure cannot turn a default run red.
 
 ## How many Pickle passes: one
 
@@ -55,4 +55,4 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Epon
 `Run-PickleWsl.ps1` looks for the suite under a mod folder named `EponaInstrumentsRenew` in the
 workspace root and passes the companion's display name as the filter (`EponaInstrumentsRenew - Pickle
 tests`). Read `exitReason` in the report before any count, and check the number of scenarios played
-against the four written here (`01-alone.feature`).
+against the seven non-`@wip` scenarios written here (`01-alone.feature` 4, `02-review-captures.feature` 3).
