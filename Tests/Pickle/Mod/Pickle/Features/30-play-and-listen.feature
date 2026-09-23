@@ -9,8 +9,10 @@
 #   - on the Windows game, with the sound on, in the in-game runner ("Watch" pace): PLAY_AND_LISTEN.md, for the
 #     person to hear it. The scenarios pause long enough after the performance starts for that.
 #
-# For each instrument, alone on the map: a colonist with a high Artistic skill and the Art work type on top priority is
-# sent to the provider's music spot and performs. The sound is the provider's stand-in sample (an ocarina for both
+# For each instrument, alone on the map: a colonist with a high Artistic skill is given the provider's music joy (its own
+# giver chooses the spot and the instrument; job MusicPlayJoy, 4,000 ticks) and performs. Not the work route: the provider's
+# WorkGiver only offers a venue that is itself an instrument (2026-09-23: a plain music spot never got the work, HasJobOnThing
+# false while every one of its checks held). The sound is the provider's stand-in sample (an ocarina for both
 # pipes, an electronic organ for the accordion).
 #
 # The provider only starts an instrument's sound when its own checkbox is ticked (the default) and Royalty is
@@ -21,52 +23,51 @@ Feature: hear the carried instruments played
     Given the save "test-colony" is loaded
     And a colonist "Jet" exists
     And "Jet" skill "Artistic" is set to level 12
-    And I set "Jet" priority "Art" to 1
     And a "MusicSpot" is built at (146, 155)
     And I zoom in
     And I move the camera to (146, 155)
 
   Scenario: the great highland bagpipes are played, and heard
     When I spawn a "JP_GreatHighlandBagpipes" at (144, 155)
-    Then Epona Instruments Renew the music work is on offer to "Jet"
-    When I wait for "Jet" to have job "MusicPlayWork"
+    And Epona Instruments Renew "Jet" is offered the music joy and starts it
+    And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the bagpipes are being played"
     When I wait 600 ticks
     And I wait 600 ticks
     And I wait 600 ticks
-    Then "Jet" has job "MusicPlayWork"
+    Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
 
   Scenario: the uilleann pipes are played, and heard
     When I spawn a "JP_UilleannPipes" at (144, 155)
-    Then Epona Instruments Renew the music work is on offer to "Jet"
-    When I wait for "Jet" to have job "MusicPlayWork"
+    And Epona Instruments Renew "Jet" is offered the music joy and starts it
+    And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the uilleann pipes are being played"
     When I wait 600 ticks
     And I wait 600 ticks
     And I wait 600 ticks
-    Then "Jet" has job "MusicPlayWork"
+    Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
 
   Scenario: the accordion is played, and heard
     When I spawn a "JP_Accordion" at (144, 155)
-    Then Epona Instruments Renew the music work is on offer to "Jet"
-    When I wait for "Jet" to have job "MusicPlayWork"
+    And Epona Instruments Renew "Jet" is offered the music joy and starts it
+    And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
     And I take a screenshot "the accordion is being played"
     When I wait 600 ticks
     And I wait 600 ticks
     And I wait 600 ticks
-    Then "Jet" has job "MusicPlayWork"
+    Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
 
   Scenario: with the provider's sound checkbox unticked, the same performance is silent
     Given Epona Instruments Renew the provider sound checkbox is off
     When I spawn a "JP_Accordion" at (144, 155)
-    Then Epona Instruments Renew the music work is on offer to "Jet"
-    When I wait for "Jet" to have job "MusicPlayWork"
+    And Epona Instruments Renew "Jet" is offered the music joy and starts it
+    And I wait for "Jet" to have job "MusicPlayJoy"
     And I wait 600 ticks
-    Then "Jet" has job "MusicPlayWork"
+    Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is not heard playing

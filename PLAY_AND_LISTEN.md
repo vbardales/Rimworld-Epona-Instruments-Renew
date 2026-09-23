@@ -12,8 +12,9 @@ renders it, which is what you check here.
 ## What it does
 
 `Tests/Pickle/Mod/Pickle/Features/30-play-and-listen.feature` loads Pickle's test colony, then, for each instrument
-**alone on the map**, sets the scene (colonist Jet, Artistic 12, work type Art on top priority, the provider's music
-spot, the instrument on the ground), waits for Jet to start performing, asserts the sound is live, takes a screenshot
+**alone on the map**, sets the scene (colonist Jet, Artistic 12, the provider's music spot, the instrument on the ground), hands Jet the
+provider's own music joy (its giver picks the spot and the instrument), waits for the performance to start, asserts the
+sound is live, takes a screenshot
 and lets the game run about 30 more seconds while you listen. A fourth scenario unticks the provider's sound checkbox
 and expects silence, then puts the checkbox back.
 
