@@ -1,7 +1,0 @@
-PASS: EponaInstrumentsRenew / XmlFields
-PASS: EponaInstrumentsRenew / ConfigErrors
-PASS: EponaInstrumentsRenew / TypeRefs
-PASS: EponaInstrumentsRenew / DefInjected
-PASS: EponaInstrumentsRenew / XmlClasses
-PASS: EponaInstrumentsRenew / DefRefs
-PASS: six shared diagnostics; 6 owned text fields covered EN/FR, duplicate/empty entries and parameter parity checked; no game session executed.

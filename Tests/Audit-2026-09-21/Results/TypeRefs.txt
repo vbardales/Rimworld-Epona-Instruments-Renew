@@ -1,7 +1,0 @@
-2 XML files read under C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew\Mod.
-77 element names searched, 9 of them List<Type>.
-3 name(s) skipped as ambiguous - vanilla declares them with more than one field type: lordJob, targetType, type
-3 type references that are neither RimWorld's nor Unity's.
-
-No unguarded reference to a third-party type.
-
