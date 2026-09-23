@@ -13,3 +13,11 @@ Source/bin/
 # Run evidence: kept ON DISK, not in git (captures, films and Player.log make the folder grow without bound).
 # What is versioned is a short text summary in docs/runs/.
 Tests/Pickle/Evidence/
+
+# Outputs of offline test runs are evidence too: on disk, not in git (docs/runs/ keeps one text line per run).
+# The scripts that produce them stay tracked.
+Tests/Audit-*/Results/
+Tests/Audit-*/run*.txt
+Tests/Reorganization-*/Results/
+Tests/Reorganization-*/run*.txt
+evidence/
