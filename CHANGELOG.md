@@ -1,11 +1,21 @@
 # Changelog
 
-## Unreleased - 2026-09-13
+## [0.1.0] - 2026-09-23
 
-- Set `tickerType` to `Normal` on the three instruments, like every Musical Instruments (Continued) instrument: the playing sound is started from `CompTick`, which never ran for the inherited `Never`. Found by the new effective-defs test; not yet observed in a game.
-- Add offline effective-defs test, a four-scenario Pickle suite (ran 4 of 4 on 2026-09-21) and real manual scenarios; see TESTING.md.
-- Install the 128 px icon and illustrated 896 x 504 preview with English title and version badge.
-- Prepare the authorized public unofficial GitHub repository and add its metadata link.
-- Separate the existing recreation content from Joy Preservation by source rights.
-- Preserve definition names, gameplay fields, texture bytes and matching French resources.
-- Document source credits, tests and unverified saves; no new gameplay or public release.
+- Creation of a publishIdFile: `Mod/About/PublishedFileId.txt` (Workshop item 3806766938), from a first upload
+  whose only purpose is to create the item. Steam creates every item private. This entry does not say that
+  the mod is public or tested.
+
+What the upload contained: `Mod/` as at commit `41ad1d5`, and nothing else changed since this file.
+
+- Three carried instruments added on top of Musical Instruments (Continued): great highland bagpipes, uilleann
+  pipes and accordion, with their six textures and a French translation.
+- `tickerType` set to `Normal` on the three instruments, like every Musical Instruments (Continued) instrument:
+  the playing sound is started from `CompTick`, which never ran for the inherited `Never`. Not yet observed in a
+  game.
+- 128 px icon, 896 x 504 preview, English description with the unofficial disclaimer and the source-code link.
+- Definition names are preserved from the former Joy Preservation collection; saves made with it are not yet
+  validated.
+
+Not part of the upload: the tests, the scenarios and the documentation of the repository (see TESTING.md and
+STATUS.md). The upload also generated `.dds` textures next to the PNGs; they are not tracked.
