@@ -4,3 +4,12 @@ Source/bin/
 .vs/
 .idea/
 *.user
+
+# Compiled textures: a .dds is a conversion product, heavy and unreadable in a diff. The PNG source is what is
+# versioned. The Workshop upload generates them next to the PNGs; the files stay on disk.
+*.dds
+*.DDS
+
+# Run evidence: kept ON DISK, not in git (captures, films and Player.log make the folder grow without bound).
+# What is versioned is a short text summary in docs/runs/.
+Tests/Pickle/Evidence/
