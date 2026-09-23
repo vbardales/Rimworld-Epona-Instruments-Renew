@@ -40,3 +40,12 @@ Feature: Epona Instruments Renew alone
     And def "JP_UilleannPipes" field "techLevel" is "Medieval"
     And def "JP_Accordion" field "techLevel" is "Medieval"
     And def "JP_Accordion" field "category" is "Item"
+
+  # The costs a player pays, as the game holds them: the wood and components of the patch's costList. The stuff
+  # (fabric or leather for the highland pipes, metal for the other two) is asserted offline, with the stuff categories.
+  Scenario: they cost what the patch says
+    Then def "JP_GreatHighlandBagpipes" costs 40 "WoodLog"
+    And def "JP_UilleannPipes" costs 20 "WoodLog"
+    And def "JP_UilleannPipes" costs 3 "ComponentIndustrial"
+    And def "JP_Accordion" costs 30 "WoodLog"
+    And def "JP_Accordion" costs 5 "ComponentIndustrial"

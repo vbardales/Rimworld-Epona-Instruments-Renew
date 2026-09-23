@@ -143,6 +143,20 @@ namespace EponaInstrumentsRenew.PickleSteps
             ctx.Attach("completed", string.Join(", ", found.Select(u => u.LabelCap.ToString())));
         }
 
+        // --- research ------------------------------------------------------------------------------------
+
+        [Then("Epona Instruments Renew the recipe {string} is {word}")]
+        public void RecipeAvailability(PickleContext ctx, string recipeDefName, string state)
+        {
+            ctx.Require(state == "available" || state == "unavailable", "write 'available' or 'unavailable', not '" + state + "'");
+            RecipeDef recipe = DefDatabase<RecipeDef>.GetNamedSilentFail(recipeDefName);
+            ctx.Require(recipe != null, "no recipe named '" + recipeDefName + "' is loaded");
+            bool now = recipe.AvailableNow;
+            ctx.Assert(now == (state == "available"),
+                "recipe " + recipeDefName + " should be " + state + " but AvailableNow is " + now +
+                " (research prerequisite: " + (recipe.researchPrerequisite?.defName ?? "none") + ", finished: " + (recipe.researchPrerequisite?.IsFinished.ToString() ?? "n/a") + ")");
+        }
+
         // --- helpers -------------------------------------------------------------------------------------
 
         private static string ModRoot(PickleContext ctx)

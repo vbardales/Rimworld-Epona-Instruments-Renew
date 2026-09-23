@@ -1,14 +1,11 @@
-# Functional scenarios - written, not executed
+# Functional scenarios
 
-Not shipped. Every scenario below is **written**; none has been **run in a game**. `STATUS.md`
-tracks that difference: do not read this file as a report of things observed. What can be proved
-without a game is already covered by `Tests/Test-EffectiveDefs.ps1` and the shared diagnostics
-(see `TESTING.md`); the four Pickle scenarios in `Tests/Pickle/` cover what only a loaded game says
-about defs. The scenarios here need a colony, so they are manual.
+Not shipped. Each scenario below says **how it is covered**: by a Pickle feature (`Tests/Pickle/Mod/Pickle/Features/`), by
+an offline test, by a check only the maintainer can do (`MANUAL`), or as not applicable with its reason. What has
+actually been run is in `STATUS.md`; this file is the plan and the accounting, not a report.
 
-**Items.** `JP_GreatHighlandBagpipes` (great highland bagpipes), `JP_UilleannPipes` (uilleann pipes),
-`JP_Accordion` (accordion), all crafted at the instrument table (`TableMusicalInstruments`) of
-Musical Instruments (Continued).
+**Items.** `JP_GreatHighlandBagpipes` (great highland bagpipes), `JP_UilleannPipes` (uilleann pipes), `JP_Accordion`
+(accordion), crafted at the instrument bench (`TableMusicalInstruments`) of Musical Instruments (Continued).
 
 | Item | Research | Cost | Work | Sound |
 | --- | --- | --- | --- | --- |
@@ -16,112 +13,51 @@ Musical Instruments (Continued).
 | uilleann pipes | Primitive instruments (500) | 20 wood + 3 components + 75 metal | 45,000 | `MIC_Ocarina_Play` |
 | accordion | Stringed instruments (750) | 30 wood + 5 components + 15 metal | 65,000 | `MIC_ElectronicOrgan_Play` |
 
-Preconditions common to all scenarios: RimWorld 1.6, Harmony, Musical Instruments (Continued) and
-this mod, in that order; a new colony from any scenario; developer mode on when a step says so.
-Play the game in the language the step names: **the language is chosen at launch, never switched
-during a test.**
+Preconditions common to all: RimWorld 1.6, Harmony, Musical Instruments (Continued) and this mod, in that order.
+The language is chosen at launch, never switched during a test: every scenario is played once per language.
 
-## Shortcuts for the manual run
+## Accounting
 
-Everything below is optional: it only saves time. Developer mode on, a colony started on any map.
+| # | Scenario | Coverage | Status |
+| --- | --- | --- | --- |
+| 1 | Loads cleanly | Pickle `01-alone` (loaded, after the provider, no error, no warning from the mod, `tickerType`, costs) | see STATUS.md |
+| 2 | Research gates the recipes | Pickle `15-research-gates-the-recipes` (unavailable before, available after); `20-craft-and-film` (a colonist takes the bill once the research is finished) | see STATUS.md |
+| 3 | Crafting | Pickle `20-craft-and-film` (each bill started, the unfinished item completed by the game's own flag, the product exists, captured and filmed); costs in `01-alone`; stuff categories in `Test-EffectiveDefs.ps1` | see STATUS.md |
+| 3b | Textures and size | Pickle `02-review-captures` (`@review`: the images are read by a person) | see STATUS.md |
+| 4 | Playing, and the sound starts | Pickle `30-play-and-listen`: a live provider sustainer for the performer, per instrument | see STATUS.md |
+| 4b | The sound is **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): a loudspeaker is not part of a headless run | to do |
+| 5 | The provider's sound checkbox | Pickle `30-play-and-listen`, last scenario (unticked: no sound); ticked is scenarios 4 | see STATUS.md |
+| 6 | Save and reload | Pickle `40-save-reload` (three items; a bill in progress at the bench; the save round trips with no error) | see STATUS.md |
+| 6b | A save made with the former Joy Preservation collection | `MANUAL M2` | to do |
+| 7 | Without the provider | **Not applicable in game**, see below; the guard is asserted offline | n/a |
+| 8 | English and French | Pickle `10-texts-in-this-language` (the loaded label and description equal what the mod wrote for the language of the pass) and `05-text-screens` (names on screen, `@review`), both played in both languages | see STATUS.md |
 
-- **Skip research:** Debug actions menu > Research (finish all, or the two projects). Scenario 2 needs the
-  gating seen *before*, so do it first and only then finish the research.
-- **Get the items without crafting:** Debug actions menu > Spawn thing, pick the item and a stuff, click on the
-  ground. The three defNames are `JP_GreatHighlandBagpipes`, `JP_UilleannPipes`, `JP_Accordion`.
-- **Music spot:** build the provider's `music spot` (Architect > Joy) for scenario 4; a pawn needs Artistic 3
-  or more, or an instrument in hand, to be offered a performance. Set Joy low (Debug > Needs) to trigger it sooner.
-- **Listening:** scenario 4 is the only check that needs your ears. Stand the camera near the pawn, zoom in,
-  and listen for the whole performance. Silence is the regression (`tickerType`, see STATUS.md).
+### MANUAL M1 - hear the instruments
 
-## What the Pickle runs already show (nothing to redo, but look at the images)
+`PLAY_AND_LISTEN.md`. Run `30-play-and-listen.feature` on the Windows game, sound on, "Watch" pace. Expected: a
+continuous tone while the colonist plays (ocarina-like for both pipes, organ-like for the accordion), and silence with
+the provider's checkbox unticked. Silence with the checkbox ticked is the failure to report, with the instrument's name.
 
-| Scenario | Pickle aid | Still manual |
-| --- | --- | --- |
-| 1 Loads cleanly | `01-alone.feature`: loaded, after the provider, no error, no warning from the mod | the log of a real start on your own mod list |
-| 2 Research gating | film `20-craft-and-film.feature` (bench built, research finished, bill added, colonist starts the item) | the gating *before* research: a bill must not be offered |
-| 3 Crafting | film up to the unfinished item (`20-craft-and-film.feature`); the finished items are shown by the captures, not the film | quality/art tab, a stuff outside the list being refused |
-| 3 Textures and size | captures `02-review-captures.feature`: three items side by side, next to an ocarina and a frame drum, default zoom | your judgement of them |
-| 4 Playing and sound | nothing | all of it (music spot, performance, sound, offsets) |
-| 5 Provider setting | nothing | all of it |
-| 6 Save / reload | nothing | all of it (`I save and reload` exists in Pickle, not written here) |
-| 7 Provider absent | offline guard test | the real start without the provider |
-| 8 EN/FR | `10-english-texts.feature`, `11-french-texts.feature`: the loaded label and description strings | rendering, clipping, fallback text in the interface |
+### MANUAL M2 - a real pre-split save
 
-The `@wip` features are skipped by a default run; aim at them with `-IncludeWip -Filter '<file>'` (see TESTING.md).
-A green capture scenario means the route ran, never that the picture is right: open the images.
+Only the maintainer has a save made while these items came from the former Joy Preservation collection.
+- **Precondition:** a **copy** of such a save; this mod enabled and the old collection's Epona content absent (the
+  reduced Joy Preservation and its split packages, per the README).
+- **Actions:** enable this mod **before** loading; load the copy; look at the items (on the ground, in inventories) and
+  any bill or job that used them; save; reload.
+- **Expected:** the items, their quality and their place are kept; no missing-definition error (the defNames are
+  unchanged: `Tests/Reorganization-2026-09-13/` proves it offline); no duplicated item; the same after the reload.
 
-## 1. Loads cleanly
+### Not applicable, and why
 
-- **Precondition:** clean profile, the mods above only.
-- **Actions:** start the game, open Mods, reach the main menu, start a colony, open the log.
-- **Expected:** no red or yellow line attributed to this mod, no "did not load any content", no
-  config error on `JP_*`. Debug spawn (`Spawn thing`) lists the three items.
-
-## 2. Research gates the recipes
-
-- **Precondition:** colony without research, an instrument table built, materials available.
-- **Actions:** open the table's bill list; complete Primitive instruments; reopen; complete
-  Stringed instruments; reopen.
-- **Expected:** no JP recipe before the research; both pipes appear after Primitive instruments and
-  not the accordion; the accordion appears only after Stringed instruments.
-
-## 3. Crafting
-
-- **Precondition:** all research done, a pawn with Artistic enabled, the materials of the table above.
-- **Actions:** queue one bill per instrument, let the pawn finish each.
-- **Expected:** each item appears with a quality, the correct icon (no red/missing texture, mask
-  applied), a name and an art tab; the stuff choice offered matches the table (fabric/leather for
-  the highland pipes, metal for the other two); the cost paid matches the table. Repeat with a
-  stuff outside the list: it must be refused.
-
-## 4. Taking to inventory and playing
-
-- **Precondition:** a finished instrument, a pawn able to play, a music spot or joy-time free.
-- **Actions:** use "Take to inventory" on the instrument; let the pawn play for joy; then for work
-  if the provider offers it; watch and listen.
-- **Expected:** the pawn plays, the instrument is drawn in hand at a sensible offset for each of
-  the three (none floating), and a sound plays **for the whole performance and stops when it
-  ends**. This is the check that depends on `tickerType Normal`: a silent performance is the
-  regression to look for. No exception in the log while playing or stopping.
-
-## 5. Provider music setting
-
-- **Precondition:** Royalty active for the "actual music" case.
-- **Actions:** in Options > Mod options > Musical Instruments, toggle "Instruments play actual
-  music" both ways; repeat scenario 4 with each of the three instruments.
-- **Expected:** no error in either state. Record what the pipes and the accordion do: this mod
-  supplies stand-in samples (`MIC_Ocarina_Play`, `MIC_ElectronicOrgan_Play`), and what the provider
-  does with them under the actual-music setting is not known.
-
-## 6. Save, reload and pre-split saves
-
-- **Precondition:** a colony with all three items existing, one held in a pawn's inventory.
-- **Actions:** save, reload, check again. Then, on a **copy** of a save made with the former Joy
-  Preservation collection that held these items: enable this package **before** loading, load.
-- **Expected:** items, their quality, ownership and inventory place preserved; active jobs continue;
-  no missing-def error (the defNames are unchanged); no duplicate item.
-
-## 7. Without the provider
-
-- **Precondition:** this mod active, Musical Instruments (Continued) forced off in the mod list.
-- **Actions:** start the game, read the log.
-- **Expected:** the game's own missing-dependency warning; no `JP_*` def created; no error from this
-  mod's patch (the guard `Defs/ThingDef[@Name="HeldMusicalInstrumentBase"]` matches nothing).
-
-## 8. English and French
-
-- **Precondition:** two separate launches, one per language, developer mode on.
-- **Actions:** in each, read the three labels and descriptions in the spawn menu, the bill list
-  and the item inspector.
-- **Expected:** English: the Def values. French: `grande cornemuse des Highlands`, `cornemuse
-  uilleann`, `accordéon` and the matching descriptions. In developer mode a text that is *accentuated
-  letter by letter* is a key missing from the active language; a clean English sentence inside French
-  is a string that never went through translation. Neither must appear.
-
-## Not applicable, and why
-
-- Power, flick and refuelling controls: these are carried items, not buildings.
-- Settings page and MainButtons shortcut: none exists (`settings_audit: not_applicable`).
-- Recreation menu and split-package ownership cases: they belonged to the extraction from Joy
-  Preservation and were verified offline (`Tests/Reorganization-2026-09-13/`).
+- **7, the provider absent, in game.** The staging (and the game's own mod list) always places the hard dependencies
+  declared in `About.xml`; the case is a missing dependency, which RimWorld itself flags and which is not this mod's
+  behaviour. The patch guard `Defs/ThingDef[@Name="HeldMusicalInstrumentBase"]` is asserted offline to match nothing
+  without the provider (`Tests/Test-EffectiveDefs.ps1`): no def is added, no invalid def is created.
+- **Description text in the info card.** The description is the def's own `description`, asserted equal in both
+  languages (`10-texts-in-this-language`); the info card is vanilla's rendering of it.
+- **Power, flick and refuelling controls:** these are carried items, not buildings.
+- **Settings page and MainButtons shortcut:** none exists (`settings_audit: not_applicable`).
+- **Recreation menu and split-package ownership:** they belonged to the extraction from Joy Preservation and were
+  verified offline (`Tests/Reorganization-2026-09-13/`).
+- **Optional mods and DLC:** none declared, so no conditional (`@requires`) scenario exists.
