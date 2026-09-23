@@ -42,8 +42,11 @@ namespace EponaInstrumentsRenew.PickleSteps
         public void TextsReadAsWritten(PickleContext ctx)
         {
             string root = ModRoot(ctx);
-            string folder = LanguageDatabase.activeLanguage?.folderName ?? "(none)";
-            bool french = string.Equals(folder, "French", StringComparison.OrdinalIgnoreCase);
+            LoadedLanguage language = LanguageDatabase.activeLanguage;
+            string folder = language?.folderName ?? "(none)";
+            // The folder of the French language is named "French (Français)" (2026-09-23 French pass), not "French":
+            // recognise it by the prefix of its folder.
+            bool french = folder.StartsWith("French", StringComparison.OrdinalIgnoreCase);
 
             var expected = new Dictionary<string, string>();
             if (french)
