@@ -28,7 +28,8 @@ Feature: hear the carried instruments played
 
   Scenario: the great highland bagpipes are played, and heard
     When I spawn a "JP_GreatHighlandBagpipes" at (144, 155)
-    And I wait for "Jet" to have job "MusicPlayWork"
+    Then Epona Instruments Renew the music work is on offer to "Jet"
+    When I wait for "Jet" to have job "MusicPlayWork"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the bagpipes are being played"
     When I wait 600 ticks
@@ -39,7 +40,8 @@ Feature: hear the carried instruments played
 
   Scenario: the uilleann pipes are played, and heard
     When I spawn a "JP_UilleannPipes" at (144, 155)
-    And I wait for "Jet" to have job "MusicPlayWork"
+    Then Epona Instruments Renew the music work is on offer to "Jet"
+    When I wait for "Jet" to have job "MusicPlayWork"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the uilleann pipes are being played"
     When I wait 600 ticks
@@ -50,7 +52,8 @@ Feature: hear the carried instruments played
 
   Scenario: the accordion is played, and heard
     When I spawn a "JP_Accordion" at (144, 155)
-    And I wait for "Jet" to have job "MusicPlayWork"
+    Then Epona Instruments Renew the music work is on offer to "Jet"
+    When I wait for "Jet" to have job "MusicPlayWork"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
     And I take a screenshot "the accordion is being played"
     When I wait 600 ticks
@@ -62,7 +65,8 @@ Feature: hear the carried instruments played
   Scenario: with the provider's sound checkbox unticked, the same performance is silent
     Given Epona Instruments Renew the provider sound checkbox is off
     When I spawn a "JP_Accordion" at (144, 155)
-    And I wait for "Jet" to have job "MusicPlayWork"
+    Then Epona Instruments Renew the music work is on offer to "Jet"
+    When I wait for "Jet" to have job "MusicPlayWork"
     And I wait 600 ticks
     Then "Jet" has job "MusicPlayWork"
     And Epona Instruments Renew "Jet" is not heard playing

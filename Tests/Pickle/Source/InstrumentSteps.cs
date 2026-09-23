@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using HarmonyLib;
+using RimWorld;
 using RimWorks.Pickle;
 using Verse;
 using Verse.Sound;
@@ -165,7 +166,92 @@ namespace EponaInstrumentsRenew.PickleSteps
                 " (research prerequisite: " + (recipe.researchPrerequisite?.defName ?? "none") + ", finished: " + (recipe.researchPrerequisite?.IsFinished.ToString() ?? "n/a") + ")");
         }
 
+        // --- performance scene ---------------------------------------------------------------------------
+
+        /// <summary>
+        /// Asks the provider's own work giver whether the colonist is offered the performance, and when not, says why.
+        /// First played 2026-09-23: the colonist kept hauling and never took MusicPlayWork, and Pickle's own wait can only
+        /// say "never took the job". This step names the fact that is missing: the work type and its priority, the music
+        /// spot (faction, active), the instruments (forbidden, reachable), then the provider's own checks one by one.
+        /// </summary>
+        [Then("Epona Instruments Renew the music work is on offer to {string}")]
+        public void MusicWorkIsOnOffer(PickleContext ctx, string nickname)
+        {
+            Pawn pawn = FindPawn(ctx, nickname);
+            var facts = new List<string>();
+            WorkGiverDef giverDef = DefDatabase<WorkGiverDef>.GetNamedSilentFail("MusicPlay");
+            ctx.Require(giverDef != null, "no WorkGiverDef 'MusicPlay': is Musical Instruments (Continued) loaded?");
+            Map map = Find.CurrentMap;
+
+            facts.Add("pawn: faction " + (pawn.Faction?.Name ?? "none") + ", downed " + pawn.Downed + ", awake " + RestUtility.Awake(pawn) +
+                      ", Artistic tag disabled " + pawn.WorkTagIsDisabled(WorkTags.Artistic) +
+                      ", Manipulation " + pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) +
+                      ", Hearing " + pawn.health.capacities.CapableOf(PawnCapacityDefOf.Hearing));
+            WorkTypeDef workType = giverDef.workType;
+            facts.Add("work type " + workType.defName + ": disabled " + pawn.WorkTypeIsDisabled(workType) + ", priority " +
+                      pawn.workSettings.GetPriority(workType) + ", manual priorities " + Find.PlaySettings.useWorkPriorities);
+
+            ThingDef spotDef = DefDatabase<ThingDef>.GetNamedSilentFail("MusicSpot");
+            List<Thing> spots = spotDef == null ? new List<Thing>() : map.listerThings.ThingsOfDef(spotDef).ToList();
+            foreach (Thing spot in spots)
+                facts.Add("spot at " + spot.Position + ": faction " + (spot.Faction?.Name ?? "none") + ", Active " + CompProperty(spot, "CompMusicSpot", "Active"));
+            if (spots.Count == 0) facts.Add("no MusicSpot on the map");
+
+            foreach (Thing t in map.listerThings.AllThings.Where(x => x is ThingWithComps twc && twc.AllComps.Any(c => c.GetType().Name == "CompMusicalInstrument")))
+                facts.Add("instrument " + t.LabelCap + " at " + t.Position + ": forbidden " + t.IsForbidden(pawn) +
+                          ", reachable " + pawn.CanReach(t, Verse.AI.PathEndMode.Touch, Danger.Deadly));
+
+            WorkGiver_Scanner scanner = giverDef.Worker as WorkGiver_Scanner;
+            bool any = false;
+            try
+            {
+                List<Thing> potential = scanner?.PotentialWorkThingsGlobal(pawn)?.ToList() ?? new List<Thing>();
+                facts.Add("PotentialWorkThingsGlobal: " + potential.Count + " thing(s)");
+                foreach (Thing t in potential)
+                {
+                    bool has = scanner.HasJobOnThing(pawn, t, false);
+                    any |= has;
+                    facts.Add("HasJobOnThing(" + t.LabelCap + " at " + t.Position + ") = " + has);
+                    if (!has) facts.AddRange(ProbeProviderChecks(pawn, t));
+                }
+            }
+            catch (Exception e) { facts.Add("the work giver threw: " + e.GetType().Name + ": " + e.Message); }
+
+            ctx.Attach("music work", string.Join("\n", facts));
+            ctx.Assert(any, "the music work is not on offer to '" + nickname + "': " + string.Join(" | ", facts));
+        }
+
         // --- helpers -------------------------------------------------------------------------------------
+
+        private static string CompProperty(Thing thing, string compTypeName, string property)
+        {
+            ThingWithComps twc = thing as ThingWithComps;
+            ThingComp comp = twc?.AllComps.FirstOrDefault(c => c.GetType().Name == compTypeName);
+            if (comp == null) return "(no " + compTypeName + ")";
+            object v = AccessTools.Property(comp.GetType(), property)?.GetValue(comp, null);
+            return v == null ? "(unreadable)" : v.ToString();
+        }
+
+        /// <summary>The provider's own conditions for the work, one by one, through reflection (its types are internal).</summary>
+        private static IEnumerable<string> ProbeProviderChecks(Pawn pawn, Thing spot)
+        {
+            var lines = new List<string>();
+            try
+            {
+                Type pmType = AccessTools.TypeByName("MusicalInstruments.PerformanceManager");
+                MapComponent pm = Find.CurrentMap.components.FirstOrDefault(c => c.GetType() == pmType);
+                if (pm == null) { lines.Add("  no PerformanceManager map component"); return lines; }
+                lines.Add("  CanPlayForWorkNow = " + AccessTools.Method(pmType, "CanPlayForWorkNow").Invoke(pm, new object[] { pawn }));
+                ThingComp spotComp = ((ThingWithComps)spot).AllComps.First(c => c.GetType().Name == "CompMusicSpot");
+                object[] sit = { spotComp, pawn, null };
+                lines.Add("  TryFindSitSpotOnGroundNear = " + AccessTools.Method(pmType, "TryFindSitSpotOnGroundNear").Invoke(pm, sit) + " (" + sit[2] + ")");
+                object[] find = { spot, pawn, null, true };
+                bool found = (bool)AccessTools.Method(pmType, "TryFindInstrumentToPlay").Invoke(pm, find);
+                lines.Add("  TryFindInstrumentToPlay(isWork) = " + found + " (" + find[2] + ")");
+            }
+            catch (Exception e) { lines.Add("  probing the provider failed: " + e.GetType().Name + ": " + e.Message); }
+            return lines;
+        }
 
         private static string ModRoot(PickleContext ctx)
         {
