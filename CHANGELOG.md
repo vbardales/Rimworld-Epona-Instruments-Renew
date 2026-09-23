@@ -18,4 +18,4 @@ What the upload contained: `Mod/` as at commit `41ad1d5`, and nothing else chang
   validated.
 
 Not part of the upload: the tests, the scenarios and the documentation of the repository (see TESTING.md and
-STATUS.md). The upload also generated `.dds` textures next to the PNGs; they are not tracked.
+STATUS.md). The upload also generated `.dds` textures next to the PNGs; they are ignored by git (`.gitignore`).

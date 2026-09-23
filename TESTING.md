@@ -66,7 +66,7 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Epon
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew -Language French
 ```
 
-Read `exitReason` in the report before any count, check that the scenarios played equal the 22 written, and check
+Keep the report **before the next run overwrites it**, by naming an evidence folder: add `-EvidenceDir EponaInstrumentsRenew/Tests/Pickle/Evidence/<run>` to the command (the launcher copies the report there under the lock, and with `-Then` one `seqN` per launch). `Tests/Pickle/Evidence/` is on disk and ignored by git; the versioned trace is a short text summary in `docs/runs/`. Read `exitReason` in the report before any count, check that the scenarios played equal the 22 written, and check
 the report's dates against the run's: the report folder is shared by the whole machine. After a change to
 `Tests/Pickle/Source/`, rebuild first (`dotnet build Tests/Pickle/Source/EponaInstrumentsRenew.PickleSteps.csproj -c Release`):
 the step assemblies are read when the game starts.
