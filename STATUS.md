@@ -395,7 +395,7 @@ was touched; Windows RimWorld was not running and was not started.
 
 Result: pass `sans-facultatifs`, `exitReason: passed`, exit 0, **4 scenarios played of 4 written**, 4 passed,
 0 failed, 0 skipped, 0 flaky (about 1.9 s of scenarios). Report copied to
-`Tests/Pickle/Evidence/2026-09-21-sans-facultatifs/` (junit.xml, messages.ndjson, summary.json, summary.md).
+`docs/runs/2026-09-21-pickle-first-suite.md` (raw report deleted 2026-09-23, superseded) (junit.xml, messages.ndjson, summary.json, summary.md).
 Report time 17:31:02 against a run that ended a few seconds earlier: not a stale report. `Player.log`
 was not kept: by the time it was read another session's run (Adaptive Storage) had already overwritten it.
 
@@ -415,7 +415,7 @@ Stage remains `done`; `done -> tested` still needs the manual scenarios (and the
 Same entry point with `-Language French` (language fixed at staging, not switched during the run; the
 script confirmed "French (Français), devMode on"). Queued behind 11 tickets. Pass `sans-facultatifs`,
 `exitReason: passed`, exit 0, **4 scenarios played of 4 written**, 4 passed, 0 failed. Report time 19:10:14
-against a check at 19:10:45: not stale. Copied to `Tests/Pickle/Evidence/2026-09-21-sans-facultatifs-french/`
+against a check at 19:10:45: not stale. Copied to `docs/runs/2026-09-21-pickle-first-suite.md` (raw report deleted 2026-09-23, superseded)
 (the set name in the report does not carry the language; the folder name does).
 
 Same limits as the English pass: the scenarios read defs and the log only, and no capture exists. It shows the
