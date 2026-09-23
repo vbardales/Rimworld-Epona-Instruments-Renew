@@ -76,3 +76,35 @@ the step assemblies are read when the game starts.
 Common Pickle steps live in the separate `PickleTools` repository (`PickleTools/README.md` at the workspace root),
 and the headless WSL guide in `PickleTools/Headless/README.md`. This suite stages no tool. `FilmTicks` (one picture
 every N game ticks) could replace the two waits of 1,800 ticks in `20-craft-and-film`; it is not needed today.
+
+## Evidence: what to keep
+
+Root rule (`AGENTS.md`, "Test evidence"): keep only the reports that still prove something. Evidence is **on disk,
+never in git** (`Tests/Pickle/Evidence/`, and `Results/` / `run*.txt` of the offline test folders, all in `.gitignore`);
+git keeps only the scripts and one text line per run in `docs/runs/`.
+
+**What a kept run folder holds** (start each Pickle run with `-EvidenceDir EponaInstrumentsRenew/Tests/Pickle/Evidence/<run>`
+so the launcher copies the report there under the lock, then trim it):
+- keep `summary.json` and `summary.md` (`exitReason`, counts, scenario names), and `junit.xml` (the failure messages);
+- keep the `@review` images a person has to read, shrunk (screenshots about 1280 px wide, films about 800 px wide, mp4):
+  `02-review-captures`, `05-text-screens` (one set per language), the `20-craft-and-film` films, and a failure capture;
+- delete `report.html`, `messages.ndjson`, and `Player.log` unless it explains a failure (then keep the few lines that do,
+  in the text line of `docs/runs/`, not the log).
+
+**What to keep over time, per scenario:**
+- the **latest** report for the revision now in the repository, in each language pass (English and French);
+- an older report **only** if it is the sole proof of a check the latest run did not repeat (today: none is from the
+  current revision, so the three folders of 2026-09-21 stay until the 22-scenario passes replace them; the offline
+  split test of `Tests/Reorganization-2026-09-13/` is the sole proof of the 555 ownership checks);
+- a report that proves nothing about the current build (superseded feature, failed attempt replaced by a passing one,
+  a pass whose scenarios are contained in a later one) is **deleted as soon as its replacement is read**.
+
+**Rules of the trade:**
+- one line per run in `docs/runs/` (date, pass and language, `exitReason`, played of written, what it showed and what it
+  did not), written **before** any folder is deleted;
+- never delete a folder a `STATUS.md` field still points to: repoint it to `docs/runs/` first;
+- a report is dated against its run before it is read (the report folder is shared by the whole machine), and
+  `exitReason` is read before any count;
+- what `done -> tested` needs on disk at the end: the English and the French report of the current revision (22 scenarios
+  played of 22 written, `exitReason: passed`), the `@review` images of both passes, and the two manual results (M1, M2)
+  written in `docs/runs/`.
