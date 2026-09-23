@@ -1,8 +1,6 @@
 # TEST_SCENARIOS.md scenario 6, the part that needs no old save: the three items, and a bill in progress at
 # the instrument bench, survive a save and a reload with no error. The pre-split case (a save made with the
-# former Joy Preservation collection) needs a save that only the maintainer has, and stays manual.
-# `@wip`: aim at it with `-IncludeWip -Filter '40-save-reload.feature'`.
-@wip
+# former Joy Preservation collection) is 50-old-collection-save.feature.
 Feature: the carried instruments across a save and a reload
 
   Scenario: three instruments on the ground

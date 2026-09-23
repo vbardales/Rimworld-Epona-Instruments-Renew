@@ -8,11 +8,10 @@
 # capture names one instrument (2026-09-21: the first English captures read "Steel uilleann pipes (normal)").
 # The three items are one cell apart and overlap, which is why each capture has its own centre.
 #
-# `@wip`: aim at it with `-IncludeWip -Filter '05-text-screens.feature'`. Developer mode is on in every Pickle
-# run, so a key missing from the active language shows as accented letters, letter by letter; a clean English
+# Developer mode is on in every Pickle run, so a key missing from the active language shows as accented letters, letter by letter; a clean English
 # word inside a French game is a text that never went through translation. Nothing here asserts that: a person
 # reads the images.
-@wip @review
+@review
 Feature: how the carried instruments are named on screen
 
   Background:

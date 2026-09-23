@@ -1,19 +1,15 @@
-# TEST_SCENARIOS.md scenarios 2 and 3, as a film: a colonist starts each instrument at the musical
-# instrument bench. `@wip`, so a default run skips it; aim at this file:
-#   -Filter '20-craft-and-film.feature' -IncludeWip
+# TEST_SCENARIOS.md scenarios 2 and 3: a colonist makes each instrument at the musical instrument bench, filmed,
+# and the finished item is captured.
 #
-# First attempt (2026-09-21) waited for the finished product with `I wait for bill`, which allows 120
-# real seconds. The film showed everything up to that point working - the bench built, the recipe on
-# offer once the research was finished, a colonist walking over and an "Unfinished steel accordion" on the
-# bench - and the accordion (65,000 work) simply is not made in 120 s. So this version stops where the
-# film is still telling something: a bill is added, the colonist works for a while, and the unfinished
-# item exists. The finished products are shown by 02-review-captures.feature instead.
+# The first two versions could not finish the craft: `I wait for bill` allows 120 real seconds and a 65,000-work
+# accordion does not fit; a 3,500-tick wait exceeds the five seconds a wait step is given. So the craft is
+# started for real (a bill, a colonist who walks over, fetches the ingredients and works until an unfinished item
+# exists), and then finished by the game's own "complete this unfinished item" flag
+# (UnfinishedThing.debugCompleted, what its developer gizmo sets), through the suite's step. The recipe code that
+# makes the product, its quality and its art then runs as it would for a player; only the waiting is skipped.
 #
-# A wait step is limited to 5 real seconds (about 2,000 ticks on this machine): a 3,500-tick wait timed
-# out on 2026-09-21, hence two waits of 1,800. The colonist was already at the bench when it did.
-#
-# What a film cannot show: sound. Playing and hearing the instruments stays manual (scenario 4).
-@wip @film @review
+# What a film cannot show: sound (30-play-and-listen.feature asserts that a sound is started).
+@film @review
 Feature: making the carried instruments
 
   Background:
@@ -31,26 +27,35 @@ Feature: making the carried instruments
     And I zoom all the way in
     And I move the camera to (148, 155)
 
-  Scenario: the accordion is started
+  Scenario: the accordion is made
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When I wait 1800 ticks
     And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
-    And I take a screenshot "accordion under construction"
+    When Epona Instruments Renew the unfinished item on the bench is completed
+    And I wait 300 ticks
+    Then a "JP_Accordion" exists
+    And I take a screenshot "accordion made at the bench"
 
-  Scenario: the uilleann pipes are started
+  Scenario: the uilleann pipes are made
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When I wait 1800 ticks
     And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
-    And I take a screenshot "uilleann pipes under construction"
+    When Epona Instruments Renew the unfinished item on the bench is completed
+    And I wait 300 ticks
+    Then a "JP_UilleannPipes" exists
+    And I take a screenshot "uilleann pipes made at the bench"
 
-  Scenario: the great highland bagpipes are started
+  Scenario: the great highland bagpipes are made
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When I wait 1800 ticks
     And I wait 1800 ticks
     Then a "UnfinishedSculpture" exists
-    And I take a screenshot "great highland bagpipes under construction"
+    When Epona Instruments Renew the unfinished item on the bench is completed
+    And I wait 300 ticks
+    Then a "JP_GreatHighlandBagpipes" exists
+    And I take a screenshot "great highland bagpipes made at the bench"
