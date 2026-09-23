@@ -3,8 +3,11 @@
 Not shipped. This is the one check that needs your ears: the three instruments must make a **sound** when a colonist
 plays them. It is run in your own Windows RimWorld; no session ever starts that game.
 
-The headless run already asserts that the game *starts* the sound (the provider holds a live sound for the performer,
-`30-play-and-listen.feature`). What it cannot say is that a loudspeaker then renders it, which is what you check here.
+The headless run is written to assert that the game *starts* the sound (the provider holds a live sound for the performer,
+`30-play-and-listen.feature`); **it has not run in that state yet**, and without an audio device the game may not create
+the sound at all, in which case those scenarios would fail for that reason (the failure message says whether the
+performer is in the provider's notebook but has no sound). What it cannot say in any case is that a loudspeaker
+renders it, which is what you check here.
 
 ## What it does
 

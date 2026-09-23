@@ -1,7 +1,8 @@
 # TEST_SCENARIOS.md scenarios 4 and 5: a colonist plays each instrument, and the game starts its sound.
 #
 # Two ways to run it, the same file:
-#   - headless (Run-PickleWsl.ps1), with no loudspeaker: the suite's step reads the provider's live Sustainer for the
+#   - headless (Run-PickleWsl.ps1), with no loudspeaker (written 2026-09-23, not yet played: without an audio device the
+#     game may not create the sound at all, and the failure message then says so): the suite's step reads the provider's live Sustainer for the
 #     performer. That sustainer is started from CompTick, which only ticks for `tickerType Normal` - the correction
 #     of 2026-09-21 - so "heard playing" here means "the game started the sound of this instrument", and its absence
 #     is exactly the regression. It does not say that a loudspeaker then renders it;

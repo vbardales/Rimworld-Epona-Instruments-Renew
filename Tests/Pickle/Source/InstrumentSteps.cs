@@ -87,14 +87,19 @@ namespace EponaInstrumentsRenew.PickleSteps
 
         // --- sound ---------------------------------------------------------------------------------------
 
-        [Then("Epona Instruments Renew {string} is heard playing {string}", TimeoutSeconds = 30f)]
+        [Then("Epona Instruments Renew {string} is heard playing {string}", TimeoutSeconds = 90f)]
         public async Task IsHeardPlaying(PickleContext ctx, string nickname, string soundDefName)
         {
             Pawn pawn = FindPawn(ctx, nickname);
-            await ctx.AssertEventually(
-                () => { Sustainer s = SustainerOf(pawn); return s != null && !s.Ended && s.def != null && s.def.defName == soundDefName; },
-                () => Describe(pawn, soundDefName),
-                25f);
+            // The sustainer is spawned from CompTick, so ticks must pass: they are driven here, 20 at a time, up to
+            // 2,000 ticks (the colonist may still be walking to the instrument), instead of trusting the ambient game speed.
+            for (int i = 0; i < 100; i++)
+            {
+                Sustainer s = SustainerOf(pawn);
+                if (s != null && !s.Ended && s.def != null && s.def.defName == soundDefName) return;
+                await ctx.WaitTicks(20);
+            }
+            ctx.Assert(false, Describe(pawn, soundDefName));
         }
 
         [Then("Epona Instruments Renew {string} is not heard playing")]
@@ -137,8 +142,11 @@ namespace EponaInstrumentsRenew.PickleSteps
         public void CompleteUnfinished(PickleContext ctx)
         {
             ctx.Require(Find.CurrentMap != null, "no map is loaded");
-            List<UnfinishedThing> found = Find.CurrentMap.listerThings.AllThings.OfType<UnfinishedThing>().ToList();
-            ctx.Require(found.Count > 0, "no unfinished item exists on the map: has a colonist started the bill yet?");
+            // Only the items of this mod's recipes: a fixture or another bill may hold unfinished things of its own.
+            List<UnfinishedThing> found = Find.CurrentMap.listerThings.AllThings.OfType<UnfinishedThing>()
+                .Where(u => u.Recipe?.products != null && u.Recipe.products.Any(p => DefNames.Contains(p.thingDef.defName)))
+                .ToList();
+            ctx.Require(found.Count > 0, "no unfinished instrument of this mod exists on the map: has a colonist started the bill yet?");
             foreach (UnfinishedThing u in found) u.debugCompleted = true;
             ctx.Attach("completed", string.Join(", ", found.Select(u => u.LabelCap.ToString())));
         }
