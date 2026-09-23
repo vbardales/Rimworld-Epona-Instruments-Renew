@@ -3,7 +3,7 @@
 Every row is a pass `sans-facultatifs` (Core, DLCs, Harmony, RimLogging, Pickle, Musical Instruments (Continued), the
 mod and its companion; 12 mods staged; developer mode on), run through `scripts/Run-PickleWsl.ps1` under the machine
 lock. Raw reports: `Tests/Pickle/Evidence/<folder>/` (local only, ignored by git). **Pruned 2026-09-23**: only the three
-most informative folders were kept (marked *kept* below); the others were deleted as superseded, their verdicts stay in
+most informative folders were kept (marked *kept* below, shrunk to 812 KB: films 800 px wide, screenshots 1280 px, no `messages.ndjson`); the others were deleted as superseded, their verdicts stay in
 this table (the files were tracked until 2026-09-23, so earlier commits still hold them).
 
 | Folder | Language | `exitReason` | Played of written | Scenarios | Raw report |
