@@ -28,3 +28,12 @@ Not shown: any audible sound; the corrected notebook check; the unticked scenari
 - **Waiting:** a wait step is capped at 5 real seconds and the machine does 150 to 700 ticks a second, so long waits now use the
   suite's own `Epona Instruments Renew N ticks pass` step (150 s allowed), in the crafting, listening and save/reload features.
   Not yet replayed.
+
+## French pass of 09:29 (ticket 51264), stopped at 14 of 22
+
+`exitReason` was not written: the game froze at 09:37 and the launcher's stall watchdog ended it (exit 3). 13 scenarios passed (features 01, 02, 05,
+10, 15) and `the accordion is made` failed: `3600 ticks pass` overran its 150 seconds, the machine doing under 24 ticks a second while the
+film is recorded. The freeze came right after that failure (Player.log stops at 09:37:09, dashboard requests failing); not reproduced yet.
+Kept: summary, junit, Player.log in `Tests/Pickle/Evidence/2026-09-24-french-full2/` (local, ignored).
+Fix: the three craft scenarios now wait with `an unfinished instrument appears on the bench` (ends as soon as the item exists, 8,000 ticks or 300 s at most).
+Queued: an audio trial (listening feature, the WSLg sink recorded by ffmpeg), then a full French and a full English pass on the new step.

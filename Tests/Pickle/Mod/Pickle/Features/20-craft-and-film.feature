@@ -30,7 +30,7 @@ Feature: making the carried instruments
   Scenario: the accordion is made
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When Epona Instruments Renew 3600 ticks pass
+    When Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -40,7 +40,7 @@ Feature: making the carried instruments
   Scenario: the uilleann pipes are made
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When Epona Instruments Renew 3600 ticks pass
+    When Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -50,7 +50,7 @@ Feature: making the carried instruments
   Scenario: the great highland bagpipes are made
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When Epona Instruments Renew 3600 ticks pass
+    When Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
