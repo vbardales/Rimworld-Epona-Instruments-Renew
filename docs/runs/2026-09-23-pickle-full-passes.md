@@ -1,8 +1,7 @@
 # 2026-09-23 - the reworked suite, first full passes (22 scenarios each)
 
 Suite as at commit `9fcf3b9` (8 features, 22 scenarios, six own steps), passes `sans-facultatifs`, 12 mods staged,
-developer mode on, through `scripts/Run-PickleWsl.ps1`. Raw reports kept: `Tests/Pickle/Evidence/2026-09-23-english-full/` and
-`.../2026-09-23-french-full/` (summary, junit, shrunk review images; local, ignored by git).
+developer mode on, through `scripts/Run-PickleWsl.ps1`. Raw reports **deleted 2026-09-24** (superseded by the passes of that day, see `2026-09-24-pickle-joy-route.md`).
 
 | Pass | `exitReason` | Played of written | Passed | Failed |
 |---|---|---|---|---|

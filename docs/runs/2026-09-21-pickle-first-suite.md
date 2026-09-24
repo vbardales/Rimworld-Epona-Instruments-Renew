@@ -3,18 +3,18 @@
 Every row is a pass `sans-facultatifs` (Core, DLCs, Harmony, RimLogging, Pickle, Musical Instruments (Continued), the
 mod and its companion; 12 mods staged; developer mode on), run through `scripts/Run-PickleWsl.ps1` under the machine
 lock. Raw reports: `Tests/Pickle/Evidence/<folder>/` (local only, ignored by git). **Pruned 2026-09-23**: only the three
-most informative folders were kept (marked *kept* below, shrunk to 812 KB: films 800 px wide, screenshots 1280 px, no `messages.ndjson`); the others were deleted as superseded, their verdicts stay in
+most informative folders were kept (marked deleted 2026-09-24 (superseded) below, shrunk to 812 KB: films 800 px wide, screenshots 1280 px, no `messages.ndjson`); the others were deleted as superseded, their verdicts stay in
 this table (the files were tracked until 2026-09-23, so earlier commits still hold them).
 
 | Folder | Language | `exitReason` | Played of written | Scenarios | Raw report |
 |---|---|---|---|---|---|
 | `2026-09-21-sans-facultatifs` | English | `passed` | 4 of 4, 4 passed | loads after the provider and says nothing; the three defs exist; `tickerType Normal`; `techLevel` and `category` | deleted (superseded) |
 | `2026-09-21-sans-facultatifs-french` | French | `passed` | 4 of 4, 4 passed | the same four | deleted (superseded) |
-| `2026-09-21-captures-english` | English | `passed` | 10 of 10, 10 passed | the four above; three review captures; three loaded English texts (features `01`, `02`, `10`) | *kept* |
-| `2026-09-21-texts-french` | French | `passed` | 3 of 3, 3 passed | the loaded French label and description of each item | *kept* |
+| `2026-09-21-captures-english` | English | `passed` | 10 of 10, 10 passed | the four above; three review captures; three loaded English texts (features `01`, `02`, `10`) | deleted 2026-09-24 (superseded) |
+| `2026-09-21-texts-french` | French | `passed` | 3 of 3, 3 passed | the loaded French label and description of each item | deleted 2026-09-24 (superseded) |
 | `2026-09-21-craft-film-stalled` | English | `watchdog-timeout` | 0 written | first crafting film: `I wait for bill` allows 120 real seconds, the 65,000-work accordion did not fit; the run was killed and wrote no scenario | deleted (superseded) |
 | `2026-09-21-craft-film-wait-timeout` | English | `failed` | 3 of 3, 0 passed | `I wait 3500 ticks` timed out after 5 s (about 2,000 ticks fit in a wait step here) | deleted (superseded) |
-| `2026-09-21-craft-film` | English | `passed` | 3 of 3, 3 passed | a colonist starts each bill at the bench; the unfinished item exists; one mp4 per instrument | *kept* |
+| `2026-09-21-craft-film` | English | `passed` | 3 of 3, 3 passed | a colonist starts each bill at the bench; the unfinished item exists; one mp4 per instrument | deleted 2026-09-24 (superseded) |
 
 ## What the images showed (read 2026-09-21, opened, not committed)
 

@@ -269,10 +269,20 @@ namespace EponaInstrumentsRenew.PickleSteps
             return notebook != null && notebook.Contains(pawn) ? notebook[pawn] : null;
         }
 
+        /// <summary>
+        /// The live sound of THIS pawn's performance. The provider's notebook is a static dictionary keyed by pawn and a
+        /// reloaded fixture gives the colonist the same id, so an entry left by an earlier scenario (with its sound, which the
+        /// unloaded scene never ended) can be found for the new colonist: found 2026-09-24, when the unticked scenario saw
+        /// the previous scenario's accordion sound although the checkbox was off. The entry only counts when it names
+        /// this very pawn object as its current player.
+        /// </summary>
         private static Sustainer SustainerOf(Pawn pawn)
         {
             object comp = CompOf(pawn);
-            return comp == null ? null : AccessTools.Field(comp.GetType(), "soundPlaying")?.GetValue(comp) as Sustainer;
+            if (comp == null) return null;
+            FieldInfo current = AccessTools.Field(comp.GetType(), "currentPlayer");
+            if (current != null && !ReferenceEquals(current.GetValue(comp), pawn)) return null;
+            return AccessTools.Field(comp.GetType(), "soundPlaying")?.GetValue(comp) as Sustainer;
         }
 
         private static string Describe(Pawn pawn, string wanted)
@@ -280,6 +290,9 @@ namespace EponaInstrumentsRenew.PickleSteps
             object comp = CompOf(pawn);
             string job = pawn.CurJobDef?.defName ?? "none";
             if (comp == null) return "wanted " + wanted + "; the pawn has no entry in the provider's performance notebook (job: " + job + ")";
+            FieldInfo current = AccessTools.Field(comp.GetType(), "currentPlayer");
+            if (current != null && !ReferenceEquals(current.GetValue(comp), pawn))
+                return "wanted " + wanted + "; the notebook entry belongs to another pawn object (left by an earlier scenario), job: " + job;
             Sustainer s = SustainerOf(pawn);
             return "wanted " + wanted + "; the pawn is in the notebook (job: " + job + ") but the sustainer is " + (s == null ? "null" : (s.Ended ? "ended" : "live, " + s.def?.defName));
         }
