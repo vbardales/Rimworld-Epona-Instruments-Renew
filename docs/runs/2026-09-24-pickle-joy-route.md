@@ -37,3 +37,13 @@ film is recorded. The freeze came right after that failure (Player.log stops at 
 Kept: summary, junit, Player.log in `Tests/Pickle/Evidence/2026-09-24-french-full2/` (local, ignored).
 Fix: the three craft scenarios now wait with `an unfinished instrument appears on the bench` (ends as soon as the item exists, 8,000 ticks or 300 s at most).
 Queued: an audio trial (listening feature, the WSLg sink recorded by ffmpeg), then a full French and a full English pass on the new step.
+
+## English pass of 14:09 (ticket 46100), stopped at 13 of 22
+
+`exitReason: watchdog-timeout`, exit 2. 13 scenarios passed (features 01, 02, 05, 10, 15); the game was then ended during `the accordion is made`:
+`pickle: watchdog tripped after 120s in scenario 'the accordion is made', last step: 'an unfinished instrument appears on the bench'`.
+Pickle's watchdog ends the run when one step lasts about 120 real seconds, whatever `TimeoutSeconds` the step declares (the same as the
+2026-09-21 `I wait for bill` case). The machine did under 25 ticks a second in that scenario. The freeze of the French pass at 09:37 (above) is the
+same case. Fix: the wait step never lasts more than 90 real seconds, and each craft scenario writes it three times.
+Kept: summary, junit, Player.log in `Tests/Pickle/Evidence/2026-09-24-english-full3/` (local, ignored).
+The first audio trial (13:38, ticket 34712) never reached a scenario: the game did not finish starting (no log line for 5 minutes, ended by the launcher); it says nothing about sound.

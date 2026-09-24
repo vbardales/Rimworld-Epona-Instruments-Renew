@@ -8,6 +8,10 @@
 # (UnfinishedThing.debugCompleted, what its developer gizmo sets), through the suite's step. The recipe code that
 # makes the product, its quality and its art then runs as it would for a player; only the waiting is skipped.
 #
+# Pickle's watchdog ends the whole run when one step lasts about 120 real seconds (2026-09-24), and the machine can do
+# under 25 ticks a second while the film is recorded: the wait for the unfinished item is a step that never lasts more than
+# 90 seconds, written three times (a repeat returns at once once the item exists); the assertion after it is the verdict.
+#
 # What a film cannot show: sound (30-play-and-listen.feature asserts that a sound is started).
 @film @review
 Feature: making the carried instruments
@@ -31,6 +35,8 @@ Feature: making the carried instruments
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -41,6 +47,8 @@ Feature: making the carried instruments
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -51,6 +59,8 @@ Feature: making the carried instruments
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
+    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass

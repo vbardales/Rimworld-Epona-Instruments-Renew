@@ -161,21 +161,27 @@ namespace EponaInstrumentsRenew.PickleSteps
         /// <summary>
         /// Waits, in game ticks, until a colonist has started the bill: an unfinished item of this mod's recipes exists. A fixed
         /// number of ticks does not do: the machine did fewer than 24 ticks a second in the French pass of 2026-09-24 (the film
-        /// is being recorded), and 3,600 ticks then overran the step's 150 seconds. The wait ends as soon as the item exists, and
-        /// gives up after 8,000 ticks or 300 real seconds, whichever comes first.
+        /// is being recorded), and 3,600 ticks then overran the step's 150 seconds. Pickle's own watchdog also ends the whole run
+        /// when one step lasts about 120 real seconds, whatever TimeoutSeconds says (2026-09-24, English pass: exitReason
+        /// watchdog-timeout, exit 2), so one call never lasts more than 90 real seconds: it ends as soon as the item exists, or
+        /// after 90 seconds, and says which. The feature repeats the step (a repeat returns at once once the item exists) and
+        /// the assertion that follows says whether the item is there.
         /// </summary>
-        [When("Epona Instruments Renew an unfinished instrument appears on the bench", TimeoutSeconds = 300f)]
+        [When("Epona Instruments Renew an unfinished instrument appears on the bench", TimeoutSeconds = 110f)]
         public async Task UnfinishedAppears(PickleContext ctx)
         {
             ctx.Require(Find.CurrentMap != null, "no map is loaded");
-            for (int waited = 0; waited < 8000; waited += 100)
+            System.Diagnostics.Stopwatch clock = System.Diagnostics.Stopwatch.StartNew();
+            int waited = 0;
+            while (clock.Elapsed.TotalSeconds < 90 && waited < 8000)
             {
                 bool found = Find.CurrentMap.listerThings.AllThings.OfType<UnfinishedThing>()
                     .Any(u => u.Recipe?.products != null && u.Recipe.products.Any(p => DefNames.Contains(p.thingDef.defName)));
-                if (found) { ctx.Attach("unfinished appeared after", waited + " ticks"); return; }
-                await ctx.WaitTicks(100);
+                if (found) { ctx.Attach("unfinished item", "there after " + waited + " ticks of this step"); return; }
+                await ctx.WaitTicks(50);
+                waited += 50;
             }
-            ctx.Assert(false, "no unfinished instrument of this mod appeared within 8000 ticks: did the colonist take the bill?");
+            ctx.Attach("unfinished item", "not there yet after " + waited + " ticks in " + (int)clock.Elapsed.TotalSeconds + " s");
         }
 
         // --- research ------------------------------------------------------------------------------------
