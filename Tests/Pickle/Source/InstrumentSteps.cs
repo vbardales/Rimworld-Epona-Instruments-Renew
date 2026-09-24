@@ -205,16 +205,24 @@ namespace EponaInstrumentsRenew.PickleSteps
         /// depending on the scene (the first crafting scenario of a run, with three colonists hauling 400 items, did 155 ticks a
         /// second on 2026-09-24 and timed out a 900-tick wait), so a wait is expressed in ticks and given the time it needs.
         /// </summary>
-        [When("Epona Instruments Renew {int} ticks pass", TimeoutSeconds = 150f)]
+        /// <remarks>
+        /// Pickle's watchdog ends the whole run when one step lasts about 120 real seconds, whatever TimeoutSeconds says
+        /// (2026-09-24: the accordion listening scenario, 1800 ticks, exitReason watchdog-timeout). So the wait stops after 90 real
+        /// seconds even if the ticks are not all done, and the step says how many did pass; what follows a wait here (a job still
+        /// running, a sound still live) does not depend on the exact count.
+        /// </remarks>
+        [When("Epona Instruments Renew {int} ticks pass", TimeoutSeconds = 110f)]
         public async Task TicksPass(PickleContext ctx, int ticks)
         {
-            int left = ticks;
-            while (left > 0)
+            System.Diagnostics.Stopwatch clock = System.Diagnostics.Stopwatch.StartNew();
+            int done = 0;
+            while (done < ticks && clock.Elapsed.TotalSeconds < 90)
             {
-                int n = Math.Min(left, 300);
+                int n = Math.Min(ticks - done, 100);
                 await ctx.WaitTicks(n);
-                left -= n;
+                done += n;
             }
+            ctx.Attach("ticks passed", done + " of " + ticks + " in " + (int)clock.Elapsed.TotalSeconds + " s");
         }
 
         // --- performance scene ---------------------------------------------------------------------------

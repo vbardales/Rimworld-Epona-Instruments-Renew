@@ -47,3 +47,10 @@ Pickle's watchdog ends the run when one step lasts about 120 real seconds, whate
 same case. Fix: the wait step never lasts more than 90 real seconds, and each craft scenario writes it three times.
 Kept: summary, junit, Player.log in `Tests/Pickle/Evidence/2026-09-24-english-full3/` (local, ignored).
 The first audio trial (13:38, ticket 34712) never reached a scenario: the game did not finish starting (no log line for 5 minutes, ended by the launcher); it says nothing about sound.
+
+## Two small tickets of 16:43 (direct launchers 12944 and 28416), neither played a scenario
+
+- `-Filter 'making the carried instruments'` (a feature title) matched no scenario: `infrastructure-error`, exit 2. A feature is selected by its file name (`20-craft-and-film.feature`), a scenario by `'::<name>'`.
+- `-Filter '::the accordion is played, and heard'` started the scenario and reached `1800 ticks pass`, where Pickle's watchdog (about 120 real seconds a step) ended the game:
+  `exitReason: watchdog-timeout`, 0 scenarios written. The same limit as the craft wait: the tick wait now stops after 90 real seconds and says how many ticks passed.
+  Nothing was measured on sound: the sink recorder had lost its state (WSL restarts clear `/tmp`).
