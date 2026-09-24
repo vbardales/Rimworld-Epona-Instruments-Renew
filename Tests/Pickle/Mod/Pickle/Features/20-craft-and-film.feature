@@ -30,38 +30,29 @@ Feature: making the carried instruments
   Scenario: the accordion is made
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
+    When Epona Instruments Renew 3600 ticks pass
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
-    And I wait 300 ticks
+    And Epona Instruments Renew 300 ticks pass
     Then a "JP_Accordion" exists
     And I take a screenshot "accordion made at the bench"
 
   Scenario: the uilleann pipes are made
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
+    When Epona Instruments Renew 3600 ticks pass
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
-    And I wait 300 ticks
+    And Epona Instruments Renew 300 ticks pass
     Then a "JP_UilleannPipes" exists
     And I take a screenshot "uilleann pipes made at the bench"
 
   Scenario: the great highland bagpipes are made
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
-    And I wait 900 ticks
+    When Epona Instruments Renew 3600 ticks pass
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
-    And I wait 300 ticks
+    And Epona Instruments Renew 300 ticks pass
     Then a "JP_GreatHighlandBagpipes" exists
     And I take a screenshot "great highland bagpipes made at the bench"

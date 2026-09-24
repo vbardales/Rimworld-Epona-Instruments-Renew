@@ -172,6 +172,25 @@ namespace EponaInstrumentsRenew.PickleSteps
                 " (research prerequisite: " + (recipe.researchPrerequisite?.defName ?? "none") + ", finished: " + (recipe.researchPrerequisite?.IsFinished.ToString() ?? "n/a") + ")");
         }
 
+        // --- waiting -------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Lets game ticks pass without Pickle's five-second cap on a wait step. The machine does 150 to 700 ticks per real second
+        /// depending on the scene (the first crafting scenario of a run, with three colonists hauling 400 items, did 155 ticks a
+        /// second on 2026-09-24 and timed out a 900-tick wait), so a wait is expressed in ticks and given the time it needs.
+        /// </summary>
+        [When("Epona Instruments Renew {int} ticks pass", TimeoutSeconds = 150f)]
+        public async Task TicksPass(PickleContext ctx, int ticks)
+        {
+            int left = ticks;
+            while (left > 0)
+            {
+                int n = Math.Min(left, 300);
+                await ctx.WaitTicks(n);
+                left -= n;
+            }
+        }
+
         // --- performance scene ---------------------------------------------------------------------------
 
         /// <summary>

@@ -33,9 +33,7 @@ Feature: hear the carried instruments played
     And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the bagpipes are being played"
-    When I wait 600 ticks
-    And I wait 600 ticks
-    And I wait 600 ticks
+    When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
 
@@ -45,9 +43,7 @@ Feature: hear the carried instruments played
     And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
     And I take a screenshot "the uilleann pipes are being played"
-    When I wait 600 ticks
-    And I wait 600 ticks
-    And I wait 600 ticks
+    When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
 
@@ -57,9 +53,7 @@ Feature: hear the carried instruments played
     And I wait for "Jet" to have job "MusicPlayJoy"
     Then Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
     And I take a screenshot "the accordion is being played"
-    When I wait 600 ticks
-    And I wait 600 ticks
-    And I wait 600 ticks
+    When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
 
@@ -68,6 +62,6 @@ Feature: hear the carried instruments played
     When I spawn a "JP_Accordion" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    And I wait 600 ticks
+    And Epona Instruments Renew 600 ticks pass
     Then "Jet" has job "MusicPlayJoy"
     And Epona Instruments Renew "Jet" is not heard playing
