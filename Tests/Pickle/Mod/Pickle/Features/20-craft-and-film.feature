@@ -30,8 +30,10 @@ Feature: making the carried instruments
   Scenario: the accordion is made
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 1800 ticks
-    And I wait 1800 ticks
+    When I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And I wait 300 ticks
@@ -41,8 +43,10 @@ Feature: making the carried instruments
   Scenario: the uilleann pipes are made
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 1800 ticks
-    And I wait 1800 ticks
+    When I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And I wait 300 ticks
@@ -52,8 +56,10 @@ Feature: making the carried instruments
   Scenario: the great highland bagpipes are made
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
-    When I wait 1800 ticks
-    And I wait 1800 ticks
+    When I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And I wait 300 ticks

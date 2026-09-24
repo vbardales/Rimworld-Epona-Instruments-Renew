@@ -35,6 +35,7 @@ namespace EponaInstrumentsRenew.PickleSteps
         private const string PackageId = "nelim.eponainstrumentsrenew";
         private static readonly string[] DefNames = { "JP_GreatHighlandBagpipes", "JP_UilleannPipes", "JP_Accordion" };
         private static bool? settingBefore;
+        private static bool? settingWanted;
 
         // --- texts ---------------------------------------------------------------------------------------
 
@@ -122,7 +123,9 @@ namespace EponaInstrumentsRenew.PickleSteps
             FieldInfo f = AccessTools.Field(settings.GetType(), "PlayMusic");
             ctx.Require(f != null, "the provider's settings class no longer has a PlayMusic field");
             if (settingBefore == null) settingBefore = (bool)f.GetValue(settings);
-            f.SetValue(settings, state == "on");
+            settingWanted = state == "on";
+            f.SetValue(settings, settingWanted.Value);
+            ctx.Attach("provider checkbox", "set to " + settingWanted + ", reads " + f.GetValue(settings) + " (settings object " + settings.GetHashCode() + ")");
         }
 
         /// <summary>The provider's checkbox is a game-wide setting: put it back, whatever the scenario did.</summary>
@@ -137,7 +140,7 @@ namespace EponaInstrumentsRenew.PickleSteps
                 object settings = instance == null ? null : AccessTools.Property(mod, "Settings")?.GetValue(instance, null);
                 if (settings != null) AccessTools.Field(settings.GetType(), "PlayMusic")?.SetValue(settings, settingBefore.Value);
             }
-            finally { settingBefore = null; }
+            finally { settingBefore = null; settingWanted = null; }
         }
 
         // --- crafting ------------------------------------------------------------------------------------
@@ -190,6 +193,13 @@ namespace EponaInstrumentsRenew.PickleSteps
             for (int i = 0; i < 20 && job == null; i++) job = giverDef.Worker.TryGiveJob(pawn);
             string facts = SceneFacts(pawn);
             ctx.Attach("scene", facts);
+            if (settingWanted != null)
+            {
+                object settings = ProviderSettings(ctx);
+                FieldInfo f = AccessTools.Field(settings.GetType(), "PlayMusic");
+                ctx.Attach("provider checkbox at the start", "wanted " + settingWanted + ", reads " + f.GetValue(settings) + " (settings object " + settings.GetHashCode() + ")");
+                f.SetValue(settings, settingWanted.Value);
+            }
             ctx.Assert(job != null, "the provider's music joy gives no job to '" + nickname + "' after 20 tries: " + facts);
             pawn.jobs.StartJob(job, Verse.AI.JobCondition.InterruptForced);
         }

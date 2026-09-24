@@ -28,10 +28,13 @@ Feature: the carried instruments across a save and a reload
     And 100 "Steel" is spawned at the stockpile
     And 100 "Cloth" is spawned at the stockpile
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
-    # Two waits of 1,800 ticks (a wait step is capped at 5 real seconds): the colonist walks over, fetches the
-    # ingredients and starts; 2026-09-21 films show the unfinished item between 2,400 and 3,200 ticks.
-    And I wait 1800 ticks
-    And I wait 1800 ticks
+    # Four waits of 900 ticks (a wait step is capped at 5 real seconds and the machine does 350 to 700 ticks per second: a wait of
+    # 1,800 ticks timed out on 2026-09-24): the colonist walks over, fetches the ingredients and starts; the 2026-09-21 films show
+    # the unfinished item between 2,400 and 3,200 ticks.
+    And I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
+    And I wait 900 ticks
     Then a "UnfinishedSculpture" exists
     When I save and reload
     Then the "TableMusicalInstruments" has 1 bills
