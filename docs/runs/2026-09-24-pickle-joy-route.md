@@ -81,3 +81,12 @@ Two statements above are wrong and are superseded by this one:
 The correct request for the craft feature: `-Filter '20-craft-and-film.feature' -Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'` (TESTING.md).
 The 17c3 failure itself (`Accessing map pawns off main thread` in the step `a colonist "Keeper" exists`, 82 ms, 17 s into the run) is Pickle's own thread check, the
 same message as the run of 2026-09-22; not explained, to be replayed once.
+
+## 2026-09-25, request b94c (`-Filter '::the accordion is made' -Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'`, tree 99be666)
+
+`exitReason: passed`, 1 of 1 played and passed, 161 s (over the 120 s default: it would have been killed without the flag, which confirms the correction above).
+The unfinished item appeared after 2,850 ticks of the wait step, was completed through the game's own flag, 300 ticks passed in 14 s, the accordion exists,
+the capture was taken. `@review` capture opened: the bench ("Wooden musical instrument bench" in the hover label) with the finished red accordion on the ground just below it.
+Film kept (139 KB, webm, first 20 s). Kept in `Evidence/2026-09-25-craft-check/`: summary, junit, the capture as a 1280 px JPEG, the film. The 2 GB launcher archive and four
+stalled-run logs of this mod in `pickle-reports-archive` were deleted after this copy was checked. Superseded partial evidence deleted (`2026-09-24-english-full2`, `2026-09-24-french-full`).
+Not shown: the pipes' crafts (same code path), sound, a French pass of this feature. Final passes requested: English f817, French f7c1.
