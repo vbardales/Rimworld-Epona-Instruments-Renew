@@ -28,7 +28,7 @@ The language is chosen at launch, never switched during a test: every scenario i
 | 4b | The sound is **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): a loudspeaker is not part of a headless run | to do |
 | 5 | The provider's sound checkbox | Pickle `30-play-and-listen`, last scenario (unticked: no sound); ticked is scenarios 4 | see STATUS.md |
 | 6 | Save and reload | Pickle `40-save-reload` (three items; a bill in progress at the bench; the save round trips with no error) | see STATUS.md |
-| 6b | A save made with the former Joy Preservation collection | Pickle pass `pre-split` (`Tests/Pickle/PreSplit`, two launches: `50-pre-split-write` then `51-pre-split-read`); replaces `MANUAL M2` (2026-09-25, at the maintainer's suggestion: the old and the current definitions differ only by `tickerType Normal`, which is not saved data) | requested, see STATUS.md |
+| 6b | A save made with the former Joy Preservation collection | Pickle pass `pre-split` (`Tests/Pickle/PreSplit`, two launches: `50-pre-split-write` then `51-pre-split-read`); replaces `MANUAL M2` (2026-09-25, at the maintainer's suggestion: the old and the current definitions differ only by `tickerType Normal`, which is not saved data) | passed 2026-09-25 (request 20e6, two launches, both green), see STATUS.md |
 | 7 | Without the provider | **Not applicable in game**, see below; the guard is asserted offline | n/a |
 | 8 | English and French | Pickle `10-texts-in-this-language` (the loaded label and description equal what the mod wrote for the language of the pass) and `05-text-screens` (names on screen, `@review`), both played in both languages | see STATUS.md |
 
