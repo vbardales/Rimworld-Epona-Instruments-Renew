@@ -64,3 +64,20 @@ The first audio trial (13:38, ticket 34712) never reached a scenario: the game d
   `'the accordion is made' passed 60s, so its film stops there`. Same picture as the French pass of 09:37 and the English pass of 14:16 (and the first craft film of 2026-09-21):
   four runs of four, the game freezes right after the 60-second film cap of this feature; the unfilmed listening feature never froze.
   Hypothesis under test: the film cap is the trigger. The craft feature is no longer `@film` (commit 10cf359); one scenario is requested (17c3).
+
+## Correction, 2026-09-25 (after reading `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md` and `PickleTools/Authoring/README.md`, section 4)
+
+Two statements above are wrong and are superseded by this one:
+
+- **The watchdog counts a scenario, not a step.** Pickle's watchdog kills the whole run when one **scenario** has lasted
+  `-pickle-scenario-timeout` real seconds (120 by default; `@timeout:N` bounds one step, or a scenario's steps, and cannot stretch a scenario past it).
+  The launcher does not set it, so every suite runs under 120 s unless the request passes `-Extra '-pickle-scenario-timeout=N'`. "About 120 real seconds a
+  step" (14:09 and 16:43 paragraphs) should read "a scenario". The bounded steps (90 seconds, three repeats) were a workaround for a limit I had misread.
+- **The film cap is not the trigger.** Every freeze fell in `the accordion is made`, which lasts longer than 120 s on this machine (under 25 ticks a second while
+  loaded); the "passed 60s, so its film stops there" warning is simply what the log shows 60 s into a long scenario, 60 s before the watchdog. The one run without
+  film that "did not freeze" (17c3) failed at its fourth Background step, after 17 s, and never got near 120 s: it says nothing about the film. The film is back
+  (`@film`, with `-pickle-max-film-seconds=20` to keep the evidence small).
+
+The correct request for the craft feature: `-Filter '20-craft-and-film.feature' -Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'` (TESTING.md).
+The 17c3 failure itself (`Accessing map pawns off main thread` in the step `a colonist "Keeper" exists`, 82 ms, 17 s into the run) is Pickle's own thread check, the
+same message as the run of 2026-09-22; not explained, to be replayed once.

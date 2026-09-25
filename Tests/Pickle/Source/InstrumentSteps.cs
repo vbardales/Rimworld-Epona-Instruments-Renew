@@ -161,19 +161,19 @@ namespace EponaInstrumentsRenew.PickleSteps
         /// <summary>
         /// Waits, in game ticks, until a colonist has started the bill: an unfinished item of this mod's recipes exists. A fixed
         /// number of ticks does not do: the machine did fewer than 24 ticks a second in the French pass of 2026-09-24 (the film
-        /// is being recorded), and 3,600 ticks then overran the step's 150 seconds. Pickle's own watchdog also ends the whole run
-        /// when one step lasts about 120 real seconds, whatever TimeoutSeconds says (2026-09-24, English pass: exitReason
-        /// watchdog-timeout, exit 2), so one call never lasts more than 90 real seconds: it ends as soon as the item exists, or
-        /// after 90 seconds, and says which. The feature repeats the step (a repeat returns at once once the item exists) and
-        /// the assertion that follows says whether the item is there.
+        /// is being recorded), and 3,600 ticks then overran the step's 150 seconds. The step ends as soon as the item exists and
+        /// gives up after 230 real seconds or 8,000 ticks, saying which; the assertion that follows is the verdict. The limit that
+        /// really bounds it is Pickle's watchdog, which kills the run when one SCENARIO lasts `-pickle-scenario-timeout` seconds
+        /// (120 by default, and `@timeout:N` does not stretch it): the craft feature is requested with 300
+        /// (`-Extra '-pickle-scenario-timeout=300'`, see TESTING.md). A step's own TimeoutSeconds only bounds that step.
         /// </summary>
-        [When("Epona Instruments Renew an unfinished instrument appears on the bench", TimeoutSeconds = 110f)]
+        [When("Epona Instruments Renew an unfinished instrument appears on the bench", TimeoutSeconds = 250f)]
         public async Task UnfinishedAppears(PickleContext ctx)
         {
             ctx.Require(Find.CurrentMap != null, "no map is loaded");
             System.Diagnostics.Stopwatch clock = System.Diagnostics.Stopwatch.StartNew();
             int waited = 0;
-            while (clock.Elapsed.TotalSeconds < 90 && waited < 8000)
+            while (clock.Elapsed.TotalSeconds < 230 && waited < 8000)
             {
                 bool found = Find.CurrentMap.listerThings.AllThings.OfType<UnfinishedThing>()
                     .Any(u => u.Recipe?.products != null && u.Recipe.products.Any(p => DefNames.Contains(p.thingDef.defName)));
@@ -206,10 +206,11 @@ namespace EponaInstrumentsRenew.PickleSteps
         /// second on 2026-09-24 and timed out a 900-tick wait), so a wait is expressed in ticks and given the time it needs.
         /// </summary>
         /// <remarks>
-        /// Pickle's watchdog ends the whole run when one step lasts about 120 real seconds, whatever TimeoutSeconds says
-        /// (2026-09-24: the accordion listening scenario, 1800 ticks, exitReason watchdog-timeout). So the wait stops after 90 real
-        /// seconds even if the ticks are not all done, and the step says how many did pass; what follows a wait here (a job still
-        /// running, a sound still live) does not depend on the exact count.
+        /// Pickle's watchdog kills the whole run when one SCENARIO lasts `-pickle-scenario-timeout` real seconds (120 by default;
+        /// the accordion listening scenario, which waits 1800 ticks, took 112 s on 2026-09-25 and was one bad minute from it).
+        /// So this wait stops after 90 real seconds even if the ticks are not all done, and the step says how many did pass; what
+        /// follows a wait here (a job still running, a sound still live) does not depend on the exact count. The suite is
+        /// requested with `-Extra '-pickle-scenario-timeout=300'` for the scenarios that wait (TESTING.md).
         /// </remarks>
         [When("Epona Instruments Renew {int} ticks pass", TimeoutSeconds = 110f)]
         public async Task TicksPass(PickleContext ctx, int ticks)

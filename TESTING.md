@@ -43,8 +43,8 @@ translated interface checked in both languages. For this mod:
 
 | Pass | Command | Staged | Needed |
 | --- | --- | --- | --- |
-| **English, sans-facultatifs** | `Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew` | Core, DLCs, Harmony, RimLogging, Pickle, Musical Instruments (Continued), this mod | **yes** |
-| **French, sans-facultatifs** | `Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew -Language French` | the same, game in French | **yes**: the language is chosen at launch, never switched mid-run, so the same 22 scenarios are played a second time |
+| **English, sans-facultatifs** | a request, no `-DepMap`, no `-Filter` (see "Running the suite") | Core, DLCs, Harmony, RimLogging, Pickle, Musical Instruments (Continued), this mod | **yes** |
+| **French, sans-facultatifs** | the same request with `-Language French` | the same, game in French | **yes**: the language is chosen at launch, never switched mid-run, so the same 22 scenarios are played a second time |
 | avec facultatifs | - | - | **not applicable.** `About.xml` declares no optional mod: `loadAfter` names Core and the hard dependency only, the patch touches nothing else, and there is no `LoadFolders.xml` or conditional branch on another mod. A second pass would stage the same set |
 | per incompatibility | - | - | **none declared** (`incompatibleWith` is absent from `About.xml`, and neither README nor ATTRIBUTION claims a conflict) |
 
@@ -55,21 +55,36 @@ cannot run under Pickle (the staging always places the hard dependencies): the p
 
 ## Running the suite
 
-From the workspace root (`Documents/rimworld`), only through the one entry point, which queues, takes the machine
-lock, refuses when a game is running and releases the lock itself. Never start the Windows RimWorld, never a second
-instance, never close someone else's game. Waiting for the queue is done by a watcher, not by staying in front of it
-(`AUDIT.md`, "File synchrone, surveillance asynchrone").
+A session **files a request** and stays idle (`AUDIT.md`, "Déposer un run au lieu de le lancer"; `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md` for every option).
+It does not call `Run-PickleWsl.ps1`, arms no watcher or `Monitor`, and never starts the Windows RimWorld, a second
+instance, or closes someone else's game. A worker plays the requests one at a time under the machine lock; TicketDispatcher
+wakes the owner at `START`, `END` and `RUN_DONE`. One pass is one request; a fix or an exploration plays as few scenarios as
+possible (`-Filter '::<scenario>'` or a feature file), an initial or final pass plays all 22.
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File scripts/Pickle-Status.ps1
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod EponaInstrumentsRenew -Language French
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod EponaInstrumentsRenew `
+  -Owner local_<session id> -Label "<what is tested> <sha>" [-Language French] [-Filter '<feature file or ::scenario>'] `
+  -Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20' `
+  -EvidenceDir EponaInstrumentsRenew/Tests/Pickle/Evidence/<run>
+powershell.exe -ExecutionPolicy Bypass -File scripts/Pickle-Status.ps1     # read-only look at the machine
 ```
 
-Keep the report **before the next run overwrites it**, by naming an evidence folder: add `-EvidenceDir EponaInstrumentsRenew/Tests/Pickle/Evidence/<run>` to the command (the launcher copies the report there under the lock, and with `-Then` one `seqN` per launch). `Tests/Pickle/Evidence/` is on disk and ignored by git; the versioned trace is a short text summary in `docs/runs/`. Read `exitReason` in the report before any count, check that the scenarios played equal the 22 written, and check
-the report's dates against the run's: the report folder is shared by the whole machine. After a change to
-`Tests/Pickle/Source/`, rebuild first (`dotnet build Tests/Pickle/Source/EponaInstrumentsRenew.PickleSteps.csproj -c Release`):
-the step assemblies are read when the game starts.
+**Always pass `-Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'`.** Pickle's watchdog kills the whole run when one
+scenario lasts 120 real seconds (its default; `@timeout:N` does not stretch a scenario past it, and the launcher does not set it),
+and the craft and listening scenarios wait for game time on a machine that can do under 25 ticks a second: the craft scenario
+ended four runs out of four on 2026-09-24/25 (`exitReason: watchdog-timeout`, or the stall guard, exit 3, no report). The film
+limit keeps the `@film` evidence of the craft feature small. A request carries **no SHA**: the mod is staged when it is played, from
+the working tree of that instant, so leave `Mod/` and `Tests/Pickle/` untouched until `RUN_DONE` and write the commit in `-Label`.
+
+The report is copied into `-EvidenceDir` before the lock is released (with `-Then`, one `seqN` per launch). `Tests/Pickle/Evidence/`
+is on disk and ignored by git; the versioned trace is a short text summary in `docs/runs/`. Read `exitReason` in the report before
+any count, check that the scenarios played equal the 22 written (or the number your filter selects), and check the report's dates
+against the run's: the game logs in UTC, two hours behind the machine in summer, and the report folder is shared by the whole
+machine. After a change to `Tests/Pickle/Source/`, rebuild first (`dotnet build Tests/Pickle/Source/EponaInstrumentsRenew.PickleSteps.csproj -c Release`):
+the step assemblies are read when the game starts. Sound: the headless run asserts that the provider holds a live sound for the
+performer (`30-play-and-listen`, played and passed 2026-09-25 for the accordion); it says nothing about what a loudspeaker renders,
+which stays MANUAL M1 (`PLAY_AND_LISTEN.md`). `PickleTools/SoundCapture` records the game's audio output but is played by hand,
+on the Windows install, only on Virginie's request (`AUDIT.md`).
 
 ## Shared Pickle tools
 

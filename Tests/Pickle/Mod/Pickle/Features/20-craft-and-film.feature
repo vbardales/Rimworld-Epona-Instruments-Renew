@@ -8,15 +8,15 @@
 # (UnfinishedThing.debugCompleted, what its developer gizmo sets), through the suite's step. The recipe code that
 # makes the product, its quality and its art then runs as it would for a player; only the waiting is skipped.
 #
-# Pickle's watchdog ends the whole run when one step lasts about 120 real seconds (2026-09-24), and the machine can do
-# under 25 ticks a second while the film is recorded: the wait for the unfinished item is a step that never lasts more than
-# 90 seconds, written three times (a repeat returns at once once the item exists); the assertion after it is the verdict.
+# Time limits (Pickle's Docs/authoring.md as summarised in PickleTools/Authoring/README.md, section 4; and four runs of
+# 2026-09-24/25): Pickle's watchdog kills the WHOLE run when ONE SCENARIO lasts 120 real seconds
+# (`-pickle-scenario-timeout`, default 120; `@timeout:N` cannot stretch a scenario past it). A craft that waits for a colonist
+# to walk, fetch and start working lasts longer on this machine (under 25 ticks a second while it is loaded), so this feature
+# is requested with `-Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'` (TESTING.md). The wait for the
+# unfinished item ends as soon as it exists and gives up after 230 real seconds.
 #
 # What a film cannot show: sound (30-play-and-listen.feature asserts that a sound is started).
-# Not filmed (2026-09-25): a film stops at 60 seconds, and in four runs out of four the game froze just after Pickle's
-# "passed 60s, so its film stops there" warning of this feature (the log stops there, Pickle's watchdog or the launcher's stall
-# check then ends the game); the listening feature, which is not filmed, never froze. The captures below are kept.
-@review
+@film @review
 Feature: making the carried instruments
 
   Background:
@@ -38,8 +38,6 @@ Feature: making the carried instruments
     When I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -50,8 +48,6 @@ Feature: making the carried instruments
     When I add bill "Make_JP_UilleannPipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
@@ -62,8 +58,6 @@ Feature: making the carried instruments
     When I add bill "Make_JP_GreatHighlandBagpipes" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
-    And Epona Instruments Renew an unfinished instrument appears on the bench
     Then a "UnfinishedSculpture" exists
     When Epona Instruments Renew the unfinished item on the bench is completed
     And Epona Instruments Renew 300 ticks pass
