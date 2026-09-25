@@ -40,6 +40,10 @@ Reread a document when its version differs from the one written here, and after 
 | `PUBLICATION.md`, `BACKLOG.md`, `NOTES.md`, `BUGS.md` (this mod) | Do not exist. `PUBLICATION.md` is required before `prepublished` (`AUDIT.md`, step 10): missing, not yet due. The others were never needed. The monorepo's `BACKLOG.md` is not this mod's. |
 | `MOD_SETTINGS.md` | Not in the list of this pass; `settings_audit` is `not_applicable` and was justified on 2026-09-13 and 2026-09-21. |
 
+## Announced by another session, no action yet
+
+- **2026-09-25, CI/CD setup session** (Rimworld-Release-Admin `f196148`, `docs/OPERATIONS.md` "Changing where the Steam description comes from"; `PUBLISHING.md` at Rimworld-protocols `16f3c59`): the Workshop description moves to one source, a ```markdown block under `## Steam description` of `PUBLICATION.md`, from which the CI generates the `<description>` of `About.xml` and refuses a publish when they differ; a change note must open with the version (`[b]1.2.3[/b]`). Adopt it at this mod's first CI publication (it needs the `PUBLICATION.md` that does not exist yet) or when Virginie asks. Do not edit `.github/` by hand. Not yet read in full: to read at `tested -> prepublished`.
+
 ## Things seen while reading, to settle later (nothing here blocks `done`)
 
 - `README.md` and the `About.xml` description say "No Steam Workshop release has been made": stale since the `0.1.0` prepublication (item `3806766938`). The description is sent only at item creation, so editing `About.xml` will not change the page; the page text is corrected by hand at `prepublished`.
