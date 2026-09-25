@@ -54,3 +54,13 @@ The first audio trial (13:38, ticket 34712) never reached a scenario: the game d
 - `-Filter '::the accordion is played, and heard'` started the scenario and reached `1800 ticks pass`, where Pickle's watchdog (about 120 real seconds a step) ended the game:
   `exitReason: watchdog-timeout`, 0 scenarios written. The same limit as the craft wait: the tick wait now stops after 90 real seconds and says how many ticks passed.
   Nothing was measured on sound: the sink recorder had lost its state (WSL restarts clear `/tmp`).
+
+## 2026-09-25, from the dispatcher's RUN_DONE messages
+
+- **Sound trial** (request 68d4, `-Filter '::the accordion is played, and heard'`): `exitReason: passed`, 1 of 1, 112 s. The step that reads the provider's live
+  sound for the performer passed twice (right after the performance starts, and after the tick wait, which took 65 s for 1,800 ticks, under the 90-second bound), so
+  the headless game does start the accordion's sound. Not measured on the sink: the recorder's state in WSL `/tmp` was gone again (WSL restarts clear it). Kept: summary, junit, Player.log in `Evidence/2026-09-24-audio-trial2/`.
+- **Craft check** (request 235d, `-Filter '20-craft-and-film.feature'`): exit 3, no report. The game stopped writing at 00:44:31, seconds after
+  `'the accordion is made' passed 60s, so its film stops there`. Same picture as the French pass of 09:37 and the English pass of 14:16 (and the first craft film of 2026-09-21):
+  four runs of four, the game freezes right after the 60-second film cap of this feature; the unfilmed listening feature never froze.
+  Hypothesis under test: the film cap is the trigger. The craft feature is no longer `@film` (commit 10cf359); one scenario is requested (17c3).
