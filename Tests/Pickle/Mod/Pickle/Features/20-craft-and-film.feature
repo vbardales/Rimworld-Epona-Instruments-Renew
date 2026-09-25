@@ -13,7 +13,10 @@
 # 90 seconds, written three times (a repeat returns at once once the item exists); the assertion after it is the verdict.
 #
 # What a film cannot show: sound (30-play-and-listen.feature asserts that a sound is started).
-@film @review
+# Not filmed (2026-09-25): a film stops at 60 seconds, and in four runs out of four the game froze just after Pickle's
+# "passed 60s, so its film stops there" warning of this feature (the log stops there, Pickle's watchdog or the launcher's stall
+# check then ends the game); the listening feature, which is not filmed, never froze. The captures below are kept.
+@review
 Feature: making the carried instruments
 
   Background:
