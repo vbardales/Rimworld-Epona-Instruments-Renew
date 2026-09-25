@@ -28,7 +28,7 @@ The language is chosen at launch, never switched during a test: every scenario i
 | 4b | The sound is **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): a loudspeaker is not part of a headless run | to do |
 | 5 | The provider's sound checkbox | Pickle `30-play-and-listen`, last scenario (unticked: no sound); ticked is scenarios 4 | see STATUS.md |
 | 6 | Save and reload | Pickle `40-save-reload` (three items; a bill in progress at the bench; the save round trips with no error) | see STATUS.md |
-| 6b | A save made with the former Joy Preservation collection | `MANUAL M2` | to do |
+| 6b | A save made with the former Joy Preservation collection | Pickle pass `pre-split` (`Tests/Pickle/PreSplit`, two launches: `50-pre-split-write` then `51-pre-split-read`); replaces `MANUAL M2` (2026-09-25, at the maintainer's suggestion: the old and the current definitions differ only by `tickerType Normal`, which is not saved data) | requested, see STATUS.md |
 | 7 | Without the provider | **Not applicable in game**, see below; the guard is asserted offline | n/a |
 | 8 | English and French | Pickle `10-texts-in-this-language` (the loaded label and description equal what the mod wrote for the language of the pass) and `05-text-screens` (names on screen, `@review`), both played in both languages | see STATUS.md |
 
@@ -38,9 +38,15 @@ The language is chosen at launch, never switched during a test: every scenario i
 continuous tone while the colonist plays (ocarina-like for both pipes, organ-like for the accordion), and silence with
 the provider's checkbox unticked. Silence with the checkbox ticked is the failure to report, with the instrument's name.
 
-### MANUAL M2 - a real pre-split save
+### M2 - a real pre-split save: now automatic (pass `pre-split`)
 
-Only the maintainer has a save made while these items came from the former Joy Preservation collection.
+Since 2026-09-25 this is played by Pickle in two launches under one lock (`TESTING.md`, pass table): the first launch saves
+the three instruments in the states an old save holds (Legendary and Masterwork on the ground, an Excellent one carried, a
+bill for the accordion at the bench) and hands the save to a companion; the second launch, a fresh process, loads it and
+checks place, quality, the carried item and the bill, then a save and a reload. What it does not cover: a real old file from
+the maintainer's disk. The manual procedure below stays as the fallback for whoever has one and wants to load it.
+
+The manual version, kept for reference. Only the maintainer has a save made while these items came from the former Joy Preservation collection.
 - **Precondition:** a **copy** of such a save; this mod enabled and the old collection's Epona content absent (the
   reduced Joy Preservation and its split packages, per the README).
 - **Actions:** enable this mod **before** loading; load the copy; look at the items (on the ground, in inventories) and

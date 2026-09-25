@@ -1,0 +1,4 @@
+# The pass "pre-split": the second test companion, which holds the hand-over of a saved game between two launches
+# (Tests/Pickle/PreSplit). Staged only here, so the plain suite never sees it. It has no Workshop id: `path:` is relative
+# to the collection root and the folder's own About.xml carries this packageId.
+nelim.eponainstrumentsrenew.presplit path:EponaInstrumentsRenew/Tests/Pickle/PreSplit/Mod
