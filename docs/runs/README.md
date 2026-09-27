@@ -12,6 +12,7 @@ first). Screenshots are described in a sentence where they matter and are not co
 | [`2026-09-24-pickle-joy-route.md`](2026-09-24-pickle-joy-route.md) | Full passes on the joy route: listening starts a live sound for all three instruments; the unticked checkbox and a stale-notebook false reading |
 | [`2026-09-23-pickle-full-passes.md`](2026-09-23-pickle-full-passes.md) | The reworked suite, first English and French passes: 22 of 22 played, 18 and 17 passed |
 | [`2026-09-22-pickle-engine-noise.md`](2026-09-22-pickle-engine-noise.md) | One run that failed 8 of 8 on an engine error attributed to no mod |
+| [`2026-09-27-m1-sound-bagpipes.md`](2026-09-27-m1-sound-bagpipes.md) | Pass "sound", first film-with-sound scenario (bagpipes): green, not silent; still awaiting a listen for M1 |
 
 Rules kept from `PickleTools/docs/runs/README.md`: one verdict per row, said from the report; say what was not shown;
 earlier commits still hold what was tracked before (untracking does not rewrite history).
