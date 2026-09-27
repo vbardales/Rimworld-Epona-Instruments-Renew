@@ -37,3 +37,14 @@ headless dev-teleport should move that camera, but there is no runtime evidence 
 points at SoundCapture/the headless camera, not at this mod: the ambient sound heard instead is presumably a
 non-positional or on-camera sound that does not depend on listener placement. Awaiting PickleTools' conclusion before
 filming the other two instruments.
+
+**PickleTools' follow-up, 2026-09-27:** the simple "listener too far" read does not hold either - the Background
+camera sits on the exact cell (distance under 1 of the 5-25 range, should be loud if the listener tracks it), and
+`CameraDriver.JumpToCurrentMapLoc` does move the real Unity camera transform every frame. So this is not a
+mispositioned listener; it points at something in the WSLg audio path specific to positional/3D sound (every sound
+recorded cleanly before, including 2026-09-25's accordion sustainer check, was 2D/on-camera or a game-state check,
+never an actually-positional sound heard through the recording). PickleTools documented this as an unconfirmed lead
+in `SoundCapture/README.md` (their repo, committed locally) rather than resolving it further on their own initiative,
+and left the next step to Epona/Virginie: spend a ticket on the two remaining instruments (likely the same gap), or
+treat "SoundCapture cannot yet be trusted for positional/3D game sound" as the working conclusion and fall back to
+the original MANUAL M1 (the real Windows game, `PLAY_AND_LISTEN.md`).
