@@ -46,6 +46,15 @@ instrument sound only when it is. Restart when the game asks.
 Also note whether the instrument is drawn in her hands at a sensible place. A tone that starts late or stops early
 is worth a line, not a failure.
 
+## Alternative: a film with its sound, for the same listening
+
+Instead of (or before) sitting through the game, the pass "sound" (`TESTING.md`) can play
+`Tests/Pickle/Mod/Pickle/Features/35-hear-the-instruments.feature` and produce one `film-sound.mp4` per instrument
+(picture and sound together, PickleTools' SoundCapture). The run itself only checks the recording is not silent;
+opening the three files and listening is exactly the same verdict this page asks for, just off a file instead of
+the live game. A few seconds of sound still play on the machine's own speakers while each one is recorded, so this
+still needs your explicit go each time, and only one such run at a time on the machine.
+
 ## The provider's checkbox, in plain words
 
 Musical Instruments (Continued) has one setting, in Options > Mod options > Musical Instruments, labelled

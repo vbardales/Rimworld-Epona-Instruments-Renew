@@ -15,7 +15,7 @@ textures. See `STATUS.md` for what is verified and what is not.
 
 Everything provable outside the game is proved outside the game.
 
-## The Pickle suite: 8 features, 22 scenarios, no `@wip`
+## The Pickle suite: 8 features, 22 scenarios, no `@wip`, plus one conditional feature
 
 | Feature | Scenarios | What it does |
 | --- | --- | --- |
@@ -28,9 +28,13 @@ Everything provable outside the game is proved outside the game.
 | `30-play-and-listen` | 4 | a colonist performs each instrument alone on the map and the provider holds a live sound for it; with the provider's checkbox unticked, silence |
 | `40-save-reload` | 2 | the three items, and a bill in progress at the bench, survive a save and a reload with no error |
 
-Nothing is tagged `@wip` and no scenario is conditional (`@requires`): the mod declares no optional mod or DLC
-dependency, so there is no scenario a missing condition could skip. A scenario that cannot be repaired is deleted
-with its justification, not set aside.
+Nothing among these 22 is tagged `@wip`, and none is conditional: the mod itself declares no optional mod or DLC
+dependency, so there is no scenario a missing mod condition could skip. A scenario that cannot be repaired is
+deleted with its justification, not set aside.
+
+| Feature (conditional) | Scenarios | What it does |
+| --- | --- | --- |
+| `35-hear-the-instruments` | 3 | `@requires:nelim.pickletools.soundcapture`: each instrument performed alone on the map, filmed with its sound by PickleTools' SoundCapture, and the recording asserted not silent. Staged only by `wsl-deps.sound.map`, so it is skipped (conditional, not counted in the 22) in the plain suite and played only in the pass "sound". It does not replace `30-play-and-listen`'s sustainer check or MANUAL M1: a non-silent recording is not "the right sound, in sync" — only a person listening to `film-sound.mp4` can say that |
 
 The suite has one step assembly of its own, `Tests/Pickle/Source/InstrumentSteps.cs` (six steps, all starting with
 the mod's name), built into `Tests/Pickle/Mod/Pickle/Assemblies/`. It is catalogued in
@@ -46,6 +50,7 @@ translated interface checked in both languages. For this mod:
 | **English, sans-facultatifs** | a request, no `-DepMap`, no `-Filter` (see "Running the suite") | Core, DLCs, Harmony, RimLogging, Pickle, Musical Instruments (Continued), this mod | **yes** |
 | **French, sans-facultatifs** | the same request with `-Language French` | the same, game in French | **yes**: the language is chosen at launch, never switched mid-run, so the same 22 scenarios are played a second time |
 | **pre-split (two launches)** | a request with `-DepMap wsl-deps.pre-split.map -Filter 50-pre-split-write -Then 51-pre-split-read` | the same set plus the second companion `nelim.eponainstrumentsrenew.presplit` (`Tests/Pickle/PreSplit/`) | **yes**, once: it replaces MANUAL M2 (a save made with the former Joy Preservation). Launch 1 saves the three instruments in the states an old save holds (qualities, one carried, a bill at the bench) and hands the save to the companion; launch 2, a fresh process, loads it and checks them. Faithful because the old and the current definitions differ only by `tickerType Normal`, which is not saved data. Two scenarios, in the companion, so the plain suite still counts 22 |
+| **sound (conditional, optional)** | a request with `-DepMap wsl-deps.sound.map -Filter 35-hear-the-instruments.feature -Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=20'` | the same set plus PickleTools' SoundCapture (staged by the map) | supports MANUAL M1: plays `35-hear-the-instruments.feature` (3 scenarios, filmed with sound), not counted in the 22. Only on Virginie's explicit word in chat (a peer session relaying "authorized" is not that word): a few seconds of sound play on her own speakers each run (`AUDIT.md`), and a machine lock, so one such run at a time |
 | avec facultatifs | - | - | **not applicable.** `About.xml` declares no optional mod: `loadAfter` names Core and the hard dependency only, the patch touches nothing else, and there is no `LoadFolders.xml` or conditional branch on another mod. A second pass would stage the same set |
 | per incompatibility | - | - | **none declared** (`incompatibleWith` is absent from `About.xml`, and neither README nor ATTRIBUTION claims a conflict) |
 

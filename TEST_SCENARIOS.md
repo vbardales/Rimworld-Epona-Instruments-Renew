@@ -25,7 +25,7 @@ The language is chosen at launch, never switched during a test: every scenario i
 | 3 | Crafting | Pickle `20-craft-and-film` (each bill started, the unfinished item completed by the game's own flag, the product exists, captured and filmed); costs in `01-alone`; stuff categories in `Test-EffectiveDefs.ps1` | see STATUS.md |
 | 3b | Textures and size | Pickle `02-review-captures` (`@review`: the images are read by a person) | see STATUS.md |
 | 4 | Playing, and the sound starts | Pickle `30-play-and-listen`: a live provider sustainer for the performer, per instrument | see STATUS.md |
-| 4b | The sound is **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): a loudspeaker is not part of a headless run | to do |
+| 4b | The sound is **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): a loudspeaker is not part of a headless run. Pickle `35-hear-the-instruments` (conditional, pass "sound") now films each performance with its sound as supporting evidence, but does not replace M1: only a person listening to the film says it is the right sound, in sync | to do |
 | 5 | The provider's sound checkbox | Pickle `30-play-and-listen`, last scenario (unticked: no sound); ticked is scenarios 4 | see STATUS.md |
 | 6 | Save and reload | Pickle `40-save-reload` (three items; a bill in progress at the bench; the save round trips with no error) | see STATUS.md |
 | 6b | A save made with the former Joy Preservation collection | Pickle pass `pre-split` (`Tests/Pickle/PreSplit`, two launches: `50-pre-split-write` then `51-pre-split-read`); replaces `MANUAL M2` (2026-09-25, at the maintainer's suggestion: the old and the current definitions differ only by `tickerType Normal`, which is not saved data) | passed 2026-09-25 (request 20e6, two launches, both green), see STATUS.md |
@@ -37,6 +37,10 @@ The language is chosen at launch, never switched during a test: every scenario i
 `PLAY_AND_LISTEN.md`. Run `30-play-and-listen.feature` on the Windows game, sound on, "Watch" pace. Expected: a
 continuous tone while the colonist plays (ocarina-like for both pipes, organ-like for the accordion), and silence with
 the provider's checkbox unticked. Silence with the checkbox ticked is the failure to report, with the instrument's name.
+
+An alternative way to verify: the pass "sound" (`TESTING.md`) plays the conditional `35-hear-the-instruments.feature`,
+which films each performance with its own sound (PickleTools' SoundCapture) into `film-sound.mp4`. The headless run
+only asserts the recording is not silent; opening the three films and listening to them is still what settles M1.
 
 ### M2 - a real pre-split save: now automatic (pass `pre-split`)
 
