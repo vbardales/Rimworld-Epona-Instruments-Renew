@@ -1,0 +1,13 @@
+{
+  "templateStamp": "a8ca11cdd9a3",
+  "workshopId": "3806766938",
+  "packageId": "nelim.eponainstrumentsrenew",
+  "releaseTitle": "Epona Instruments Renew (unofficial) {version}",
+  "requirePaths": [
+    "Patches"
+  ],
+  "forbidPaths": [
+    "Assemblies"
+  ],
+  "previewFile": "About/Preview.png"
+}
