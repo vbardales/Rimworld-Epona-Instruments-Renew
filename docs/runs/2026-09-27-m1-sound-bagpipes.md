@@ -28,3 +28,12 @@ Not concluded yet:
 
 The two other instruments (uilleann pipes, accordion) are not filmed yet, pending this one being understood: filming
 them now would likely reproduce the same gap. Next step: investigate before requesting another sound ticket.
+
+**Likely cause, found 2026-09-27 (with PickleTools):** `MIC_Ocarina_Play` (Musical Instruments Continued,
+`1.6/Defs/MusicDefs/MusicDef.xml`) is a positional `SoundDef` (`distRange 5~25`, no `onCamera`, so `false`) - every
+instrument sound of the provider is defined the same way. PickleTools' own reading of the decompiled sound classes
+says a positional sound's real-time volume depends on Unity's `AudioListener` position, normally on `Camera.main`; a
+headless dev-teleport should move that camera, but there is no runtime evidence yet that it does under WSLg. This
+points at SoundCapture/the headless camera, not at this mod: the ambient sound heard instead is presumably a
+non-positional or on-camera sound that does not depend on listener placement. Awaiting PickleTools' conclusion before
+filming the other two instruments.
