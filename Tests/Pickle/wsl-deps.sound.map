@@ -1,0 +1,5 @@
+# The pass "sound": the optional SoundCapture tool, staged beside the suite, for 35-hear-the-instruments.feature (a video
+# with its sound of each instrument). Staged only here, so the plain suite never sees it. Same two lines as PickleTools' own
+# wsl-deps.soundcapture.map: the tool and the shell that replaces the committed bundle.
+nelim.pickletools.soundcapture   path:PickleTools/SoundCapture/Mod
+nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
