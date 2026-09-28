@@ -32,6 +32,15 @@ remaining:
 
 # Epona Instruments Renew - status
 
+## Note from the CI/CD session — 2026-09-27
+
+The manual publish workflow (`publish-tag.yml`) is now in place (defs-only mod: `--require
+Patches --forbid Assemblies`, no build). **No description source configured**: this repository
+has neither `PUBLICATION.md` nor `Mod/README.template.md` to source a Steam description from.
+`update_description` is left unusable; `build`-free tag/publish/`update_preview`/`update_title`/
+`update_tags` all work as-is. Writing a `PUBLICATION.md` with a `## Steam description` block (the
+project standard) is a separate decision, left here rather than improvised.
+
 Current stage: done (audit of 2026-09-21, then the preTest -> done work of the same day; stage codes are the literal workflow names, no numeric codes). The autonomous repository, public GitHub remote and first pushed commit are verified. Earlier sections preserve historical findings; the final transition record supersedes resolved findings.
 
 Scope: Three carried instruments: great highland bagpipes, uilleann pipes and accordion.
