@@ -48,3 +48,10 @@ in `SoundCapture/README.md` (their repo, committed locally) rather than resolvin
 and left the next step to Epona/Virginie: spend a ticket on the two remaining instruments (likely the same gap), or
 treat "SoundCapture cannot yet be trusted for positional/3D game sound" as the working conclusion and fall back to
 the original MANUAL M1 (the real Windows game, `PLAY_AND_LISTEN.md`).
+
+## 2026-09-28, request e2ce: uilleann pipes and accordion (tree 9bfad92, packageId nelim.eponainstruments)
+
+`exitReason: passed`, 2 of 2 played and passed (60 s and 52 s). Both films kept in
+`Tests/Pickle/Evidence/2026-09-28-m1-pipes-accordion-sound/` (`film-sound.mp4`, `sound.wav`, `film.webm`, one frame).
+Same limit as the bagpipes: "not silent" and "heard playing" pass, and neither says the instrument is audible.
+Virginie's listening verdict: pending.
