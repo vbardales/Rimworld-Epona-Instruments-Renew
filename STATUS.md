@@ -2,6 +2,7 @@
 mod: Epona Instruments Renew (unofficial)
 packageId: nelim.eponainstruments
 licence: silent
+upstream_mod_remotes: N/A
 visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
