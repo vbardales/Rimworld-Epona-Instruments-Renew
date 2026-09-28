@@ -4,7 +4,7 @@
 Feature: a game saved by another launch, loaded by this one
 
   Scenario: the three instruments, their qualities, the carried one and the bill are as they were saved
-    Given mod "nelim.eponainstrumentsrenew" is loaded
+    Given mod "nelim.eponainstruments" is loaded
     And the save "epona-pre-split" is loaded
     When I wait 120 ticks
     Then 1 "JP_GreatHighlandBagpipes" exist

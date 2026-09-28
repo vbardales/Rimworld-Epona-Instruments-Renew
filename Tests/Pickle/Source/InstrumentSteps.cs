@@ -32,7 +32,7 @@ namespace EponaInstrumentsRenew.PickleSteps
     [PickleSteps]
     public class InstrumentSteps
     {
-        private const string PackageId = "nelim.eponainstrumentsrenew";
+        private const string PackageId = "nelim.eponainstruments";
         private static readonly string[] DefNames = { "JP_GreatHighlandBagpipes", "JP_UilleannPipes", "JP_Accordion" };
         private static bool? settingBefore;
         private static bool? settingWanted;

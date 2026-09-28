@@ -8,7 +8,7 @@ Three carried instruments: great highland bagpipes, uilleann pipes and accordion
 ## Status
 
 This is an unofficial recreation extraction prepared for a public GitHub repository. It does not claim to port the whole
-source mod. Classification: silent; see LICENSE and ATTRIBUTION.md. Package: nelim.eponainstrumentsrenew.
+source mod. Classification: silent; see LICENSE and ATTRIBUTION.md. Package: nelim.eponainstruments.
 
 Install Mod/ as the game mod root. Enable this package before loading a save that used
 these items in the old Joy Preservation. Their definition names and behavior are retained.

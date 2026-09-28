@@ -16,9 +16,9 @@
 Feature: Epona Instruments Renew alone
 
   Scenario: it loads after Musical Instruments and says nothing
-    Then mod "nelim.eponainstrumentsrenew" is loaded
+    Then mod "nelim.eponainstruments" is loaded
     And mod "Mlie.MusicalInstruments" is loaded
-    And mod "nelim.eponainstrumentsrenew" loads after "Mlie.MusicalInstruments"
+    And mod "nelim.eponainstruments" loads after "Mlie.MusicalInstruments"
     # DISPLAY NAME here, not the packageId: the step compares against RimLogging's LogEntry.Mod,
     # which holds About.xml's <name>. The packageId would pass its guard and never match a warning.
     And no warnings from mod "Epona Instruments Renew (unofficial)"

@@ -27,5 +27,5 @@ Feature: a game saved by one launch, for the next launch to load
     And I add bill "Make_JP_Accordion" to the "TableMusicalInstruments"
     Then the "TableMusicalInstruments" has 1 bills
     When Epona Instruments Renew pre-split: the game is saved as "epona-pre-split"
-    And Epona Instruments Renew pre-split: the saved game "epona-pre-split" is handed to the mod "nelim.eponainstrumentsrenew.presplit"
+    And Epona Instruments Renew pre-split: the saved game "epona-pre-split" is handed to the mod "nelim.eponainstruments.presplit"
     Then no errors were logged

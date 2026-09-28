@@ -1,6 +1,6 @@
 ---
 mod: Epona Instruments Renew (unofficial)
-packageId: nelim.eponainstrumentsrenew
+packageId: nelim.eponainstruments
 licence: silent
 visibility: public
 detached: yes
