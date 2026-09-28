@@ -55,3 +55,9 @@ the original MANUAL M1 (the real Windows game, `PLAY_AND_LISTEN.md`).
 `Tests/Pickle/Evidence/2026-09-28-m1-pipes-accordion-sound/` (`film-sound.mp4`, `sound.wav`, `film.webm`, one frame).
 Same limit as the bagpipes: "not silent" and "heard playing" pass, and neither says the instrument is audible.
 Virginie's listening verdict: pending.
+
+## 2026-09-28, request ad03: refilmed 30 s after the sound is live (tree 76a12a3)
+
+`exitReason: passed`, 1 of 1, 110 s. Feature fixed to wait for the live sustainer before filming (the earlier 10 s
+window started while Jet was still walking to the instrument). Kept in
+`Tests/Pickle/Evidence/2026-09-28-m1-bagpipes-30s/`. Virginie's listening verdict: pending.
