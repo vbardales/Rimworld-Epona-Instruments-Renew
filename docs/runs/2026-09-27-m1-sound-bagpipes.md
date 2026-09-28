@@ -61,3 +61,10 @@ Virginie's listening verdict: pending.
 `exitReason: passed`, 1 of 1, 110 s. Feature fixed to wait for the live sustainer before filming (the earlier 10 s
 window started while Jet was still walking to the instrument). Kept in
 `Tests/Pickle/Evidence/2026-09-28-m1-bagpipes-30s/`. Virginie's listening verdict: pending.
+
+## M1 verdict, bagpipes, 2026-09-28 (refilmed 30 s after sound live): PASS
+
+Virginie heard a continuous tone (described as piano/small keyed plastic flute), in sync with the picture, not the
+ambient noise of the earlier attempt. This matches the documented substitute sound (ATTRIBUTION.md: no real bagpipe
+sample exists, MIC_Ocarina_Play used instead) and PLAY_AND_LISTEN.md's own expectation ("ocarina-like tone"). MANUAL
+M1 is settled for the bagpipes: continuous, right sound (the mod's stand-in), in sync.
