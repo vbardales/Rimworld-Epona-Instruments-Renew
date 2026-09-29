@@ -6,6 +6,7 @@ const sharp = require('sharp');
 const art = __dirname;
 const palette = JSON.parse(fs.readFileSync(path.join(art, 'preview-palette.json')));
 const image = fs.readFileSync(path.join(art, 'Preview.png')).toString('base64');
+const icon = fs.readFileSync(path.join(art, 'ModIcon-cutout.png')).toString('base64');
 const html = `<!doctype html><html><meta charset="utf-8"><style>
 *{box-sizing:border-box}body{margin:0;width:896px;height:504px;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;color:${palette.inkPrimary};background:url(data:image/png;base64,${image}) center/cover}
 .veil{position:absolute;inset:0;background:radial-gradient(ellipse 850px 650px at top left,${palette.veil}ef 0%,${palette.veil}d9 42%,${palette.veil}00 85%)}
@@ -16,7 +17,8 @@ h1,p{margin:0}h1{font-size:46px;font-weight:600;line-height:1.1;letter-spacing:0
 .summary{font-size:21px;font-weight:400;line-height:1.45;width:430px}
 .badge{position:absolute;right:0;top:0;width:80px;height:80px;background:${palette.accent};clip-path:polygon(0 0,100% 0,100% 100%)}
 .version{position:absolute;left:869px;top:27px;transform:translate(-50%,-50%) rotate(45deg);font-size:26px;font-weight:700;line-height:1;color:${palette.badgeInk}}
-</style><div class="veil"></div><div class="copy"><h1>Epona<br>Instruments <span>Renew</span></h1><p class="tag">(unofficial)</p><div class="rule"></div><p class="summary">Bagpipes and accordion<br>for your colony.</p></div><div class="badge"></div><div class="version">1.6</div></html>`;
+.icon{position:absolute;left:-78px;top:300px;width:282px;height:282px;transform:rotate(15deg);background:url(data:image/png;base64,${icon}) center/contain no-repeat}
+</style><div class="veil"></div><div class="copy"><h1>Epona<br>Instruments <span>Renew</span></h1><p class="tag">(unofficial)</p><div class="rule"></div><p class="summary">Bagpipes and accordion<br>for your colony.</p></div><div class="badge"></div><div class="version">1.6</div><div class="icon"></div></html>`;
 fs.writeFileSync(path.join(art, 'preview.html'), html);
 function luminance(rgb) {const v=rgb.map(c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4});return .2126*v[0]+.7152*v[1]+.0722*v[2]}
 function hex(c){return c.match(/[0-9a-f]{2}/gi).map(x=>parseInt(x,16))}
