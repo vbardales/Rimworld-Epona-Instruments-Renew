@@ -68,3 +68,23 @@ Virginie heard a continuous tone (described as piano/small keyed plastic flute),
 ambient noise of the earlier attempt. This matches the documented substitute sound (ATTRIBUTION.md: no real bagpipe
 sample exists, MIC_Ocarina_Play used instead) and PLAY_AND_LISTEN.md's own expectation ("ocarina-like tone"). MANUAL
 M1 is settled for the bagpipes: continuous, right sound (the mod's stand-in), in sync.
+
+## 2026-09-29, request 66e7: uilleann pipes and accordion, both failed (infrastructure, not the mod)
+
+`Submit-PickleRun.ps1 ... -Filter '35-hear-the-instruments.feature::uilleann pipes are filmed,::accordion is filmed'
+-Extra '-pickle-scenario-timeout=300 -pickle-max-film-seconds=60'`, tree `76a12a3` (same fix as the bagpipes' 30 s
+refilm). `exitReason` 0/2 passed, both failed:
+
+- Uilleann pipes: "not silent" failed on its own terms this time - peak -91.0 dB. PickleTools' own assertion message
+  names the cause: the WSLg PulseAudio RDP sink stalled mid-recording ("q overrun" in pulseaudio.log), so the file
+  holds 4.3 s of real sound out of 41.6 s recorded - not a short/late instrument, a capture gap.
+- Accordion: no sound file was produced at all - `ffmpeg` failed to open `RDPSink.monitor` ("Exec format error"),
+  i.e. the capture never started.
+
+Both are the WSLg audio path failing under load (two films run back to back, same session as the bagpipes'
+successful one two days earlier), not a mod-side problem: nothing in `Tests/Pickle/Source/InstrumentSteps.cs` or the
+feature file changed between the passing bagpipes run and this one. No listening verdict possible on this recording
+either instrument. Evidence kept in `Tests/Pickle/Evidence/2026-09-29-m1-pipes-accordion-30s/` (junit.xml has the
+detailed PickleTools messages; the two `sound.wav`/attempted film folders are the incomplete captures - not sent for
+listening, since they don't hold enough of the sound to judge). Next step: re-run, or ask PickleTools whether the RDP
+sink needs a delay/retry between back-to-back films - not yet requested, since a straight retry may just work.
