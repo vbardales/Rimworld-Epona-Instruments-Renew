@@ -1,7 +1,9 @@
 # Images for the Workshop page (PUBLICATION.md, "Gallery"). Composition stays a visual review: a passed scenario
 # proves the route ran, never that the picture sells the mod.
 #
-# NOT PLAYED, AND NOT PLAYABLE YET. Written 2026-10-02 in Tests/Pickle/Gallery-draft/, outside the staged companion, because
+# NOT PLAYED. The pawn-placement step now exists in PickleTools (written, compiled, not committed there, not played);
+# the pass map needs nelim.pickletools.colonistrace for it. The older note below about a MISSING step is superseded.
+# NOT PLAYED, AND NOT PLAYABLE YET (written before that step existed). Written 2026-10-02 in Tests/Pickle/Gallery-draft/, outside the staged companion, because
 # two M1 sound requests were queued and the staged tree must not move under them. Steps marked "MISSING" do not exist in
 # PickleTools/docs/steps.md; they were asked of NPT through Ticket Manager (see PUBLICATION.md, "Gallery"). Once they exist
 # and the M1 requests have run: move this file to Tests/Pickle/Mod/Pickle/Features/ and play it once in the "studio" pass.
@@ -22,7 +24,7 @@
 # THE SCENE IS THE OWNER'S SHOWCASE COLONY: "nelim-zen-meadow-studio" of PickleTools/ScreenshotStudio, staged only by
 # wsl-deps.studio.map (screenshotmode, screenshotstudio, stagedecor). Every other pass skips this feature. Play it in
 # English: the page is English.
-@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
+@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
 Feature: images for the Workshop page
 
   Background:
@@ -37,8 +39,9 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Ambre" hair colour is rgb (176, 88, 40)
     And Nelim's Pickle Tools: "Ambre" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
     And Nelim's Pickle Tools: "Ambre" wears "Apparel_Jacket" dyed rgb (40, 88, 56)
-    # MISSING: a step that puts a colonist on a cell and turns it to face the camera.
-    And Nelim's Pickle Tools: "Ambre" is placed at (125, 96)
+    # Step from PickleTools (written, compiled, not played as of 2026-10-02; PickleTools/docs/STAGING.md): the camera looks
+    # north, so a pawn faces South to face it.
+    And Nelim's Pickle Tools: "Ambre" stands at (125, 96) facing South
     And I spawn a "JP_GreatHighlandBagpipes" at (125, 97)
     When Epona Instruments Renew "Ambre" is offered the music joy and starts it
     And I wait for "Ambre" to have job "MusicPlayJoy"
@@ -53,7 +56,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Flore" hair colour is rgb (44, 30, 26)
     And Nelim's Pickle Tools: "Flore" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
     And Nelim's Pickle Tools: "Flore" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
-    And Nelim's Pickle Tools: "Flore" is placed at (125, 96)
+    And Nelim's Pickle Tools: "Flore" stands at (125, 96) facing South
     And I spawn a "JP_UilleannPipes" at (125, 97)
     When Epona Instruments Renew "Flore" is offered the music joy and starts it
     And I wait for "Flore" to have job "MusicPlayJoy"
@@ -68,7 +71,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I let the hairstyle of "Soleil" show its own colours
     And Nelim's Pickle Tools: "Soleil" wears "Apparel_CollarShirt" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Soleil" wears "Apparel_Jacket" dyed rgb (196, 152, 64)
-    And Nelim's Pickle Tools: "Soleil" is placed at (125, 96)
+    And Nelim's Pickle Tools: "Soleil" stands at (125, 96) facing South
     And I spawn a "JP_Accordion" at (125, 97)
     When Epona Instruments Renew "Soleil" is offered the music joy and starts it
     And I wait for "Soleil" to have job "MusicPlayJoy"

@@ -89,7 +89,7 @@ random silhouette. No tattoo: they need Ideology and mean nothing for this story
 choices are in the header of `Gallery-draft/14-publication-shots.feature`.
 
 **Open points.**
-- **Missing step, asked of NPT through Ticket Manager (2026-10-02):** put a colonist on a given cell facing the
+- **Step now written by Pickle Tools, not played (2026-10-02, `PickleTools/docs/STAGING.md`): `"X" stands at (x, z) facing South`. Originally asked as: put a colonist on a given cell facing the
   camera (`"Ambre" is placed at (x, z)` in the draft). Nothing in `PickleTools/docs/steps.md` moves a pawn to a cell.
   The studio's pawns also stand at their own stations, so the draft assumes the step.
 - Unconfirmed until played: the defNames of the decor and the apparel (`StandingLamp`, `Shelf`, `Apparel_CollarShirt`,
