@@ -48,3 +48,25 @@ Reread a document when its version differs from the one written here, and after 
 
 - `README.md` and the `About.xml` description say "No Steam Workshop release has been made": stale since the `0.1.0` prepublication (item `3806766938`). The description is sent only at item creation, so editing `About.xml` will not change the page; the page text is corrected by hand at `prepublished`.
 - `STATUS.md` `remaining` is out of date (see above).
+
+## Pass of 2026-10-02 (AUDIT.md re-applied)
+
+Read in full this pass: `AUDIT.md` (`90d51374` 2026-09-25 15:25, unchanged since the last pass), both `AGENTS.md`. The rest was
+**version-checked only, not reread**; versions moved since 2026-09-25 are listed so the next pass knows what to open.
+
+| Document | Version now | State |
+| --- | --- | --- |
+| `TRANSLATIONS.md`, `MOD_SETTINGS.md`, `scripts/SEARCHING.md` | `90d51374` 2026-09-25 | unchanged, not reread |
+| `PUBLISHING.md` | `c770fd1e` 2026-10-02 10:42, modified, not committed | moved, **unread**: read at `tested -> prepublished` |
+| `STYLE_RIMWORLD.md` | `f7e23d33` 2026-10-01 22:29, modified, not committed | moved, unread; not needed (images validated) |
+| `WORKSHOP_COMMENTS.md` | `08878789` 2026-09-29 | never read; useful only at `prepublished` (thank-you comments) |
+| `PickleTools/README.md` | `ff20d89` 2026-09-29, modified | moved, unread; reread before the next sound run |
+| `PickleTools/Headless/README.md` | `ed4e73a` 2026-09-26 | moved, unread |
+| `PickleTools/Authoring/README.md` | `a47799f` 2026-09-29 | moved, unread |
+| `PickleTools/docs/steps.md` | `da7c3b0` 2026-09-28, modified | first sighting, unread; needed only when a step is added |
+| `Rimworld-Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26 | moved, unread; needed at `prepublished` |
+| `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `docs/SUBMIT.md` | `77ca9d7` 2026-09-27, `d07b2b8` 2026-09-26 | moved, unread; needed before the next `Submit-PickleRun.ps1` |
+
+Mod files of this repository: `STATUS.md`, `TESTING.md`, `CHANGELOG.md`, `README.md`, `ATTRIBUTION.md`, `LICENSE`,
+`docs/runs/`, `Tests/Pickle/` listed and spot-checked; `Mod/About/About.xml` not rechecked. `PUBLICATION.md`, `BACKLOG.md`,
+`NOTES.md`, `BUGS.md` do not exist (`PUBLICATION.md` due at `prepublished`).

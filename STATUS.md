@@ -8,16 +8,18 @@ detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
 stage: done
+workflow_stage: done
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
 translation_fr: partial
 showcase: complete
 tested_on:
-updated: 2026-09-25
+updated: 2026-10-02
 workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
+  - unverified (2026-10-02): M1 for the uilleann pipes and the accordion. Bagpipes: heard by Virginie (2026-09-28). Pipes and accordion: 10 s films passed (2026-09-28, not yet listened to); the 30 s refilm of 2026-09-29 failed on the WSLg audio path (docs/runs/2026-09-27-m1-sound-bagpipes.md). Needs a retry or a listen of the 2026-09-28 films; blocks `tested`
   - tested criterion, no @wip: met (8 features, 22 scenarios, none tagged); the 6 steps of Tests/Pickle/Source/InstrumentSteps.cs have all been played (2026-09-24/25)
   - tested criterion, conditional scenarios: none exists (no optional mod or DLC dependency, no @requires); nothing to run
   - tested criterion, Pickle green in both languages: MET on 2026-09-25, in the form AUDIT.md's "no red without a green replay" describes, not as one clean report: final passes on tree 99be666 with `-pickle-scenario-timeout=300`, 22 played of 22 in each (English 20 passed, French 21 passed; Evidence/2026-09-25-final-english and -final-french), and each red replayed green on 0a247d0: `a bill in progress at the bench` in English (ff21, 160 s) and French (063c, 148 s), where a fixed tick wait had stopped short (fixed in 0a247d0), and `the uilleann pipes are played, and heard` in English (2f06, 127 s), whose save load had timed out at 180 s under machine load. No single 22-of-22 green report of the final tree exists; two more full passes would give one, and nothing in AUDIT.md asks for it
@@ -513,3 +515,18 @@ by the next run; only the junit messages above were read.
 Also seen: the second run queued that night (French, `05-text-screens`) died before the game started because its own queue
 ticket vanished while it waited (`Get-Item` on a missing ticket in `Run-PickleWsl.ps1`); that script defect is not this
 mod's and was not touched. The earlier backspace-in-a-path defect of the same script was fixed by another session.
+
+## Audit - 2026-10-02 (AUDIT.md re-applied; tree 0f02714, untracked only: Art/*.ico, Assets/, Mod/desktop.ini, Tests/Audit-2026-09-13/, desktop.ini)
+
+Stage kept: `done` (workflow_stage `done`), unchanged. `tested` is not reached: M1 for the uilleann pipes and the accordion is
+unverified (see `remaining`), and `translation_fr` stays `partial` until Virginie reads `FRENCH_REVIEW.md`.
+
+Checked on disk, not from the declaration:
+- `Mod/About/PublishedFileId.txt` exists (3806766938); `CHANGELOG.md` opens with `## [0.1.0]`, "creation of a publishIdFile";
+- no `.dds` and no `Evidence/` file is tracked by git; `.gitignore` covers `*.dds`, `Tests/Pickle/Evidence/`, `evidence/`;
+- `@wip`: none; conditional scenarios: none exist (no `@requires`); manual tests left: M1 only;
+- upstream git: Epona Instruments Standalone (Workshop 2627618308, Outremer): no repository linked in the local Workshop copy
+  nor found by web search, so `upstream_mod_remotes` stays `N/A` and no PR target exists. The base mod Musical Instruments
+  (Continued) has `https://github.com/emipa606/MusicalInstruments`; it is a dependency, not the source of the three defs;
+- evidence trimmed from 43 MB to 11 MB (TESTING.md, "Kept on disk as of 2026-10-02"); `docs/PROTOCOLS-READ.md` re-versioned.
+Not run: any game test (rule: no launch by a session); the offline suites were not replayed in this pass.

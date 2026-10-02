@@ -129,3 +129,15 @@ so the launcher copies the report there under the lock, then trim it):
 - what `done -> tested` needs on disk at the end: the English and the French report of the current revision (22 scenarios
   played of 22 written, `exitReason: passed`), the `@review` images of both passes, and the two manual results (M1, M2)
   written in `docs/runs/`.
+
+**Kept on disk as of 2026-10-02 (11 MB, down from 43 MB), and why:**
+- `2026-09-25-final-english`, `2026-09-25-final-french`: latest full pass of each language (22 of 22 played);
+- `2026-09-25-replay-bill-english`, `-bill-french`, `-replay-pipes-english`, `2026-09-25-craft-nofilm`: the only green
+  replays of the scenarios that were red in the final passes (see `STATUS.md`, "no red without a green replay");
+- `2026-09-25-pre-split`: the only proof of the two-launch old-save pass;
+- `2026-09-28-m1-bagpipes-30s`: latest bagpipes sound run (passed; the listened-to film);
+- `2026-09-28-m1-pipes-accordion-sound`: the only run where uilleann pipes and accordion recorded sound (passed, 10 s films);
+  the 30 s refilm of 2026-09-29 failed on the WSLg audio path and does not replace it;
+- `2026-09-29-m1-pipes-accordion-30s`: the failed refilm, kept as the proof of the capture failure (junit messages).
+Minified on 2026-10-02: film frames (`NNNN.jpg`, the webm/mp4 holds them), the 30 s `sound.wav` of the bagpipes run, and
+the two 3 MB failure PNGs were deleted. `2026-09-27-m1-bagpipes-sound` (same scenario, superseded) was deleted.

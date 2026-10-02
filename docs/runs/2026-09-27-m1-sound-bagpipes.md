@@ -88,3 +88,5 @@ either instrument. Evidence kept in `Tests/Pickle/Evidence/2026-09-29-m1-pipes-a
 detailed PickleTools messages; the two `sound.wav`/attempted film folders are the incomplete captures - not sent for
 listening, since they don't hold enough of the sound to judge). Next step: re-run, or ask PickleTools whether the RDP
 sink needs a delay/retry between back-to-back films - not yet requested, since a straight retry may just work.
+
+2026-10-02 trim: `Tests/Pickle/Evidence/2026-09-27-m1-bagpipes-sound/` deleted (same scenario, superseded by `2026-09-28-m1-bagpipes-30s`); film frames and the 30 s `sound.wav` also deleted, the films kept.
