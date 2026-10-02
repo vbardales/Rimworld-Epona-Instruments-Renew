@@ -88,7 +88,7 @@ the studio's "display" stage, with a standing lamp and a shelf, placed before ea
 (`StageDecor`). Palette: deep green, ochre and wool red. Each pawn has a chosen body (Hulk, Female, Fat), a chosen hair
 colour (copper, near black, and white for the third, whose hairstyle shows its own colours) and dyed apparel; no
 random silhouette. No tattoo: they need Ideology and mean nothing for this story. The story, the palette and the
-choices are in the header of `Gallery-draft/14-publication-shots.feature`.
+choices are in the header of `Tests/Pickle/Mod/Pickle/Features/14-publication-shots.feature`.
 
 **Open points.**
 - **Step now written by Pickle Tools, not played (2026-10-02, `PickleTools/docs/STAGING.md`): `"X" stands at (x, z) facing South`. Originally asked as: put a colonist on a given cell facing the
@@ -104,7 +104,7 @@ choices are in the header of `Gallery-draft/14-publication-shots.feature`.
 Rules that apply (`PUBLISHING.md`, the owner's): the scene is the showcase colony `nelim-zen-meadow-studio`, never the
 fixture (pass `wsl-deps.studio.map`, English); each upload under 2 MB; **every image is opened and looked at** before
 it is called ready; a capture showing developer tools, another mod's overlay or the Pickle panel is disqualified.
-`Art/Gallery/00-preview.png` is an older numbering and must go before the upload (the folder holds nothing else).
+`Art/Gallery/` holds only `0-preview.png`, checked 2026-10-02 byte-identical to `Mod/About/Preview.png` (sha256 a5b94a5ea629...); the old `00-preview.png` is gone.
 
 ## Adult content boxes
 

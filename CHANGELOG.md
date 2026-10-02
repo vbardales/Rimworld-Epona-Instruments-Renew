@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased] (1.0.0)
+
+- French text corrected after review: agreement in the accordion description, "grande cornemuse écossaise" for the
+  great highland bagpipes, and a plainer phrasing for the uilleann pipes.
+- New Preview image (regenerated, with the ModIcon in a corner).
+- `About.xml`: one line changed since the `0.1.0` upload (see the git log of the file).
+
 ## [0.1.0] - 2026-09-23
 
 - Creation of a publishIdFile: `Mod/About/PublishedFileId.txt` (Workshop item 3806766938), from a first upload
