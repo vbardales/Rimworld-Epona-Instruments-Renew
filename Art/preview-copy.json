@@ -1,0 +1,44 @@
+{
+  "title": "Epona Instruments",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Epona Instruments",
+      "scale": 1
+    }
+  ],
+  "suffix": "Renew (unofficial)",
+  "tag": "",
+  "copyLines": [
+    "Bagpipes and accordion for your colony."
+  ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
+  "backgroundFile": "Preview.png",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "echo": {
+    "file": "echo.png",
+    "preSized": true,
+    "color": "var(--accent)",
+    "width": 250,
+    "height": 158,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 3,
+    "panelRight": 0,
+    "panelWidth": 48,
+    "flipX": true
+  },
+  "iconBadge": {
+    "file": "ModIcon-badge.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "translate": "-12.5%, 12.5%",
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 275,
+    "veilLeft": -55,
+    "veilBottom": -61
+  }
+}
