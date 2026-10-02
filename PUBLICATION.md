@@ -75,13 +75,29 @@ copy of `Mod/About/Preview.png`. Steam shows the first one large.
 | File | Shows | State |
 | --- | --- | --- |
 | `0-preview.png` | The Preview itself | present; **compare its hash with `Mod/About/Preview.png` after every regeneration** |
-| `1-the-three-instruments.png` | The three items on the studio's display stage, nothing else | scenario written (`Gallery-draft/14-publication-shots.feature`), not played, no image |
-| `2-next-to-the-providers-instruments.png` | The same stage next to the ocarina and the frame drum: the size a subscriber compares against | same |
+| `1-the-piper.png` | A broad piper with copper hair, green jacket over an ochre shirt, playing the great highland bagpipes | scenario written, **not playable**: needs one missing step, see below |
+| `2-the-sitting-piper.png` | A slight dark-haired pawn in a wool-red jacket, playing the uilleann pipes | same |
+| `3-the-accordionist.png` | A round, white-haired pawn in an ochre jacket over a green shirt, with the accordion | same |
+| `4-the-instruments-side-by-side.png` | The three items next to the provider's ocarina and frame drum: the size a subscriber compares against | scenario written, playable once the pass map is accepted; no pawn |
 
-Order: the Preview, then the clearest picture of what the mod adds, then the size reference. No image of a pawn
-playing is planned: the sound is what a pawn playing adds and a still cannot show it (to reconsider if the owner wants
-one). A film with its sound exists (`Tests/Pickle/Evidence/`) but the pipes and the accordion
-film is not yet judged; do not upload one before it has been listened to.
+**The rule (owner, 2026-10-02): a gallery shot is a staged photograph, never a default setting.** Menus and interface
+windows are the only plain screenshots; this mod has none. So the series has a story and one set: a ceilidh at dusk on
+the studio's "display" stage, with a standing lamp and a shelf, placed before each shot and removed after it
+(`StageDecor`). Palette: deep green, ochre and wool red. Each pawn has a chosen body (Hulk, Female, Fat), a chosen hair
+colour (copper, near black, and white for the third, whose hairstyle shows its own colours) and dyed apparel; no
+random silhouette. No tattoo: they need Ideology and mean nothing for this story. The story, the palette and the
+choices are in the header of `Gallery-draft/14-publication-shots.feature`.
+
+**Open points.**
+- **Missing step, asked of NPT through Ticket Manager (2026-10-02):** put a colonist on a given cell facing the
+  camera (`"Ambre" is placed at (x, z)` in the draft). Nothing in `PickleTools/docs/steps.md` moves a pawn to a cell.
+  The studio's pawns also stand at their own stations, so the draft assumes the step.
+- Unconfirmed until played: the defNames of the decor and the apparel (`StandingLamp`, `Shelf`, `Apparel_CollarShirt`,
+  `Apparel_Jacket`), the free cells (122..128, 95..97), and that a pawn in the `MusicPlayJoy` job shows the instrument in
+  hand once the game is paused.
+- Order: the Preview, then the piper (the most recognisable instrument), the sitting piper, the accordionist, then the
+  size reference last. A film with its sound exists (`Tests/Pickle/Evidence/`) but the pipes and the accordion film
+  is not yet judged; do not upload one before it has been listened to.
 
 Rules that apply (`PUBLISHING.md`, the owner's): the scene is the showcase colony `nelim-zen-meadow-studio`, never the
 fixture (pass `wsl-deps.studio.map`, English); each upload under 2 MB; **every image is opened and looked at** before

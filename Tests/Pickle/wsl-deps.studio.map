@@ -6,3 +6,4 @@
 # Run it in English: the Workshop page is English.
 nelim.pickletools.screenshotmode     path:PickleTools/ScreenshotMode/Mod
 nelim.pickletools.screenshotstudio   path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.stagedecor        path:PickleTools/StageDecor/Mod
