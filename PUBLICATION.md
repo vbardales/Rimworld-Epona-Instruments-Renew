@@ -80,6 +80,8 @@ copy of `Mod/About/Preview.png`. Steam shows the first one large.
 | `3-the-accordionist.png` | A round, white-haired pawn in an ochre jacket over a green shirt, with the accordion | same |
 | `4-the-instruments-side-by-side.png` | The three items next to the provider's ocarina and frame drum: the size a subscriber compares against | scenario written, playable once the pass map is accepted; no pawn |
 
+**Story, palette and the four portraits validated by the owner 2026-10-02.**
+
 **The rule (owner, 2026-10-02): a gallery shot is a staged photograph, never a default setting.** Menus and interface
 windows are the only plain screenshots; this mod has none. So the series has a story and one set: a ceilidh at dusk on
 the studio's "display" stage, with a standing lamp and a shelf, placed before each shot and removed after it
