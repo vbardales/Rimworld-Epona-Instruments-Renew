@@ -62,3 +62,12 @@ The sounds are a stopgap and are meant as one: Mlie has neither a bagpipe nor an
 One line to change the day real recordings exist.
 
 ---
+
+## Bagpipes sound
+
+`Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg`: "Sound Effect by freesound_community from Pixabay"
+(https://pixabay.com/fr/users/freesound_community-46691455/, content id 27401), re-encoded from the supplied MP3
+to Ogg Vorbis, otherwise unchanged. Pixabay Content License (https://pixabay.com/service/license-summary/):
+use without attribution allowed, credit given anyway; selling or distributing the file on a standalone basis is
+not allowed, and it ships here only as the sound of the great highland bagpipes. Replaces the borrowed
+`MIC_Ocarina_Play` for that instrument only.

@@ -7,7 +7,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: playTests[1.0.0]
+workflow_stage: code[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -50,3 +50,7 @@ Remaining for `playTests` -> `shootGallery` (all `unverified`, none a defect):
 - `protocols_read_sha` absent: protocols not fully read nor marked in this pass.
 
 Housekeeping 2026-10-11: `.build/` renamed `build/` (`.gitignore`, both `Directory.Build.props`); `_tools/Generate-FrenchReview.ps1` removed in favour of `scripts/Make-FrenchReview.ps1`, `FRENCH_REVIEW.md` regenerated. `preview-generation.txt` (the illustration prompt) deleted: the source `Art/Preview-source.png` was received (AUDIT.md 2.f); the prompt stays in git history.
+
+## Back to `code[1.0.0]` - 2026-10-11
+
+New feature: own sound for the great highland bagpipes (Virginie supplied a Pixabay recording; M1 judged the ocarina stand-in not bagpipe-like). `Mod/Defs/SoundDefs/EponaInstruments_Sounds.xml`, `Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg`, patch line, `Tests/Test-EffectiveDefs.ps1` (green), ATTRIBUTION, CHANGELOG. Not yet loaded in a game: ogg loading and the sustained loop of a 52 s clip are unverified. Next: `code` -> `declareDependencies` (no new dependency), then back through `playTests` (new Pickle pass, M1 listen).

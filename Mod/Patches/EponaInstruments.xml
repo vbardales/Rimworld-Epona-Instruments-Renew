@@ -44,7 +44,7 @@
               <vertical>true</vertical>
             </li>
             <li Class="MusicalInstruments.CompProp_PlayingMusic">
-              <soundPlayInstrument>MIC_Ocarina_Play</soundPlayInstrument>
+              <soundPlayInstrument>EponaIR_GreatHighlandBagpipes_Play</soundPlayInstrument>
             </li>
           </comps>
         </ThingDef>

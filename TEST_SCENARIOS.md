@@ -9,7 +9,7 @@ actually been run is in `STATUS.md`; this file is the plan and the accounting, n
 
 | Item | Research | Cost | Work | Sound |
 | --- | --- | --- | --- | --- |
-| great highland bagpipes | Primitive instruments (500) | 40 wood + 80 fabric or leather | 28,000 | `MIC_Ocarina_Play` |
+| great highland bagpipes | Primitive instruments (500) | 40 wood + 80 fabric or leather | 28,000 | `EponaIR_GreatHighlandBagpipes_Play` (own) |
 | uilleann pipes | Primitive instruments (500) | 20 wood + 3 components + 75 metal | 45,000 | `MIC_Ocarina_Play` |
 | accordion | Stringed instruments (750) | 30 wood + 5 components + 15 metal | 65,000 | `MIC_ElectronicOrgan_Play` |
 

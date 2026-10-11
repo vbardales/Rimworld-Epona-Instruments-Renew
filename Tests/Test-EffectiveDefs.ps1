@@ -84,6 +84,7 @@ function Resolve-Def($node, $byName) {
 $patchFile = Join-Path $Root 'Mod/Patches/EponaInstruments.xml'
 $provDefs = @(Read-Defs (Join-Path $Provider 'Defs'))
 $byName = @{}; $byDef = @{}
+foreach ($f in Get-ChildItem (Join-Path $Root "Mod/Defs") -Filter *.xml -Recurse) { foreach ($d in (Read-Defs $f.FullName)) { $dn = Text $d "defName"; if ($dn) { $byDef["$($d.Name)/$dn"] = $d } } }
 foreach ($d in $provDefs) {
   $nm = $d.GetAttribute('Name'); if ($nm) { $byName[$nm] = $d }
   $dn = Text $d 'defName'; if ($dn) { $byDef["$($d.Name)/$dn"] = $d }
@@ -117,7 +118,7 @@ $added = @($matchOp.SelectNodes('value/*'))
 Check ($added.Count -eq 3) "patch adds exactly 3 defs (found $($added.Count))"
 
 $expected = @{
-  'JP_GreatHighlandBagpipes' = @{ Research = 'PrimitiveInstruments'; Sound = 'MIC_Ocarina_Play';        Tex = 'Things/Items/Pipes/GreatHighlandPipes' }
+  'JP_GreatHighlandBagpipes' = @{ Research = 'PrimitiveInstruments'; Sound = 'EponaIR_GreatHighlandBagpipes_Play'; Tex = 'Things/Items/Pipes/GreatHighlandPipes' }
   'JP_UilleannPipes'         = @{ Research = 'PrimitiveInstruments'; Sound = 'MIC_Ocarina_Play';        Tex = 'Things/Items/Pipes/UilleannPipes' }
   'JP_Accordion'             = @{ Research = 'StringedInstruments';  Sound = 'MIC_ElectronicOrgan_Play'; Tex = 'Things/Items/Pipes/Accordion' }
 }
@@ -158,7 +159,7 @@ foreach ($n in $added) {
   Check (($ea -gt 0 -and $ea -le 1) -and ($ex -gt 0 -and $ex -le 1)) "easiness $ea and expressiveness $ex within (0,1]"
   $pm = @($comps.ChildNodes | Where-Object { $_.GetAttribute('Class') -eq 'MusicalInstruments.CompProp_PlayingMusic' })[0]
   $snd = Text $pm 'soundPlayInstrument'
-  Check ($snd -eq $exp.Sound -and $byDef.ContainsKey("SoundDef/$snd")) "soundPlayInstrument $snd exists in the provider ($($exp.Sound) expected)"
+  Check ($snd -eq $exp.Sound -and $byDef.ContainsKey("SoundDef/$snd")) "soundPlayInstrument $snd exists in the provider or in this mod ($($exp.Sound) expected)"
 
   $rm = Child $eff 'recipeMaker'
   $rp = Text $rm 'researchPrerequisite'
