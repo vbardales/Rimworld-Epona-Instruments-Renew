@@ -24,11 +24,11 @@ Feature: hear the carried instruments, on film
     When I spawn a "JP_GreatHighlandBagpipes" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_GreatHighlandBagpipes_Play"
     And Nelim's Pickle Tools: I film with sound as "highland-bagpipes"
     And Nelim's Pickle Tools: I let 30 real seconds go by
     And Nelim's Pickle Tools: I stop filming with sound
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_GreatHighlandBagpipes_Play"
     And Nelim's Pickle Tools: the sound recorded as "highland-bagpipes" is not silent
 
   Scenario: the uilleann pipes are filmed with their sound

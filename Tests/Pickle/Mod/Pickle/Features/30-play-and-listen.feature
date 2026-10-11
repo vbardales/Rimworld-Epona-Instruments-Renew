@@ -31,11 +31,11 @@ Feature: hear the carried instruments played
     When I spawn a "JP_GreatHighlandBagpipes" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_GreatHighlandBagpipes_Play"
     And I take a screenshot "the bagpipes are being played"
     When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_GreatHighlandBagpipes_Play"
 
   Scenario: the uilleann pipes are played, and heard
     When I spawn a "JP_UilleannPipes" at (144, 155)
