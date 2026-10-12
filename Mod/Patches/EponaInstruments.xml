@@ -84,7 +84,7 @@
               <vertical>true</vertical>
             </li>
             <li Class="MusicalInstruments.CompProp_PlayingMusic">
-              <soundPlayInstrument>MIC_Ocarina_Play</soundPlayInstrument>
+              <soundPlayInstrument>EponaIR_UilleannPipes_Play</soundPlayInstrument>
             </li>
           </comps>
         </ThingDef>
@@ -127,7 +127,7 @@
               <vertical>true</vertical>
             </li>
             <li Class="MusicalInstruments.CompProp_PlayingMusic">
-              <soundPlayInstrument>MIC_ElectronicOrgan_Play</soundPlayInstrument>
+              <soundPlayInstrument>EponaIR_Accordion_Play</soundPlayInstrument>
             </li>
           </comps>
         </ThingDef>

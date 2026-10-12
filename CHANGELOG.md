@@ -4,7 +4,7 @@
 
 - French text corrected after review: agreement in the accordion description, "grande cornemuse écossaise" for the
   great highland bagpipes, and a plainer phrasing for the uilleann pipes.
-- Great highland bagpipes: own sound (Pixabay recording, `EponaIR_GreatHighlandBagpipes_Play`) instead of the borrowed ocarina; the uilleann pipes and the accordion keep the borrowed sounds. Not yet heard in a game.
+- Own sounds for the three instruments (Pixabay recordings: `EponaIR_GreatHighlandBagpipes_Play`, `EponaIR_UilleannPipes_Play`, `EponaIR_Accordion_Play`) instead of the borrowed ocarina and electronic organ. The bagpipes sound was heard and validated by Virginie 2026-10-12; the other two are not yet heard in a game.
 - New Preview image (regenerated, with the ModIcon in a corner).
 - `About.xml`: one line changed since the `0.1.0` upload (see the git log of the file).
 

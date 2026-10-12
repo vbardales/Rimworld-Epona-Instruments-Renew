@@ -58,3 +58,7 @@ New feature: own sound for the great highland bagpipes (Virginie supplied a Pixa
 ### 2026-10-12: bagpipes sound validated
 
 Own bagpipes sound loaded in the game and heard (two Pickle requests green on 49ce4d1, Virginie validated the 30 s film). Left in M1: uilleann pipes and accordion, still on borrowed sounds, never heard (see `docs/runs/2026-10-11-m1-listen-verdict.md`). Next: decide their sounds, then declareDependencies (blocked while the protocols repository has uncommitted files, `Mark-ProtocolsRead`).
+
+### 2026-10-12: own sounds for the uilleann pipes and the accordion
+
+Virginie supplied two more Pixabay recordings (Brian Cradden; freesound_community). Added as `EponaIR_UilleannPipes_Play` and `EponaIR_Accordion_Play`; patch, effective-defs test (green) and the two 30/35 features updated. Not yet heard in a game. The queued gallery ticket was cancelled and resubmitted on this tree.

@@ -35,20 +35,20 @@ Feature: hear the carried instruments, on film
     When I spawn a "JP_UilleannPipes" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_UilleannPipes_Play"
     And Nelim's Pickle Tools: I film with sound as "uilleann-pipes"
     And Nelim's Pickle Tools: I let 30 real seconds go by
     And Nelim's Pickle Tools: I stop filming with sound
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_UilleannPipes_Play"
     And Nelim's Pickle Tools: the sound recorded as "uilleann-pipes" is not silent
 
   Scenario: the accordion is filmed with its sound
     When I spawn a "JP_Accordion" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_Accordion_Play"
     And Nelim's Pickle Tools: I film with sound as "accordion"
     And Nelim's Pickle Tools: I let 30 real seconds go by
     And Nelim's Pickle Tools: I stop filming with sound
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_Accordion_Play"
     And Nelim's Pickle Tools: the sound recorded as "accordion" is not silent

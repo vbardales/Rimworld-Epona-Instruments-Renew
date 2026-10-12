@@ -71,3 +71,16 @@ to Ogg Vorbis, otherwise unchanged. Pixabay Content License (https://pixabay.com
 use without attribution allowed, credit given anyway; selling or distributing the file on a standalone basis is
 not allowed, and it ships here only as the sound of the great highland bagpipes. Replaces the borrowed
 `MIC_Ocarina_Play` for that instrument only.
+
+## Uilleann pipes and accordion sounds
+
+- `Mod/Sounds/EponaInstruments/UilleannPipes/uilleann-pipes.ogg`: "Sound Effect by Brian Cradden from Pixabay"
+  (uploaded under the Pixabay account Grumpynora), re-encoded from the supplied MP3 to Ogg Vorbis, otherwise unchanged.
+  The Pixabay page notes the track is registered with Content ID on YouTube: a YouTube video that contains it may
+  receive an automatic claim.
+- `Mod/Sounds/EponaInstruments/Accordion/accordion.ogg`: "Sound Effect by freesound_community from Pixabay",
+  re-encoded from the supplied MP3 to Ogg Vorbis, otherwise unchanged.
+
+Both under the Pixabay Content License (https://pixabay.com/service/license-summary/), same terms as the bagpipes
+sound above: no attribution required, credit given anyway, no standalone redistribution of the file.
+They replace the borrowed `MIC_Ocarina_Play` and `MIC_ElectronicOrgan_Play` for these two instruments.

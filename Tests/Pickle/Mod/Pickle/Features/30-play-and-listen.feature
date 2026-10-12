@@ -41,21 +41,21 @@ Feature: hear the carried instruments played
     When I spawn a "JP_UilleannPipes" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_UilleannPipes_Play"
     And I take a screenshot "the uilleann pipes are being played"
     When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_Ocarina_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_UilleannPipes_Play"
 
   Scenario: the accordion is played, and heard
     When I spawn a "JP_Accordion" at (144, 155)
     And Epona Instruments Renew "Jet" is offered the music joy and starts it
     And I wait for "Jet" to have job "MusicPlayJoy"
-    Then Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
+    Then Epona Instruments Renew "Jet" is heard playing "EponaIR_Accordion_Play"
     And I take a screenshot "the accordion is being played"
     When Epona Instruments Renew 1800 ticks pass
     Then "Jet" has job "MusicPlayJoy"
-    And Epona Instruments Renew "Jet" is heard playing "MIC_ElectronicOrgan_Play"
+    And Epona Instruments Renew "Jet" is heard playing "EponaIR_Accordion_Play"
 
   Scenario: with the provider's sound checkbox unticked, the same performance is silent
     Given Epona Instruments Renew the provider sound checkbox is off

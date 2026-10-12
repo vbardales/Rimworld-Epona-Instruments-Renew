@@ -119,8 +119,8 @@ Check ($added.Count -eq 3) "patch adds exactly 3 defs (found $($added.Count))"
 
 $expected = @{
   'JP_GreatHighlandBagpipes' = @{ Research = 'PrimitiveInstruments'; Sound = 'EponaIR_GreatHighlandBagpipes_Play'; Tex = 'Things/Items/Pipes/GreatHighlandPipes' }
-  'JP_UilleannPipes'         = @{ Research = 'PrimitiveInstruments'; Sound = 'MIC_Ocarina_Play';        Tex = 'Things/Items/Pipes/UilleannPipes' }
-  'JP_Accordion'             = @{ Research = 'StringedInstruments';  Sound = 'MIC_ElectronicOrgan_Play'; Tex = 'Things/Items/Pipes/Accordion' }
+  'JP_UilleannPipes'         = @{ Research = 'PrimitiveInstruments'; Sound = 'EponaIR_UilleannPipes_Play'; Tex = 'Things/Items/Pipes/UilleannPipes' }
+  'JP_Accordion'             = @{ Research = 'StringedInstruments';  Sound = 'EponaIR_Accordion_Play'; Tex = 'Things/Items/Pipes/Accordion' }
 }
 $fr = New-Object System.Xml.XmlDocument
 $fr.Load((Join-Path $Root 'Mod/Languages/French/DefInjected/ThingDef/JoyPreservation.xml'))
