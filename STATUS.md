@@ -54,3 +54,7 @@ Housekeeping 2026-10-11: `.build/` renamed `build/` (`.gitignore`, both `Directo
 ## Back to `code[1.0.0]` - 2026-10-11
 
 New feature: own sound for the great highland bagpipes (Virginie supplied a Pixabay recording; M1 judged the ocarina stand-in not bagpipe-like). `Mod/Defs/SoundDefs/EponaInstruments_Sounds.xml`, `Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg`, patch line, `Tests/Test-EffectiveDefs.ps1` (green), ATTRIBUTION, CHANGELOG. Not yet loaded in a game: ogg loading and the sustained loop of a 52 s clip are unverified. Next: `code` -> `declareDependencies` (no new dependency), then back through `playTests` (new Pickle pass, M1 listen).
+
+### 2026-10-12: bagpipes sound validated
+
+Own bagpipes sound loaded in the game and heard (two Pickle requests green on 49ce4d1, Virginie validated the 30 s film). Left in M1: uilleann pipes and accordion, still on borrowed sounds, never heard (see `docs/runs/2026-10-11-m1-listen-verdict.md`). Next: decide their sounds, then declareDependencies (blocked while the protocols repository has uncommitted files, `Mark-ProtocolsRead`).
