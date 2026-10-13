@@ -7,14 +7,14 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: code[1.0.0]
+workflow_stage: declareDependencies[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
 translation_fr: complete
 showcase: complete
 tested_on:
-updated: 2026-10-11
+updated: 2026-10-13
 workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
@@ -63,3 +63,7 @@ Own bagpipes sound loaded in the game and heard (two Pickle requests green on 49
 ### 2026-10-12: own sounds for the uilleann pipes and the accordion
 
 Virginie supplied two more Pixabay recordings (Brian Cradden; freesound_community). Added as `EponaIR_UilleannPipes_Play` and `EponaIR_Accordion_Play`; patch, effective-defs test (green) and the two 30/35 features updated. Not yet heard in a game. The queued gallery ticket was cancelled and resubmitted on this tree.
+
+### 2026-10-13: code[1.0.0] to declareDependencies[1.0.0]
+
+Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; `CHANGELOG.md` `[Unreleased] (1.0.0)` says what the version changes; protocols read (`protocols_read_sha` 5e7c922c). The own sounds of the uilleann pipes and the accordion are not yet heard in a game: `unverified`, M1, belongs to `playTests`. Next: verify the real dependencies (4.a to 4.g).
