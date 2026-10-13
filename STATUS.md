@@ -7,7 +7,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -84,3 +84,9 @@ Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; 
 ### 2026-10-13: localization (localize[1.0.0] to writeTests[1.0.0])
 
 Player-facing texts: the three labels and descriptions, patched in English, covered in French by `Languages/French/DefInjected/ThingDef/JoyPreservation.xml`; no Keyed text, no code. No text changed since Virginie validated the French on 2026-10-02 (26fa6b3, c073659); the sound change adds none. `FRENCH_REVIEW.md` regenerated at edef521 (same French; the English columns are now filled). `translation_fr` stays `complete`.
+
+### 2026-10-13: tests replayed (writeTests[1.0.0] to playTests[1.0.0], tree 00c8d6b)
+
+Replayed now, offline, all green on 00c8d6b: `Tests/Test-EffectiveDefs.ps1` (all assertions passed), `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` (six shared diagnostics PASS), `Check-ModBasics.ps1` (PASS after syncing `Mod/ATTRIBUTION.md` with the root copy, which lacked the sound credits), `Check-Translations.ps1` (PASS). Scenarios (`TEST_SCENARIOS.md`) and the 22-scenario Pickle suite are written, not run in this pass; translations `complete`. Nothing was played in a game.
+
+Left for `playTests` (all `unverified`): new Pickle tickets for the own sounds of the uilleann pipes and the accordion and a French pass on the current `Mod/`; M1 listen (Virginie); code review 8.m (`code_review_sha` absent, review from `0.1.0`).
