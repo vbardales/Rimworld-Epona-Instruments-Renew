@@ -7,7 +7,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: localize[1.0.0]
+workflow_stage: writeTests[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -80,3 +80,7 @@ Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; 
 ### 2026-10-13: settings audit, not applicable (settings[1.0.0] to localize[1.0.0])
 
 5.b/5.c/5.d: no settings, no MainButton. Verified in the sources: no DLL in `Mod/`, no `MainButtonDef`, no `ModSettings`, `Mod/Defs/` holds only `SoundDefs/`. No empty page and no shortcut is exposed. `settings_audit: not_applicable` stands.
+
+### 2026-10-13: localization (localize[1.0.0] to writeTests[1.0.0])
+
+Player-facing texts: the three labels and descriptions, patched in English, covered in French by `Languages/French/DefInjected/ThingDef/JoyPreservation.xml`; no Keyed text, no code. No text changed since Virginie validated the French on 2026-10-02 (26fa6b3, c073659); the sound change adds none. `FRENCH_REVIEW.md` regenerated at edef521 (same French; the English columns are now filled). `translation_fr` stays `complete`.
