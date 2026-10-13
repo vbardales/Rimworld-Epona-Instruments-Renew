@@ -7,7 +7,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: settings[1.0.0]
+workflow_stage: localize[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -76,3 +76,7 @@ Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; 
 - 4.e: the only patch is a `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing is added or logged without Musical Instruments. No `MayRequire`, no optional mod.
 - 4.f: not an animal mod, not applicable. No `incompatibleWith` needed (none known).
 - Not run here: `scripts/sort-load-order.py` and an in-game load (`unverified`, belongs to `playTests`).
+
+### 2026-10-13: settings audit, not applicable (settings[1.0.0] to localize[1.0.0])
+
+5.b/5.c/5.d: no settings, no MainButton. Verified in the sources: no DLL in `Mod/`, no `MainButtonDef`, no `ModSettings`, `Mod/Defs/` holds only `SoundDefs/`. No empty page and no shortcut is exposed. `settings_audit: not_applicable` stands.
