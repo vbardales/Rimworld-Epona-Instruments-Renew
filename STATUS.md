@@ -7,7 +7,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: declareDependencies[1.0.0]
+workflow_stage: settings[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -67,3 +67,12 @@ Virginie supplied two more Pixabay recordings (Brian Cradden; freesound_communit
 ### 2026-10-13: code[1.0.0] to declareDependencies[1.0.0]
 
 Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; `CHANGELOG.md` `[Unreleased] (1.0.0)` says what the version changes; protocols read (`protocols_read_sha` 5e7c922c). The own sounds of the uilleann pipes and the accordion are not yet heard in a game: `unverified`, M1, belongs to `playTests`. Next: verify the real dependencies (4.a to 4.g).
+
+### 2026-10-13: dependencies declared (declareDependencies[1.0.0], tree 112e4d1)
+
+- 4.a/4.b: one hard dependency, `Mlie.MusicalInstruments` (Workshop 2274558815), declared with its Workshop URL. Used for real: the patch parents (`HeldMusicalInstrumentBase`, `PrimitiveInstrumentBase`) and the classes `MusicalInstruments.CompProperties_MusicalInstrument`, `CompMusicalInstrument`, `CompProp_PlayingMusic`. No other mod referenced.
+- 4.c: no DLC referenced; `supportedVersions` is 1.6 only; no `LoadFolders.xml` (none needed, one folder).
+- 4.d: `loadAfter` lists `Ludeon.RimWorld` and `Mlie.MusicalInstruments`; no cycle (one dependency).
+- 4.e: the only patch is a `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing is added or logged without Musical Instruments. No `MayRequire`, no optional mod.
+- 4.f: not an animal mod, not applicable. No `incompatibleWith` needed (none known).
+- Not run here: `scripts/sort-load-order.py` and an in-game load (`unverified`, belongs to `playTests`).
