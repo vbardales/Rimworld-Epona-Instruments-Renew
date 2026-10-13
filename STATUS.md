@@ -33,7 +33,7 @@ remaining:
   - the tickerType Normal correction: the loaded def reports Normal (Pickle 2026-09-21), and the game holds a live provider sound for the performer of each instrument (30-play-and-listen, passed 2026-09-25 in English for the bagpipes and the accordion, in French for all three, and silent with the checkbox unticked); that a loudspeaker renders it is MANUAL M1 (by ear, waits for the PickleTools sound work)
   - local state (2026-10-02): committed and pushed up to the French review and the gallery story; untracked and left alone on purpose: Tests/Audit-2026-09-13/ (decompilation evidence), Assets/, the desktop.ini files. Art/ was trimmed on 2026-10-02 (c6a83ca): the Preview working files (preview.html, render-preview.cjs, preview-qa.json, Preview-268.png, preview-render/background, ModIcon-32/badge/cutout) are gone from the tree; the older sections of this file that name them describe what existed on their date. Art/ now holds ModIcon-source.png, ModIcon.ico, Preview.png, echo.png, preview-copy.json, preview-palette.json, preview-generation.txt and Gallery/0-preview.png (byte-identical to Mod/About/Preview.png)
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
-protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
+protocols_read_sha: b483dd6813cb9e000e9a71d4a0d631de555c7aac
 ---
 
 # Epona Instruments Renew - status
@@ -90,3 +90,10 @@ Player-facing texts: the three labels and descriptions, patched in English, cove
 Replayed now, offline, all green on 00c8d6b: `Tests/Test-EffectiveDefs.ps1` (all assertions passed), `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` (six shared diagnostics PASS), `Check-ModBasics.ps1` (PASS after syncing `Mod/ATTRIBUTION.md` with the root copy, which lacked the sound credits), `Check-Translations.ps1` (PASS). Scenarios (`TEST_SCENARIOS.md`) and the 22-scenario Pickle suite are written, not run in this pass; translations `complete`. Nothing was played in a game.
 
 Left for `playTests` (all `unverified`): new Pickle tickets for the own sounds of the uilleann pipes and the accordion and a French pass on the current `Mod/`; M1 listen (Virginie); code review 8.m (`code_review_sha` absent, review from `0.1.0`).
+
+### 2026-10-13: audit recheck of the earlier states (tree 828ab1e)
+
+- 2.b: the shipped ModIcon.png dated from 2026-09-13, older than its source (2026-10-02): regenerated with Render-Preview.cjs (modIconSource), with Preview.png, 0-preview.png and both .ico (828ab1e). ModIcon.png is 31,7 KB, above the expected 20-30 KB: the tool's output, left as is.
+- 2.e: Art/Preview-source.png has a mean value of 0.188 (Measure-Palette.sh), below the 0.30 asked. Reserve accepted by Virginie on 2026-10-13 (confirmed in chat): the rendered Preview reads well at 268 px; the source is not redone.
+- Mod/ATTRIBUTION.md synced with the root copy (sound credits).
+- Not rechecked in this pass: PUBLICATION.md line by line; scripts/sort-load-order.py (no Python on this machine).
