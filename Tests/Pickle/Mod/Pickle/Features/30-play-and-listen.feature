@@ -12,8 +12,8 @@
 # For each instrument, alone on the map: a colonist with a high Artistic skill is given the provider's music joy (its own
 # giver chooses the spot and the instrument; job MusicPlayJoy, 4,000 ticks) and performs. Not the work route: the provider's
 # WorkGiver only offers a venue that is itself an instrument (2026-09-23: a plain music spot never got the work, HasJobOnThing
-# false while every one of its checks held). The sound is the provider's stand-in sample (an ocarina for both
-# pipes, an electronic organ for the accordion).
+# false while every one of its checks held). The sound is each instrument's own sound def (EponaIR_*_Play, 2026-10-12;
+# the provider's ocarina and organ were the stand-ins before).
 #
 # The provider only starts an instrument's sound when its own checkbox is ticked (the default) and Royalty is
 # active: the last scenario unticks it and asserts silence, then the checkbox is put back by the suite's step.

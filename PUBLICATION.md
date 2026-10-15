@@ -6,7 +6,7 @@ envoi (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, create
 
 ## Where it stands
 
-- Stage `done`; `tested` is not reached (M1 for the uilleann pipes and the accordion; see `STATUS.md`). The fail-fast
+- Stage `playTests[1.0.0]`; `shootGallery` is not reached (M1 for the uilleann pipes and the accordion; see `STATUS.md`). The fail-fast
   policy of `AUDIT.md` lets `1.0.0` go out once no red is open and the gaps are written down; it is the owner's call.
 - Version to publish: **1.0.0**, `unreleased` in `CHANGELOG.md` above the `0.1.0`. Not written yet: the `## [1.0.0]`
   section has to exist and be dated before the dry-run.
@@ -25,7 +25,7 @@ Three carried instruments, for pawns who play music to relax: the great highland
 
 They are crafted and played like every other instrument of Musical Instruments (Continued): a pawn picks one up and plays it as a joy activity.
 
-[b]About the sound.[/b] There is no bagpipe or accordion sample in Musical Instruments (Continued), so the bagpipes and the pipes play its ocarina sound and the accordion its electronic organ sound. It is a stand-in, not a recording of the instrument.
+[b]About the sound.[/b] Musical Instruments (Continued) has no bagpipe or accordion sample, so each of the three instruments plays its own recording (Pixabay, credited in ATTRIBUTION.md).
 
 [b]Requires[/b] Musical Instruments (Continued). No settings, no custom button. Nothing is patched. Use it if you ran the former Joy Preservation collection: the definition names are kept, so it can replace the three instruments of that collection. Saves made with it have not been validated in a game.
 
@@ -38,7 +38,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 The mod icon and the preview artwork were generated with OpenAI image_gen; layout, delivery and testing were prepared by Nelim with AI assistance (Claude Code, Codex). The six in-game textures are Outremer's, unchanged.
 
 [b]THANKS[/b]
-Outremer, for the original Epona Instruments Standalone (definitions and textures). Mlie, for Musical Instruments (Continued), on whose bases and sounds this mod stands. The Pickle test framework and the PickleTools of this collection, for the in-game checks.
+Outremer, for the original Epona Instruments Standalone (definitions and textures). Mlie, for Musical Instruments (Continued), on whose bases this mod stands. Brian Cradden and freesound_community, on Pixabay, for the three recordings. The Pickle test framework and the PickleTools of this collection, for the in-game checks.
 
 Credits, source and what was changed: ATTRIBUTION.md in the repository. Licence: see LICENSE.
 
@@ -56,13 +56,13 @@ Written now so the form does not find it missing. It opens with the version.
 
 ```markdown
 [b]1.0.0[/b]
-First public version. Adds the great highland bagpipes, the uilleann pipes and the accordion, crafted and played like the other instruments of Musical Instruments (Continued). English and French text. Their sounds borrow the ocarina and electronic organ of that mod until real recordings exist.
+First public version. Adds the great highland bagpipes, the uilleann pipes and the accordion, crafted and played like the other instruments of Musical Instruments (Continued). English and French text. Each plays its own recording.
 ```
 
 ## Dependencies and DLC
 
 - **Hard:** `Mlie.MusicalInstruments`, Musical Instruments (Continued), Workshop 2274558815. Technically required: the
-  three defs inherit its `PrimitiveInstrumentBase` and `HeldMusicalInstrumentBase`, and borrow its sounds. In
+  three defs inherit its `PrimitiveInstrumentBase` and `HeldMusicalInstrumentBase`, and use its `MusicalInstruments` component classes. In
   `About.xml` as `modDependencies` and `loadAfter`.
 - **Nothing else.** No DLC, no optional mod, no `LoadFolders.xml` branch. `supportedVersions`: 1.6 only.
 - Re-checked in the sources on 2026-10-02 against `Mod/About/About.xml`; the dependency is declared with its Workshop id.
@@ -120,7 +120,7 @@ under 1,000. Drafts, to be rewritten in her voice before posting (states: `draft
 **Musical Instruments (Continued)** (2274558815, Mlie; original author to verify on the page and credit too):
 
 ```text
-Thanks for keeping Musical Instruments alive, Mlie :) Nine carried instruments and no bagpipe, so I borrowed your ocarina sound for a bagpipe-shaped one and your organ for an accordion. They're stand-ins until real samples exist. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806766938]Epona Instruments Renew (unofficial)[/url]
+Thanks for keeping Musical Instruments alive, Mlie :) Nine carried instruments and no bagpipe or accordion, so I added three on top of your framework, each with its own sound. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806766938]Epona Instruments Renew (unofficial)[/url]
 ```
 
 **Epona Instruments Standalone** (2627618308, Outremer; the mod is unofficial and carries his definitions and textures):

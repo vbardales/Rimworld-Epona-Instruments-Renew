@@ -35,7 +35,7 @@ The language is chosen at launch, never switched during a test: every scenario i
 ### MANUAL M1 - hear the instruments
 
 `PLAY_AND_LISTEN.md`. Run `30-play-and-listen.feature` on the Windows game, sound on, "Watch" pace. Expected: a
-continuous tone while the colonist plays (ocarina-like for both pipes, organ-like for the accordion), and silence with
+continuous tone while the colonist plays (each instrument's own recording), and silence with
 the provider's checkbox unticked. Silence with the checkbox ticked is the failure to report, with the instrument's name.
 
 An alternative way to verify: the pass "sound" (`TESTING.md`) plays the conditional `35-hear-the-instruments.feature`,
@@ -70,4 +70,4 @@ The manual version, kept for reference. Only the maintainer has a save made whil
 - **Settings page and MainButtons shortcut:** none exists (`settings_audit: not_applicable`).
 - **Recreation menu and split-package ownership:** they belonged to the extraction from Joy Preservation and were
   verified offline (`Tests/Reorganization-2026-09-13/`).
-- **Optional mods and DLC:** none declared, so no conditional (`@requires`) scenario exists.
+- **Optional mods and DLC:** none declared. The only `@requires` scenarios need PickleTools companions, not a mod or a DLC the mod depends on: `35-hear-the-instruments` (SoundCapture) and `14-publication-shots` (gallery staging).

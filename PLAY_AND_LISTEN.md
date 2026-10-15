@@ -36,9 +36,9 @@ instrument sound only when it is. Restart when the game asks.
 
 | Scenario | You see | You hear | Verdict |
 | --- | --- | --- | --- |
-| great highland bagpipes | Jet walks to the music spot and plays | a continuous ocarina-like tone (the provider's stand-in sample) while she plays | pass |
-| uilleann pipes | the same | the same tone | pass |
-| accordion | the same | a continuous organ-like tone | pass |
+| great highland bagpipes | Jet walks to the music spot and plays | a continuous bagpipe tone (its own recording) while she plays | pass |
+| uilleann pipes | the same | a continuous uilleann pipes tone (its own recording) | pass |
+| accordion | the same | a continuous accordion tone (its own recording) | pass |
 | checkbox unticked | Jet plays | **nothing**, by design | pass |
 | any of the first three | Jet plays | **nothing** | **fail**: tell me which instrument (the headless run says whether the game started the sound) |
 | any | the runner waits and times out, or a red error appears | - | tell me the runner's message or the first log line; it is not a verdict on the sound |
