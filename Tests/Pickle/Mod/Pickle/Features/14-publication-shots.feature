@@ -1,95 +1,195 @@
 # Images for the Workshop page (PUBLICATION.md, "Gallery"). Composition stays a visual review: a passed scenario
 # proves the route ran, never that the picture sells the mod.
 #
-# NOT PLAYED. The pawn-placement step now exists in PickleTools (written, compiled, not committed there, not played);
-# the pass map needs nelim.pickletools.colonistrace for it. The older note below about a MISSING step is superseded.
-# NOT PLAYED, AND NOT PLAYABLE YET (written before that step existed). Written 2026-10-02 in Tests/Pickle/Gallery-draft/, outside the staged companion, because
-# two M1 sound requests were queued and the staged tree must not move under them. Steps marked "MISSING" do not exist in
-# PickleTools/docs/steps.md; they were asked of NPT through Ticket Manager (see PUBLICATION.md, "Gallery"). Once they exist
-# and the M1 requests have run: move this file to Tests/Pickle/Mod/Pickle/Features/ and play it once in the "studio" pass.
+# NOT PLAYED. Rewritten 2026-10-15 for the Sanctuary (the 2026-10-02 version used the studio colony and three invented pawns;
+# the rules since then: AUDIT.md 9.a, GALLERY.md). Several defNames and cells below are unconfirmed until a first run, and are
+# marked "to confirm": a step that does not know a name fails with the list of the valid ones.
 #
-# THE RULE (owner, 2026-10-02): a gallery shot is a staged photograph, never a default setting. Only menus and interface
-# windows are plain screenshots of themselves; this mod has none, so all of its images are staged.
+# STEP PREFIXES: "Nelim's Sanctuary:" is the Sanctuary Backlot (fixture, named places, Nelim's own face); "Nelim's Pickle Tools:" is
+# PickleTools (framing, decor, apparel, face parts, hairstyles, presentation mode); "Epona Instruments Renew:" is this suite's own; the rest is Pickle's.
+# Pass: -Language English -DepMap wsl-deps.gallery.map -Filter 14-publication-shots.feature (English: the page is English).
 #
-# THE STORY. A ceilidh at dusk in the owner's meadow studio, on the "display" stage. One band of three, one portrait each,
-# one shared set: a standing lamp, a shelf, potted plants, a brazier-warm floor of carpet. Palette of the whole series:
-# deep green, ochre and wool red, so that the brass of the accordion and the black of the pipes stand out. Each portrait
-# is taken on the same set: place the decor, photograph, remove it, next subject.
-#   1. the piper (great highland bagpipes): tall, broad, copper hair, a green jacket over an ochre shirt;
-#   2. the sitting piper (uilleann pipes): slight, dark hair, a wool-red jacket;
-#   3. the accordionist: round, white hair, an ochre jacket over a green shirt.
-# Hair colours are chosen, never rolled. Bodies are chosen (Hulk, Female, Fat), never a random silhouette. Face tattoos
-# need Ideology and carry no meaning for this story, so none is set.
+# THE STORY. A ceilidh at the hermit's hearth. Nelim (Virginie, the only colonist of the Sanctuary and the protagonist of the
+# series) is the host: she plays the great highland bagpipes. Two guests come with the other two instruments: Flore, with the
+# uilleann pipes, and Soleil, with the accordion. One set for the whole series, the hearth of the hall (named place "fire-pit",
+# stone hearth at (181, 115), braziers in the next room), photographed at its own hour each time: dusk, then night, then the
+# morning after. Palette of the series: deep green, ochre and wool red, so the brass of the accordion and the black of the
+# pipes stand out against the dark parquet. The series is told in the order of the scenarios; image 1 is the whole band, the most
+# demonstrative, and the next ones tell how the evening began (the subtitles say so, PUBLICATION.md "Gallery subtitles").
 #
-# THE SCENE IS THE OWNER'S SHOWCASE COLONY: "nelim-zen-meadow-studio" of PickleTools/ScreenshotStudio, staged only by
-# wsl-deps.studio.map (screenshotmode, screenshotstudio, stagedecor). Every other pass skips this feature. Play it in
-# English: the page is English.
-@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
+# WHO WEARS WHAT (chosen, never rolled). Props from two added mods, in the pass map: Irn Bru And Other Scottish Delights
+# (geodesicdragon.irnbru: the kilt, IrnBruMod_KiltApparel) and Vanilla Hair Expanded (VanillaExpanded.VHE: the braids).
+#   Nelim  : her own body, hair, face (SanctuaryBacklot "Nelim has her own face": two brows, a smirk, blink) and brown eyes
+#            (the fixture's defaults); an ochre shirt, a wool-red jacket, her own trousers dyed deep green.
+#   Flore  : Female body, dark hair (44, 30, 26), VHE_SideBraid; an ochre shirt, a green jacket, a wool-red kilt; face kit "calm" (a player
+#            of a difficult instrument, lips closed, eyes steady).
+#   Soleil : Fat body, white hair so that the braid VHE_Braid shows its own colours; a green shirt, an ochre jacket, a deep-red kilt;
+#            face kit "smile" (the one who enjoys it).
+# Faces: Facial Animation also draws an expression from the pawn's job (MusicPlayJoy) and mood, so every capture is read for the
+# face (a smile that is not wanted, sweat or blush from the heat: the map is held at 20 degrees).
+# Animals face the camera on at least one image (owner, 2026-10-14): Shogun the labrador and Yuki the husky, the fixture's dogs
+# (names from the owner, not yet checked in the save: to confirm).
+#
+# SHOOTING PLAN, one line per image (hour; subject; composition; the living thing; what the image says):
+#   1  hour 20, night; the three players in a row at z 117, north of the hearth, facing South; the band is the subject, the lit hearth
+#      is the foreground, two torches flank them; Shogun lies at the hearth facing the camera; the ceilidh at its height.
+#   2  hour 17, dusk; Nelim alone at (181, 117) with the great highland bagpipes; tight on her and the bag, the hearth behind-left;
+#      Yuki beside her facing the camera; the host tuning, the evening before it starts.
+#   3  hour 18; Flore alone at (181, 117) with the uilleann pipes; tight; no animal; the first guest.
+#   4  hour 19; Soleil alone at (181, 117) with the accordion; tight; no animal; the second guest, the one that carries a dance.
+#   5  hour 8, the morning after; the three new instruments and the provider's ocarina and frame drum on the stone of the hearth
+#      row, Nelim one step behind with her own face; the size a subscriber compares against.
+# Windows of the interface: none. Every image here is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").
+#
+# Cells (SANCTUAIRE-CASES.md, fire-pit, free standable at z 117: x 178-185; z 118: 178, 181-183; z 119: 182-186; z 113-114: 172-184):
+# the performer stands at (x, 117), the instrument is spawned at (x, 118).
+@requires:nelim.sanctuarybacklot
+@requires:nelim.pickletools.screenshotstudio
+@requires:nelim.pickletools.stagedecor
+@requires:nelim.pickletools.colonistrace
+@requires:nelim.pickletools.camerazoom
+@requires:geodesicdragon.irnbru
+@requires:VanillaExpanded.VHE
+@review
 Feature: images for the Workshop page
 
-  Background:
-    Given the save "nelim-zen-meadow-studio" is loaded
+  Scenario: image 1, the band by the fire
+    Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And Nelim's Pickle Tools: I frame the studio "display"
-
-  Scenario: the piper
-    Given I place the decor "StandingLamp" at (122, 95)
-    And I place the decor "Shelf" at (128, 95)
-    And Nelim's Pickle Tools: "Ambre" body type is Hulk
-    And Nelim's Pickle Tools: "Ambre" hair colour is rgb (176, 88, 40)
-    And Nelim's Pickle Tools: "Ambre" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
-    And Nelim's Pickle Tools: "Ambre" wears "Apparel_Jacket" dyed rgb (40, 88, 56)
-    # Step from PickleTools (written, compiled, not played as of 2026-10-02; PickleTools/docs/STAGING.md): the camera looks
-    # north, so a pawn faces South to face it.
-    And Nelim's Pickle Tools: "Ambre" stands at (125, 96) facing South
-    And I spawn a "JP_GreatHighlandBagpipes" at (125, 97)
-    When Epona Instruments Renew "Ambre" is offered the music joy and starts it
-    And I wait for "Ambre" to have job "MusicPlayJoy"
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    Then I take a screenshot "Workshop page, the piper"
-    And Nelim's Pickle Tools: the decor is removed
-
-  Scenario: the sitting piper
-    Given I place the decor "StandingLamp" at (122, 95)
-    And I place the decor "Shelf" at (128, 95)
+    And I set the hour to 20
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And a colonist "Flore" exists
+    And a colonist "Soleil" exists
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
+    And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
+    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Flore" body type is Female
+    And Nelim's Pickle Tools: "Flore" hairstyle is "VHE_SideBraid"
     And Nelim's Pickle Tools: "Flore" hair colour is rgb (44, 30, 26)
     And Nelim's Pickle Tools: "Flore" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
-    And Nelim's Pickle Tools: "Flore" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
-    And Nelim's Pickle Tools: "Flore" stands at (125, 96) facing South
-    And I spawn a "JP_UilleannPipes" at (125, 97)
-    When Epona Instruments Renew "Flore" is offered the music joy and starts it
-    And I wait for "Flore" to have job "MusicPlayJoy"
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    Then I take a screenshot "Workshop page, the sitting piper"
-    And Nelim's Pickle Tools: the decor is removed
-
-  Scenario: the accordionist
-    Given I place the decor "StandingLamp" at (122, 95)
-    And I place the decor "Shelf" at (128, 95)
+    And Nelim's Pickle Tools: "Flore" wears "Apparel_Jacket" dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Flore" wears "IrnBruMod_KiltApparel" dyed rgb (150, 40, 36)
+    And Nelim's Pickle Tools: "Flore" face kit is "calm"
     And Nelim's Pickle Tools: "Soleil" body type is Fat
+    And Nelim's Pickle Tools: "Soleil" hairstyle is "VHE_Braid"
     And Nelim's Pickle Tools: I let the hairstyle of "Soleil" show its own colours
     And Nelim's Pickle Tools: "Soleil" wears "Apparel_CollarShirt" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Soleil" wears "Apparel_Jacket" dyed rgb (196, 152, 64)
-    And Nelim's Pickle Tools: "Soleil" stands at (125, 96) facing South
-    And I spawn a "JP_Accordion" at (125, 97)
-    When Epona Instruments Renew "Soleil" is offered the music joy and starts it
+    And Nelim's Pickle Tools: "Soleil" wears "IrnBruMod_KiltApparel" dyed rgb (130, 30, 34)
+    And Nelim's Pickle Tools: "Soleil" face kit is "smile"
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (176, 117)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (176, 117) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (187, 117)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (187, 117) is lit
+    And Nelim's Pickle Tools: "Flore" stands at (178, 117) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
+    And Nelim's Pickle Tools: "Soleil" stands at (183, 117) facing South
+    And I spawn a "JP_UilleannPipes" at (178, 118)
+    And I spawn a "JP_GreatHighlandBagpipes" at (181, 118)
+    And I spawn a "JP_Accordion" at (183, 118)
+    And Nelim's Pickle Tools: the animal "Shogun" stands at (181, 114) facing South
+    When Epona Instruments Renew "Flore" is offered the music joy and starts it
+    And Epona Instruments Renew "Nelim" is offered the music joy and starts it
+    And Epona Instruments Renew "Soleil" is offered the music joy and starts it
+    And I wait for "Flore" to have job "MusicPlayJoy"
+    And I wait for "Nelim" to have job "MusicPlayJoy"
     And I wait for "Soleil" to have job "MusicPlayJoy"
+    And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: I frame the rectangle from (175, 112) to (188, 119)
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    Then I take a screenshot "Workshop page, the accordionist"
+    Then I take a screenshot "image 1, the band by the fire"
     And Nelim's Pickle Tools: the decor is removed
 
-  # The size reference, not a portrait: the three items on the bare stage beside the provider's own, for a subscriber who
-  # wants to compare. Still a photograph of the set, no pawn.
-  Scenario: the instruments side by side
-    Given I place the decor "StandingLamp" at (122, 95)
-    And I place the decor "Shelf" at (128, 95)
-    When I spawn a "Ocarina" at (123, 96)
-    And I spawn a "JP_GreatHighlandBagpipes" at (124, 96)
-    And I spawn a "JP_UilleannPipes" at (125, 96)
-    And I spawn a "JP_Accordion" at (126, 96)
-    And I spawn a "FrameDrum" at (127, 96)
-    And I wait 30 ticks
+  Scenario: image 2, Nelim tunes the great highland bagpipes
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 17
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
+    And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
+    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
+    And I spawn a "JP_GreatHighlandBagpipes" at (181, 118)
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (182, 116) facing South
+    When Epona Instruments Renew "Nelim" is offered the music joy and starts it
+    And I wait for "Nelim" to have job "MusicPlayJoy"
+    And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: I frame the rectangle from (178, 113) to (185, 119)
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    Then I take a screenshot "Workshop page, the instruments side by side"
-    And Nelim's Pickle Tools: the decor is removed
+    Then I take a screenshot "image 2, Nelim tunes the great highland bagpipes"
+
+  Scenario: image 3, Flore and the uilleann pipes
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 18
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And a colonist "Flore" exists
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
+    And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
+    And Nelim's Pickle Tools: "Flore" body type is Female
+    And Nelim's Pickle Tools: "Flore" hairstyle is "VHE_SideBraid"
+    And Nelim's Pickle Tools: "Flore" hair colour is rgb (44, 30, 26)
+    And Nelim's Pickle Tools: "Flore" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
+    And Nelim's Pickle Tools: "Flore" wears "Apparel_Jacket" dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Flore" wears "IrnBruMod_KiltApparel" dyed rgb (150, 40, 36)
+    And Nelim's Pickle Tools: "Flore" face kit is "calm"
+    And Nelim's Pickle Tools: "Flore" stands at (181, 117) facing South
+    And I spawn a "JP_UilleannPipes" at (181, 118)
+    When Epona Instruments Renew "Flore" is offered the music joy and starts it
+    And I wait for "Flore" to have job "MusicPlayJoy"
+    And Nelim's Pickle Tools: I frame the rectangle from (178, 113) to (185, 119)
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    Then I take a screenshot "image 3, Flore and the uilleann pipes"
+
+  Scenario: image 4, Soleil and the accordion
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 19
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And a colonist "Soleil" exists
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
+    And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
+    And Nelim's Pickle Tools: "Soleil" body type is Fat
+    And Nelim's Pickle Tools: "Soleil" hairstyle is "VHE_Braid"
+    And Nelim's Pickle Tools: I let the hairstyle of "Soleil" show its own colours
+    And Nelim's Pickle Tools: "Soleil" wears "Apparel_CollarShirt" dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Soleil" wears "Apparel_Jacket" dyed rgb (196, 152, 64)
+    And Nelim's Pickle Tools: "Soleil" wears "IrnBruMod_KiltApparel" dyed rgb (130, 30, 34)
+    And Nelim's Pickle Tools: "Soleil" face kit is "smile"
+    And Nelim's Pickle Tools: "Soleil" stands at (181, 117) facing South
+    And I spawn a "JP_Accordion" at (181, 118)
+    When Epona Instruments Renew "Soleil" is offered the music joy and starts it
+    And I wait for "Soleil" to have job "MusicPlayJoy"
+    And Nelim's Pickle Tools: I frame the rectangle from (178, 113) to (185, 119)
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    Then I take a screenshot "image 4, Soleil and the accordion"
+
+  Scenario: image 5, the morning after, the instruments side by side
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 8
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
+    And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
+    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Nelim" stands at (182, 119) facing South
+    When I spawn a "Ocarina" at (179, 117)
+    And I spawn a "JP_GreatHighlandBagpipes" at (180, 117)
+    And I spawn a "JP_UilleannPipes" at (181, 117)
+    And I spawn a "JP_Accordion" at (182, 117)
+    And I spawn a "FrameDrum" at (183, 117)
+    And Nelim's Sanctuary: Nelim has her own face
+    And I wait 30 ticks
+    And Nelim's Pickle Tools: I frame the rectangle from (176, 114) to (187, 120)
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    Then I take a screenshot "image 5, the morning after, the instruments side by side"

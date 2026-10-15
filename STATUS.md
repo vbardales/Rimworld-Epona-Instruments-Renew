@@ -104,3 +104,7 @@ Left for `playTests` (all `unverified`): new Pickle tickets for the own sounds o
 - PUBLICATION.md: the Steam description changed (sound paragraph, THANKS credit to the two Pixabay authors): Virginie reads it at 11.j.
 - Still open, not defects: `tested_on` stays empty until the stage is left (8.l); code review 8.m; M1; the pass `sound` retry; 8.f for `14-publication-shots`.
 - Seen, not mine: `scripts/LOCAL_SCRIPTS.md` holds hash 30956A65 for `Tests/Test-EffectiveDefs.ps1`, the file is now 0A7560F1 (Audit session to refresh). `scripts/sort-load-order.py` not run: no Python on this machine.
+
+### 2026-10-15: the gallery rewritten for the Sanctuary, with subtitles
+
+The first plan (2026-10-02: studio colony, three invented pawns, no Nelim, no hour, expression or hairstyle) did not follow the rules set since (AUDIT.md 9.a, GALLERY.md). Replaced: story "a ceilidh at the hermit's hearth", Nelim as host and protagonist, two guests, five images at their own hours, hairstyles and kilts from two added mods (Vanilla Hair Expanded, Irn Bru And Other Scottish Delights), face kits and Nelim's own face, dogs facing the camera. Scenarios: `14-publication-shots.feature` (rewritten, NOT PLAYED), pass map `Tests/Pickle/wsl-deps.gallery.map` (replaces `wsl-deps.studio.map`), seeds `Tests/Pickle/config/gallery/`. Subtitles: `PUBLICATION.md`, "Gallery subtitles". Played and judged at `shootGallery`; several defNames and the two dog names are unconfirmed (listed in `PUBLICATION.md`, "Gallery"). `scripts/sort-load-order.py` can be run with `uv run --no-project python`.

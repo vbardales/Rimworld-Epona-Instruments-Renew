@@ -1,0 +1,42 @@
+# Pass "gallery": the Workshop gallery of Epona Instruments Renew (PUBLICATION.md, "Gallery"), one pass for the whole series, in English.
+#
+# Base: SanctuaryBacklot/Tests/Pickle/wsl-deps.sanctuary.map, as DustBunniesRenew copies it (owner's instruction, 2026-10-08): the Sanctuary is the one
+# Nelim's Sanctuary Backlot ships. Seeds of the third-party settings: Tests/Pickle/config/gallery/ (copied from DustBunniesRenew, which copied them
+# from SanctuaryBacklot/Tests/Pickle/config/sanctuary/).
+#
+# Added for this suite, the props of the story (a ceilidh at the hermit's hearth), named in the header of 14-publication-shots.feature:
+#   geodesicdragon.irnbru   Irn Bru And Other Scottish Delights (2086949615): the kilt, IrnBruMod_KiltApparel
+#   VanillaExpanded.VHE     Vanilla Hair Expanded (1888705256): the braids, VHE_Braid and VHE_SideBraid
+# The Backlot itself (fixture Nelims-tribe and the place steps, prefix "Nelim's Sanctuary:") must NOT also be staged by ScreenshotStudio.
+# The studio pass of 2026-10-02 (nelim-zen-meadow-studio) is replaced by this one: the series plays in the Sanctuary (AUDIT.md 9.a).
+nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
+geodesicdragon.irnbru 2086949615
+VanillaExpanded.VHE 1888705256
+# ---- the Backlot's map, as copied ----
+nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
+nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
+nelim.pickletools.coatsteps path:PickleTools/CoatSteps/Mod
+nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
+nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
+# The bundle is committed under PickleTools/Mod: this shell replaces it, so the tools above are the only copy of their steps (see StandaloneBase).
+nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+# Minimum list, 2026-10-07/08 (owner). The staging activates in file order, then sorts by loadAfter/dependencies.
+# Bodies and trousers, as proven by Venus Touch Waistlines' gallery pass WITHOUT TailorMade (VenusTouchWaistlines/docs/runs/2026-10-08_gallery-no-tailormade-1):
+# Female Body Variants and Female Apparel Variants load BEFORE WDI (else their Naked_*_Female textures shadow WDI's); AB's Visible Pants is indispensable (without it Venus does nothing).
+# Seeds: Tests/Pickle/config/gallery/ (copied from SanctuaryBacklot/Tests/Pickle/config/sanctuary/) (AB's settings; Venus's, whose name must be Mod_local-<packageId>_<Class>.xml because it is staged by path:).
+# Not staged: TailorMade (not needed), Paper Adapter / APP / THIGAPPE (redo the same fitting, not tested together; for a separate comparison pass), Kas.GeneralCollection (optional, Workshop id not found), Reel's textures (second pass).
+tiagocc0.FemaleBodyVariants 3798082132
+tiagocc0.FemaleApparelVariants 3799726535
+wdi.realistic.bodies 3527486510
+ab.vplrf 2986402536
+nelim.venustouch.waistlines path:VenusTouchWaistlines/Mod
+# Facial animation: base, experimentals, Vanilla Textures Expanded, Akeron Extras (needs VTE), EyeGenes3, the performance patch, then VFAE (hard-requires the first four of this block, adopts the VTE and Reel placement adjustments, includes blinking).
+Nals.FacialAnimation 1635901197
+nals.facialanimationexperimentals 2581693737
+VanillaExpanded.VTEXE.FacialAnims 2816938779
+Newton.AKNExtras.FacialAnimations 2889716301
+lucius.eyegenes3 3745223213
+astryl.FacialAnimationPerformancePatch 3790129900
+sd.fa.movingvanillaeyes 3753978140

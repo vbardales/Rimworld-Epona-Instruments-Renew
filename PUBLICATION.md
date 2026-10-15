@@ -70,41 +70,60 @@ First public version. Adds the great highland bagpipes, the uilleann pipes and t
 ## Gallery
 
 Folder `Art/Gallery/`, uploaded as it is (`PUBLISHING.md`): only the images, numbered on one digit, `0-` a byte-for-byte
-copy of `Mod/About/Preview.png`. Steam shows the first one large.
+copy of `Mod/About/Preview.png`. Steam shows the first one large. The accepted captures without their subtitle live in
+`Art/Gallery-clean/` under the same names (`GALLERY.md`, "Sous-titres"); `Art/Gallery/` holds the subtitled images.
 
-| File | Shows | State |
+**Rewritten 2026-10-15, nothing played yet.** The first plan (2026-10-02: three invented pawns in the owner's meadow studio) did not
+follow the rules set since: scenes play in the Sanctuary (`AUDIT.md` 9.a), Nelim is the protagonist, the photographer picks an hour
+per image, expressions, hairstyles and props are chosen, and every staged image takes a subtitle. The scenarios are in
+`Tests/Pickle/Mod/Pickle/Features/14-publication-shots.feature` (header: story, who wears what, shooting plan), pass map
+`Tests/Pickle/wsl-deps.gallery.map`, English.
+
+**The story.** A ceilidh at the hermit's hearth. Nelim hosts and plays the great highland bagpipes; two guests bring the other two
+instruments, Flore the uilleann pipes and Soleil the accordion. One set, the stone hearth of the hall (named place `fire-pit`),
+photographed at its own hour each time. Palette: deep green, ochre, wool red. Image 1 is the whole band at night (the most
+demonstrative one goes first); the next ones tell how the evening began; the last is the morning after.
+
+| File | Hour | Shows | State |
+| --- | --- | --- | --- |
+| `0-preview.png` | | The Preview itself | present; compare its hash with `Mod/About/Preview.png` after every regeneration |
+| `1-the-band-by-the-fire.png` | 20 | Nelim, Flore and Soleil in a row north of the lit hearth, facing the camera, all three playing; torches on both sides; Shogun the labrador at the hearth, facing the camera | scenario written, not played |
+| `2-nelim-tunes-the-bagpipes.png` | 17 | Nelim alone with the great highland bagpipes, tight on her and the bag; Yuki the husky beside her, facing the camera | scenario written, not played |
+| `3-flore-and-the-uilleann-pipes.png` | 18 | Flore alone with the uilleann pipes | scenario written, not played |
+| `4-soleil-and-the-accordion.png` | 19 | Soleil alone with the accordion | scenario written, not played |
+| `5-the-morning-after.png` | 8 | The three new instruments and the provider's ocarina and frame drum in a row on the hearth floor, Nelim a step behind: the size a subscriber compares against | scenario written, not played |
+
+**Who wears what** (all chosen). Nelim: her own body, hair, face (two brows, a smirk, blink) and brown eyes, which are the fixture's
+defaults; an ochre shirt, a wool-red jacket, her trousers dyed deep green. Flore: Female body, dark hair (44, 30, 26) in the braid
+`VHE_SideBraid`, an ochre shirt, a green jacket, a wool-red kilt, face kit "calm". Soleil: Fat body, white hair so the braid `VHE_Braid`
+shows its own colours, a green shirt, an ochre jacket, a deep-red kilt, face kit "smile". Two mods added to the pass for the props:
+Irn Bru And Other Scottish Delights (`geodesicdragon.irnbru`, Workshop 2086949615, the kilt `IrnBruMod_KiltApparel`) and Vanilla Hair
+Expanded (`VanillaExpanded.VHE`, Workshop 1888705256, the braids). If these two mods are in the images, they join the THANKS of
+the description (`PUBLISHING.md`, "Remerciements": any integration named or exercised). Not done yet; decided when the images are accepted.
+
+**Unconfirmed until a first run:** the defNames `Apparel_CollarShirt`, `Apparel_Jacket`, `TorchLamp`, `VHE_SideBraid`, `VHE_Braid`; the face kits
+(the kits are not yet read by `SanctuaryBacklot/docs/GALERIE.md`); that `Shogun` and `Yuki` exist in the save under these names (from the owner,
+not checked); the free cells of `fire-pit` (from `SANCTUAIRE-CASES.md`); that a pawn in the `MusicPlayJoy` job shows the instrument in hand
+once the game is paused; what Facial Animation draws on each face (job and mood decide too). Every image is opened and judged before it
+goes to the owner (`GALLERY.md`, "La session est la metteuse en scène").
+
+Rules that apply (`PUBLISHING.md`, `GALLERY.md`, the owner's): each upload under 2 MB and under 8 MB in all, in both folders; **every image is opened and looked at**
+before it is called ready; a capture showing developer tools, another mod's overlay or the Pickle panel is disqualified.
+`Art/Gallery/` holds only `0-preview.png` today, byte-identical to `Mod/About/Preview.png` (sha256 recorded 2026-10-02, to compare again after the 2026-10-13 regeneration).
+
+## Gallery subtitles
+
+One line of English written at the bottom of each staged image, like a film subtitle (`GALLERY.md`, "Sous-titres", owner rule 2026-10-15).
+No subtitle on `0-` (the Preview) and none on an interface window (this mod has none). Burned in by
+`scripts/Add-Subtitle.ps1` from the clean original in `Art/Gallery-clean/`; a changed line is replayed from the clean original.
+
+| Index | File | Subtitle |
 | --- | --- | --- |
-| `0-preview.png` | The Preview itself | present; **compare its hash with `Mod/About/Preview.png` after every regeneration** |
-| `1-the-piper.png` | A broad piper with copper hair, green jacket over an ochre shirt, playing the great highland bagpipes | scenario written, **not playable**: needs one missing step, see below |
-| `2-the-sitting-piper.png` | A slight dark-haired pawn in a wool-red jacket, playing the uilleann pipes | same |
-| `3-the-accordionist.png` | A round, white-haired pawn in an ochre jacket over a green shirt, with the accordion | same |
-| `4-the-instruments-side-by-side.png` | The three items next to the provider's ocarina and frame drum: the size a subscriber compares against | scenario written, playable once the pass map is accepted; no pawn |
-
-**Story, palette and the four portraits validated by the owner 2026-10-02.**
-
-**The rule (owner, 2026-10-02): a gallery shot is a staged photograph, never a default setting.** Menus and interface
-windows are the only plain screenshots; this mod has none. So the series has a story and one set: a ceilidh at dusk on
-the studio's "display" stage, with a standing lamp and a shelf, placed before each shot and removed after it
-(`StageDecor`). Palette: deep green, ochre and wool red. Each pawn has a chosen body (Hulk, Female, Fat), a chosen hair
-colour (copper, near black, and white for the third, whose hairstyle shows its own colours) and dyed apparel; no
-random silhouette. No tattoo: they need Ideology and mean nothing for this story. The story, the palette and the
-choices are in the header of `Tests/Pickle/Mod/Pickle/Features/14-publication-shots.feature`.
-
-**Open points.**
-- **Step now written by Pickle Tools, not played (2026-10-02, `PickleTools/docs/STAGING.md`): `"X" stands at (x, z) facing South`. Originally asked as: put a colonist on a given cell facing the
-  camera (`"Ambre" is placed at (x, z)` in the draft). Nothing in `PickleTools/docs/steps.md` moves a pawn to a cell.
-  The studio's pawns also stand at their own stations, so the draft assumes the step.
-- Unconfirmed until played: the defNames of the decor and the apparel (`StandingLamp`, `Shelf`, `Apparel_CollarShirt`,
-  `Apparel_Jacket`), the free cells (122..128, 95..97), and that a pawn in the `MusicPlayJoy` job shows the instrument in
-  hand once the game is paused.
-- Order: the Preview, then the piper (the most recognisable instrument), the sitting piper, the accordionist, then the
-  size reference last. A film with its sound exists (`Tests/Pickle/Evidence/`) but the pipes and the accordion film
-  is not yet judged; do not upload one before it has been listened to.
-
-Rules that apply (`PUBLISHING.md`, the owner's): the scene is the showcase colony `nelim-zen-meadow-studio`, never the
-fixture (pass `wsl-deps.studio.map`, English); each upload under 2 MB; **every image is opened and looked at** before
-it is called ready; a capture showing developer tools, another mod's overlay or the Pickle panel is disqualified.
-`Art/Gallery/` holds only `0-preview.png`, checked 2026-10-02 byte-identical to `Mod/About/Preview.png` (sha256 a5b94a5ea629...); the old `00-preview.png` is gone.
+| 1 | `1-the-band-by-the-fire.png` | By night the hearth hall is a ceilidh: bagpipes, uilleann pipes and an accordion, all new. |
+| 2 | `2-nelim-tunes-the-bagpipes.png` | It began at dusk, with Nelim tuning the great highland bagpipes. |
+| 3 | `3-flore-and-the-uilleann-pipes.png` | Flore answers on the uilleann pipes, softer and sweeter. |
+| 4 | `4-soleil-and-the-accordion.png` | Soleil brings the accordion, loud enough to carry a whole dance. |
+| 5 | `5-the-morning-after.png` | Next morning the three newcomers rest beside the ocarina and the frame drum. |
 
 ## Adult content boxes
 
