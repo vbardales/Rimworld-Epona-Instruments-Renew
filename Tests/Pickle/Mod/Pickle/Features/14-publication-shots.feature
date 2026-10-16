@@ -65,7 +65,7 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
-    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Flore" body type is Female
     And Nelim's Pickle Tools: "Flore" hairstyle is "VHE_SideBraid"
     And Nelim's Pickle Tools: "Flore" hair colour is rgb (44, 30, 26)
@@ -113,7 +113,7 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
-    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
     And I spawn a "JP_GreatHighlandBagpipes" at (181, 118)
     And Nelim's Pickle Tools: the animal "Yuki" stands at (182, 116) facing South
@@ -181,7 +181,7 @@ Feature: images for the Workshop page
     And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
-    And Nelim's Pickle Tools: the "Apparel_Pants" worn by "Nelim" is dyed rgb (40, 88, 56)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" stands at (182, 119) facing South
     When I spawn a "Ocarina" at (179, 117)
     And I spawn a "JP_GreatHighlandBagpipes" at (180, 117)
