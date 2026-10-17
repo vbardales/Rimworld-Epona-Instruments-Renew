@@ -2,7 +2,7 @@
 
 What the Workshop page needs and this repository does not record anywhere else. Written 2026-10-02, for the first
 envoi (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, created private by the `0.1.0` prepublication
-(2026-09-23). Nothing here has been posted, uploaded or sent; every state below is a local state.
+(2026-09-23). Nothing of `1.0.0` has been posted, uploaded or sent (only the private `0.1.0` item exists); every state below is a local state.
 
 ## Where it stands
 
