@@ -33,7 +33,7 @@ remaining:
   - the tickerType Normal correction: the loaded def reports Normal (Pickle 2026-09-21), and the game holds a live provider sound for the performer of each instrument (30-play-and-listen, passed 2026-09-25 in English for the bagpipes and the accordion, in French for all three, and silent with the checkbox unticked); that a loudspeaker renders it is MANUAL M1 (by ear, waits for the PickleTools sound work)
   - local state (2026-10-02): committed and pushed up to the French review and the gallery story; untracked and left alone on purpose: Tests/Audit-2026-09-13/ (decompilation evidence), Assets/, the desktop.ini files. Art/ was trimmed on 2026-10-02 (c6a83ca): the Preview working files (preview.html, render-preview.cjs, preview-qa.json, Preview-268.png, preview-render/background, ModIcon-32/badge/cutout) are gone from the tree; the older sections of this file that name them describe what existed on their date. Art/ now holds ModIcon-source.png, ModIcon.ico, Preview.png, echo.png, preview-copy.json, preview-palette.json, preview-generation.txt and Gallery/0-preview.png (byte-identical to Mod/About/Preview.png)
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
-protocols_read_sha: e733386f133716f60efbad53c37602935eda7050
+protocols_read_sha: c283fedfcc80166d175245f9553ab4095716c1fa
 ---
 
 # Epona Instruments Renew - status
