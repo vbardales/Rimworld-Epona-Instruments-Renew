@@ -15,6 +15,7 @@ first). Screenshots are described in a sentence where they matter and are not co
 | [`2026-09-27-m1-sound-bagpipes.md`](2026-09-27-m1-sound-bagpipes.md) | Pass "sound", first film-with-sound scenario (bagpipes): green, not silent; still awaiting a listen for M1 |
 | [`2026-10-11-m1-listen-verdict.md`](2026-10-11-m1-listen-verdict.md) | M1 verdict on the bagpipes (heard, not bagpipe-like), the decision to use an own recording, and the two green requests on 49ce4d1 |
 | [`2026-10-13-own-sounds-and-sound-pass.md`](2026-10-13-own-sounds-and-sound-pass.md) | Own sounds in English (4 of 4), French texts (1 of 1), the pass "sound" red on the environment and its cause |
+| [`2026-10-17-gallery-explore.md`](2026-10-17-gallery-explore.md) | The 8.f exploration of `14-publication-shots` (images 1 and 2): red on the pants, then on the missing `MusicSpot`, and the fix |
 
 Rules kept from `PickleTools/docs/runs/README.md`: one verdict per row, said from the report; say what was not shown;
 earlier commits still hold what was tracked before (untracking does not rewrite history).

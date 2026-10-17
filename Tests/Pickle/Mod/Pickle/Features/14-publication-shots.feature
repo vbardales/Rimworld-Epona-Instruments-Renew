@@ -87,6 +87,9 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Flore" stands at (178, 117) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
     And Nelim's Pickle Tools: "Soleil" stands at (183, 117) facing South
+    And a "MusicSpot" is built at (178, 117)
+    And a "MusicSpot" is built at (181, 117)
+    And a "MusicSpot" is built at (183, 117)
     And I spawn a "JP_UilleannPipes" at (178, 118)
     And I spawn a "JP_GreatHighlandBagpipes" at (181, 118)
     And I spawn a "JP_Accordion" at (183, 118)
@@ -115,6 +118,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (150, 40, 36)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
+    And a "MusicSpot" is built at (181, 117)
     And I spawn a "JP_GreatHighlandBagpipes" at (181, 118)
     And Nelim's Pickle Tools: the animal "Yuki" stands at (182, 116) facing South
     When Epona Instruments Renew "Nelim" is offered the music joy and starts it
@@ -141,6 +145,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Flore" wears "IrnBruMod_KiltApparel" dyed rgb (150, 40, 36)
     And Nelim's Pickle Tools: "Flore" face kit is "calm"
     And Nelim's Pickle Tools: "Flore" stands at (181, 117) facing South
+    And a "MusicSpot" is built at (181, 117)
     And I spawn a "JP_UilleannPipes" at (181, 118)
     When Epona Instruments Renew "Flore" is offered the music joy and starts it
     And I wait for "Flore" to have job "MusicPlayJoy"
@@ -165,6 +170,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Soleil" wears "IrnBruMod_KiltApparel" dyed rgb (130, 30, 34)
     And Nelim's Pickle Tools: "Soleil" face kit is "smile"
     And Nelim's Pickle Tools: "Soleil" stands at (181, 117) facing South
+    And a "MusicSpot" is built at (181, 117)
     And I spawn a "JP_Accordion" at (181, 118)
     When Epona Instruments Renew "Soleil" is offered the music joy and starts it
     And I wait for "Soleil" to have job "MusicPlayJoy"
