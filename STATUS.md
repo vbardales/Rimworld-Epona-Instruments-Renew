@@ -35,76 +35,75 @@ remaining:
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
 protocols_read_sha: c283fedfcc80166d175245f9553ab4095716c1fa
 ---
-
 # Epona Instruments Renew - status
 
 Journal up to 2026-10-03 (audits of 2026-09-13/21/10-02, Pickle runs, 0.1.0 prepublication, Preview migration): `docs/runs/status-journal-to-2026-10-03.md`.
 
 ## Audit - 2026-10-11 (tree 64398ef plus local changes)
 
-Old `done` -> `playTests[1.0.0]` (AUDIT.md correspondence table). Not a regression: the writeTests criteria hold (scenarios, tests and Pickle suite written, French reviewed by Virginie 2026-10-02). Nothing was replayed in this pass; no game launched.
+Old `done` -> `playTests[1.0.0]` (AUDIT.md correspondence table). Not regression: writeTests criteria hold (scenarios, tests, Pickle suite written, French reviewed by Virginie 2026-10-02). Nothing replayed this pass; no game launched.
 
-Remaining for `playTests` -> `shootGallery` (all `unverified`, none a defect):
-- M1: hear the uilleann pipes and the accordion (10 s films of 2026-09-28; bagpipes already heard). Virginie only.
-- French Pickle pass on the current `Mod/` (see `remaining`).
-- Code review (8.m): `code_review_sha` absent; defs-only mod, review from `0.1.0`.
-- `protocols_read_sha` absent: protocols not fully read nor marked in this pass.
+Remaining for `playTests` -> `shootGallery` (all `unverified`, none defect):
+- M1: hear uilleann pipes and accordion (10 s films of 2026-09-28; bagpipes already heard). Virginie only.
+- French Pickle pass on current `Mod/` (see `remaining`).
+- Code review (8.m): `code_review_sha` absent, defs-only mod, review from `0.1.0`.
+- `protocols_read_sha` absent: protocols not fully read nor marked this pass.
 
-Housekeeping 2026-10-11: `.build/` renamed `build/` (`.gitignore`, both `Directory.Build.props`); `_tools/Generate-FrenchReview.ps1` removed in favour of `scripts/Make-FrenchReview.ps1`, `FRENCH_REVIEW.md` regenerated. `preview-generation.txt` (the illustration prompt) deleted: the source `Art/Preview-source.png` was received (AUDIT.md 2.f); the prompt stays in git history.
+Housekeeping 2026-10-11: `.build/` renamed `build/` (`.gitignore`, both `Directory.Build.props`); `_tools/Generate-FrenchReview.ps1` removed for `scripts/Make-FrenchReview.ps1`, `FRENCH_REVIEW.md` regenerated. `preview-generation.txt` (illustration prompt) deleted: source `Art/Preview-source.png` received (AUDIT.md 2.f); prompt stays in git history.
 
 ## Back to `code[1.0.0]` - 2026-10-11
 
-New feature: own sound for the great highland bagpipes (Virginie supplied a Pixabay recording; M1 judged the ocarina stand-in not bagpipe-like). `Mod/Defs/SoundDefs/EponaInstruments_Sounds.xml`, `Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg`, patch line, `Tests/Test-EffectiveDefs.ps1` (green), ATTRIBUTION, CHANGELOG. Not yet loaded in a game: ogg loading and the sustained loop of a 52 s clip are unverified. Next: `code` -> `declareDependencies` (no new dependency), then back through `playTests` (new Pickle pass, M1 listen).
+New feature: own sound for great highland bagpipes (Virginie supplied Pixabay recording; M1 judged ocarina stand-in not bagpipe-like). `Mod/Defs/SoundDefs/EponaInstruments_Sounds.xml`, `Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg`, patch line, `Tests/Test-EffectiveDefs.ps1` (green), ATTRIBUTION, CHANGELOG. Not yet loaded in game: ogg loading and sustained loop of 52 s clip unverified. Next: `code` -> `declareDependencies` (no new dependency), then back through `playTests` (new Pickle pass, M1 listen).
 
 ### 2026-10-12: bagpipes sound validated
 
-Own bagpipes sound loaded in the game and heard (two Pickle requests green on 49ce4d1, Virginie validated the 30 s film). Left in M1: uilleann pipes and accordion, still on borrowed sounds, never heard (see `docs/runs/2026-10-11-m1-listen-verdict.md`). Next: decide their sounds, then declareDependencies (blocked while the protocols repository has uncommitted files, `Mark-ProtocolsRead`).
+Own bagpipes sound loaded in game and heard (two Pickle requests green on 49ce4d1, Virginie validated 30 s film). Left in M1: uilleann pipes and accordion, still borrowed sounds, never heard (see `docs/runs/2026-10-11-m1-listen-verdict.md`). Next: decide their sounds, then declareDependencies (blocked while protocols repository has uncommitted files, `Mark-ProtocolsRead`).
 
 ### 2026-10-12: own sounds for the uilleann pipes and the accordion
 
-Virginie supplied two more Pixabay recordings (Brian Cradden; freesound_community). Added as `EponaIR_UilleannPipes_Play` and `EponaIR_Accordion_Play`; patch, effective-defs test (green) and the two 30/35 features updated. Not yet heard in a game. The queued gallery ticket was cancelled and resubmitted on this tree.
+Virginie supplied two more Pixabay recordings (Brian Cradden; freesound_community). Added as `EponaIR_UilleannPipes_Play` and `EponaIR_Accordion_Play`; patch, effective-defs test (green), two 30/35 features updated. Not yet heard in game. Queued gallery ticket cancelled, resubmitted on this tree.
 
 ### 2026-10-13: code[1.0.0] to declareDependencies[1.0.0]
 
-Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; `CHANGELOG.md` `[Unreleased] (1.0.0)` says what the version changes; protocols read (`protocols_read_sha` 5e7c922c). The own sounds of the uilleann pipes and the accordion are not yet heard in a game: `unverified`, M1, belongs to `playTests`. Next: verify the real dependencies (4.a to 4.g).
+Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; `CHANGELOG.md` `[Unreleased] (1.0.0)` says what version changes; protocols read (`protocols_read_sha` 5e7c922c). Own sounds of uilleann pipes and accordion not yet heard in game: `unverified`, M1, belongs to `playTests`. Next: verify real dependencies (4.a to 4.g).
 
 ### 2026-10-13: dependencies declared (declareDependencies[1.0.0], tree 112e4d1)
 
-- 4.a/4.b: one hard dependency, `Mlie.MusicalInstruments` (Workshop 2274558815), declared with its Workshop URL. Used for real: the patch parents (`HeldMusicalInstrumentBase`, `PrimitiveInstrumentBase`) and the classes `MusicalInstruments.CompProperties_MusicalInstrument`, `CompMusicalInstrument`, `CompProp_PlayingMusic`. No other mod referenced.
-- 4.c: no DLC referenced; `supportedVersions` is 1.6 only; no `LoadFolders.xml` (none needed, one folder).
+- 4.a/4.b: one hard dependency, `Mlie.MusicalInstruments` (Workshop 2274558815), declared with Workshop URL. Used for real: patch parents (`HeldMusicalInstrumentBase`, `PrimitiveInstrumentBase`) and classes `MusicalInstruments.CompProperties_MusicalInstrument`, `CompMusicalInstrument`, `CompProp_PlayingMusic`. No other mod referenced.
+- 4.c: no DLC referenced; `supportedVersions` 1.6 only; no `LoadFolders.xml` (none needed, one folder).
 - 4.d: `loadAfter` lists `Ludeon.RimWorld` and `Mlie.MusicalInstruments`; no cycle (one dependency).
-- 4.e: the only patch is a `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing is added or logged without Musical Instruments. No `MayRequire`, no optional mod.
-- 4.f: not an animal mod, not applicable. No `incompatibleWith` needed (none known).
-- Not run here: `scripts/sort-load-order.py` and an in-game load (`unverified`, belongs to `playTests`).
+- 4.e: only patch is `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing added or logged without Musical Instruments. No `MayRequire`, no optional mod.
+- 4.f: not animal mod, not applicable. No `incompatibleWith` needed (none known).
+- Not run here: `scripts/sort-load-order.py` and in-game load (`unverified`, belongs to `playTests`).
 
 ### 2026-10-13: settings audit, not applicable (settings[1.0.0] to localize[1.0.0])
 
-5.b/5.c/5.d: no settings, no MainButton. Verified in the sources: no DLL in `Mod/`, no `MainButtonDef`, no `ModSettings`, `Mod/Defs/` holds only `SoundDefs/`. No empty page and no shortcut is exposed. `settings_audit: not_applicable` stands.
+5.b/5.c/5.d: no settings, no MainButton. Verified in sources: no DLL in `Mod/`, no `MainButtonDef`, no `ModSettings`, `Mod/Defs/` holds only `SoundDefs/`. No empty page, no shortcut exposed. `settings_audit: not_applicable` stands.
 
 ### 2026-10-13: localization (localize[1.0.0] to writeTests[1.0.0])
 
-Player-facing texts: the three labels and descriptions, patched in English, covered in French by `Languages/French/DefInjected/ThingDef/JoyPreservation.xml`; no Keyed text, no code. No text changed since Virginie validated the French on 2026-10-02 (26fa6b3, c073659); the sound change adds none. `FRENCH_REVIEW.md` regenerated at edef521 (same French; the English columns are now filled). `translation_fr` stays `complete`.
+Player-facing texts: three labels and descriptions, patched in English, covered in French by `Languages/French/DefInjected/ThingDef/JoyPreservation.xml`; no Keyed text, no code. No text changed since Virginie validated French on 2026-10-02 (26fa6b3, c073659); sound change adds none. `FRENCH_REVIEW.md` regenerated at edef521 (same French; English columns now filled). `translation_fr` stays `complete`.
 
 ### 2026-10-13: tests replayed (writeTests[1.0.0] to playTests[1.0.0], tree 00c8d6b)
 
-Replayed now, offline, all green on 00c8d6b: `Tests/Test-EffectiveDefs.ps1` (all assertions passed), `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` (six shared diagnostics PASS), `Check-ModBasics.ps1` (PASS after syncing `Mod/ATTRIBUTION.md` with the root copy, which lacked the sound credits), `Check-Translations.ps1` (PASS). Scenarios (`TEST_SCENARIOS.md`) and the 22-scenario Pickle suite are written, not run in this pass; translations `complete`. Nothing was played in a game.
+Replayed now, offline, all green on 00c8d6b: `Tests/Test-EffectiveDefs.ps1` (all assertions passed), `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` (six shared diagnostics PASS), `Check-ModBasics.ps1` (PASS after syncing `Mod/ATTRIBUTION.md` with root copy, which lacked sound credits), `Check-Translations.ps1` (PASS). Scenarios (`TEST_SCENARIOS.md`) and 22-scenario Pickle suite written, not run this pass; translations `complete`. Nothing played in game.
 
-Left for `playTests` (all `unverified`): new Pickle tickets for the own sounds of the uilleann pipes and the accordion and a French pass on the current `Mod/`; M1 listen (Virginie); code review 8.m (`code_review_sha` absent, review from `0.1.0`).
+Left for `playTests` (all `unverified`): new Pickle tickets for own sounds of uilleann pipes and accordion, French pass on current `Mod/`; M1 listen (Virginie); code review 8.m (`code_review_sha` absent, review from `0.1.0`).
 
 ### 2026-10-13: audit recheck of the earlier states (tree 828ab1e)
 
-- 2.b: the shipped ModIcon.png dated from 2026-09-13, older than its source (2026-10-02): regenerated with Render-Preview.cjs (modIconSource), with Preview.png, 0-preview.png and both .ico (828ab1e). ModIcon.png is 31,7 KB, above the expected 20-30 KB: the tool's output, left as is.
-- 2.e: Art/Preview-source.png has a mean value of 0.188 (Measure-Palette.sh), below the 0.30 asked. Reserve accepted by Virginie on 2026-10-13 (confirmed in chat): the rendered Preview reads well at 268 px; the source is not redone.
-- Mod/ATTRIBUTION.md synced with the root copy (sound credits).
-- Not rechecked in this pass: PUBLICATION.md line by line; scripts/sort-load-order.py (no Python on this machine).
+- 2.b: shipped ModIcon.png dated 2026-09-13, older than source (2026-10-02): regenerated with Render-Preview.cjs (modIconSource), with Preview.png, 0-preview.png, both .ico (828ab1e). ModIcon.png 31,7 KB, above expected 20-30 KB: tool output, left as is.
+- 2.e: Art/Preview-source.png mean value 0.188 (Measure-Palette.sh), below 0.30 asked. Reserve accepted by Virginie 2026-10-13 (confirmed in chat): rendered Preview reads well at 268 px; source not redone.
+- Mod/ATTRIBUTION.md synced with root copy (sound credits).
+- Not rechecked this pass: PUBLICATION.md line by line; scripts/sort-load-order.py (no Python on this machine).
 
 ### 2026-10-15: audit replayed up to playTests (tree 14fde65 plus local docs)
 
-- Fixed: `repo` and `remote` were missing from the front matter (1.h); documents that still said the sounds are borrowed stand-ins (ATTRIBUTION.md and its `Mod/` copy, PUBLICATION.md description and notes, PLAY_AND_LISTEN.md, TEST_SCENARIOS.md, a comment in `30-play-and-listen.feature`); the 8.f line, which wrongly said no `@requires` scenario exists; `docs/runs/` had no line for the runs of 2026-10-11 to 2026-10-14 (8.l).
-- PUBLICATION.md: the Steam description changed (sound paragraph, THANKS credit to the two Pixabay authors): Virginie reads it at 11.j.
-- Still open, not defects: `tested_on` stays empty until the stage is left (8.l); code review 8.m; M1; the pass `sound` retry (waits for free RAM); 8.f for `14-publication-shots` (decided: played in playTests, exploration ticket 48dc).
-- Seen, not mine: `scripts/LOCAL_SCRIPTS.md` holds hash 30956A65 for `Tests/Test-EffectiveDefs.ps1`, the file is now 0A7560F1 (Audit session to refresh). `scripts/sort-load-order.py` not run: no Python on this machine.
+- Fixed: `repo` and `remote` missing from front matter (1.h); documents still saying sounds are borrowed stand-ins (ATTRIBUTION.md and `Mod/` copy, PUBLICATION.md description and notes, PLAY_AND_LISTEN.md, TEST_SCENARIOS.md, comment in `30-play-and-listen.feature`); 8.f line, wrongly saying no `@requires` scenario exists; `docs/runs/` had no line for runs of 2026-10-11 to 2026-10-14 (8.l).
+- PUBLICATION.md: Steam description changed (sound paragraph, THANKS credit to two Pixabay authors): Virginie reads it at 11.j.
+- Still open, not defects: `tested_on` stays empty until stage left (8.l); code review 8.m; M1; pass `sound` retry (waits for free RAM); 8.f for `14-publication-shots` (decided: played in playTests, exploration ticket 48dc).
+- Seen, not mine: `scripts/LOCAL_SCRIPTS.md` holds hash 30956A65 for `Tests/Test-EffectiveDefs.ps1`, file now 0A7560F1 (Audit session to refresh). `scripts/sort-load-order.py` not run: no Python on this machine.
 
 ### 2026-10-15: the gallery rewritten for the Sanctuary, with subtitles
 
-The first plan (2026-10-02: studio colony, three invented pawns, no Nelim, no hour, expression or hairstyle) did not follow the rules set since (AUDIT.md 9.a, GALLERY.md). Replaced: story "a ceilidh at the hermit's hearth", Nelim as host and protagonist, two guests, five images at their own hours, hairstyles and kilts from two added mods (Vanilla Hair Expanded, Irn Bru And Other Scottish Delights), face kits and Nelim's own face, dogs facing the camera. Scenarios: `14-publication-shots.feature` (rewritten, NOT PLAYED), pass map `Tests/Pickle/wsl-deps.gallery.map` (replaces `wsl-deps.studio.map`), seeds `Tests/Pickle/config/gallery/`. Subtitles: `PUBLICATION.md`, "Gallery subtitles". Played and judged at `shootGallery`; several defNames and the two dog names are unconfirmed (listed in `PUBLICATION.md`, "Gallery"). `scripts/sort-load-order.py` can be run with `uv run --no-project python`.
+First plan (2026-10-02: studio colony, three invented pawns, no Nelim, no hour, expression or hairstyle) did not follow rules set since (AUDIT.md 9.a, GALLERY.md). Replaced: story "a ceilidh at the hermit's hearth", Nelim host and protagonist, two guests, five images at own hours, hairstyles and kilts from two added mods (Vanilla Hair Expanded, Irn Bru And Other Scottish Delights), face kits and Nelim's own face, dogs facing camera. Scenarios: `14-publication-shots.feature` (rewritten, NOT PLAYED), pass map `Tests/Pickle/wsl-deps.gallery.map` (replaces `wsl-deps.studio.map`), seeds `Tests/Pickle/config/gallery/`. Subtitles: `PUBLICATION.md`, "Gallery subtitles". Played and judged at `shootGallery`; several defNames and two dog names unconfirmed (listed in `PUBLICATION.md`, "Gallery"). `scripts/sort-load-order.py` can run with `uv run --no-project python`.
