@@ -28,5 +28,6 @@ Art/.render/
 # Windows Explorer folder icons: never shipped, never versioned.
 desktop.ini
 
-# Few captures and films kept by hand out of Evidence/ (on disk, not in git).
-Tests/Pickle/Kept/
+# Pickle run inbox and parked failures (on disk, not in git).
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
