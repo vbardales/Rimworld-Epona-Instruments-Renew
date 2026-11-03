@@ -40,7 +40,7 @@ remaining:
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); read again and validated 2026-10-17 at 1d43b2a (ChatGPT review: no French correction, one PUBLICATION.md wording fixed); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
-protocols_read_sha: 58ce15e70e3e8698ed34b7f4a4c0c06259119672
+protocols_read_sha: 70aa4922f19ac4df5b64764c38ed8681034da913
 ---
 # Epona Instruments Renew - status
 
