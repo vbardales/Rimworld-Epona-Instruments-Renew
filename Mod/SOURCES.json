@@ -16,9 +16,24 @@
   "files": [
     {
       "Path": "Mod/Patches/EponaInstruments.xml",
-      "SHA256": "05F735889FF00C911EC29FC8F74F8BEB4F216EBA210B3EA8B7343874CDB62AEA",
+      "SHA256": "571C2015D678133253890324255FEE83E358FC9229222ED288A116377F395536",
       "OriginalSHA256": "2804E719BDF2B782FFB8D386A57306946E175177B4ED6559C45F0344F5135203",
-      "Modification": "2026-09-21: tickerType Normal added to the three ThingDefs"
+      "Modification": "2026-09-21: tickerType Normal added to the three ThingDefs; 2026-10-12: own EponaIR_*_Play sounds replace the borrowed MIC_* ones"
+    },
+    {
+      "Path": "Mod/Sounds/EponaInstruments/Bagpipes/bagpipes.ogg",
+      "SHA256": "C9968BFA0576EBA8C70B200378C9D44107257D9C7E12187C91C0ACE088AA387D",
+      "Source": "Pixabay, freesound_community, content id 27401 (see ATTRIBUTION.md)"
+    },
+    {
+      "Path": "Mod/Sounds/EponaInstruments/UilleannPipes/uilleann-pipes.ogg",
+      "SHA256": "05BDC117511AFCC3DE8387DFBB928CB7D5726EB9FDDE0146FE9349076AE308AE",
+      "Source": "Pixabay, Brian Cradden (account Grumpynora) (see ATTRIBUTION.md)"
+    },
+    {
+      "Path": "Mod/Sounds/EponaInstruments/Accordion/accordion.ogg",
+      "SHA256": "599FC89C4165DE90F44C3C23B092314B418E2E63DD230C4DBBF0D8039922EBD8",
+      "Source": "Pixabay, freesound_community (see ATTRIBUTION.md)"
     },
     {
       "Path": "Mod/Textures/Things\\Items\\Pipes/GreatHighlandPipes_m.png",
