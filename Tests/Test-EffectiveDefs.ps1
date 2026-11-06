@@ -9,7 +9,7 @@
   against Musical Instruments (Continued). This script replays exactly that and asserts on
   the merged result. It never starts RimWorld.
 
-  Inheritance follows Verse.XmlInheritance.RecursiveNodeCopyOverwriteElements (read from
+  Inheritance is scripts/lib/DefInheritance.ps1, the shared port of Verse.XmlInheritance (read from
   Assembly-CSharp.dll): scalar nodes of the child overwrite, nested nodes merge, `li` items
   of the child are APPENDED to the parent's list unless the list has Inherit="False".
 
@@ -17,6 +17,7 @@
 #>
 param(
   [string]$Root = (Split-Path $PSScriptRoot -Parent),
+  [string]$Protocols = (Join-Path (Split-Path $PSScriptRoot -Parent) '..'),
   [string]$Provider = 'C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2274558815/1.6',
   [string]$Data = 'C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Data',
   [string]$OutFile
@@ -43,41 +44,13 @@ function Child([System.Xml.XmlNode]$n, [string]$name) {
 }
 function Text([System.Xml.XmlNode]$n, [string]$name) { $c = Child $n $name; if ($c) { $c.InnerText.Trim() } else { $null } }
 
-function Copy-Over($child, $current) {
-  $inh = $child.Attributes['Inherit']
-  if ($inh -and $inh.Value.ToLower() -eq 'false') {
-    foreach ($x in @($current.ChildNodes)) { [void]$current.RemoveChild($x) }
-    foreach ($x in @($child.ChildNodes)) { [void]$current.AppendChild($current.OwnerDocument.ImportNode($x, $true)) }
-    foreach ($a in @($child.Attributes)) { if ($a.Name -ne 'Inherit') { $na = $current.OwnerDocument.CreateAttribute($a.Name); $na.Value = $a.Value; [void]$current.Attributes.Append($na) } }
-    return
-  }
-  $current.Attributes.RemoveAll()
-  foreach ($a in @($child.Attributes)) { [void]$current.Attributes.Append($current.OwnerDocument.ImportNode($a, $true)) }
-  $text = $null; $hasEl = $false
-  foreach ($c in $child.ChildNodes) { if ($c.NodeType -eq 'Text') { $text = $c } elseif ($c.NodeType -eq 'Element') { $hasEl = $true } }
-  if ($text) {
-    foreach ($x in @($current.ChildNodes)) { [void]$current.RemoveChild($x) }
-    [void]$current.AppendChild($current.OwnerDocument.ImportNode($text, $true)); return
-  }
-  if (-not $hasEl) {
-    if ($null -ne (@($current.ChildNodes | Where-Object { $_.NodeType -eq 'Element' }) | Select-Object -First 1)) { return }
-    foreach ($x in @($current.ChildNodes)) { [void]$current.RemoveChild($x) }; return
-  }
-  foreach ($c in @($child.ChildNodes)) {
-    if ($c.NodeType -ne 'Element') { continue }
-    if ($c.Name -eq 'li') { [void]$current.AppendChild($current.OwnerDocument.ImportNode($c, $true)); continue }
-    $e = Child $current $c.Name
-    if ($e) { Copy-Over $c $e } else { [void]$current.AppendChild($current.OwnerDocument.ImportNode($c, $true)) }
-  }
-}
+# Inheritance is the shared port of Verse.XmlInheritance (scripts/lib/DefInheritance.ps1), not a copy kept here.
+. (Join-Path $Protocols 'scripts\lib\DefInheritance.ps1')
 function Resolve-Def($node, $byName) {
   $pn = $node.GetAttribute('ParentName')
   if (-not $pn) { return $node.CloneNode($true) }
   if (-not $byName.ContainsKey($pn)) { throw "ParentName '$pn' not found" }
-  $cur = Resolve-Def $byName[$pn] $byName
-  $cur = $node.OwnerDocument.ImportNode($cur, $true)
-  Copy-Over $node $cur
-  return $cur
+  return Merge-Def (Resolve-Def $byName[$pn] $byName) $node
 }
 
 # --- Inputs -----------------------------------------------------------------------------
