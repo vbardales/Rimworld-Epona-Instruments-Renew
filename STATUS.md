@@ -16,10 +16,11 @@ translation_en: complete
 translation_fr: complete
 showcase: complete
 tested_on:
-updated: 2026-11-03
+updated: 2026-11-07
 workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
+  - 2026-11-07: resume: protocols read (f0219f10); Preview rendered again from the new-schema Preview.config.json (titleSize default dropped), echo touches the S of INSTRUMENTS in the title (doubtful, flagged to Virginie); FRENCH_REVIEW.md replaced by TRANSLATION_REVIEW.md; Check-OptionalCompat OK (0 targets); social_preview_sha256 stale, Virginie uploads Preview.png to Steam; ticket e33d (French pass) still queued; at `tested`, `tested_on` must be a date and sha of the last green Pickle run
   - code review 8.m done 2026-11-03 (first commit to 8725ed1, Opus sub-agent): 4 findings, 3 fixed (SOURCES.json hash and ogg entries, patch comment); open, low: Mod/ATTRIBUTION.md lacks the Pixabay content id and URL for the uilleann pipes and accordion sounds (only Virginie holds the pages)
   - 2026-11-03: Preview rendered again (echo.width/height removed; again after renderer default background cover + top left, 70aa492, commit 94d9dfe), echo checked, no clipping or overlap
   - ticket 20261025-152546-701-54ae done (run 2026-10-30 13:03, tree 026441a, 1 of 2): sound capture now works (launcher fix 459f037). `the uilleann pipes are filmed with their sound` PASSED (peak -14.6 dB, 34.6 s film); Virginie heard it 2026-10-30: real bagpipe sound, sound right, M1 done for the uilleann pipes; run folder deleted. `the accordion is filmed with its sound` FAILED: step `"Jet" is heard playing "EponaIR_Accordion_Play"` timed out after 90 s (pawn job HaulToCell at scene start, accordion reachable, not forbidden); cause not studied: no capture; replay ticket 20261030-152752-639-225f waits (accordion scenario alone, tree eb32939, map wsl-deps.sound.map): at RUN_DONE read summary.json and junit.xml in `Tests/Pickle/Inbox/sound-film-accordion-3`; green: keep film for Virginie (RELEASE.md), red: study the step timeout. Blocks `tested` with M1 accordion
@@ -42,7 +43,7 @@ remaining:
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); read again and validated 2026-10-17 at 1d43b2a (ChatGPT review: no French correction, one PUBLICATION.md wording fixed); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
-protocols_read_sha: 70aa4922f19ac4df5b64764c38ed8681034da913
+protocols_read_sha: f0219f10b948804b3bfd2586c5fca74bf45c3805
 ---
 # Epona Instruments Renew - status
 
