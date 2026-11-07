@@ -1,6 +1,6 @@
 {
   "panel": {
-    "title": "Epona Instruments",
+    "title": "Epona Instruments Renew (unofficial)",
     "titleParts": [
       { "text": "Epona Instruments" },
       { "text": "Renew (unofficial)", "suffix": true }
@@ -11,8 +11,10 @@
   "echo": { "file": "echo-preview.png" },
   "icon": { "file": "ModIcon-source.png" },
   "palette": {
-    "veil": "#202832", "inkPrimary": "#F2ECE1",
-    "inkSecondary": "#A9C4D6", "accent": "#FFB23E",
+    "veil": "#202832",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#A9C4D6",
+    "accent": "#FFB23E",
     "badgeInk": "#17120E"
   }
 }
