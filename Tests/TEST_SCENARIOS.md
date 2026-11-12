@@ -64,4 +64,4 @@ Manual version, kept for reference. Only maintainer has save made while these it
 - **Power, flick, refuelling controls:** carried items, not buildings.
 - **Settings page and MainButtons shortcut:** none exists (`settings_audit: not_applicable`).
 - **Recreation menu and split-package ownership:** belonged to extraction from Joy Preservation, verified offline (`Tests/Reorganization-2026-09-13/`).
-- **Optional mods and DLC:** none declared. Only `@requires` scenarios need PickleTools companions, not mod or DLC the mod depends on: `35-hear-the-instruments` (SoundCapture) and `14-publication-shots` (gallery staging).
+- **Optional mods and DLC:** none declared. Only `@requires` scenarios need PickleTools companions, not mod or DLC the mod depends on: `35-hear-the-instruments` (SoundCapture). `14-publication-shots` (gallery staging) is not applicable to 8.f: moved to 9.a (Audit ruling 2026-11-12), the draft now sits in `Tests/Pickle/Gallery-draft/`, outside the playTests suite, to be rewritten for SanctuaryBacklot at `shootGallery`; the exploration ticket d0b9 (2026-10-17, no result) is dropped.
