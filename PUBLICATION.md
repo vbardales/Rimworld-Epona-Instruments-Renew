@@ -1,7 +1,7 @@
 # Publication
 
 What the Workshop page needs and this repository does not record anywhere else. Written 2026-10-02, for the first
-envoi (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, created private by the `0.1.0` prepublication
+release (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, created private by the `0.1.0` prepublication
 (2026-09-23). Nothing of `1.0.0` has been posted, uploaded or sent (only the private `0.1.0` item exists); every state below is a local state.
 
 ## Where it stands
@@ -151,12 +151,12 @@ Hi Outremer, your bagpipes and accordion had been invisible since the 1.4 folder
 Both drafts say only what is tested offline or in the game; neither claims a compatibility the author did not declare.
 Check the last comments of each page before posting (language, mood, whether the author answers).
 
-## After the envoi
+## After the release
 
 - Commit `About/PublishedFileId.txt` at once (already in git for `0.1.0`; a lost file means a second item).
 - Steam creates every item private; RimWorld never calls `SetItemVisibility`. The owner switches it to public by hand,
   after subscribing to her own item.
 - `CHANGELOG.md` `## [1.0.0]`, tag `v1.0.0` and the GitHub release come from the CI (`publish-tag.yml`) after a
-  successful envoi: dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by
+  successful release: dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by
   the owner alone. Not by a session, not by hand.
 - Then the non-regression passes, as small tickets: the French pass on the final tree and the full English pass.
