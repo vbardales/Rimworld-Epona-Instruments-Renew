@@ -6,7 +6,7 @@ release (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, crea
 
 ## Where it stands
 
-- Stage `playTests[1.0.0]`; `shootGallery` is not reached (M1 for the uilleann pipes and the accordion; see `STATUS.md`). The fail-fast
+- Stage `playTests[1.0.0]`; `shootGallery` is not reached (M1 is done for the three instruments; still open: the whole-run sound scenario and the ecosystem refresh; see `STATUS.md`). The fail-fast
   policy of `AUDIT.md` lets `1.0.0` go out once no red is open and the gaps are written down; it is the owner's call.
 - Version to publish: **1.0.0**, `unreleased` in `CHANGELOG.md` above the `0.1.0`. Not written yet: the `## [1.0.0]`
   section has to exist and be dated before the dry-run.
