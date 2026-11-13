@@ -21,11 +21,11 @@ envoi (`1.0.0`) and for whoever takes the mod over. Item: **3806766938**, create
 ```markdown
 UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-Three carried instruments, for pawns who play music to relax: the great highland bagpipes, the uilleann pipes and the accordion. Musical Instruments (Continued) has nine carried instruments and no bagpipe and no accordion; these three fill that gap and duplicate nothing.
+Three carried instruments, for pawns who play music to relax: the great highland bagpipes, the uilleann pipes and the accordion. Musical Instruments (Continued) has nine carried instruments, but no bagpipes or accordion; these three fill that gap and duplicate nothing.
 
 They are crafted and played like every other instrument of Musical Instruments (Continued): a pawn picks one up and plays it as a joy activity.
 
-[b]About the sound.[/b] Musical Instruments (Continued) has no bagpipe or accordion sample, so each of the three instruments plays its own recording (Pixabay, credited in ATTRIBUTION.md).
+[b]About the sound.[/b] Musical Instruments (Continued) has no bagpipe or accordion samples, so each of the three instruments plays its own recording (Pixabay, credited in ATTRIBUTION.md).
 
 [b]Requires[/b] Musical Instruments (Continued). No settings, no custom button. Nothing is patched. Use it if you ran the former Joy Preservation collection: the definition names are kept, so it can replace the three instruments of that collection. Saves made with it have not been validated in a game.
 
@@ -45,12 +45,12 @@ Credits, source and what was changed: ATTRIBUTION.md in the repository. Licence:
 [url=https://github.com/vbardales/Rimworld-Epona-Instruments-Renew]Source code on GitHub[/url]
 ```
 
-To check before the first envoi: the credit line for the original author of Musical Instruments (verify on the page, as
+To check before the first release: the credit line for the original author of Musical Instruments (verify on the page, as
 `AUDIT.md` asks, and credit the original author **and** Mlie); that "can replace the three instruments" is true for a
 real old save (the pre-split pass covers the definitions, not a file from the owner's disk); the `AI-GENERATED` tool
 names (the owner's wording wins).
 
-## Change note (Steam, first envoi)
+## Change note (Steam, first release)
 
 Written now so the form does not find it missing. It opens with the version.
 
