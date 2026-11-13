@@ -9,7 +9,7 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: playTests[1.0.0]
+workflow_stage: shootGallery[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
@@ -20,7 +20,7 @@ updated: 2026-11-07
 workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
-  - 2026-11-13: Audit accepted 8.f on the per-instrument greens (a711 4/4, French pass 5dda, M1 heard for the three instruments, Mod/ 03c2101); 8.c, 8.i MET; next: 8.0 ecosystem refresh (`ECOSYSTEM? EponaInstrumentsRenew` sent to PiI 2026-11-13, queue cut that night by Virginie, not started: RESEND on 2026-11-14), then 8.n: Check-Status, Mark-ProtocolsRead, `workflow_stage: shootGallery[1.0.0]`, commit, push, rename. `14-publication-shots` moved to `Tests/Pickle/Gallery-draft/`, rewrite for SanctuaryBacklot at shootGallery (9.a). Also low: Pixabay ids in Mod/ATTRIBUTION.md (only Virginie holds the pages)
+  - 2026-11-13: Audit accepted 8.f on the per-instrument greens (a711 4/4, French pass 5dda, M1 heard for the three instruments, Mod/ 03c2101); 8.c, 8.i MET; next: 8.0 ecosystem refresh (8.0 done 2026-11-13, see Ecosystem), then 8.n: Check-Status, Mark-ProtocolsRead, `workflow_stage: shootGallery[1.0.0]`, commit, push, rename. `14-publication-shots` moved to `Tests/Pickle/Gallery-draft/`, rewrite for SanctuaryBacklot at shootGallery (9.a). Also low: Pixabay ids in Mod/ATTRIBUTION.md (only Virginie holds the pages)
   - unverified: whole-run sound scenario `35-hear-the-instruments`: ead2 (2026-11-12, 0 of 3) ran on lane azure (runner auto, remote server, no WSLg PulseServer, no RDPSink): ffmpeg `Error opening input file RDPSink.monitor`; lane error, not the mod. Audit correction 2026-11-13: local WSL has /mnt/wslg/PulseServer and RDPSink.monitor, so refiled PINNED `-Runner wsl` (never auto for a recording ticket): ticket 20261113-232245-951-3cac (`-DepMap wsl-deps.sound.map`, evidence `Tests/Pickle/Inbox/sound-35-wsl`, tree 7d1dffc). A short silent wav = local audio stall (SoundCapture README), not a lane error. 8.f stays accepted on the per-instrument greens meanwhile
   - 2026-11-07: resume: Preview.png upload to Steam only at publication (Virginie, 2026-11-07), social_preview_sha256 stale until then; ticket e33d (French pass) still queued; at `tested`, `tested_on` must be a date and sha of the last green Pickle run
   - code review 8.m done 2026-11-03 (first commit to 8725ed1, Opus sub-agent): 4 findings, 3 fixed (SOURCES.json hash and ogg entries, patch comment); open, low: Mod/ATTRIBUTION.md lacks the Pixabay content id and URL for the uilleann pipes and accordion sounds (only Virginie holds the pages)
@@ -45,7 +45,7 @@ remaining:
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); read again and validated 2026-10-17 at 1d43b2a (ChatGPT review: no French correction, one PUBLICATION.md wording fixed); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
-protocols_read_sha: dddcd388a1a471290edbd3fdbb00986d404ee4a0
+protocols_read_sha: d9c98a1611603ae262a379480e6ca48923a955a6
 ---
 # Epona Instruments Renew - status
 
@@ -119,3 +119,17 @@ Left for `playTests` (all `unverified`): new Pickle tickets for own sounds of ui
 ### 2026-10-15: the gallery rewritten for the Sanctuary, with subtitles
 
 First plan (2026-10-02: studio colony, three invented pawns, no Nelim, no hour, expression or hairstyle) did not follow rules set since (AUDIT.md 9.a, GALLERY.md). Replaced: story "a ceilidh at the hermit's hearth", Nelim host and protagonist, two guests, five images at own hours, hairstyles and kilts from two added mods (Vanilla Hair Expanded, Irn Bru And Other Scottish Delights), face kits and Nelim's own face, dogs facing camera. Scenarios: `14-publication-shots.feature` (rewritten, NOT PLAYED), pass map `Tests/Pickle/wsl-deps.gallery.map` (replaces `wsl-deps.studio.map`), seeds `Tests/Pickle/config/gallery/`. Subtitles: `PUBLICATION.md`, "Gallery subtitles". Played and judged at `shootGallery`; several defNames and two dog names unconfirmed (listed in `PUBLICATION.md`, "Gallery"). `scripts/sort-load-order.py` can run with `uv run --no-project python`.
+## Ecosystem - 2026-11-13 (PiI, 8.0; `docs/inventory/ecosystem-steam/EponaInstrumentsRenew.md`, d9c98a1)
+
+Source of every line: Steam search by Chrome (PiI), plus local scan `same-pattern` of the whole Workshop folder. Nothing subscribed.
+
+| Workshop id | Title | Versions | Type |
+|---|---|---|---|
+| 2627618308 | Epona Instruments Standalone (original, defNames `Epona_Instrument_*`, no collision with `eponair_*`) | 1.3 | original, dead for 1.6 |
+| 2624033197 | Epona race Renaissance | not in registry | same author family, carries the instruments |
+| 3250668195 | Epona race Renaissance (Unofficial) | 1.5, installed | may carry the same instruments: check at play tests (likely not loaded in 1.6) |
+| 2483902695 | Epona Race (Total Medieval) | 1.2 | race mod, same author |
+| 3514746737 | Epona Dynastic Rise | 1.5 to 1.7 | newer Epona race line |
+| 3134829573 | Musical Instruments (Continued) Patch | 1.4 to 1.7 | patch for our dependency |
+
+Verdict: no duplicate for 1.6; no other mod ships bagpipes or an accordion for Musical Instruments. No mod patches or retextures ours.
