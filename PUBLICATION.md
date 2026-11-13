@@ -38,7 +38,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 The mod icon and the preview artwork were generated with OpenAI image_gen; layout, delivery and testing were prepared by Nelim with AI assistance (Claude Code, Codex). The six in-game textures are Outremer's, unchanged.
 
 [b]THANKS[/b]
-Outremer, for the original Epona Instruments Standalone (definitions and textures). Mlie, for Musical Instruments (Continued), on whose bases this mod stands. Brian Cradden and freesound_community, on Pixabay, for the three recordings. The Pickle test framework and the PickleTools of this collection, for the in-game checks.
+Outremer, for the original Epona Instruments Standalone (definitions and textures). Mlie, for Musical Instruments (Continued), on whose foundation this mod stands. Brian Cradden and freesound_community, on Pixabay, for the three recordings. The Pickle test framework and the PickleTools of this collection, for the in-game checks.
 
 Credits, source and what was changed: ATTRIBUTION.md in the repository. Licence: see LICENSE.
 
@@ -70,11 +70,11 @@ First public version. Adds the great highland bagpipes, the uilleann pipes and t
 ## Gallery
 
 Folder `Art/Gallery/`, uploaded as it is (`PUBLISHING.md`): only the images, numbered on one digit, `0-` a byte-for-byte
-copy of `Mod/About/Preview.png`. Steam shows the first one large. The accepted captures without their subtitle live in
+copy of `Mod/About/Preview.png`. Steam shows the first one large. The accepted captures without their subtitles live in
 `Art/Gallery-clean/` under the same names (`GALLERY.md`, "Sous-titres"); `Art/Gallery/` holds the subtitled images.
 
 **Rewritten 2026-10-15, nothing played yet.** The first plan (2026-10-02: three invented pawns in the owner's meadow studio) did not
-follow the rules set since: scenes play in the Sanctuary (`AUDIT.md` 9.a), Nelim is the protagonist, the photographer picks an hour
+follow the rules established since then: scenes play in the Sanctuary (`AUDIT.md` 9.a), Nelim is the protagonist, the photographer picks an hour
 per image, expressions, hairstyles and props are chosen, and every staged image takes a subtitle. The scenarios are in
 `Tests/Pickle/Mod/Pickle/Features/14-publication-shots.feature` (header: story, who wears what, shooting plan), pass map
 `Tests/Pickle/wsl-deps.gallery.map`, English.
@@ -139,7 +139,7 @@ under 1,000. Drafts, to be rewritten in her voice before posting (states: `draft
 **Musical Instruments (Continued)** (2274558815, Mlie; original author to verify on the page and credit too):
 
 ```text
-Thanks for keeping Musical Instruments alive, Mlie :) Nine carried instruments and no bagpipe or accordion, so I added three on top of your framework, each with its own sound. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806766938]Epona Instruments Renew (unofficial)[/url]
+Thanks for keeping Musical Instruments alive, Mlie :) It has nine carried instruments but no bagpipe or accordion, so I added three on top of your framework, each with its own sound. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806766938]Epona Instruments Renew (unofficial)[/url]
 ```
 
 **Epona Instruments Standalone** (2627618308, Outremer; the mod is unofficial and carries his definitions and textures):
