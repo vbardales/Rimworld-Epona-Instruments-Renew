@@ -3,3 +3,4 @@
 # wsl-deps.soundcapture.map: the tool and the shell that replaces the committed bundle.
 nelim.pickletools.soundcapture   path:PickleTools/SoundCapture/Mod
 nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+nelim.pickletools.colonistrace   path:PickleTools/ColonistRace/Mod

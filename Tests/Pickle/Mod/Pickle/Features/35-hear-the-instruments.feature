@@ -12,7 +12,7 @@ Feature: hear the carried instruments, on film
 
   Background:
     Given the save "test-colony" is loaded
-    And a colonist "Jet" exists
+    And Nelim's Pickle Tools: a colonist "Jet" exists
     And "Jet" skill "Artistic" is set to level 12
     And a "MusicSpot" is built at (146, 155)
     And I zoom in
