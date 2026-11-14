@@ -26,6 +26,9 @@ Mod icon and preview artwork generated with AI; layout and delivery preparation 
       <steamWorkshopUrl>steam://url/CommunityFilePage/2274558815</steamWorkshopUrl>
     </li>
   </modDependencies>
+  <incompatibleWith>
+    <li>Epona.Culture</li>
+  </incompatibleWith>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Mlie.MusicalInstruments</li>

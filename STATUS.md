@@ -85,7 +85,7 @@ Criteria 3.a to 3.d: no `feature` left in `remaining`; defs-only mod, no build; 
 - 4.c: no DLC referenced; `supportedVersions` 1.6 only; no `LoadFolders.xml` (none needed, one folder).
 - 4.d: `loadAfter` lists `Ludeon.RimWorld` and `Mlie.MusicalInstruments`; no cycle (one dependency).
 - 4.e: only patch is `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing added or logged without Musical Instruments. No `MayRequire`, no optional mod.
-- 4.f: not animal mod, not applicable. No `incompatibleWith` needed (none known).
+- 4.f: not animal mod, not applicable. `incompatibleWith` Epona.Culture (Epona Instruments Standalone, the original this mod replaces) added 2026-11-14 on Virginie's decision; Epona Renaissance (Unofficial) not listed: it loads nothing in 1.6.
 - Not run here: `scripts/sort-load-order.py` and in-game load (`unverified`, belongs to `playTests`).
 
 ### 2026-10-13: settings audit, not applicable (settings[1.0.0] to localize[1.0.0])
