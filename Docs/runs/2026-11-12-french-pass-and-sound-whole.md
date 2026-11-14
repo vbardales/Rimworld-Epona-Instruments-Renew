@@ -9,3 +9,11 @@ Read from each report's `summary.json`, `exitReason` first. Evidence on disk und
 | 20261112-140902-610-ead2 | 8614d61 | `35-hear-the-instruments` whole, pass `sound`, English, `sound-35-whole` | failed | 0 of 3. ffmpeg: `Error opening input file RDPSink.monitor: No such process`, `PULSE_SERVER='(unset)'`, `XDG_RUNTIME_DIR='(unset)'`, WSLg socket missing for the game, no `sound.wav`. Environment, not the mod. Fourth red of the pass `sound` for this reason (2026-10-14, 10-15, 10-23, 11-12). Report deleted; no loop (Audit ruling 2026-11-12) |
 
 What this does not show: a loudspeaker rendering the sound in the whole `35` feature. M1 (heard by Virginie) stands for each instrument: bagpipes 2026-10-12, uilleann pipes 2026-10-30, accordion 2026-11-03. The per-instrument greens of `30-play-and-listen` hold the live provider sound.
+
+## 2026-11-14
+
+| Request | Tree | What | exitReason | Result |
+|---|---|---|---|---|
+| 20261114-091420-338-3712 | 1391190 | `45-incompat-epona-original`, pass `incompat-eponaculture` (original Epona Instruments Standalone, `Epona.Culture`, 2627618308) | passed | 3 of 3: both mods load, our three defs (`JP_*`) exist, the original's three (`Epona_Instrument_*`) exist beside them. The declared incompatibility behaves as written: duplicates, no error |
+| 20261113-232245-951-3cac | 7d1dffc | `35-hear-the-instruments` whole, pass `sound`, `-Runner wsl` | none | No report, launcher exit code 1: the game died at startup (Mono fallback handler), before Pickle ran. FMOD without audio device, non-fatal. Cause not proven; not the mod |
+| 20261114-091455-841-4951 | 1391190 | `35-hear-the-instruments::great highland bagpipes`, `-Runner wsl` | none | No report, launcher exit code 139 (SIGSEGV, `Caught fatal signal - signo:11`), second startup crash on the local WSL. Evidence parked in `Tests/Pickle/Parked/sound-35-bagpipes-wsl-4951` |
