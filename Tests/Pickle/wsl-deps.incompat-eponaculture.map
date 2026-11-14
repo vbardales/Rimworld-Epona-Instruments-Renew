@@ -1,0 +1,4 @@
+# Pass "incompat-eponaculture": Epona Instruments Standalone (Epona.Culture, Workshop 2627618308), the original this mod replaces and
+# declares in <incompatibleWith> (About.xml, 2026-11-14). Staged only here, so the plain suite never sees it. AUDIT.md: one more pass
+# per declared incompatibility, to LOOK at it: is the statement still true?
+Epona.Culture 2627618308
