@@ -44,8 +44,8 @@
 #      yet (two empty Stools side by side wait for them) | medium, framed x 176-186 / z 113-119 so the hall, hearth and the two empty
 #      stools set the place; Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim in the
 #      MusicPlayJoy job, Yuki lying at (183, 116) facing the camera | one TorchLamp lit at (178, 117) (the light in frame) and one
-#      unlit at (184, 117), two empty Stool at (176, 118) and (187, 118), PlantPot at (176, 113) and PlantPot_Bonsai at (182, 112) kept,
-#      DiningChair at (175, 110) kept | instant: she has just settled into her spot with the bag under her arm (job running 20 ticks).
+#      unlit at (184, 117), two empty Stool at (176, 118) and (187, 118), PlantPot at (176, 113) kept, a placed PlantPot with a fully grown plant at (177, 116), a placed DiningChair at (186, 118) and a mug on the Stool at (176, 118), all inside the frame,
+#      the hearth stone bare of other objects | instant: she has just settled into her spot with the bag under her arm (job running 20 ticks).
 #   2  fire-pit, hour 18, Clear | Miel answers on the uilleann pipes while Nelim listens and smiles: the first guest has arrived | close,
 #      framed from the knees up, x 178-184 / z 115-119, the pipes and bellows fill a third of the frame width against Miel's ochre jacket
 #      and black curls; Miel at (181, 117), pipes at (181, 116) | Miel in the job; Nelim at (178, 117) turned toward her, bagpipes under
@@ -65,7 +65,7 @@
 #      on the hearth floor, the size a subscriber compares against | medium wide, low angle along the row (z 116, x 177-183), the five
 #      instruments each at least 8 percent of the frame width; Nelim at (181, 117) caught carrying the last instrument toward the row (a
 #      haul job, mid-carry) | Nelim smiling, Shogun curled at (176, 116) facing the camera | one TorchLamp left lit at (178, 117) all
-#      night (the light in frame), one out at (184, 117), a Stool, PlantPot kept, the hearth cold | instant: she is putting the
+#      night (the light in frame), one out at (184, 117), a Stool at (187, 118), PlantPot kept at (176, 113), a placed PlantPot with a fully grown plant at (188, 117), a placed DiningChair at (186, 118), a mug left on the stone at (184, 118) (frame x 176-189), the hearth cold, all inside the frame | instant: she is putting the
 #      instruments back after the night | defNames of the ocarina and the frame drum to confirm (Musical Instruments, a hard
 #      dependency already in the map).
 # Windows of the interface: none. Every image is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").

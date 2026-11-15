@@ -163,3 +163,5 @@ Decision: Flore and Soleil (invented guests, with body, hair and face set by the
 | Included animal (rule 5) | Shots |
 | --- | --- |
 | none: the mod adds no animal | not applicable |
+
+Plan score run 2 (score-gallery, 2026-11-16, no capture yet: rating the plan): after adding in-frame decor to images 1 and 5 (a placed fully grown PlantPot, a DiningChair, a mug; b was `weak` there because the kept props sat outside the frame), every criterion a to g and j reads `ok` and k reads `ok`: 5.0 on each of the five scenes. Not verified in game: the cells, the interaction cell and facing of an instrument, the defNames of the ocarina and the frame drum. Gate 2 (scenarios) is held: asked NPT on 2026-11-16 for a one-step "colonist as in the roster" form or the current verified property block for Miel and Soren (the block in NSB's `sanctuary-looks.feature` is older than `MIEL-PROFIL.md`). The five scenarios below the header still name Flore and Soleil; no ticket until they are rewritten and `Check-ShotlistVsScenario.ps1` passes.
