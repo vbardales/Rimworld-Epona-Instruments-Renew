@@ -79,29 +79,25 @@ per image, expressions, hairstyles and props are chosen, and every staged image 
 `Tests/Pickle/Mod/Pickle/Features/14-publication-shots.feature` (header: story, who wears what, shooting plan), pass map
 `Tests/Pickle/wsl-deps.gallery.map`, English.
 
-**The story.** A ceilidh at the hermit's hearth. Nelim hosts and plays the great highland bagpipes; two guests bring the other two
-instruments, Flore the uilleann pipes and Soleil the accordion. One set, the stone hearth of the hall (named place `fire-pit`),
-photographed at its own hour each time. Palette: deep green, ochre, wool red. Image 1 is the whole band at night (the most
-demonstrative one goes first); the next ones tell how the evening began; the last is the morning after.
+**The story.** A ceilidh at the hermit's hearth, in chronological order (rewritten 2026-11-15 after the NSB sync). Nelim hosts and plays the
+great highland bagpipes; two Sanctuary friends bring the other two instruments, Miel the uilleann pipes and Soren the accordion
+(NSB colonists played as the roster says). One set, the stone hearth of the hall (named place `fire-pit`), one hour per image
+(17, 18, 19, 20, then 8 the next morning), the hour shown by the torches. Image 1 opens on Nelim alone and the empty stools; each image
+adds one person or object; image 4 is the whole band; image 5 closes on the morning after. Palette: deep green, ochre, wool red. Full
+plan in the header of `Tests/Pickle/Gallery-draft/14-publication-shots.feature`.
 
 | File | Hour | Shows | State |
 | --- | --- | --- | --- |
 | `0-preview.png` | | The Preview itself | present; compare its hash with `Mod/About/Preview.png` after every regeneration |
-| `1-the-band-by-the-fire.png` | 20 | Nelim, Flore and Soleil in a row north of the lit hearth, facing the camera, all three playing; torches on both sides; Shogun the labrador at the hearth, facing the camera | scenario written, not played |
-| `2-nelim-tunes-the-bagpipes.png` | 17 | Nelim alone with the great highland bagpipes, tight on her and the bag; Yuki the husky beside her, facing the camera | scenario written, not played |
-| `3-flore-and-the-uilleann-pipes.png` | 18 | Flore alone with the uilleann pipes | scenario written, not played |
-| `4-soleil-and-the-accordion.png` | 19 | Soleil alone with the accordion | scenario written, not played |
-| `5-the-morning-after.png` | 8 | The three new instruments and the provider's ocarina and frame drum in a row on the hearth floor, Nelim a step behind: the size a subscriber compares against | scenario written, not played |
+| `1-nelim-tunes-at-dusk.png` | 17 | Nelim tunes the great highland bagpipes at the hearth, two empty stools waiting; Yuki the husky facing the camera | header written 2026-11-15, scenario to rewrite, not played |
+| `2-miel-and-the-uilleann-pipes.png` | 18 | Miel answers on the uilleann pipes, Nelim listening and smiling; Yuki facing the camera | header written 2026-11-15, scenario to rewrite, not played |
+| `3-soren-and-the-accordion.png` | 19 | Soren plays the accordion, Nelim hurries over with her bagpipes; Yuki facing the camera | header written 2026-11-15, scenario to rewrite, not played |
+| `4-the-band-by-the-fire.png` | 20 | The whole band plays, hearth in the foreground; Shogun the labrador facing the camera | header written 2026-11-15, scenario to rewrite, not played |
+| `5-the-morning-after.png` | 8 | The three new instruments and the provider's ocarina and frame drum in a row, Nelim carrying the last one; Shogun curled facing the camera | header written 2026-11-15, scenario to rewrite, not played |
 
-**Who wears what** (all chosen). Nelim: her own body, hair, face (two brows, a smirk, blink) and brown eyes, which are the fixture's
-defaults; an ochre shirt, a wool-red jacket, her trousers dyed deep green. Flore: Female body, dark hair (44, 30, 26) in the braid
-`VHE_SideBraid`, an ochre shirt, a green jacket, a wool-red kilt, face kit "calm". Soleil: Fat body, white hair so the braid `VHE_Braid`
-shows its own colours, a green shirt, an ochre jacket, a deep-red kilt, face kit "smile". Two mods added to the pass for the props:
-Irn Bru And Other Scottish Delights (`geodesicdragon.irnbru`, Workshop 2086949615, the kilt `IrnBruMod_KiltApparel`) and Vanilla Hair
-Expanded (`VanillaExpanded.VHE`, Workshop 1888705256, the braids). If these two mods are in the images, they join the THANKS of
-the description (`PUBLISHING.md`, "Remerciements": any integration named or exercised). Not done yet; decided when the images are accepted.
+**Who wears what** (outfits only, the properties of the colonists are the roster's; rewritten 2026-11-15). Nelim: her own body, hair, face and eyes; an ochre shirt, a wool-red jacket, her trousers dyed deep green. Miel: deep-green shirt, ochre jacket, wool-red kilt. Soren: ochre shirt, deep-green jacket, deep-red kilt. One added mod for the pass: Irn Bru And Other Scottish Delights (`geodesicdragon.irnbru`, Workshop 2086949615, the kilt `IrnBruMod_KiltApparel`). If it is in the images, it joins the THANKS of the description (`PUBLISHING.md`, "Remerciements"): decided when the images are accepted. Vanilla Hair Expanded and the invented guests Flore and Soleil are dropped.
 
-**Unconfirmed until a first run:** the defNames `Apparel_CollarShirt`, `Apparel_Jacket`, `TorchLamp`, `VHE_SideBraid`, `VHE_Braid`; the face kits
+**Unconfirmed until a first run:** the defNames `Apparel_CollarShirt`, `Apparel_Jacket`, `TorchLamp`, `Stool`, `PlantPot_Bonsai`, `DiningChair`; the interaction cell of each instrument (the pawn must face the camera when the instrument is one cell south); the face kits
 (the kits are not yet read by `SanctuaryBacklot/docs/GALERIE.md`); that `Shogun` and `Yuki` exist in the save under these names (from the owner,
 not checked); the free cells of `fire-pit` (from `SANCTUAIRE-CASES.md`); that a pawn in the `MusicPlayJoy` job shows the instrument in hand
 once the game is paused; what Facial Animation draws on each face (job and mood decide too). Every image is opened and judged before it
@@ -119,10 +115,10 @@ No subtitle on `0-` (the Preview) and none on an interface window (this mod has 
 
 | Index | File | Subtitle |
 | --- | --- | --- |
-| 1 | `1-the-band-by-the-fire.png` | By night the hearth hall is a ceilidh: bagpipes, uilleann pipes and an accordion, all new. |
-| 2 | `2-nelim-tunes-the-bagpipes.png` | It began at dusk, with Nelim tuning the great highland bagpipes. |
-| 3 | `3-flore-and-the-uilleann-pipes.png` | Flore answers on the uilleann pipes, softer and sweeter. |
-| 4 | `4-soleil-and-the-accordion.png` | Soleil brings the accordion, loud enough to carry a whole dance. |
+| 1 | `1-nelim-tunes-at-dusk.png` | It began at dusk, with Nelim tuning the great highland bagpipes. |
+| 2 | `2-miel-and-the-uilleann-pipes.png` | Miel answers on the uilleann pipes, softer and sweeter. |
+| 3 | `3-soren-and-the-accordion.png` | Soren brings the accordion, loud enough to carry a whole dance. |
+| 4 | `4-the-band-by-the-fire.png` | By night the hearth hall is a ceilidh: bagpipes, uilleann pipes and an accordion, all new. |
 | 5 | `5-the-morning-after.png` | Next morning the three newcomers rest beside the ocarina and the frame drum. |
 
 ## Adult content boxes

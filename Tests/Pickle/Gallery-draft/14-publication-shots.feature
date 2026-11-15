@@ -1,50 +1,77 @@
 # Images for the Workshop page (PUBLICATION.md, "Gallery"). Composition stays a visual review: a passed scenario
 # proves the route ran, never that the picture sells the mod.
 #
-# NOT PLAYED. Rewritten 2026-10-15 for the Sanctuary (the 2026-10-02 version used the studio colony and three invented pawns;
-# the rules since then: AUDIT.md 9.a, GALLERY.md). Several defNames and cells below are unconfirmed until a first run, and are
+# NOT PLAYED. Header rewritten 2026-11-15 (NSB sync, Nelim + Miel + Soren); the scenarios below still name Flore and Soleil and are TO REWRITE from this header (gate 2 of write-shotlist). Older text: rules AUDIT.md 9.a, GALLERY.md.
+# Several defNames and cells below are unconfirmed until a first run and are
 # marked "to confirm": a step that does not know a name fails with the list of the valid ones.
 #
 # STEP PREFIXES: "Nelim's Sanctuary:" is the Sanctuary Backlot (fixture, named places, Nelim's own face); "Nelim's Pickle Tools:" is
 # PickleTools (framing, decor, apparel, face parts, hairstyles, presentation mode); "Epona Instruments Renew:" is this suite's own; the rest is Pickle's.
 # Pass: -Language English -DepMap wsl-deps.gallery.map -Filter 14-publication-shots.feature (English: the page is English).
 #
-# THE STORY. A ceilidh at the hermit's hearth. Nelim (Virginie, the only colonist of the Sanctuary and the protagonist of the
-# series) is the host: she plays the great highland bagpipes. Two guests come with the other two instruments: Flore, with the
-# uilleann pipes, and Soleil, with the accordion. One set for the whole series, the hearth of the hall (named place "fire-pit",
-# stone hearth at (181, 115), braziers in the next room), photographed at its own hour each time: dusk, then night, then the
-# morning after. Palette of the series: deep green, ochre and wool red, so the brass of the accordion and the black of the
-# pipes stand out against the dark parquet. The series is told in the order of the scenarios; image 1 is the whole band, the most
-# demonstrative, and the next ones tell how the evening began (the subtitles say so, PUBLICATION.md "Gallery subtitles").
+# THE STORY (rewritten 2026-11-15 after sync-nsb-npt and the director's pass). A ceilidh at the hermit's hearth, one evening and
+# the morning after, in chronological order, all at the hearth of the hall (named place "fire-pit", stone hearth at (181, 115),
+# validated by Virginie 2026-11-08). Nelim, the protagonist, hosts and plays the great highland bagpipes; two Sanctuary friends bring
+# the other two instruments: Miel the uilleann pipes and Soren the accordion (NSB colonists, played as the roster says: no property
+# of a colonist is changed, only outfits and scene expressions). The invented guests Flore and Soleil are dropped (outside NSB, no
+# validation). Rhythm: one hour per image, the photographer's choice (GALLERY.md): 17, 18, 19, 20, then 8 the next morning; each image
+# is a new Scenario that reloads the save and sets its own hour. The hall is indoors, so the hour is shown by the torches, not by the
+# sky: one lit at 17, two lit at 18 and 19, two lit and the braziers burning at 20, one left lit and one out at 8. The series builds
+# one person or object at a time: Nelim alone, then Miel, then Soren, then the whole band, then the morning. Palette: deep green
+# (40, 88, 56), ochre (196, 152, 64), wool red (150, 40, 36), so the black of the pipes and the brass of the accordion stand out
+# against the dark parquet and the grey stone. Gesture rule (director): the game cannot draw a breath or a squeeze; each image is
+# paused a few ticks AFTER the pawn has reached its cell and the playing job runs (wait for the job, then 20 ticks), and the "mid-play"
+# feeling comes from the job, the facing and the listener turned toward the player, never from an arm movement.
 #
-# WHO WEARS WHAT (chosen, never rolled). Props from two added mods, in the pass map: Irn Bru And Other Scottish Delights
-# (geodesicdragon.irnbru: the kilt, IrnBruMod_KiltApparel) and Vanilla Hair Expanded (VanillaExpanded.VHE: the braids).
-#   Nelim  : her own body, hair, face (SanctuaryBacklot "Nelim has her own face": two brows, a smirk, blink) and brown eyes
-#            (the fixture's defaults); an ochre shirt, a wool-red jacket, her own trousers dyed deep green.
-#   Flore  : Female body, dark hair (44, 30, 26), VHE_SideBraid; an ochre shirt, a green jacket, a wool-red kilt; face kit "calm" (a player
-#            of a difficult instrument, lips closed, eyes steady).
-#   Soleil : Fat body, white hair so that the braid VHE_Braid shows its own colours; a green shirt, an ochre jacket, a deep-red kilt;
-#            face kit "smile" (the one who enjoys it).
-# Faces: Facial Animation also draws an expression from the pawn's job (MusicPlayJoy) and mood, so every capture is read for the
-# face (a smile that is not wanted, sweat or blush from the heat: the map is held at 20 degrees).
-# Animals face the camera on at least one image (owner, 2026-10-14): Shogun the labrador and Yuki the husky, the fixture's dogs
-# (names from the owner, not yet checked in the save: to confirm).
+# WHO WEARS WHAT (chosen, never rolled; same outfit in every scene of the story, nobody changes clothes in one evening).
+# Outfits only: colours and garments are free (owner, 2026-11-05). The kilt comes from Irn Bru And Other Scottish Delights
+# (geodesicdragon.irnbru, IrnBruMod_KiltApparel), the only mod added to the pass besides the Musical Instruments dependency.
+#   Nelim : her own body, hair, face (SanctuaryBacklot "Nelim has her own face") and eyes; ochre shirt (Apparel_CollarShirt), wool-red
+#           jacket (Apparel_Jacket), her trousers (Apparel_Pants) dyed deep green. Smile (default scene expression), no sweat: the map
+#           is held at 20 degrees.
+#   Miel  : roster look as in sanctuary-looks.feature (Female, Thin, Female_AverageWide, black curls Roo_Royal_NaturalcurlsHD, very dark
+#           skin, orange eyes, kit smile; her looks are still "D" in NSB AVANCEMENT.md, played as the roster says); deep-green shirt,
+#           ochre jacket, wool-red kilt (150, 40, 36). The black curls and the ochre jacket separate against the dark skin.
+#   Soren : roster look as in sanctuary-soren-wardrobe (Male, Roo_HD_Hair_Tidy, short dark reddish hair); ochre shirt, deep-green
+#           jacket, deep-red kilt (130, 30, 34); smile.
+# Animals face the camera (owner, 2026-10-14): Yuki the husky on images 2 and 3, Shogun the labrador (linked to Nelim) on images 4
+# and 5; both NSB dogs, undressed (nothing in the mod addresses animals).
 #
-# SHOOTING PLAN, one line per image (hour; subject; composition; the living thing; what the image says):
-#   1  hour 20, night; the three players in a row at z 117, north of the hearth, facing South; the band is the subject, the lit hearth
-#      is the foreground, two torches flank them; Shogun lies at the hearth facing the camera; the ceilidh at its height.
-#   2  hour 17, dusk; Nelim alone at (181, 117) with the great highland bagpipes; tight on her and the bag, the hearth behind-left;
-#      Yuki beside her facing the camera; the host tuning, the evening before it starts.
-#   3  hour 18; Flore alone at (181, 117) with the uilleann pipes; tight; no animal; the first guest.
-#   4  hour 19; Soleil alone at (181, 117) with the accordion; tight; no animal; the second guest, the one that carries a dance.
-#   5  hour 8, the morning after; the three new instruments and the provider's ocarina and frame drum on the stone of the hearth
-#      row, Nelim one step behind with her own face; the size a subscriber compares against.
-# Windows of the interface: none. Every image here is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").
+# SHOOTING PLAN, one line per image. Fields: place and hour | weather and time | subject (what the image says) | composition |
+# living | decor | instant and how the gesture is obtained. The instrument is spawned one cell SOUTH of the performer, at (x, 116),
+# so the performer does not turn its back to the camera; to confirm at the first run (the interaction cell of the def decides).
+#   1  fire-pit, hour 17, Clear, 20 degrees | OPENING: Nelim tunes the great highland bagpipes at the empty hearth, the guests have not come
+#      yet (two empty Stools side by side wait for them) | medium, framed x 176-186 / z 113-119 so the hall, hearth and the two empty
+#      stools set the place; Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim in the
+#      MusicPlayJoy job, Yuki lying at (183, 116) facing the camera | one TorchLamp lit at (178, 117) (the light in frame) and one
+#      unlit at (184, 117), two empty Stool at (176, 118) and (187, 118), PlantPot at (176, 113) and PlantPot_Bonsai at (182, 112) kept,
+#      DiningChair at (175, 110) kept | instant: she has just settled into her spot with the bag under her arm (job running 20 ticks).
+#   2  fire-pit, hour 18, Clear | Miel answers on the uilleann pipes while Nelim listens and smiles: the first guest has arrived | close,
+#      framed from the knees up, x 178-184 / z 115-119, the pipes and bellows fill a third of the frame width against Miel's ochre jacket
+#      and black curls; Miel at (181, 117), pipes at (181, 116) | Miel in the job; Nelim at (178, 117) turned toward her, bagpipes under
+#      her arm; Yuki lying at (184, 116) facing the camera | two TorchLamp lit at (176, 117) and (183, 117), one Stool at (187, 118) with
+#      a mug on it, PlantPot at (176, 113) kept | instant: the two have just exchanged the first tune.
+#   3  fire-pit, hour 19, Clear | the band is gathering: Soren plays the accordion while Nelim hurries over with her bagpipes | medium,
+#      framed x 177-185 / z 114-119; Soren at (181, 117) with the accordion at (181, 116), brass against his deep-green jacket; Nelim at
+#      (183, 117) in a haul job toward her spot, bagpipes in her hands, head turned toward him; Miel's empty Stool in the frame | Soren in
+#      the job, Nelim carrying; Yuki at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117), two Stool, PlantPot
+#      kept | instant: Soren has just started and Nelim is walking to join him; image 4 follows.
+#   4  fire-pit, hour 20, Clear | the whole band plays the ceilidh at its height | wide, framed x 178-184 / z 114-119 so each of the
+#      three instruments takes at least 8 percent of the frame width at 268 px; Nelim (181, 117) centre, Miel (179, 117) and Soren (183,
+#      117) at her sides, facing South, hearth as foreground; instruments at (179, 116), (181, 116), (183, 116) | all three in the job;
+#      Shogun at (185, 116) facing the camera so the hearth stays visible | two TorchLamp lit at (176, 117) and (184, 117), two Stool at
+#      (176, 118) and (187, 118), the braziers lit, PlantPot kept | instant: the three have been playing 20 ticks.
+#   5  fire-pit, hour 8 (the morning after), Clear | CLOSING: the three new instruments rest beside the provider's ocarina and frame drum
+#      on the hearth floor, the size a subscriber compares against | medium wide, low angle along the row (z 116, x 177-183), the five
+#      instruments each at least 8 percent of the frame width; Nelim at (181, 117) caught carrying the last instrument toward the row (a
+#      haul job, mid-carry) | Nelim smiling, Shogun curled at (176, 116) facing the camera | one TorchLamp left lit at (178, 117) all
+#      night (the light in frame), one out at (184, 117), a Stool, PlantPot kept, the hearth cold | instant: she is putting the
+#      instruments back after the night | defNames of the ocarina and the frame drum to confirm (Musical Instruments, a hard
+#      dependency already in the map).
+# Windows of the interface: none. Every image is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").
 #
-# Cells (SANCTUAIRE-CASES.md, fire-pit, free standable at z 117: x 178-185; z 118: 178, 181-183; z 119: 182-186; z 113-114: 172-184):
-# the performer stands at (x, 117), the instrument is spawned at (x, 118).
-@requires:nelim.sanctuarybacklot
-@requires:nelim.pickletools.screenshotstudio
+# Cells (SANCTUAIRE-CASES.md, fire-pit, free standable at z 116: 172-183, 187-189; z 117: 172-173, 176, 178-185, 187-190; z 118: 172-173,
+# 176, 178, 181-183, 185, 187-190). Any cell above not in these lists is moved at the first run, and the header is corrected.
 @requires:nelim.pickletools.stagedecor
 @requires:nelim.pickletools.colonistrace
 @requires:nelim.pickletools.camerazoom
