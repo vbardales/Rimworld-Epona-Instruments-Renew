@@ -133,3 +133,33 @@ Source of every line: Steam search by Chrome (PiI), plus local scan `same-patter
 | 3134829573 | Musical Instruments (Continued) Patch | 1.4 to 1.7 | patch for our dependency |
 
 Verdict: no duplicate for 1.6; no other mod ships bagpipes or an accordion for Musical Instruments. No mod patches or retextures ours.
+
+## NSB - 2026-11-15 (sync-nsb-npt, nothing rewritten yet: write-shotlist does it)
+
+Places read: 2026-11-15
+Tribe read: 2026-11-15
+Steps read: 2026-11-15
+
+Changed in NSB since the 2026-10-15 plan: `hearth-hall` and `fire-pit` validated by Virginie (2026-11-08, NPT photos lot 5h, ticket 1140); `fire-pit` is still (181, 115), free cells at z 117 are 172-173, 176, 178-185, 187-190 (draft cells 176, 178, 181, 183, 187 all free, but a TorchLamp is already at (181, 110) and (172, 114)). The draft header says Nelim is the only colonist: false, NSB has 17 humans. Owner rules (2026-11-05) said back: everything in NSB free; a colonist or domestic animal outside NSB needs her express validation; any property of a colonist (body, hair, face, skin, genes) too; every outfit free; every animal the mod includes must be shot (this mod adds none: rule 5 not applicable, three instruments only).
+
+Decision: Flore and Soleil (invented guests, with body, hair and face set by the draft) are NOT in NSB and no validation exists: replaced in the plan by NSB pawns played as the roster says, outfits only. Uilleann pipes: Miel (roster entry exists, looks still `D` in AVANCEMENT.md: usable, flagged). Accordion: Soren (looks `V`). The two VHE braids and the hair, body and face steps of the draft fall away (rule 3); VHE leaves the pass map unless an NSB pawn already wears it. Kilt `IrnBruMod_KiltApparel`: outfit, free, kept or dropped at write-shotlist. NPT: all steps used by the draft still exist in `PickleTools/docs/steps.md` (wears dyed, face kit, place decor, stands at, animal stands at, temperature); StageDecor/ColonistRace changed since 2026-11-11 (decor burns, filth, floor) without breaking any of them.
+
+| Place | Shots | Changes for the gallery | Last read |
+| --- | --- | --- | --- |
+| `fire-pit` (hearth-hall) | 1 to 5 | two TorchLamp placed (draft cells 176 and 187, z 117) | 2026-11-15 |
+
+| Colonist | Shots | Outfit per shot | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Nelim | 1, 2, 5 | ochre shirt, wool-red jacket, deep-green trousers (free; her face and body untouched) | 2026-11-15 (profile lines) | none |
+| Miel | 1, 3 | to choose at write-shotlist (free) | 2026-11-15 (profile, AVANCEMENT) | none, played as the roster says |
+| Soren | 1, 4 | to choose at write-shotlist (free) | 2026-11-15 (profile, AVANCEMENT) | none, played as the roster says |
+| Flore, Soleil | none now | removed from the plan | | were outside NSB, no validation, dropped |
+
+| Animal | Shots | Outfit | Last read | Exceptions |
+| --- | --- | --- | --- | --- |
+| Shogun (labrador, linked to Nelim) | 1 | none | 2026-11-15 (roster) | none |
+| Yuki (husky, linked to Soren) | 2 | none | 2026-11-15 (roster) | none |
+
+| Included animal (rule 5) | Shots |
+| --- | --- |
+| none: the mod adds no animal | not applicable |
