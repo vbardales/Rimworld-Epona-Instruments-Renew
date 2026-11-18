@@ -130,7 +130,7 @@ Source of every line: Steam search by Chrome (PiI), plus local scan `same-patter
 | 3250668195 | Epona race Renaissance (Unofficial) (`Epona.EponaRenaissanceUno`) | 1.5, installed | CHECKED 2026-11-14: carries the same three instruments (`Epona_Instrument_GreatHighlandPipes`, `_UilleannPipes`, `_Accordion`, via a Musical Instruments patch in `1.5/Patches/ModPatches/Music.xml`, own research); no collision with our `eponair_*`; `LoadFolders.xml` has only a `<v1.5>` block, so nothing loads in 1.6 (read from files, not played) |
 | 2483902695 | Epona Race (Total Medieval) | 1.2 | race mod, same author |
 | 3514746737 | Epona Dynastic Rise | 1.5 to 1.7 | newer Epona race line |
-| 3134829573 | Musical Instruments (Continued) Patch | 1.4 to 1.7 | patch for our dependency |
+| 3134829573 | Musical Instruments (Continued) Patch | 1.4 to 1.7 | patch for our dependency; READ 2026-11-18 (`RunningBugs.MusicPatch`, 1.4 to 1.7): adds its own `MusicPatch.CompProp_PlayingMusic` and sounds `MIC_*_Play` to the Musical Instruments (Continued) defNames only (FrameDrum, Ocarina, Marimba, Balalaika, Banjo, Cello, Guitar...), none of ours (`JP_*`), no pipes or accordion; nothing to reuse, no conflict |
 
 Verdict: no duplicate for 1.6; no other mod ships bagpipes or an accordion for Musical Instruments. No mod patches or retextures ours.
 
