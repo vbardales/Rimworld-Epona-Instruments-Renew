@@ -136,6 +136,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" also wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" face kit is "smile"
     And Nelim's Pickle Tools: a colonist "Miel" of kind "Colonist" exists
+    And Nelim's Pickle Tools: "Miel" has no backstory
     And Nelim's Pickle Tools: "Miel" loses all genes
     And Nelim's Pickle Tools: "Miel" gender is Female
     And "Miel" is 34 years old
@@ -197,6 +198,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" also wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" face kit is "smile"
     And Nelim's Pickle Tools: a colonist "Soren" of kind "Colonist" exists
+    And Nelim's Pickle Tools: "Soren" has no backstory
     And Nelim's Pickle Tools: "Soren" loses all genes
     And Nelim's Pickle Tools: "Soren" gender is Male
     And "Soren" is 38 years old
@@ -257,6 +259,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" also wears "Apparel_Pants" dyed rgb (40, 88, 56)
     And Nelim's Pickle Tools: "Nelim" face kit is "smile"
     And Nelim's Pickle Tools: a colonist "Miel" of kind "Colonist" exists
+    And Nelim's Pickle Tools: "Miel" has no backstory
     And Nelim's Pickle Tools: "Miel" loses all genes
     And Nelim's Pickle Tools: "Miel" gender is Female
     And "Miel" is 34 years old
@@ -282,6 +285,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Miel" face skin is "SkinEyeshadow"
     And Nelim's Pickle Tools: "Miel" eyeballs are "Empathetic"
     And Nelim's Pickle Tools: a colonist "Soren" of kind "Colonist" exists
+    And Nelim's Pickle Tools: "Soren" has no backstory
     And Nelim's Pickle Tools: "Soren" loses all genes
     And Nelim's Pickle Tools: "Soren" gender is Male
     And "Soren" is 38 years old
