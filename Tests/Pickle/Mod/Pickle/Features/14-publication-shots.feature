@@ -19,9 +19,9 @@
 # lit at 18 and 19, two lit and the braziers burning at 20, one left lit and one out at 8. The series builds one person or object at a
 # time: Nelim alone, then Miel, then Soren, then the whole band, then the morning. Palette: deep green (40, 88, 56), ochre (196, 152, 64),
 # wool red (150, 40, 36), so the black of the pipes and the brass of the accordion stand out against the dark parquet and the grey stone.
-# Gesture rule (director): the game cannot draw a breath or a squeeze; each image is paused a few ticks AFTER the pawn has reached its cell and
-# the playing job runs (wait for the job, then 20 ticks), and the "mid-play" feeling comes from the job, the facing and the listener
-# turned toward the player, never from an arm movement.
+# Gesture rule (director): the game cannot draw a breath or a squeeze; each performer HOLDS the instrument in the hands (owner delegated the staging to the session, 2026-11-18: run a8e8 showed the instruments on the floor and
+# the pawn standing idle, which does not read as playing); no job runs, the pose is the held instrument, the facing and the listener turned toward
+# the player, never an arm movement. The music joy was proven by images 1 to 5 of runs 4490 and a8e8 and is not needed in the picture.
 #
 # WHO WEARS WHAT (chosen, never rolled; same outfit in every scene of the story). Outfits only, free (owner, 2026-11-05). The kilt comes from
 # Irn Bru And Other Scottish Delights (geodesicdragon.irnbru, IrnBruMod_KiltApparel), the only mod added to the pass for a garment.
@@ -37,29 +37,29 @@
 # Animals face the camera (owner, 2026-10-14): Yuki the husky on images 1 to 3, Shogun the labrador (linked to Nelim) on images 4 and 5;
 # both NSB dogs, undressed (nothing in the mod addresses animals).
 #
-# SHOOTING PLAN, one line per image. The instrument is spawned one cell SOUTH of the performer, at (x, 116), so the performer does not turn
+# SHOOTING PLAN, one line per image. The instrument is held in the performer's hands (carries the item), so the performer does not turn
 # its back to the camera; to confirm at the first run (the interaction cell of the def decides). Fields: place and hour | subject | composition |
 # living | decor | instant and how the gesture is obtained.
 #   1. fire-pit, 17h, Clear, 20 degrees | OPENING: Nelim tunes the great highland bagpipes at the empty hearth, the guests have not come yet
 #        (two empty Stool wait for them) | medium, framed x 176-186 / z 113-119 so the hall, hearth and the two empty stools set the place;
-#        Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim in the MusicPlayJoy job, Yuki lying at
+#        Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim holding the pipes, Yuki lying at
 #        (183, 116) facing the camera | one TorchLamp lit at (178, 117) and one unlit at (184, 117), Stool at (176, 118) and (187, 118), a placed
 #        PlantPot with Plant_Daylily fully grown at (177, 116), a DiningChair at (185, 118), all inside the frame; a Beer bottle (Core item, Cat: no mug exists) on the Stool at
-#        (176, 118) | instant: she has just settled into her spot (job running 20 ticks), pipes at (181, 116).
+#        (176, 118) | instant: she has just settled into her spot (pipes held, paused 20 ticks).
 #   2. fire-pit, 18h, Clear | Miel answers on the uilleann pipes while Nelim listens and smiles: the first guest has arrived | close,
 #        framed from the knees up, x 178-184 / z 115-119, the pipes and bellows fill a third of the frame width against Miel's ochre jacket and
-#        black curls; Miel at (181, 117), JP_UilleannPipes at (181, 116) | Miel in the job; Nelim at (178, 117) turned East toward her, JP_GreatHighlandBagpipes
+#        black curls; Miel at (181, 117), JP_UilleannPipes held in her hands | Miel holding them; Nelim at (178, 117) turned East toward her, JP_GreatHighlandBagpipes
 #        under her arm; Yuki at (183, 116) facing the camera | two TorchLamp lit at (176, 117) and (183, 117), one Stool at (187, 118) | instant: the two
 #        have just exchanged the first tune.
 #   3. fire-pit, 19h, Clear | the band is gathering: Soren plays the accordion while Nelim hurries over with her bagpipes | medium,
-#        framed x 177-185 / z 114-119; Soren at (181, 117) with JP_Accordion at (181, 116), brass against his deep-green jacket; Nelim at
-#        (183, 117) turned West toward him, JP_GreatHighlandBagpipes in her hands; Miel's empty Stool at (178, 118) in the frame | Soren in the
-#        job, Nelim carrying; Yuki at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117) | instant: Soren has just
+#        framed x 177-185 / z 114-119; Soren at (181, 117) holding JP_Accordion, brass against his deep-green jacket; Nelim at
+#        (183, 117) turned West toward him, JP_GreatHighlandBagpipes in her hands; Miel's empty Stool at (178, 118) in the frame | Soren
+#        holding, Nelim carrying; Yuki at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117) | instant: Soren has just
 #        started and Nelim is walking to join him; image 4 follows.
 #   4. fire-pit, 20h, Clear | the whole band plays the ceilidh at its height | wide, framed x 178-184 / z 114-119 so each of the three
 #        instruments takes at least 8 percent of the frame width at 268 px; Nelim (181, 117) centre, Miel (179, 117) and Soren (183, 117) at her
-#        sides, facing South, hearth as foreground; JP_UilleannPipes at (179, 116), JP_GreatHighlandBagpipes at (181, 116), JP_Accordion at (183, 116)
-#        | all three in the job; Shogun at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117), two Stool at
+#        sides, facing South, hearth as foreground; each holding JP_UilleannPipes, JP_GreatHighlandBagpipes, JP_Accordion
+#        | all three holding; Shogun at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117), two Stool at
 #        (176, 118) and (187, 118), two Brazier lit at (178, 118) and (182, 118) | instant: the three have been playing 20 ticks.
 #   5. fire-pit, 8h (the morning after), Clear | CLOSING: the three new instruments rest beside the provider's Ocarina and FrameDrum on the
 #        hearth floor, the size a subscriber compares against | medium wide, low angle along the row (z 116, x 177-183), the five instruments
@@ -82,6 +82,7 @@
 @review
 Feature: images for the Workshop page
 
+  Scenario: image 1, Nelim tunes the great highland bagpipes
   Scenario: image 1, Nelim tunes the great highland bagpipes
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
@@ -107,11 +108,8 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "DiningChair" at (185, 118)
     And I spawn a "Beer" at (176, 118)
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
-    And a "MusicSpot" is built at (181, 117)
-    And I spawn a "JP_GreatHighlandBagpipes" at (181, 116)
+    And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (183, 116) facing South
-    When Epona Instruments Renew "Nelim" is offered the music joy and starts it
-    And I wait for "Nelim" to have job "MusicPlayJoy"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I frame the cells (176, 113) to (186, 119) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -167,13 +165,10 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the decor "TorchLamp" at (183, 117) is lit
     And Nelim's Pickle Tools: I place the decor "Stool" at (187, 118)
     And Nelim's Pickle Tools: "Miel" stands at (181, 117) facing South
-    And a "MusicSpot" is built at (181, 117)
-    And I spawn a "JP_UilleannPipes" at (181, 116)
+    And Nelim's Pickle Tools: "Miel" carries the item "JP_UilleannPipes"
     And Nelim's Pickle Tools: "Nelim" stands at (178, 117) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (183, 116) facing South
-    When Epona Instruments Renew "Miel" is offered the music joy and starts it
-    And I wait for "Miel" to have job "MusicPlayJoy"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I frame the cells (178, 115) to (184, 119) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -228,13 +223,10 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the decor "TorchLamp" at (184, 117) is lit
     And Nelim's Pickle Tools: I place the decor "Stool" at (178, 118)
     And Nelim's Pickle Tools: "Soren" stands at (181, 117) facing South
-    And a "MusicSpot" is built at (181, 117)
-    And I spawn a "JP_Accordion" at (181, 116)
+    And Nelim's Pickle Tools: "Soren" carries the item "JP_Accordion"
     And Nelim's Pickle Tools: "Nelim" stands at (183, 117) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (178, 116) facing South
-    When Epona Instruments Renew "Soren" is offered the music joy and starts it
-    And I wait for "Soren" to have job "MusicPlayJoy"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I frame the cells (177, 114) to (185, 119) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -322,19 +314,10 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Miel" stands at (179, 117) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
     And Nelim's Pickle Tools: "Soren" stands at (183, 117) facing South
-    And a "MusicSpot" is built at (179, 117)
-    And a "MusicSpot" is built at (181, 117)
-    And a "MusicSpot" is built at (183, 117)
-    And I spawn a "JP_UilleannPipes" at (179, 116)
-    And I spawn a "JP_GreatHighlandBagpipes" at (181, 116)
-    And I spawn a "JP_Accordion" at (183, 116)
+    And Nelim's Pickle Tools: "Miel" carries the item "JP_UilleannPipes"
+    And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
+    And Nelim's Pickle Tools: "Soren" carries the item "JP_Accordion"
     And Nelim's Pickle Tools: the animal "Shogun" stands at (178, 116) facing South
-    When Epona Instruments Renew "Miel" is offered the music joy and starts it
-    And Epona Instruments Renew "Nelim" is offered the music joy and starts it
-    And Epona Instruments Renew "Soren" is offered the music joy and starts it
-    And I wait for "Miel" to have job "MusicPlayJoy"
-    And I wait for "Nelim" to have job "MusicPlayJoy"
-    And I wait for "Soren" to have job "MusicPlayJoy"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I frame the cells (178, 114) to (184, 119) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
