@@ -44,8 +44,8 @@
 #        (two empty Stool wait for them) | medium, framed x 176-186 / z 113-119 so the hall, hearth and the two empty stools set the place;
 #        Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim in the MusicPlayJoy job, Yuki lying at
 #        (183, 116) facing the camera | one TorchLamp lit at (178, 117) and one unlit at (184, 117), Stool at (176, 118) and (187, 118), a placed
-#        PlantPot with Plant_Daylily fully grown at (177, 116), a DiningChair at (185, 118), all inside the frame; the mug on the Stool at
-#        (176, 118) is added when Cat gives its defName | instant: she has just settled into her spot (job running 20 ticks), pipes at (181, 116).
+#        PlantPot with Plant_Daylily fully grown at (177, 116), a DiningChair at (185, 118), all inside the frame; a Beer bottle (Core item, Cat: no mug exists) on the Stool at
+#        (176, 118) | instant: she has just settled into her spot (job running 20 ticks), pipes at (181, 116).
 #   2. fire-pit, 18h, Clear | Miel answers on the uilleann pipes while Nelim listens and smiles: the first guest has arrived | close,
 #        framed from the knees up, x 178-184 / z 115-119, the pipes and bellows fill a third of the frame width against Miel's ochre jacket and
 #        black curls; Miel at (181, 117), JP_UilleannPipes at (181, 116) | Miel in the job; Nelim at (178, 117) turned East toward her, JP_GreatHighlandBagpipes
@@ -66,8 +66,8 @@
 #        each at least 8 percent of the frame width: Ocarina at (177, 116), FrameDrum at (178, 116), JP_GreatHighlandBagpipes at (179, 116),
 #        JP_UilleannPipes at (180, 116), and Nelim at (181, 117) caught carrying JP_Accordion toward the row (mid-carry) | Nelim smiling, Shogun
 #        curled at (176, 116) facing the camera | one TorchLamp left lit at (178, 117) all night, one out at (184, 117), a Stool at (187, 118),
-#        a placed PlantPot with Plant_Daylily fully grown at (188, 117), a DiningChair at (185, 118) (frame x 176-189), the hearth cold, the mug
-#        left on the stone beside the hearth is added with the mug of image 1 | instant: she is putting the instruments back after the night.
+#        a placed PlantPot with Plant_Daylily fully grown at (188, 117), a DiningChair at (185, 118) (frame x 176-189), the hearth cold, a Beer bottle
+#        on the stone at (183, 118) | instant: she is putting the instruments back after the night.
 # Windows of the interface: none. Every image is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").
 #
 # Cells (SANCTUAIRE-CASES.md, fire-pit, free standable at z 116: 172-183, 187-189; z 117: 172-173, 176, 178-185, 187-190; z 118: 172-173,
@@ -105,6 +105,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "Stool" at (187, 118)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (177, 116)
     And Nelim's Pickle Tools: I place the decor "DiningChair" at (185, 118)
+    And I spawn a "Beer" at (176, 118)
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
     And a "MusicSpot" is built at (181, 117)
     And I spawn a "JP_GreatHighlandBagpipes" at (181, 116)
@@ -359,6 +360,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: I place the decor "Stool" at (187, 118)
     And Nelim's Pickle Tools: I place the decor "PlantPot" holding "Plant_Daylily" fully grown at (188, 117)
     And Nelim's Pickle Tools: I place the decor "DiningChair" at (185, 118)
+    And I spawn a "Beer" at (183, 118)
     And Nelim's Pickle Tools: "Nelim" stands at (181, 117) facing South
     And Nelim's Pickle Tools: the animal "Shogun" stands at (176, 116) facing South
     And I spawn a "Ocarina" at (177, 116)
