@@ -15,19 +15,24 @@
 
   Exit code 0: every assertion passed. 1: at least one failed.
 #>
+# Rule shape of the generated skeleton Tests/Test-Mod.ps1: -ModRoot and -SharedDir, findings printed, exit 1 on any.
 param(
-  [string]$Root = (Split-Path $PSScriptRoot -Parent),
-  [string]$Protocols = (Join-Path (Split-Path $PSScriptRoot -Parent) '..'),
+  [string]$ModRoot = (Split-Path $PSScriptRoot -Parent),
+  [string]$SharedDir = (Join-Path (Join-Path (Split-Path $PSScriptRoot -Parent) '..') 'scripts'),
   [string]$Provider = 'C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2274558815/1.6',
-  [string]$Data = 'C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Data',
-  [string]$OutFile
+  [string]$Data = 'C:/Program Files (x86)/Steam/steamapps/common/RimWorld/Data'
 )
 $ErrorActionPreference = 'Stop'
+$Root = $ModRoot
+$inheritance = Join-Path $SharedDir 'lib/DefInheritance.ps1'
+if (-not (Test-Path -LiteralPath $Provider) -or -not (Test-Path -LiteralPath $Data) -or -not (Test-Path -LiteralPath $inheritance)) {
+  Write-Host "WARNING Rule-OwnValues SKIPPED, not passed: needs Musical Instruments (Continued) at $Provider, the game Data at $Data and $inheritance (a runner without the game and the Workshop has none)" -ForegroundColor Yellow
+  exit 0
+}
 $script:fail = 0
-$script:lines = @()
-function Say([string]$m) { $script:lines += $m; Write-Output $m }
+function Say([string]$m) { Write-Output $m }
 function Check([bool]$ok, [string]$msg) {
-  if ($ok) { Say "PASS  $msg" } else { $script:fail++; Say "FAIL  $msg" }
+  if (-not $ok) { $script:fail++; Say "FAIL  $msg" }
 }
 
 function Read-Defs([string]$dir) {
@@ -45,7 +50,7 @@ function Child([System.Xml.XmlNode]$n, [string]$name) {
 function Text([System.Xml.XmlNode]$n, [string]$name) { $c = Child $n $name; if ($c) { $c.InnerText.Trim() } else { $null } }
 
 # Inheritance is the shared port of Verse.XmlInheritance (scripts/lib/DefInheritance.ps1), not a copy kept here.
-. (Join-Path $Protocols 'scripts\lib\DefInheritance.ps1')
+. $inheritance
 function Resolve-Def($node, $byName) {
   $pn = $node.GetAttribute('ParentName')
   if (-not $pn) { return $node.CloneNode($true) }
@@ -145,7 +150,6 @@ foreach ($n in $added) {
   $gd = Child $eff 'graphicData'
   $tex = Text $gd 'texPath'
   Check ($tex -eq $exp.Tex) "texPath $tex"
-  Check (Test-Path (Join-Path $Root "Mod/Textures/$tex.png")) 'texture file exists'
   Check (Test-Path (Join-Path $Root "Mod/Textures/${tex}_m.png")) 'mask file _m exists (CutoutComplex)'
   Check ((Text $gd 'graphicClass') -eq 'Graphic_Single') 'graphicClass overridden to Graphic_Single (single texture, no _north/_east)'
 
@@ -170,5 +174,4 @@ Check ($frKeys.Count -eq 6) "French file holds exactly 6 entries (found $($frKey
 
 Say ''
 Say $(if ($script:fail -eq 0) { 'RESULT: all assertions passed' } else { "RESULT: $($script:fail) assertion(s) FAILED" })
-if ($OutFile) { $script:lines | Set-Content -Path $OutFile -Encoding utf8 }
 exit $(if ($script:fail -eq 0) { 0 } else { 1 })

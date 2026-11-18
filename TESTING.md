@@ -9,7 +9,7 @@ textures. See `STATUS.md` for what is verified and what is not.
 | Layer | Where | Runs | What it proves |
 | --- | --- | --- | --- |
 | Shared XML diagnostics | `Tests/Audit-2026-09-21/Validate-Package.ps1 -Root .` | seconds, no game | fields, type references, DefInjected paths, XML classes, def references and parents, EN/FR inventory. `Check-ConfigErrors` reads 0 defs here (no Defs folder): its PASS is no coverage |
-| Effective defs | `Tests/Test-EffectiveDefs.ps1` | seconds, no game | the three defs **as the game sees them**: the patch guard is evaluated with and without the provider, `ParentName` inheritance is replayed the way `XmlInheritance` does it (list items append), then ~30 assertions per def |
+| Effective defs | `Tests/Rule-OwnValues.ps1` | seconds, no game | the three defs **as the game sees them**: the patch guard is evaluated with and without the provider, `ParentName` inheritance is replayed the way `XmlInheritance` does it (list items append), then ~30 assertions per def |
 | Pickle (Gherkin) | `Tests/Pickle/Mod/Pickle/Features/` | about ten minutes per pass, **takes the machine** | what only a running game can say: 22 scenarios, none set aside (see below) |
 | By hand | `TEST_SCENARIOS.md`, `PLAY_AND_LISTEN.md` | in your own game | what a headless run cannot: hearing the sound, and loading a real pre-split save |
 
@@ -57,7 +57,7 @@ translated interface checked in both languages. For this mod:
 Musical Instruments (Continued) is a **hard** dependency, so it is present in every pass by construction; the
 staging places it from `About.xml` and finds its Workshop id in `Tests/Pickle/wsl-ids.map`. The provider-absent case
 cannot run under Pickle (the staging always places the hard dependencies): the patch guard is asserted offline by
-`Test-EffectiveDefs.ps1`, and the game's own handling of a missing dependency is not this mod's.
+`Rule-OwnValues.ps1`, and the game's own handling of a missing dependency is not this mod's.
 
 ## Running the suite
 

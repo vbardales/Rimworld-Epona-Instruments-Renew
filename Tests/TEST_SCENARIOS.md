@@ -21,7 +21,7 @@ Language chosen at launch, never switched during test: every scenario played onc
 | --- | --- | --- | --- |
 | 1 | Loads cleanly | Pickle `01-alone` (loaded, after provider, no error, no warning from mod, `tickerType`, costs) | see STATUS.md |
 | 2 | Research gates the recipes | Pickle `15-research-gates-the-recipes` (unavailable before, available after); `20-craft-and-film` (colonist takes bill once research finished) | see STATUS.md |
-| 3 | Crafting | Pickle `20-craft-and-film` (each bill started, unfinished item completed by game's own flag, product exists, captured and filmed); costs in `01-alone`; stuff categories in `Test-EffectiveDefs.ps1` | see STATUS.md |
+| 3 | Crafting | Pickle `20-craft-and-film` (each bill started, unfinished item completed by game's own flag, product exists, captured and filmed); costs in `01-alone`; stuff categories in `Rule-OwnValues.ps1` | see STATUS.md |
 | 3b | Textures and size | Pickle `02-review-captures` (`@review`: person reads images) | see STATUS.md |
 | 4 | Playing, sound starts | Pickle `30-play-and-listen`: live provider sustainer for performer, per instrument | see STATUS.md |
 | 4b | Sound **heard** | `MANUAL M1` (`PLAY_AND_LISTEN.md`): loudspeaker not part of headless run. Pickle `35-hear-the-instruments` (conditional, pass "sound") now films each performance with sound as supporting evidence, but not replace M1: only person listening to film says it right sound, in sync | to do |
@@ -58,7 +58,7 @@ Manual version, kept for reference. Only maintainer has save made while these it
 - **7, provider absent, in game.** Staging (and game's own mod list) always places hard dependencies
   declared in `About.xml`; case is missing dependency, which RimWorld itself flags and not this mod's
   behaviour. Patch guard `Defs/ThingDef[@Name="HeldMusicalInstrumentBase"]` asserted offline to match nothing
-  without provider (`Tests/Test-EffectiveDefs.ps1`): no def added, no invalid def created.
+  without provider (`Tests/Rule-OwnValues.ps1`): no def added, no invalid def created.
 - **Description text in info card.** Description is def's own `description`, asserted equal in both
   languages (`10-texts-in-this-language`); info card is vanilla's rendering of it.
 - **Power, flick, refuelling controls:** carried items, not buildings.
