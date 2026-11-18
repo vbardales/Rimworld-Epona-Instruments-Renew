@@ -6,12 +6,20 @@
 #
 # Added for this suite, the props of the story (a ceilidh at the hermit's hearth), named in the header of 14-publication-shots.feature:
 #   geodesicdragon.irnbru   Irn Bru And Other Scottish Delights (2086949615): the kilt, IrnBruMod_KiltApparel
-#   VanillaExpanded.VHE     Vanilla Hair Expanded (1888705256): the braids, VHE_Braid and VHE_SideBraid
 # The Backlot itself (fixture Nelims-tribe and the place steps, prefix "Nelim's Sanctuary:") must NOT also be staged by ScreenshotStudio.
 # The studio pass of 2026-10-02 (nelim-zen-meadow-studio) is replaced by this one: the series plays in the Sanctuary (AUDIT.md 9.a).
 nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 geodesicdragon.irnbru 2086949615
-VanillaExpanded.VHE 1888705256
+# Colonists of the story, played as the roster says (Miel and Soren, 2026-11-18; blocks of NSB sanctuary-miel-wardrobe and sanctuary-soren-wardrobe):
+# Roo HD hair (Roo_Royal_NaturalcurlsHD, Roo_HD_Hair_Tidy, and the hair of Nelim own face), Tribal Tattoos (STribalTat_Body_SacredGrass), Genes Expanded Skin (GES_Skin_Chocolate),
+# VanityCase (VanityCase_LipstickCaramel, own mod, Pickle map only, never in About.xml), and the facial-animation fixes NSB stages for spawned pawns.
+rooboid.hdhair.continued 3559870636
+Shenanigans.TribalTattoos 2782262247
+LazyFridayStudio.GenesExpandedSkin 3214172563
+nelim.vanitycase path:VanityCase/Mod
+vk.addeyes.EX 3694711465
+Moshii.NLFA.InitFix 3609895011
+ccj.nlfaloadfix 3721489042
 # ---- the Backlot's map, as copied ----
 nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
