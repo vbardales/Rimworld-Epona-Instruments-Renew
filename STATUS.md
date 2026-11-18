@@ -45,7 +45,7 @@ remaining:
   - French review by Virginie: validated 2026-10-02 (three corrections applied, 26fa6b3); read again and validated 2026-10-17 at 1d43b2a (ChatGPT review: no French correction, one PUBLICATION.md wording fixed); FRENCH_REVIEW.md regenerated. A French Pickle pass on the current Mod/ is still to replay before `tested`
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
-protocols_read_sha: 83f3ecdc225600a0b1c3be5b28d0d76db95b0eab
+protocols_read_sha: b346379f25fb196ea0552f0a15d1f38d6bc38f97
 ---
 # Epona Instruments Renew - status
 
@@ -137,8 +137,8 @@ Verdict: no duplicate for 1.6; no other mod ships bagpipes or an accordion for M
 ## NSB - 2026-11-15 (sync-nsb-npt, nothing rewritten yet: write-shotlist does it)
 
 Places read: 2026-11-15
-Tribe read: 2026-11-15
-Steps read: 2026-11-15
+Tribe read: 2026-11-18
+Steps read: 2026-11-18
 
 Changed in NSB since the 2026-10-15 plan: `hearth-hall` and `fire-pit` validated by Virginie (2026-11-08, NPT photos lot 5h, ticket 1140); `fire-pit` is still (181, 115), free cells at z 117 are 172-173, 176, 178-185, 187-190 (draft cells 176, 178, 181, 183, 187 all free, but a TorchLamp is already at (181, 110) and (172, 114)). The draft header says Nelim is the only colonist: false, NSB has 17 humans. Owner rules (2026-11-05) said back: everything in NSB free; a colonist or domestic animal outside NSB needs her express validation; any property of a colonist (body, hair, face, skin, genes) too; every outfit free; every animal the mod includes must be shot (this mod adds none: rule 5 not applicable, three instruments only).
 
@@ -151,7 +151,7 @@ Decision: Flore and Soleil (invented guests, with body, hair and face set by the
 | Colonist | Shots | Outfit per shot | Last read | Exceptions |
 | --- | --- | --- | --- | --- |
 | Nelim | 1, 2, 5 | ochre shirt, wool-red jacket, deep-green trousers (free; her face and body untouched) | 2026-11-15 (profile lines) | none |
-| Miel | 1, 3 | to choose at write-shotlist (free) | 2026-11-15 (profile, AVANCEMENT) | none, played as the roster says |
+| Miel | 1, 3 | to choose at write-shotlist (free); VALIDE.md 2026-11-17 lists three validated daily outfits (overalls orange + builders jacket green; overalls alone; plaid shirt orange + trousers green) | 2026-11-18 (VALIDE, AVANCEMENT) | none, played as the roster says: Caramel lipstick `VanityCase_LipstickCaramel`, equal orange eyes `Eyes_Orange`, body Thin Female (temporary VTW go) |
 | Soren | 1, 4 | to choose at write-shotlist (free) | 2026-11-15 (profile, AVANCEMENT) | none, played as the roster says |
 | Flore, Soleil | none now | removed from the plan | | were outside NSB, no validation, dropped |
 
@@ -163,5 +163,7 @@ Decision: Flore and Soleil (invented guests, with body, hair and face set by the
 | Included animal (rule 5) | Shots |
 | --- | --- |
 | none: the mod adds no animal | not applicable |
+
+Sync 2026-11-18: NSB docs since 2026-11-15 changed only for other pawns, plus Miel validated (above) and a plan to rebuild the save `Nelims-tribe-v2` (same site names, centres and free zones kept; nothing built, no effect now). NPT: only `face-parts.md` (vanilla face) changed, no step used here moved. Places, animals and roster docs untouched since 2026-11-15, no change to the plan.
 
 Plan score run 2 (score-gallery, 2026-11-16, no capture yet: rating the plan): after adding in-frame decor to images 1 and 5 (a placed fully grown PlantPot, a DiningChair, a mug; b was `weak` there because the kept props sat outside the frame), every criterion a to g and j reads `ok` and k reads `ok`: 5.0 on each of the five scenes. Not verified in game: the cells, the interaction cell and facing of an instrument, the defNames of the ocarina and the frame drum. Gate 2 (scenarios) is held: asked NPT on 2026-11-16 for a one-step "colonist as in the roster" form or the current verified property block for Miel and Soren (the block in NSB's `sanctuary-looks.feature` is older than `MIEL-PROFIL.md`). The five scenarios below the header still name Flore and Soleil; no ticket until they are rewritten and `Check-ShotlistVsScenario.ps1` passes.
