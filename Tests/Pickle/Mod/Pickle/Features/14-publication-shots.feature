@@ -92,7 +92,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: all filth is cleaned
     And Nelim's Pickle Tools: all humans but "Nelim" are removed
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "fire-pit"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: a decor that finds no cell is skipped and logged
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
@@ -126,7 +126,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: all filth is cleaned
     And Nelim's Pickle Tools: all humans but "Nelim" are removed
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "fire-pit"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: a decor that finds no cell is skipped and logged
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
@@ -185,7 +185,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: all filth is cleaned
     And Nelim's Pickle Tools: all humans but "Nelim" are removed
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "fire-pit"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: a decor that finds no cell is skipped and logged
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
@@ -243,7 +243,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: all filth is cleaned
     And Nelim's Pickle Tools: all humans but "Nelim" are removed
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "fire-pit"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: a decor that finds no cell is skipped and logged
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
@@ -334,7 +334,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: the eclipse of the map is ended
     And Nelim's Pickle Tools: all filth is cleaned
     And Nelim's Pickle Tools: all humans but "Nelim" are removed
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "fire-pit"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "fire-pit"
     And Nelim's Sanctuary: I am at the sanctuary "fire-pit"
     And Nelim's Pickle Tools: a decor that finds no cell is skipped and logged
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (196, 152, 64)
