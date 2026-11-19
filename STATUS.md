@@ -23,7 +23,7 @@ workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
   - 8.m code review open (defect of stage): About.xml incompatibleWith Epona.Culture added 2026-11-14 (d22cbfb) after code_review_sha 915cb7d; review the diff 915cb7d..HEAD of Mod/ (Opus sub-agent), set code_review_sha, replay
-  - Gallery (resumes at shootGallery after the replay): ticket 12a4 (images 1-5, tree f1c477d) filed 2026-11-19; then score-gallery, REDO or candidate, rate-gallery. Open work and defects: BACKLOG.md
+  - Gallery (resumes at shootGallery after the replay): ticket 3b6e (images 1-5, tight frames) waiting; 12a4 read 2026-11-19: green 5/5, dogs shown (removed from fixes it), all 5 REDO (instruments about 30 px at 268 px); then score-gallery, REDO or candidate, rate-gallery. Open work and defects: BACKLOG.md
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
 protocols_read_sha: 29f3358636f0a78dc84f49e57f5dabaa11011713
@@ -109,3 +109,5 @@ Plan score run 2 (score-gallery, 2026-11-16, no capture yet: rating the plan): a
 - Next: read `7a43` (`summary.json`, `junit.xml`, then screenshots), triage the Inbox folder `gallery-explore-4`, run `score-gallery` on the captures, `REDO` or `candidate` per scene, then subtitles (owner types `/mod-workflow:rate-gallery`), `thanks_drafted_line` at `writeReleaseDocs`.
 
 Update 2026-11-19: 7a43 green 5 of 5, held instruments show in all four images (pipes, uilleann pipes, accordion in hands). score-gallery: all four REDO, no dog in any frame (plan: Yuki images 1-3, Shogun image 4). Cause (read in the feature, not yet proven in game): `the animals are kept out of the sanctuary "fire-pit"` sends the staged dogs away again; replaced by `are removed from` in the five scenarios (f1c477d). Also seen: image 1 pipes about 14 percent of the frame height (plan: a third), image 2 wide instead of close. Old captures 1-4 deleted (Inbox and Evidence). Ticket 20261119-213205-618-12a4 (images 1-5, English, wsl-deps.gallery.map) waits; evidence folder `Tests/Pickle/Inbox/gallery-explore-5`.
+
+Update 2026-11-19 (later): 12a4 green 5 of 5, Yuki (images 1-3) and Shogun (images 4-5) now in frame. score-gallery: all five REDO, criterion j weak (instruments too small at 268 px). Frames tightened in header and scenarios (images 1: 179-183/115-118, 2: 178-184/116-118, 3: 178-184/115-118, 4: 177-185/115-118, 5: 177-183/115-118); Check-ShotlistVsScenario 0. Ticket 3b6e filed on that tree; then score-gallery again. Image 5: Shogun stands instead of curled (adequacy partly).
