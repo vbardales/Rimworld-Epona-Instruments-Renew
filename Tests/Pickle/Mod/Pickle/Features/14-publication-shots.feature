@@ -41,22 +41,22 @@
 # its back to the camera; to confirm at the first run (the interaction cell of the def decides). Fields: place and hour | subject | composition |
 # living | decor | instant and how the gesture is obtained.
 #   1. fire-pit, 17h, Clear, 20 degrees | OPENING: Nelim tunes the great highland bagpipes at the empty hearth, the guests have not come yet
-#        (two empty Stool wait for them) | medium, framed x 176-186 / z 113-119 so the hall, hearth and the two empty stools set the place;
+#        (two empty Stool wait for them) | medium, framed x 179-183 / z 115-118 so the hall, hearth and the two empty stools set the place;
 #        Nelim off-centre right at (181, 117), bag and drones a third of the frame height | Nelim holding the pipes, Yuki lying at
 #        (183, 116) facing the camera | one TorchLamp lit at (178, 117) and one unlit at (184, 117), Stool at (176, 118) and (187, 118), a placed
 #        PlantPot with Plant_Daylily fully grown at (177, 116), a DiningChair at (185, 118), all inside the frame; a Beer bottle (Core item, Cat: no mug exists) on the Stool at
 #        (176, 118) | instant: she has just settled into her spot (pipes held, paused 20 ticks).
 #   2. fire-pit, 18h, Clear | Miel answers on the uilleann pipes while Nelim listens and smiles: the first guest has arrived | close,
-#        framed from the knees up, x 178-184 / z 115-119, the pipes and bellows fill a third of the frame width against Miel's ochre jacket and
+#        framed from the knees up, x 178-184 / z 116-118, the pipes and bellows fill a third of the frame width against Miel's ochre jacket and
 #        black curls; Miel at (181, 117), JP_UilleannPipes held in her hands | Miel holding them; Nelim at (178, 117) turned East toward her, JP_GreatHighlandBagpipes
 #        under her arm; Yuki at (183, 116) facing the camera | two TorchLamp lit at (176, 117) and (183, 117), one Stool at (187, 118) | instant: the two
 #        have just exchanged the first tune.
 #   3. fire-pit, 19h, Clear | the band is gathering: Soren plays the accordion while Nelim hurries over with her bagpipes | medium,
-#        framed x 177-185 / z 114-119; Soren at (181, 117) holding JP_Accordion, brass against his deep-green jacket; Nelim at
+#        framed x 178-184 / z 115-118; Soren at (181, 117) holding JP_Accordion, brass against his deep-green jacket; Nelim at
 #        (183, 117) turned West toward him, JP_GreatHighlandBagpipes in her hands; Miel's empty Stool at (178, 118) in the frame | Soren
 #        holding, Nelim carrying; Yuki at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117) | instant: Soren has just
 #        started and Nelim is walking to join him; image 4 follows.
-#   4. fire-pit, 20h, Clear | the whole band plays the ceilidh at its height | wide, framed x 178-184 / z 114-119 so each of the three
+#   4. fire-pit, 20h, Clear | the whole band plays the ceilidh at its height | wide, framed x 177-185 / z 115-118 so each of the three
 #        instruments takes at least 8 percent of the frame width at 268 px; Nelim (181, 117) centre, Miel (179, 117) and Soren (183, 117) at her
 #        sides, facing South, hearth as foreground; each holding JP_UilleannPipes, JP_GreatHighlandBagpipes, JP_Accordion
 #        | all three holding; Shogun at (178, 116) facing the camera | two TorchLamp lit at (176, 117) and (184, 117), two Stool at
@@ -66,7 +66,7 @@
 #        each at least 8 percent of the frame width: Ocarina at (177, 116), FrameDrum at (178, 116), JP_GreatHighlandBagpipes at (179, 116),
 #        JP_UilleannPipes at (180, 116), and Nelim at (181, 117) caught carrying JP_Accordion toward the row (mid-carry) | Nelim smiling, Shogun
 #        curled at (176, 116) facing the camera | one TorchLamp left lit at (178, 117) all night, one out at (184, 117), a Stool at (187, 118),
-#        a placed PlantPot with Plant_Daylily fully grown at (188, 117), a DiningChair at (185, 118) (frame x 176-189), the hearth cold, a Beer bottle
+#        a placed PlantPot with Plant_Daylily fully grown at (188, 117), a DiningChair at (185, 118) (frame x 177-183), the hearth cold, a Beer bottle
 #        on the stone at (183, 118) | instant: she is putting the instruments back after the night.
 # Windows of the interface: none. Every image is staged, so every one takes a subtitle (GALLERY.md "Sous-titres").
 #
@@ -110,7 +110,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (183, 116) facing South
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: I frame the cells (176, 113) to (186, 119) filling 85 percent of the screen
+    And Nelim's Pickle Tools: I frame the cells (179, 115) to (183, 118) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I wait 20 ticks
     Then I take a screenshot "image 1, Nelim tunes the great highland bagpipes"
@@ -169,7 +169,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (183, 116) facing South
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: I frame the cells (178, 115) to (184, 119) filling 85 percent of the screen
+    And Nelim's Pickle Tools: I frame the cells (178, 116) to (184, 118) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I wait 20 ticks
     Then I take a screenshot "image 2, Miel answers on the uilleann pipes"
@@ -227,7 +227,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_GreatHighlandBagpipes"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (178, 116) facing South
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: I frame the cells (177, 114) to (185, 119) filling 85 percent of the screen
+    And Nelim's Pickle Tools: I frame the cells (178, 115) to (184, 118) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I wait 20 ticks
     Then I take a screenshot "image 3, Soren plays the accordion, Nelim joins"
@@ -318,7 +318,7 @@ Feature: images for the Workshop page
     And Nelim's Pickle Tools: "Soren" carries the item "JP_Accordion"
     And Nelim's Pickle Tools: the animal "Shogun" stands at (178, 116) facing South
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: I frame the cells (178, 114) to (184, 119) filling 85 percent of the screen
+    And Nelim's Pickle Tools: I frame the cells (177, 115) to (185, 118) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I wait 20 ticks
     Then I take a screenshot "image 4, the whole band"
@@ -355,7 +355,7 @@ Feature: images for the Workshop page
     And I spawn a "JP_UilleannPipes" at (180, 116)
     And Nelim's Pickle Tools: "Nelim" carries the item "JP_Accordion"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: I frame the cells (176, 114) to (189, 119) filling 85 percent of the screen
+    And Nelim's Pickle Tools: I frame the cells (177, 115) to (183, 118) filling 85 percent of the screen
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I wait 20 ticks
     Then I take a screenshot "image 5, the morning after"
