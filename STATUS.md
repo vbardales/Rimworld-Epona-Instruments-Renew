@@ -48,7 +48,7 @@ Verdict: no duplicate for 1.6; no other mod ships bagpipes or an accordion for M
 
 Places read: 2026-11-15
 Tribe read: 2026-11-18
-Steps read: 2026-11-18 (re-synced 20:20: only new NPT entry = bfde383b backstory steps, used on Miel and Soren; NSB unchanged since 13:50)
+Steps read: 2026-11-19 (NPT since 11-18: only its own docs migration, no step or catalogue changed; NSB unchanged since 20:00)
 
 Changed in NSB since the 2026-10-15 plan: `hearth-hall` and `fire-pit` validated by Virginie (2026-11-08, NPT photos lot 5h, ticket 1140); `fire-pit` is still (181, 115), free cells at z 117 are 172-173, 176, 178-185, 187-190 (draft cells 176, 178, 181, 183, 187 all free, but a TorchLamp is already at (181, 110) and (172, 114)). The draft header says Nelim is the only colonist: false, NSB has 17 humans. Owner rules (2026-11-05) said back: everything in NSB free; a colonist or domestic animal outside NSB needs her express validation; any property of a colonist (body, hair, face, skin, genes) too; every outfit free; every animal the mod includes must be shot (this mod adds none: rule 5 not applicable, three instruments only).
 
