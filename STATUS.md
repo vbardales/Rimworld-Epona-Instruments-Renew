@@ -9,25 +9,47 @@ visibility: public
 detached: yes
 local_path: C:\Users\nelim\Documents\rimworld\EponaInstrumentsRenew
 publication_intent: public_unofficial
-workflow_stage: shootGallery[1.0.0]
+workflow_stage: playTests[1.0.0]
 settings_audit: not_applicable
 localization: complete
 translation_en: complete
 translation_fr: complete
 showcase: complete
 tested_on: 2026-11-12 pickle 8614d61
-updated: 2026-11-07
+ecosystem_line: 1.0
+workshop_required_items: n/a, not released yet
+updated: 2026-11-19
 workshop_id: 3806766938
 prepublished_version: 0.1.0 (private Workshop item created 2026-09-23; not a stage, see AUDIT.md)
 remaining:
-  - Gallery: ticket 12a4 (images 1-5, tree f1c477d) filed 2026-11-19; read it, score-gallery, REDO or candidate, then rate-gallery (subtitles). Open work and defects: BACKLOG.md
+  - 8.m code review open (defect of stage): About.xml incompatibleWith Epona.Culture added 2026-11-14 (d22cbfb) after code_review_sha 915cb7d; review the diff 915cb7d..HEAD of Mod/ (Opus sub-agent), set code_review_sha, replay
+  - Gallery (resumes at shootGallery after the replay): ticket 12a4 (images 1-5, tree f1c477d) filed 2026-11-19; then score-gallery, REDO or candidate, rate-gallery. Open work and defects: BACKLOG.md
 social_preview_sha256: c148dd428c7ff6c6a9cea82abe7b7a0e2b1c0a095fb10e3c6c4210f49bbfce4c
 code_review_sha: 915cb7db501415ba59322065faafab0ede420c45
-protocols_read_sha: 649cfe7207b76e149ce5d64d3f97e53f89a0b972
+protocols_read_sha: 29f3358636f0a78dc84f49e57f5dabaa11011713
 ---
 # Epona Instruments Renew - status
 
 Journal up to 2026-10-03 (audits of 2026-09-13/21/10-02, Pickle runs, 0.1.0 prepublication, Preview migration): `docs/runs/status-journal-to-2026-10-03.md`.
+
+## Dependencies (4.g)
+
+- 4.a/4.b: one hard dependency, `Mlie.MusicalInstruments` (Workshop 2274558815), declared with Workshop URL. Used for real: patch parents (`HeldMusicalInstrumentBase`, `PrimitiveInstrumentBase`) and classes `MusicalInstruments.CompProperties_MusicalInstrument`, `CompMusicalInstrument`, `CompProp_PlayingMusic`. No other mod referenced.
+- 4.c: no DLC referenced; `supportedVersions` 1.6 only; no `LoadFolders.xml` (none needed, one folder).
+- 4.d: `loadAfter` lists `Ludeon.RimWorld` and `Mlie.MusicalInstruments`; no cycle (one dependency).
+- 4.e: only patch is `PatchOperationConditional` guarded on `HeldMusicalInstrumentBase`; nothing added or logged without Musical Instruments. No `MayRequire`, no optional mod.
+- 4.f: not animal mod, not applicable. `incompatibleWith` Epona.Culture (Epona Instruments Standalone, the original this mod replaces) added 2026-11-14 on Virginie's decision; Epona Renaissance (Unofficial) not listed: it loads nothing in 1.6. Looked at in a running game 2026-11-14 (3712, 3 of 3): both mods load, six instruments side by side, no error.
+- Not run here: `scripts/sort-load-order.py` and in-game load (`unverified`, belongs to `playTests`).
+- Workshop required items: not released yet, see `workshop_required_items`.
+
+## Settings audit
+
+5.b/5.c/5.d: no settings, no MainButton. Verified in sources: no DLL in `Mod/`, no `MainButtonDef`, no `ModSettings`, `Mod/Defs/` holds only `SoundDefs/`. No empty page, no shortcut exposed. `settings_audit: not_applicable` stands.
+
+## Translation audit
+
+Player-facing texts: three labels and descriptions, patched in English, covered in French by `Languages/French/DefInjected/ThingDef/JoyPreservation.xml`; no Keyed text, no code. No text changed since Virginie validated French on 2026-10-02 (26fa6b3, c073659); sound change adds none. `FRENCH_REVIEW.md` regenerated at edef521 (same French; English columns now filled). `translation_fr` stays `complete`.
+French review by Virginie: validated 2026-10-02 (three corrections, 26fa6b3); read again and validated 2026-10-17 at 1d43b2a (ChatGPT review: no French correction).
 
 ## Ecosystem - 2026-11-13 (PiI, 8.0; `docs/inventory/ecosystem-steam/EponaInstrumentsRenew.md`, d9c98a1)
 
