@@ -83,7 +83,6 @@
 Feature: images for the Workshop page
 
   Scenario: image 1, Nelim tunes the great highland bagpipes
-  Scenario: image 1, Nelim tunes the great highland bagpipes
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 17
